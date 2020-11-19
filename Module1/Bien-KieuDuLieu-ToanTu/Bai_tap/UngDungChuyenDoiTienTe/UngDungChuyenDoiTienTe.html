@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <form id="tiente">
+        <label>Amount</label>
+        <input type="text" id="amount" name="amount">
+        <label>From Currency</label>
+        <select name="fromcurrency" id="fromcurrency">
+            <option value="VietNam" name="VietNam" id="VND">VietNam</option>
+        </select>
+        <label>To Currency</label>
+        <select name="tocurrency" id="tocurrency">
+            <option value="USD" name="USD" id="USD">USD</option>
+        </select>
+        <button name="convert" onclick="Convert()">Convert</button>
+    </form>
+    <script>
+        function Convert() {
+            var USD = document.getElementById("USD").value
+            var amount = Number(USD) * 23000
+            document.write("Result = " + amount)
+        }
+    </script>
+</body>
+</html>

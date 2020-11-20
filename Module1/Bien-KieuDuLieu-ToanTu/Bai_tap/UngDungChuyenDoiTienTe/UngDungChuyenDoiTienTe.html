@@ -5,7 +5,7 @@
     <title>Title</title>
 </head>
 <body>
-    <form id="tiente">
+    <form>
         <label>Amount</label>
         <input type="text" id="amount" name="amount">
         <label>From Currency</label>
@@ -16,13 +16,13 @@
         <select name="tocurrency" id="tocurrency">
             <option value="USD" name="USD" id="USD">USD</option>
         </select>
-        <button name="convert" onclick="Convert()">Convert</button>
+        <button onclick="Convert()">Convert</button>
     </form>
     <script>
         function Convert() {
-            var USD = document.getElementById("USD").value
-            var amount = Number(USD) * 23000
-            document.write("Result = " + amount)
+            var VND = document.getElementById("amount").value
+            var amount = VND / 23000
+            document.write("Result = " + amount + "  $")
         }
     </script>
 </body>

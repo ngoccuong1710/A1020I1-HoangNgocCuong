@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <form>
+        <h1>Caculator</h1>
+        <input type="text" id="firstNumber">
+        <input type="text" id="secondNumber">
+        <br>
+        <button onclick="Addition()">Addition(+)</button>
+        <button onclick="Subtraction()">Subtraction(-)</button>
+        <button onclick="Multiplication()">Multiplication(X)</button>
+        <button onclick="Division()">Division(/)</button>
+    </form>
+    <script>
+        function Addition() {
+            let a = document.getElementById("firstNumber").value
+            let b = document.getElementById("secondNumber").value
+            let result
+            result = Number(a) + Number(b)
+            document.write("Result Division = " + result)
+        }
+        function Subtraction() {
+            let a = document.getElementById("firstNumber").value
+            let b = document.getElementById("secondNumber").value
+            let result
+            result = Number(a) - Number(b)
+            document.write("Result Division = " + result)
+        }
+        function Multiplication() {
+            let a = document.getElementById("firstNumber").value
+            let b = document.getElementById("secondNumber").value
+            let result
+            result = Number(a) * Number(b)
+            document.write("Result Division = " + result)
+        }
+        function Division() {
+            let a = document.getElementById("firstNumber").value
+            let b = document.getElementById("secondNumber").value
+            let result
+            if(b == 0){
+                document.write("Undefined")
+            }
+            else {
+                result = Number(a) / Number(b)
+                document.write("Result Division = " + result)
+            }
+        }
+    </script>
+</body>
+</html>

@@ -10,44 +10,36 @@
         <input type="text" id="firstNumber">
         <input type="text" id="secondNumber">
         <br>
-        <button onclick="Addition()">Addition(+)</button>
-        <button onclick="Subtraction()">Subtraction(-)</button>
-        <button onclick="Multiplication()">Multiplication(X)</button>
-        <button onclick="Division()">Division(/)</button>
+        <input type="button" onclick="Addition()" value="Addition(+)">
+        <input type="button" onclick="Subtraction()" value="Subtraction(-)">
+        <input type="button" onclick="Multiplication()" value="Multiplication(X)">
+        <input type="button" onclick="Division()" value="Division(/)">
+        <div id="result"></div>
     </form>
     <script>
         function Addition() {
             let a = document.getElementById("firstNumber").value
             let b = document.getElementById("secondNumber").value
-            let result
-            result = Number(a) + Number(b)
-            document.write("Result Division = " + result)
+            let result = Number(a) + Number(b)
+            document.getElementById("result").innerHTML = result;
         }
         function Subtraction() {
             let a = document.getElementById("firstNumber").value
             let b = document.getElementById("secondNumber").value
-            let result
-            result = Number(a) - Number(b)
-            document.write("Result Division = " + result)
+            let result = a - b
+            document.getElementById("result").innerHTML = result;
         }
         function Multiplication() {
             let a = document.getElementById("firstNumber").value
             let b = document.getElementById("secondNumber").value
-            let result
-            result = Number(a) * Number(b)
-            document.write("Result Division = " + result)
+            let result = a * b
+            document.getElementById("result").innerHTML = result;
         }
         function Division() {
             let a = document.getElementById("firstNumber").value
             let b = document.getElementById("secondNumber").value
-            let result
-            if(b == 0){
-                document.write("Undefined")
-            }
-            else {
-                result = Number(a) / Number(b)
-                document.write("Result Division = " + result)
-            }
+            let result = a / b
+            document.getElementById("result").innerHTML = result;
         }
     </script>
 </body>

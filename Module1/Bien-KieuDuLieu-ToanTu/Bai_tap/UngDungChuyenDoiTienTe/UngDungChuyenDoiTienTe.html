@@ -16,13 +16,14 @@
         <select name="tocurrency" id="tocurrency">
             <option value="USD" name="USD" id="USD">USD</option>
         </select>
-        <button onclick="Convert()">Convert</button>
+        <input type="button" onclick="Convert()" value="Convert">
+        <div id="result"></div>
     </form>
     <script>
         function Convert() {
             var VND = document.getElementById("amount").value
             var amount = VND / 23000
-            document.write("Result = " + amount + "  $")
+            document.getElementById("result").innerHTML = amount;
         }
     </script>
 </body>

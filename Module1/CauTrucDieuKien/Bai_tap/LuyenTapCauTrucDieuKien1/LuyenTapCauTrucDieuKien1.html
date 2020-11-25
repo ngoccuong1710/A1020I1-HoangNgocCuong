@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h3>Bài 1: Nhập vào hai số a và b, và kiểm tra xem a có chia hết cho b hay không</h3>
+    <input type="text" id="fisrtNumber_1">
+    <input type="text" id="secondNumber_1">
+    <input type="button" value="Kiểm tra" onclick="check1()">
+    <div id="result1"></div>
+    <script>
+        function check1(){
+            let a = document.getElementById("fisrtNumber_1").value;
+            let b = document.getElementById("secondNumber_1").value;
+            if(a % b == 0){
+                document.getElementById("result1").innerHTML = "a chia hết cho b"
+            }
+            else document.getElementById("result1").innerHTML = "a ko chia hết cho b"
+        }
+    </script><hr>
+
+    <h3>Bai 2: Nhập tuổi và in ra kết quả nếu tuổi học sinh đó không đủ điều kiện vào học lớp 10.</h3>
+    <input type="text" id="age">
+    <input type="button" value="Kết quả" onclick="check2()">
+    <div id="result2"></div>
+    <script>
+        function check2() {
+            let age = document.getElementById("age").value;
+            if(age == 16){
+                document.getElementById("result2").innerHTML = "Đủ tuổi học lớp 10"
+            }
+            else if (age > 16){
+                document.getElementById("result2").innerHTML = "Quá già để học lớp 10"
+            }
+            else document.getElementById("result2").innerHTML = "Chưa đủ tuổi"
+        }
+    </script><hr>
+
+    <h3>Bai 3: Nhập một số nguyên bất kỳ và in kết quả ra màn hình để nói cho người dùng biết số đó là lớn hay nhỏ hơn 0</h3>
+    <input type="text" id="number">
+    <input type="button" value="Kiểm tra" onclick="check3()">
+    <div id="result3"></div>
+    <script>
+        function check3() {
+            let num = document.getElementById("number").value
+            if (num > 0) {
+                document.getElementById("result3").innerHTML = num + " lớn hơn 0"
+            } else if (num < 0) {
+                document.getElementById("result3").innerHTML = num + " nhỏ hơn 0"
+            } else document.getElementById("result3").innerHTML = num
+        }
+    </script><hr>
+
+    <h3>Bài 4: Nhập 3 số nguyên và tìm giá trị lớn nhất của ba số nguyên đó</h3>
+    <input type="text" id="fisrtNumber_4">
+    <input type="text" id="secondNumber_4">
+    <input type="text" id="thirstNumber_4">
+    <input type="button" value="Kiểm tra" onclick="check4()">
+    <div id="result4"></div>
+    <script>
+        function check4() {
+            let a = document.getElementById("fisrtNumber_4").value
+            let b = document.getElementById("secondNumber_4").value
+            let c = document.getElementById("thirstNumber_4").value
+            if(a > b){
+                if (a > c){
+                    document.getElementById("result4").innerHTML = a + " là số lớn nhất"
+                }
+               // else document.getElementById("result4").innerHTML = c + " là số lớn nhất"
+            }
+            else if(b > c){
+                document.getElementById("result4").innerHTML = b + " là số lớn nhất"
+            }
+            else document.getElementById("result4").innerHTML = c + " là số lớn nhất"
+        }
+    </script><hr>
+
+    <h3>Bài 5: Xếp hạng học lực của học sinh dựa trên các điểm bài kiểm tra, điểm thi giữa kỳ, điểm thi cuối kỳ</h3>
+    <p>Nhập điểm kiểm tra 15 phút</p>
+    <input type="text" id="diemKiemTra">
+    <p>Nhập điểm kiểm tra giữa kỳ</p>
+    <input type="text" id="diemGiuaKy">
+    <p>Nhập điểm kiểm tra cuối kỳ</p>
+    <input type="text" id="diemCuoiKy">
+    <br><br>
+    <input type="button" value="Kiểm tra" onclick="check5()">
+    <div id="result5"></div>
+    <script>
+        function check5() {
+            let a = document.getElementById("diemKiemTra").value;
+            let b = document.getElementById("diemGiuaKy").value;
+            let c = document.getElementById("diemCuoiKy").value;
+            let result = (a + b*2 + c*3) / 7
+            if(result >= 9){
+                document.getElementById("result5").innerHTML = "Điểm tổng kết = " + result + ". Học lực Giỏi"
+            }
+            else if (result >= 7){
+                document.getElementById("result5").innerHTML = "Điểm tổng kết = " + result + ". Học lực Khá"
+            }
+            else if (result >= 5){
+                document.getElementById("result5").innerHTML = "Điểm tổng kết = " + result + ". Học lực Trung bình"
+            }
+            else document.getElementById("result5").innerHTML = "Điểm tổng kết = " + result + ". Học lực Yếu"
+        }
+    </script><hr>
+
+    <h3>Bài 6: Tính hoa hồng nhận được tuỳ theo mức doanh số bán hàng</h3>
+    <p>Nhập số hàng hóa bán được</p>
+    <input type="text" id="firstNumber_6">
+    <p>Nhập giá tiền của 1 hàng hóa</p>
+    <input type="text" id="secondNumber_6">
+    <br><br>
+    <input type="button" value="Kiểm tra" onclick="check6()">
+    <div id="result6"></div>
+    <script>
+        function check6() {
+            let a = document.getElementById("firstNumber_6").value;
+            let b = document.getElementById("secondNumber_6").value;
+            if(a*b >= 100000000){
+                document.getElementById("result6").innerHTML = "Doanh thu nhận được là: "+ a*b + ". Nhận được số tiền hoa hồng là: " + (a*b)/10
+            }
+            else if(a*b >= 10000000){
+                document.getElementById("result6").innerHTML = "Doanh thu nhận được là: "+ a*b + ". Nhận được số tiền hoa hồng là: " + (a*b)/5
+            }
+            else if(a*b >= 1000000){
+                document.getElementById("result6").innerHTML = "Doanh thu nhận được là: "+ a*b + ". Nhận được số tiền hoa hồng là: " + (a*b)/2.5
+            }
+            else document.getElementById("result6").innerHTML = "Doanh thu nhận được là: "+ a*b + ". Nhận được số tiền hoa hồng là: " + (a*b)/2
+
+        }
+    </script><hr>
+
+    <h3>Bài 7: Tính cước điện thoại cho một hộ gia đình với các thông số đã cho</h3>
+
+    <script>
+
+    </script>
+</body>
+</html>

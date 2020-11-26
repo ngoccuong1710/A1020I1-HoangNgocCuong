@@ -1,3 +1,26 @@
-td{
-    padding:8px;
+form {
+    margin: 0 auto;
+    width: 185px;
+    padding: 20px;
 }
+form table tr, form table td {
+    border: 1px solid black;
+}
+form table tr:first-child input {
+    height: 30px;
+    padding: 0 10px;
+    font-weight: 800;
+}
+form table tr:not(:first-child) td {
+    height: 30px;
+}
+form table tr:not(:first-child) td input {
+    height: 100%;
+}
+form table input {
+    width: 100%;
+    border: 0;
+    font-size: 20px;
+}
+
+

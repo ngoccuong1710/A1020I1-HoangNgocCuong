@@ -7,25 +7,36 @@
     <script src="MayTinhDonGian.js"></script>
 </head>
 <body>
-    <div class="calculator">1</div>
-    <div class="calculator_key"></div>
-    <div>
-        <button>1</button>
-        <button>2</button>
-        <button>3</button>
-        <button>+</button>
-        <button>4</button>
-        <button>5</button>
-        <button>6</button>
-        <button>-</button>
-        <button>7</button>
-        <button>8</button>
-        <button>9</button>
-        <button>x</button>
-        <button>C</button>
-        <button>0</button>
-        <button>=</button>
-        <button>/</button>
-    </div>
+   <form name="calculator">
+       <table>
+           <tr>
+               <td colspan="4"><input type="text" name="ketQua" id="ketQua" disabled></td>
+           </tr>
+           <tr>
+               <td><input type="button" class="num" name="mot" value="1" onclick="calculator.ketQua.value += 1"></td>
+               <td><input type="button" class="num" name="hai" value="2" onclick="calculator.ketQua.value += 2"></td>
+               <td><input type="button" class="num" name="ba" value="3" onclick="calculator.ketQua.value += 3"></td>
+               <td><input type="button" class="btn" name="cong" value="+" onclick="calculator.ketQua.value += '+'"></td>
+           </tr>
+           <tr>
+               <td><input type="button" class="num" name="bon" value="4" onclick="calculator.ketQua.value += 4"></td>
+               <td><input type="button" class="num" name="nam" value="5" onclick="calculator.ketQua.value += 5"></td>
+               <td><input type="button" class="num" name="sau" value="6" onclick="calculator.ketQua.value += 6"></td>
+               <td><input type="button" class="operator" name="tru" value="-" onclick="calculator.ketQua.value += '-'"></td>
+           </tr>
+           <tr>
+               <td><input type="button" class="num" name="bay" value="7" onclick="calculator.ketQua.value += 7"></td>
+               <td><input type="button" class="num" name="tam" value="8" onclick="calculator.ketQua.value += 8"></td>
+               <td><input type="button" class="num" name="chin" value="9" onclick="calculator.ketQua.value += 9"></td>
+               <td><input type="button" class="operator" name="nhan" value="x" onclick="calculator.ketQua.value += '*'"></td>
+           </tr>
+           <tr>
+               <td><input type="button" class="clear" name="clear" value="C" onclick="calculator.ketQua.value = ''"></td>
+               <td><input type="button" class="num" name="khong" value="0" onclick="calculator.ketQua.value += 0"></td>
+               <td><input type="button" class="result" name="bang" value="=" onclick="calculator.ketQua.value = eval(calculator.ketQua.value)"></td>
+               <td><input type="button" class="num" name="chia" value="/" onclick="calculator.ketQua.value += '/'"></td>
+           </tr>
+       </table>
+   </form>
 </body>
 </html>

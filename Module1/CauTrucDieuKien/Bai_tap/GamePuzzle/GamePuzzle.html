@@ -5,6 +5,57 @@
     <title>Title</title>
 </head>
 <body>
+    <img src="kim1.png" id="hinh1" onclick="click_img(1)">
+    <img src="tap2.png" id="hinh2" onclick="click_img(2)">
+    <img src="trump3.png" id="hinh3" onclick="click_img(3)">
+    <script>
+        let hinh_1 = document.getElementById('hinh1')
+        let hinh_2 = document.getElementById('hinh2')
+        let hinh_3 = document.getElementById('hinh3')
+        function click_img(click) {
+            switch (click) {
+                case 1:
+                    if (hinh_1.getAttribute('src') === "kim1.png"){
+                        hinh_1.src = "tap1.png"
+                    }
+                    else if (hinh_1.getAttribute('src') === "tap1.png"){
+                        hinh_1.src = "trump1.png"
+                    }
+                    else hinh_1.src = "kim1.png"
+                    setTimeout(check,1000);
+                    break;
+                case 2:
+                    if (hinh_2.getAttribute('src') === "kim2.png"){
+                        hinh_2.src = "tap2.png"
+                    }
+                    else if (hinh_2.getAttribute('src') === "tap2.png"){
+                        hinh_2.src = "trump2.png"
+                    }
+                    else hinh_2.src = "kim2.png"
+                    setTimeout(check,1000);
+                    break;
+                case 3:
+                    if (hinh_3.getAttribute('src') === "kim3.png"){
+                        hinh_3.src = "tap3.png"
+                    }
+                    else if (hinh_3.getAttribute('src') === "tap3.png"){
+                        hinh_3.src = "trump3.png"
+                    }
+                    else hinh_3.src = "kim3.png"
+                    setTimeout(check,1000);
+                    break;
+            }
+        }
 
+        function check() {
+            if (hinh_1.getAttribute('src') === "kim1.png" && hinh_2.getAttribute('src') === "kim2.png" && hinh_3.getAttribute('src') === "kim3.png") {
+                alert("Kim jung un")
+            } else if (hinh_1.getAttribute('src') === "tap1.png" && hinh_2.getAttribute('src') === "tap2.png" && hinh_3.getAttribute('src') === "tap3.png") {
+                alert("Tập Cân Bình")
+            } else if (hinh_1.getAttribute('src') === "trump1.png" && hinh_2.getAttribute('src') === "trump2.png" && hinh_3.getAttribute('src') === "trump3.png") {
+                alert("Donal Trump")
+            }
+        }
+    </script>
 </body>
 </html>

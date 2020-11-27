@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <input type="checkbox" id="good" onclick="check_good()">GOOD<br>
+    <input type="checkbox" id="cheap" onclick="check_cheap()">CHEAP<br>
+    <input type="checkbox" id="fast" onclick="check_fast()">FAST<br>
+
+    <script>
+        function check_good(){
+            let cb_good = document.getElementById('good').checked
+            let cb_cheap = document.getElementById('cheap').checked
+            let cb_fast = document.getElementById('fast').checked
+            if(cb_cheap && cb_fast){
+                if (Math.random()) {
+                    document.getElementById("fast").checked = false;
+                }
+            }
+        }
+        function check_cheap() {
+            let cb_good = document.getElementById('good').checked
+            let cb_cheap = document.getElementById('cheap').checked
+            let cb_fast = document.getElementById('fast').checked
+            if(cb_good && cb_fast){
+                if (Math.random()) {
+                    document.getElementById("good").checked = false;
+                }
+            }
+        }
+        function check_fast() {
+            let cb_good = document.getElementById('good').checked
+            let cb_cheap = document.getElementById('cheap').checked
+            let cb_fast = document.getElementById('fast').checked
+            if(cb_good && cb_cheap){
+                if (Math.random()) {
+                    document.getElementById("cheap").checked = false;
+                }
+            }
+        }
+    </script>
+</body>
+</html>

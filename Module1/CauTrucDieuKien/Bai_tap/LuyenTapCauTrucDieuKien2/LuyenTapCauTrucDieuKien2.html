@@ -32,6 +32,220 @@
     </script><hr>
 
     <h3>Bài 3: Tính diện tích hình vuông khi biết cạnh a.</h3>
-    <p></p>
+    <p>Nhập cạnh a</p>
+    <input type="text" id="input_3">
+    <input type="button" value="Result" onclick="check3()">
+    <div id="result3"></div>
+    <script>
+        function check3() {
+            let num = document.getElementById('input_3').value
+            let result = num*num
+            document.getElementById('result3').innerHTML = "Diện tích hình vuông là:" + result
+        }
+    </script><hr>
+
+    <h3>Bài 4: Tính diện tích hình  chữ nhật khi biết 02 cạnh a, b.</h3>
+    <p>Nhập cạnh a</p>
+    <input type="text" id="fisrtnum_4">
+    <p>Nhập cạnh b</p>
+    <input type="text" id="secondnum_4">
+    <input type="button" value="Result" onclick="check4()">
+    <div id="result4"></div>
+    <script>
+        function check4() {
+            let a = document.getElementById('fisrtnum_4').value
+            let b = document.getElementById('secondnum_4').value
+            let result = a*b
+            document.getElementById('result4').innerHTML = "Diện tích hình chữ nhật là:" + result
+        }
+    </script><hr>
+
+    <h3>Bài 5: Tính diện tích tam giác vuông khi biết 02 cạnh kề a, b.</h3>
+    <p>Nhập cạnh a</p>
+    <input type="text" id="fisrtnum_5">
+    <p>Nhập cạnh b</p>
+    <input type="text" id="secondnum_5">
+    <input type="button" value="Result" onclick="check5()">
+    <div id="result5"></div>
+    <script>
+        function check5() {
+            let a = document.getElementById('fisrtnum_5').value
+            let b = document.getElementById('secondnum_5').value
+            let result = (a*b)/2
+            document.getElementById('result5').innerHTML = "Diện tích tam giác vuông là:" + result
+        }
+    </script><hr>
+
+    <h3>Bài 6: Giải phương trình bậc 1.</h3>
+    <p>Nhập cạnh a</p>
+    <input type="text" id="fisrtnum_6">
+    <p>Nhập cạnh b</p>
+    <input type="text" id="secondnum_6">
+    <input type="button" value="Result" onclick="check6()">
+    <div id="result6"></div>
+    <script>
+        function check6() {
+            let a = document.getElementById('fisrtnum_6').value
+            let b = document.getElementById('secondnum_6').value
+            let result = -b/a
+            if(a == 0){
+                if (b == 0){
+                    document.getElementById('result6').innerHTML = "Phương trình vô số nghiệm"
+                } document.getElementById('result6').innerHTML = "Phương trình vô nghiệm"
+            }
+            else document.getElementById('result6').innerHTML = "x = " + result
+        }
+    </script><hr>
+
+    <h3>Bài 7: Giải phương trình bậc 2.</h3>
+    <p>Nhập cạnh a</p>
+    <input type="text" id="fisrtnum_7">
+    <p>Nhập cạnh b</p>
+    <input type="text" id="secondnum_7">
+    <p>Nhập cạnh c</p>
+    <input type="text" id="thirtnum_7">
+    <input type="button" value="Result" onclick="check7()">
+    <div id="result7"></div>
+    <script>
+        function check7() {
+            let a = document.getElementById('fisrtnum_7').value
+            let b = document.getElementById('secondnum_7').value
+            let c = document.getElementById('thirtnum_7').value
+            let detal = b*b - 4*a*c
+            if(a != 0){
+                if(detal < 0){
+                    document.getElementById('result7').innerHTML = "Phương trình vô nghiệm"
+                }
+                else if (detal == 0){
+                    document.getElementById('result7').innerHTML = "phương trình có 1 nghiệm: x1 = x2 = " + -b/(2*a)
+                }
+                else {
+                    document.getElementById('result7').innerHTML = "Phương trình có 2 nghiệm: x1 = " + (-b-Math.sqrt(detal))/(2*a) + " và x2 = " + (-b+Math.sqrt(detal))/(2*a)
+                }
+            }
+            else document.getElementById('result7').innerHTML = "phương trình có 1 nghiệm: x = " + -c/b
+        }
+    </script><hr>
+
+    <h3>Bài 8: Kiểm tra xem một số nhập vào có phải là tuổi của một người không. Một số nguyên là tuổi của một người khi nhỏ 120 và lơn hơn 0.</h3>
+    <p>Nhập số tuổi</p>
+    <input type="text" id="input_8">
+    <input type="button" value="Result" onclick="check8()">
+    <div id="result8"></div>
+    <script>
+        function check8() {
+            let num = document.getElementById('input_8').value
+            if(num > 0 && num < 120){
+                document.getElementById('result8').innerHTML = num + " tuổi. Đó là tuổi của 1 người"
+            }
+            else document.getElementById('result8').innerHTML = "Ko phải là tuổi của con người"
+        }
+    </script><hr>
+
+    <h3>Bài 9: Kiểm tra xem 3 số thực (a,b,c) nhập vào có phải là cạnh của một tam giác. Điều kiện để a,b,c là cạnh của một tam giác là:</h3>
+    <p>Nhập cạnh a</p>
+    <input type="text" id="fisrtnum_9">
+    <p>Nhập cạnh b</p>
+    <input type="text" id="secondnum_9">
+    <p>Nhập cạnh c</p>
+    <input type="text" id="thirtnum_9">
+    <input type="button" value="Result" onclick="check9()">
+    <div id="result9"></div>
+    <script>
+        function check9() {
+            let a = document.getElementById('fisrtnum_9').value
+            let b = document.getElementById('secondnum_9').value
+            let c = document.getElementById('thirtnum_9').value
+            if (isNaN(a) || isNaN(b) || isNaN(c)) {
+                document.getElementById('result9').innerHTML = "Dữ liệu ko hợp lệ"
+            }
+            else if ((a>0 && b>0 && c>0) && ((a + b > c) || (a + c > b) || (b + c > a))) {
+                if ((a * a == b * b + c * c) || (b * b == a * a + c * c) || (c * c == a * a + b * b)) {
+                    document.getElementById('result9').innerHTML = " Đây là tam giác vuông"
+                }
+                else if (a == b && b == c) {
+                    document.getElementById('result9').innerHTML = " Đây là tam giác đều"
+                }
+                else if (a == b || b == c || c == a) {
+                    document.getElementById('result9').innerHTML = " Đây là tam giác cân"
+                }
+                else  document.getElementById('result9').innerHTML = " Đây là cạnh của 1 hình tam giác"
+            }
+            else document.getElementById('result9').innerHTML = " a, b, c ko phải cạnh của 1 tam giác"
+        }
+    </script><hr>
+
+    <h3>Bài 10: Viết chương trình tính giá điện.</h3>
+    <p>Giá bán lẻ điện cho mỗi mức bậc thang được quy định như sau:</p>
+    <p>Bậc 1 (0 đến 50kWh): 1.484 VND(/kWh)</p>
+    <p>Bậc 2 (51 đến 100kWh): 1.533 VND (/kWh)</p>
+    <p>Bậc 3 (101 đến 200 kWh): 1.786 VND (/kWh)</p>
+    <p>Bậc 4 (201 đến 300 kWh): 2.242 VND (/kWh)</p>
+    <p>Bậc 5 (301 đến 400 kWh): 2.503 VND (/kWh)</p>
+    <p>Bậc 6 (401 kWh trở lên): 2.587 VND (/kWh)</p>
+    <p>Nhập Lượng điện tiêu thụ (kWh)</p>
+    <input type="text" id="input_10">
+    <input type="button" value="Result" onclick="check10()">
+    <div id="result10"></div>
+    <script>
+        function check10() {
+            let num = document.getElementById('input_10').value
+            if(num > 0){
+                if(0 < num && num <= 50){
+                    document.getElementById('result10').innerHTML = "Giá tiền là: " + num * 1.484
+                }
+                else if (51 <= num && num <= 100){
+                    document.getElementById('result10').innerHTML = "Giá tiền là: " + num * 1.533
+                }
+                else if (101 <= num && num <= 200){
+                    document.getElementById('result10').innerHTML = "Giá tiền là: " + num * 1.786
+                }
+                else if (201 <= num && num <= 300){
+                    document.getElementById('result10').innerHTML = "Giá tiền là: " + num * 2.242
+                }
+                else if (301 <= num && num <= 400){
+                    document.getElementById('result10').innerHTML = "Giá tiền là: " + num * 2.503
+                }
+                else document.getElementById('result10').innerHTML = "Giá tiền là: " + num * 2.587
+            }
+            else document.getElementById('result10').innerHTML = "Dữ liệu ko hợp lệ"
+        }
+    </script><hr>
+
+    <h3>Bài 11: Viết chương trình tính thuế thu nhập cá nhân.</h3>
+    <p>Nhập chu nhập các nhân trên 1 tháng</p>
+    <input type="text" id="input_11">
+    <input type="button" value="Result" onclick="check11()">
+    <div id="result11"></div>
+    <script>
+        function check11() {
+            let num = document.getElementById('input_11').value
+            if(num > 0){
+                if(0 < num && num <= 5000000){
+                    document.getElementById('result11').innerHTML = "Giá tiền là: " + num * 0.05
+                }
+                else if (500000 < num && num <= 10000000){
+                    document.getElementById('result11').innerHTML = "Giá tiền là: " + num * 0.1 + 250000
+                }
+                else if (10000000 < num && num <= 18000000){
+                    document.getElementById('result11').innerHTML = "Giá tiền là: " + num * 0.15 + 750000
+                }
+                else if (18000000 < num && num <= 32000000){
+                    document.getElementById('result11').innerHTML = "Giá tiền là: " + num * 0.2 + 1950000
+                }
+                else if (32000000 < num && num <= 52000000){
+                    document.getElementById('result11').innerHTML = "Giá tiền là: " + num * 2.5 + 4750000
+                }
+                else if (52000000 < num && num <= 80000000){
+                    document.getElementById('result11').innerHTML = "Giá tiền là: " + num * 3.0 + 9750000
+                }
+                else document.getElementById('result11').innerHTML = "Giá tiền là: " + num * 3.5 + 18150000
+            }
+            else document.getElementById('result11').innerHTML = "Dữ liệu ko hợp lệ"
+        }
+    </script><hr>
+
+    <h3>Bài 12: Viết chương trình tính lãi ngân hàng (lãi mẹ đẻ lãi con) khi biết số tiền ban đầu, số tháng cho vay và lãi xuất hàng tháng.</h3>
+
 </body>
 </html>

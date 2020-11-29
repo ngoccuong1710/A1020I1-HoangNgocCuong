@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h3>Bài 1: Sử dụng vòng lặp để đếm từ 1 đến 100. Khi số là 99, hiển thị hộp thoại thông báo là đã hoàn thành.</h3>
+    <input type="button" value="Đếm số" onclick="demSo()">
+    <script>
+        function demSo() {
+            for (let i = 0; i < 99; i++){
+                let num = i + 1
+                alert(num)
+            }
+            alert("Hoàn thành")
+        }
+    </script><hr>
+
+    <h3>Bài 2: Sử dụng hàm prompt() để lấy thông tin nhiệt độ hiện tại được nhập bởi người truy cập. Nếu nhiệt độ nhập vào trên 100, yêu cầu người dùng giảm nhiệt độ. Nếu nhiệt độ dưới 20, yêu cầu người dùng tăng nhiệt độ.</h3>
+    <input type="button" value="Click" onclick="check2()">
+    <div id="result2"></div>
+    <script>
+        function check2() {
+            let num = prompt("Yêu cầu nhập nhiệu độ")
+            for (let i = 0; i < 10 ; i++){
+                if (num > 100 ){
+                    num = prompt("Yêu cầu giảm nhiệt độ")
+                }
+                else if (num < 20){
+                    num = prompt("Yêu cầu tăng nhiệt độ")
+                }
+                else {
+                    alert("Nhiệt độ ổn định")
+                    break;
+                }
+            }
+        }
+    </script><hr>
+
+    <h3>Bài 3: Hiển thị ra 20 số trong dãy fibonacci đầu tiên.</h3>
+    <script>
+        let a = 0
+        let b = 1
+        let c = ""
+        let string = a + ", " + b + ", "
+        for(let i = 0; i < 18; i++){
+            c = a + b
+            string += c + ", "
+            a = b
+            b = c
+        }
+        document.write(string)
+    </script><hr>
+
+    <h3>Bài 4: Tìm số đầu tiên trong dãy fibonacci chia hết cho 5.</h3>
+    <div id="result4"> </div>
+    <script>
+        function fibonacci(n) {
+            if (n < 2) {
+                return 1;
+            } else {
+                return fibonacci(n-2) + fibonacci(n-1);
+            }
+        }
+        function check() {
+            let n = 2;
+            while (fibonacci(n) % 5 !== 0) {
+                n+=1;
+            }
+            document.getElementById('result4').innerHTML = fibonacci(n);
+        }
+        check();
+    </script><hr>
+
+    <h3>Bài 5: Tính tổng của 20 số đầu tiên trong dãy fibonacci.</h3>
+    <div id="result5"> </div>
+    <script>
+        function fibonacci(n) {
+            if (n < 2) {
+                return 1;
+            } else {
+                return fibonacci(n - 2) + fibonacci(n - 1);
+            }
+        }
+
+        function display() {
+            let tong = 0 ;
+            for (let i = 0; i <= 18; i++) {
+                tong += fibonacci(i);
+            }
+            document.getElementById("result5").innerHTML = tong;
+        }
+        display();
+    </script><hr>
+
+    <h3>Bài 6: Tính tổng của 30 số chia hết cho 7 đầu tiên trong các số tự nhiên.</h3>
+    
+</body>
+</html>

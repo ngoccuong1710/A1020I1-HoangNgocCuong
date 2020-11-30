@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h3>Bài 1: In dãy Finonaci</h3>
+    <script>
+        let a = 0
+        let b = 1
+        let c = ""
+        let string = a + ", " + b + ", "
+        for(let i = 0; i < 20; i++){
+            c = a + b
+            string += c + ", "
+            a = b
+            b = c
+        }
+        document.write(string + "...")
+    </script><hr>
+
+    <h3>Bài 2: Tính giai thừa của một số nguyên dương</h3>
+    <input type="text" id="input_2">
+    <input type="button" value="Click" onclick="check2()">
+    <div id="result2"></div>
+    <script>
+        function check2(){
+            let num = document.getElementById('input_2').value
+            let result = 1
+            for (let i = num; i > 0; i--){
+                 result = result * i
+            }
+            document.getElementById('result2').innerHTML = result
+        }
+    </script><hr>
+
+    <h3>Bài 3: In tam giác vuông. Các góc vuông nằm ở các vị trí khác nhau</h3>
+    <div id="result3_1"></div>
+    <div id="result3_2"></div>
+    <div id="result3_3"></div>
+    <div id="result3_4"></div>
+    <script>
+        function tamgiac_1() {
+            let i = 1
+            let n = 5
+            let tamgiac = ''
+            while(i <= n){
+                for (let j = 0; j < i; j++){
+                    tamgiac += '*'
+                }
+                tamgiac += "<br>"
+                i++
+            }
+            document.getElementById('result3_1').innerHTML = tamgiac
+        }
+        tamgiac_1();
+
+        function tamgiac_2() {
+            let i = 5
+            let n = 1
+            let tamgiac = '<br>'
+            while(i >= n){
+                for (let j = 0; j < i; j++){
+                    tamgiac += '*'
+                }
+                tamgiac += "<br>"
+                i--
+            }
+            document.getElementById('result3_2').innerHTML = tamgiac
+        }
+        tamgiac_2();
+
+        function tamgiac_3() {
+            let i = 1
+            let n = 5
+            let tamgiac = '<br>'
+            while(i <= n){
+                for (let j = 0; j < (n - i); j++){
+                    tamgiac += '&nbsp;&nbsp;'
+                }
+                for (let j = 0; j < i; j++){
+                    tamgiac += '*'
+                }
+                tamgiac += "<br>"
+                i++
+            }
+            document.getElementById('result3_3').innerHTML = tamgiac
+        }
+        tamgiac_3();
+
+        function tamgiac_4() {
+            let i = 5
+            let n = 1
+            let tamgiac = '<br>'
+            while(i <= n){
+                for (let j = 0; j <= n; j++){
+                    tamgiac += '&nbsp;&nbsp;'
+                }
+                for (let j = 0; j > i; j--){
+                    tamgiac += '*'
+                }
+                tamgiac += "<br>"
+                i--
+            }
+            document.getElementById('result3_4').innerHTML = tamgiac
+        }
+        tamgiac_4();
+    </script>
+</body>
+</html>

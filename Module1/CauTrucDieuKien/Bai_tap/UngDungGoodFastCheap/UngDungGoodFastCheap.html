@@ -11,7 +11,6 @@
 
     <script>
         function check_good(){
-            let cb_good = document.getElementById('good').checked
             let cb_cheap = document.getElementById('cheap').checked
             let cb_fast = document.getElementById('fast').checked
             if(cb_cheap && cb_fast){
@@ -22,7 +21,6 @@
         }
         function check_cheap() {
             let cb_good = document.getElementById('good').checked
-            let cb_cheap = document.getElementById('cheap').checked
             let cb_fast = document.getElementById('fast').checked
             if(cb_good && cb_fast){
                 if (Math.random()) {
@@ -33,7 +31,6 @@
         function check_fast() {
             let cb_good = document.getElementById('good').checked
             let cb_cheap = document.getElementById('cheap').checked
-            let cb_fast = document.getElementById('fast').checked
             if(cb_good && cb_cheap){
                 if (Math.random()) {
                     document.getElementById("cheap").checked = false;

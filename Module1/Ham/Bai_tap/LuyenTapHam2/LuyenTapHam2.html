@@ -135,6 +135,14 @@
     </script><hr>
 
     <h3>Bài 9: Viết hàm truyền vào một mảng ký tự, và một ký tự bất kỳ, kiểm tra xem ký tự bất kỳ đó có nằm trong mảng không. Nếu có trả về số lần xuất hiện của ký tự đó, nếu không trả về -1. </h3>
-    
+    <input type="button" value="Click" onclick="check9()">
+    <div id="result9"></div>
+    <script>
+        function check9() {
+            let arr = [1, 2, 3, 5, 8, '*', 6, 4]
+            //arr.indexOf("*")
+            document.getElementById('result9').innerHTML = arr.indexOf('10');
+        }
+    </script>
 </body>
 </html>

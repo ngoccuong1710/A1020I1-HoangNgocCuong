@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h3>Bài 1: Viết hàm tính bình phương của một số bất kỳ được đưa vào.</h3>
+    <input type="text" id="input1">
+    <input type="button" value="Click" onclick="check1()">
+    <div id="result1"></div>
+    <script>
+        function check1() {
+            let num = parseInt(document.getElementById('input').value);
+            document.getElementById('result1').innerHTML = num*num;
+        }
+    </script><hr>
+
+    <h3>Bài 2: Viết hàm tính diện tích, hàm tính chu vi hình tròn.</h3>
+    <input type="text" id="input2">
+    <input type="button" value="Diện tích" onclick="dienTichHT()">
+    <input type="button" value="Chu vi" onclick="chuViHT()">
+    <div id="result2"></div>
+    <script>
+        function dienTichHT() {
+            let r = parseInt(document.getElementById('input2').value)
+            document.getElementById('result2').innerHTML = r*r*3.14
+        }
+        function chuViHT() {
+            let r = parseInt(document.getElementById('input2').value)
+            document.getElementById('result2').innerHTML = 2*r*3.14
+        }
+    </script><hr>
+
+    <h3>Bài 3: Viết hàm tính giai thừa của một số nguyên bất kỳ được đưa vào.</h3>
+    <input type="text" id="input3">
+    <input type="button" value="Click" onclick="check3()">
+    <div id="result3"></div>
+    <script>
+        function check3(){
+            let num = document.getElementById('input3').value
+            let result = 1;
+            for (let i = num; i > 0; i--){
+                result = result * i
+            }
+            document.getElementById('result3').innerHTML = result
+        }
+    </script><hr>
+
+    <h3>Bài 4: Viết hàm kiểm tra xem ký tự nhập vào có phải là ký tự số không. Nếu là ký tự số hàm trả về true, ngược lại trả về false</h3>
+    <input type="text" id="input4">
+    <input type="button" value="Click" onclick="checkNum()">
+    <div id="result4"></div>
+    <script>
+        function checkNum() {
+            let num = document.getElementById('input4').value;
+            if (isNaN(num)){
+                document.getElementById('result4').innerHTML = "Không phải số"
+            }
+            else document.getElementById('result4').innerHTML = num
+        }
+    </script><hr>
+
+    <h3>Bài 5: Viết hàm nhận vào 3 số nguyên bất kỳ, trả về số nguyên có giá trị nhỏ nhất.</h3>
+    <input type="text" id="numMot">
+    <input type="text" id="numHai">
+    <input type="text" id="numBa">
+    <input type="button" value="Click" onclick="check5()">
+    <div id="result5"></div>
+    <script>
+        function check5() {
+            let a = document.getElementById('numMot').value;
+            let b = document.getElementById('numHai').value;
+            let c = document.getElementById('numBa').value;
+            let min = a
+            if(min > b){
+                min = b
+                document.getElementById('result5').innerHTML = min
+            }
+            if (min > c){
+                min = c
+                document.getElementById('result5').innerHTML = min
+            }
+            return document.getElementById('result5').innerHTML = min
+        }
+    </script><hr>
+
+    <h3>Bài 6: Viết hàm nhận vào một số, kiểm tra xem nếu số đưa vào có phải là nguyên dương không. Nếu là nguyên dương trả về true, ngược lại trả về false.</h3>
+    <input type="text" id="input6">
+    <input type="button" value="Click" onclick="check6()">
+    <div id="result6"></div>
+    <script>
+        function check6() {
+            let num = parseInt(document.getElementById('input6').value);
+            if (num > 0){
+                document.getElementById('result6').innerHTML = "Số dương"
+            }
+            else document.getElementById('result6').innerHTML = "Số âm"
+        }
+    </script><hr>
+
+    <h3>Bài 7: Viết hàm truyền vào 2 số nguyên bất kì, thực hiện đổi chỗ hai số nguyên đó.</h3>
+    <input type="text" id="numMot_7">
+    <input type="text" id="numHai_7">
+    <input type="button" value="Click" onclick="check7()">
+    <div id="result7_1"></div>
+    <div id="result7_2"></div>
+    <script>
+        function check7() {
+            let a = document.getElementById('numMot_7').value;
+            let b = document.getElementById('numHai_7').value;
+            document.getElementById('result7_1').innerHTML = a + ", " + b;
+            let temp = a;
+            a = b;
+            b = temp;
+            document.getElementById('result7_2').innerHTML = "Swap: " + a + ", " + b;
+        }
+    </script><hr>
+
+    <h3>Bài 8: Viết hàm truyền vào mảng số nguyên bất kỳ, sau đó đảo ngược mảng số nguyên đó.</h3>
+    <input type="button" value="Click" onclick="check8()">
+    <div id="result8_1"></div>
+    <div id="result8_2"></div>
+    <script>
+        function check8() {
+            let arr = []
+            let num = parseInt(prompt("Nhập số phần tử:"))
+            for(let i = 0; i < num; i++){
+                arr[i] = parseInt(prompt("Nhập phần tử thứ " + i))
+            }
+            document.getElementById('result8_1').innerHTML = arr;
+            arr.reverse();
+            document.getElementById('result8_2').innerHTML = arr;
+        }
+    </script><hr>
+
+    <h3>Bài 9: Viết hàm truyền vào một mảng ký tự, và một ký tự bất kỳ, kiểm tra xem ký tự bất kỳ đó có nằm trong mảng không. Nếu có trả về số lần xuất hiện của ký tự đó, nếu không trả về -1. </h3>
+    
+</body>
+</html>

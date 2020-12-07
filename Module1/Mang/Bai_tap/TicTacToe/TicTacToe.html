@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <p id="displayTable"></p>
+    <script>
+        let array = new Array(27)
+        for(let i = 0; i < 27; i++){
+            array[i] = new Array(27)
+            for (let j = 0; j < 27; j++){
+                array[i][j] = ""
+            }
+        }
+        let flag = true
+
+        function hienThi() {
+            let tableString = '<table border="1">';
+            for(let i = 0; i < 25; i++){
+                tableString += '<tr>';
+                for (let j = 0; j < 25; j++){
+                    tableString += '<td width="25xp" height="25xp" onclick="play(' + i + ',' + j + ')">' + array[i][j] +'</td>'
+                }
+                tableString += '</tr>'
+            }
+            tableString += '</table>';
+            document.getElementById('displayTable').innerHTML = tableString
+       }
+        hienThi();
+
+        function play(i, j) {
+            if (flag && !kiemTraDaChoi(i,j)){
+                array[i][j] = 'X';
+                flag =false;
+                if (kiemTraCT()){
+                    alert("Người chơi 1 chiến thăng")
+                }
+            }else if(!flag && !kiemTraDaChoi(i,j)){
+                array[i][j] = 'O';
+                flag =true;
+                if (kiemTraCT()){
+                    alert("Người chơi 2 chiến thăng")
+                }
+            }
+            hienThi()
+        }
+        function kiemTraDaChoi(i,j) {
+            if (array[i][j]==="X"||array[i][j]==="O"){
+                alert("ô này đã có người chơi");
+                return true;
+            }
+            return false;
+        }
+
+        function kiemTraCT() {
+            for (let i = 0; i < 27; i++) {
+                for (let j = 0; j < 27; j++) {
+                    if (array[i][j] === "X") { // nếu giá trị tìm thấy là X thì đi kiểm tra các ô bên cạnh
+                        if (array[i][j + 1] === "X" && array[i][j + 2] === "X" && array[i][j + 3] === "X" && array[i][j + 4] === "X") { // Kiểm tra đường ngang
+                            return true;
+                        } else if (array[i + 1][j] === "X" && array[i + 2][j] === "X" && array[i + 3][j] === "X" && array[i + 4][j] === "X") { // Kiểm tra đường dọc
+                            return true;
+                        } else if (array[i + 1][j + 1] === "X" && array[i + 2][j + 2] === "X" && array[i + 3][j + 3] === "X" && array[i + 4][j + 4] === "X") { // Kiểm tra đường chéo
+                            return true;
+                        } else if (array[i + 1][j - 1] === "X" && array[i + 2][j - 2] === "X" && array[i + 3][j - 3] === "X" && array[i + 4][j - 4] === "X") { // Kiểm tra đường chéo
+                            return true;
+                        }
+                    } else if (array[i][j] === "O") { // Nếu giá trị tìm thấy là O thì đi kiểm tra các giá trị bên cạnh
+                        if (array[i][j + 1] === "O" && array[i][j + 2] === "O" && array[i][j + 3] === "X" && array[i][j + 4] === "X") {
+                            return true;
+                        } else if (array[i + 1][j] === "O" && array[i + 2][j] === "O" && array[i + 3][j] === "X" && array[i + 4][j] === "X") {
+                            return true;
+                        } else if (array[i + 1][j + 1] === "O" && array[i + 2][j + 2] === "O" && array[i + 3][j + 3] === "X" && array[i + 4][j + 4] === "X") {
+                            return true;
+                        } else if (array[i + 1][j - 1] === "O" && array[i + 2][j - 2] === "O" && array[i + 3][j - 3] === "X" && array[i + 4][j - 4] === "X") {
+                            return true;
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</body>
+</html>

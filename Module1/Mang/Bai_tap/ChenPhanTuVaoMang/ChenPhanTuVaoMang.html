@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        let j = []
+        let num = parseInt(prompt("Nhập số phần tử:"))
+        for(let i = 1; i < num; i++){
+            j[i] = parseInt(prompt("Nhập phần tử thứ " + i))
+        }
+        let a = parseInt(prompt("Nhập số muốn chèn vào mảng:"))
+        let b = parseInt(prompt("Nhập số muốn chèn:"))
+        j.splice(b,0,a)
+        for (let i= 1; i <= num; i++){
+            document.write(j[i])
+        }
+    </script>
+</body>
+</html>

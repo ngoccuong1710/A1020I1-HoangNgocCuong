@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h3>Bài 1: Viết một chương trình Javascript để nối tất cả các phần tử trong một mảng chuỗi lại với nhau. </h3>
+    <script>
+        let mycolor = ["Red", "Green", "While", "Black"];
+        console.log(mycolor.toString());
+        console.log(mycolor.join());
+        console.log(mycolor.join('+'));
+    </script><hr>
+
+    <h3>Bài 2: Viết một chương trình nhận một số nhập vào và chèn dấu (-) giữa 2  số chẵn.</h3>
+    <input type="button" value="Click" onclick="check2()">
+    <div id="result2"></div>
+    <script>
+        function check2() {
+            let num = parseInt(prompt("Nhập dãy số: "));
+            let str = num.toString();
+            let result = [str[0]]
+            for(let i = 0; i < str.length; i++){
+                if(str[i]%2 === 0){
+                    result.push('-', str[i])
+                }
+                else result.push(str[i])
+            }
+            document.getElementById('result2').innerHTML = result
+        }
+    </script><hr>
+
+    <h3>Bài 3: Viết một chương trình nhập vào một chuỗi và chuyển các ký tự chữ thường trong chuỗi vừa nhập sang thành dạng chữ hoa.</h3>
+    <input type="button" value="Click" onclick="check3()">
+    <div id="result3"></div>
+    <script>
+        function check3(){
+            let str = prompt();
+            let UPPER = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+            let LOWER = 'abcdefghijklmnopqrstuvwxyz';
+            let result = [str[0]];
+            for(let x=0; x < str.length; x++)
+            {
+                if(UPPER.indexOf(str[x]) !== -1)
+                {
+                    result.push(str[x].toLowerCase());
+                }
+                else if(LOWER.indexOf(str[x]) !== -1)
+                {
+                    result.push(str[x].toUpperCase());
+                }
+                else
+                {
+                    result.push(str[x]);
+                }
+            }
+            document.getElementById('result3').innerHTML = result.join('');
+        }
+    </script>
+</body>
+</html>

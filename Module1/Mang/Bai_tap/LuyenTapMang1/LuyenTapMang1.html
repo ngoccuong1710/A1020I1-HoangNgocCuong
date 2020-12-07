@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h3>Bài 1- Viết chương trình khởi tạo mảng số nguyên gồm 10 phần tử. Chương trình thực hiện tính và hiển thị xem có bao nhiêu số nguyên lớn hơn hoặc bằng 10.</h3>
+    <input type="button" value="Click" onclick="check1()">
+    <div id="result1"></div>
+    <script>
+        function check1() {
+            let num = parseInt(prompt("Nhập số phân tử:"))
+            let str = [];
+            for(let i = 0; i < num; i++){
+                str[i] = parseInt(prompt("Nhập phần tử thứ " + i))
+            }
+            for (let i = 0; i < str.length; i++){
+                if (str[i] >= 10){
+                    console.log(str[i]);
+                }
+            }
+        }
+    </script>
+</body>
+</html>

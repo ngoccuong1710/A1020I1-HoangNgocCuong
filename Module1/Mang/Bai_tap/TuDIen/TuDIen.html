@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <input type="text" id="input">
+    <input type="button" value="Tra từ" onclick="traTu()" >
+    <script>
+        let en = ['book', 'car', 'sunny'];
+        let vn = ['sách', 'xe ô tô', ' mặt trời'];
+        function traTu() {
+            let word = document.getElementById('input').value;
+            let check = false;
+            let index;
+            for (let i = 0; i < en.length; i++){
+                if (en[i] === word){
+                    check = true;
+                    index = i;
+                    break;
+                }
+            }
+            if(check){
+                alert("từ " + word + " dc dịch ra là: " + vn[index])
+            }else  alert("not found")
+        }
+    </script>
+</body>
+</html>

@@ -90,22 +90,23 @@
         tamgiac_3();
 
         function tamgiac_4() {
-            let i = 5
-            let n = 1
-            let tamgiac = '<br>'
-            while(i <= n){
-                for (let j = 0; j <= n; j++){
-                    tamgiac += '&nbsp;&nbsp;'
+            let i = 1
+            let n = 5
+            let tamgiac = '<br>';
+            while (i <= n) {
+                for (let j = 1; j < i ; j++ ) {
+                    tamgiac += "&nbsp;&nbsp;";
                 }
-                for (let j = 0; j > i; j--){
-                    tamgiac += '*'
+                for (let j = 6; j > i; j--) {
+                    tamgiac += "*";
                 }
-                tamgiac += "<br>"
-                i--
+                tamgiac +="<br/>";
+                i++
             }
             document.getElementById('result3_4').innerHTML = tamgiac
         }
         tamgiac_4();
     </script>
+
 </body>
 </html>

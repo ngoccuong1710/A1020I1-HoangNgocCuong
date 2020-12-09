@@ -15,11 +15,10 @@
 
     <h3>Bài 2: Tạo hàm nhận vào một đối số dạng số, tăng giá trị đối số đó lên 1 và trả lại giá trị cho lời gọi hàm.</h3>
     <input type="text" id="input">
-    <input type="button" value="Click" onclick="check2()">
+    <input type="button" value="Click" onclick="check2(document.getElementById('input').value)">
     <div id="result2"></div>
     <script>
-        function check2() {
-            let num = document.getElementById('input').value;
+        function check2(num) {
             num++;
             document.getElementById('result2').innerHTML = num
         }
@@ -31,9 +30,9 @@
     <input type="button" value="Click" onclick="check3()">
     <div id="result3"></div>
     <script>
-        function check3() {
-            let a = parseInt(document.getElementById('num1').value);
-            let b = parseInt(document.getElementById('num2').value);
+        function check3(a, b) {
+            a = parseInt(document.getElementById('num1').value);
+            b = parseInt(document.getElementById('num2').value);
             if (a > b){
                 alert(a + " lớn hơn " + b)
             }

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <input type="text" id="SanPham">
+    <input type="button" value="Thêm mới sản phẩm" onclick="them()"><br>
+    Số lượng sản phẩm: <span id="soLuongSanPham"></span>
+    <p id="table"></p>
+
+    <script>
+        let array = ["Iphone", "Samsung", "Nokia"];
+        hienThi();
+        function hienThi() {
+            let banChuoi = '<table border="1">\n' +
+                '        <tr>\n' +
+                '            <th>id</th>\n' +
+                '            <th>Sản phẩm</th>\n' +
+                '            <th>Sửa</th>\n' +
+                '            <th>Xóa</th>\n' +
+                '        </tr>';
+            for (let i = 0; i < array.length; i++){
+                banChuoi += '<tr>\n' +
+                    '            <td>'+ (i + 1) +'</td>\n' +
+                    '            <td>'+ array[i] +'</td>\n' +
+                    '            <td><input type="button" value="Sửa" onclick="sua('+ i +')"></td>\n' +
+                    '            <td><input type="button" value="Xóa" onclick="xoa('+ i +')"></td>\n' +
+                    '        </tr>';
+            }
+            banChuoi += '</table>'
+            document.getElementById('table').innerHTML = banChuoi;
+            document.getElementById('soLuongSanPham').innerHTML = array.length;
+        }
+
+        function them() {
+            let tenSP = document.getElementById('SanPham').value;
+            if(tenSP !== ""){
+                array.push(tenSP);
+            }
+            document.getElementById("SanPham").value = ""
+            hienThi()
+        }
+
+        function sua(id) {
+            let sanPhamMoi = prompt("Tên sản phẩm mới");
+            if (sanPhamMoi != null && sanPhamMoi !== ""){
+                array[id] = sanPhamMoi;
+            }
+            hienThi()
+        }
+
+        function xoa(id) {
+            let xacNhanXoa = confirm("Bạn có muốn xóa sản phẩm " + array[id] + " không?");
+            if(xacNhanXoa){
+                array.splice(id, 1)
+            }
+            hienThi()
+        }
+    </script>
+</body>
+</html>

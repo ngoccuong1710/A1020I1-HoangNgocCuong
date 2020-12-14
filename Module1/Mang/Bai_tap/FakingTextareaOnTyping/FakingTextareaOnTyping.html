@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <textarea cols="50" rows="10" id="input" onkeydown="text()"></textarea>
+    <script>
+        let arr = new Array(), n = "";
+        arr[1] = "X"; arr[2] = "I"; arr[3] = "N"; arr[4] = " "; arr[5] = "C"; arr[6] = "H"; arr[7] = "À"; arr[8] = "O";
+        function text(){
+            let input = document.getElementById("input").value;
+            let i = input.length;
+            if (i > 0){
+                for (let j = 1; j <= i; j++){
+                    n += arr[j]
+                    if (j == 9){
+                        document.getElementById('input').value = "";
+                        n = ""
+                    }
+                }
+            }
+            document.getElementById('input').value = n;
+            n = "";
+            setTimeout("text()", 1)
+        }
+    </script>
+</body>
+</html>

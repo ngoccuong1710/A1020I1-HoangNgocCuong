@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h3>Bài 2- Viết chương trình khởi tạo mảng số nguyên gồm 10 phần tử khác nhau. Chương trình hiển thị ra được phần tử có giá trị lớn nhất trong mảng và vị trí của phần tử đó.</h3>
+    <input type="button" value="Click" onclick="check2()">
+    <script>
+        function check2() {
+            let num = parseInt(prompt("Nhập số phân tử:"))
+            let str = [];
+            for(let i = 0; i < num; i++){
+                str[i] = parseInt(prompt("Nhập phần tử thứ " + i))
+            }
+            for (let i = 0; i != str.length; i++){
+                if (str[i] > max){
+                    max = str[i]
+                }
+            }
+        }
+    </script>
+</body>
+</html>

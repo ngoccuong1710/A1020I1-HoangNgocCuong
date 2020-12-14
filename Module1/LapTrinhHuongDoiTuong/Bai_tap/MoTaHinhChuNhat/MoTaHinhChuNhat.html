@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <canvas id="Canvas" width="1000px" height="500px"></canvas>
+    <p id="result"></p>
+    <p id="result2"></p>
+    <script>
+        class Rectangle {
+            constructor(chieuDai, chieuRong) {
+                this.chieuDai = chieuDai;
+                this.chieuRong = chieuRong;
+                this.dienTich = function () {
+                    return chieuDai * chieuRong
+                };
+                this.chuVi = function () {
+                    return 2* (chieuDai + chieuRong)
+                };
+            }
+        }
+        Rectangle.prototype.display = function (){
+            let canvas = document.getElementById('Canvas');
+            let context = canvas.getContext("2d");
+            context.rect(20, 20, this.chieuRong, this.chieuDai);
+            context.stroke();
+            document.getElementById('result').innerHTML = "Diện tích là: " + this.dienTich();
+            document.getElementById('result2').innerHTML = "Chu vi là: " + this.chuVi()
+        };
+            let hcn = new Rectangle(200, 400);
+            hcn.display();
+    </script>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        class chuot{
+            constructor(ten, khoiLuong, tocDo, status) {
+                this.ten = ten;
+                this.khoiLuong = khoiLuong;
+                this.tocDo = tocDo;
+                this.status = status;
+            }
+            keu(){
+                console.log("Chít, chít");
+            }
+        }
+
+        class meo{
+            constructor(ten, khoiLuong, tocDo) {
+                this.ten = ten;
+                this.khoiLuong = khoiLuong;
+                this.tocDo = tocDo;
+            }
+            keu(){
+                console.log("Meo, meo")
+            }
+            batChuot(chuot){
+                if(this.tocDo > chuot.tocDo){
+                    console.log("Mèo bắt được chuột rồi!");
+                    this.anChuot(chuot);
+                }
+                else {
+                    console.log("Chuột chạy nhanh quá");
+                }
+            }
+            anChuot(chuot){
+                if (chuot.status === "song"){
+                    this.khoiLuong += chuot.khoiLuong;
+                    console.log("Mèo ăn chuột, khối lượng của chuột là: " + this.khoiLuong)
+                }
+                else {
+                    console.log("Chuột chết rồi ko ăn dc")
+                }
+            }
+        }
+        let objChuot = new chuot("Jerry", 2, 5, "song");
+        let objMeo = new meo("Tom", 5, 10);
+
+        objChuot.keu();
+        objMeo.keu();
+        objMeo.batChuot(objChuot)
+    </script>
+</body>
+</html>

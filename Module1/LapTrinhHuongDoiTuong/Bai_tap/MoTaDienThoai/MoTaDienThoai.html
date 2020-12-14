@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        class Mobile{
+            constructor(pin, status) {
+                this.pin = pin;
+                this.messSoanThao = "";
+                this.messHopThuDen = "";
+                this.messDaGui = "";
+                this.status = status;
+                }
+
+                statusOnOff(Mobile){
+                if (Mobile.status === "off"){
+                    console.log("Điện thoại đang tắt")
+                }
+                else{
+                    console.log("Điện thoại đã bật")
+                }
+            }
+        }
+        let samsung = new Mobile();
+        samsung.statusOnOff("on")
+    </script>
+</body>
+</html>

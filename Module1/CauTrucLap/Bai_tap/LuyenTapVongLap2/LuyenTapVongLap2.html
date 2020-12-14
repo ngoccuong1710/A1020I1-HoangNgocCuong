@@ -106,7 +106,53 @@
             document.getElementById('result3_4').innerHTML = tamgiac
         }
         tamgiac_4();
-    </script>
+    </script><hr>
 
+    <h3>Bài 4: In hình chữ nhật</h3>
+    <div id="result4"></div>
+    <script>
+        function hinhChuNhat(a, b) {
+            let hcn = '';
+            for (let i = 0; i <= a; i++){
+                for (let j = 0; j <= b; j++){
+                   if (i == 0 || i == a){
+                       hcn += '*'
+                   }
+                   else if (j == 0 || j == b){
+                       hcn += '*'
+                   }
+                   else hcn += '&nbsp&nbsp;'
+                }
+                hcn += '<br/>'
+            }
+            document.getElementById('result4').innerHTML = hcn
+        }
+        hinhChuNhat(6, 20)
+    </script><hr>
+
+    <h3>Bài 5: Viết chương trình tính lãi ngân hàng (lãi mẹ đẻ lại con) khi biết số tiền ban đầu, số tháng cho vay và lãi xuất hàng tháng.</h3>
+    <p>Số tiền gửi vào ngân hàng</p>
+    <input type="text" id="amount">
+    <p>Lãi suất (%)</p>
+    <input type="text" id="laisuat">
+    <p>Số tháng gửi</p>
+    <input type="text" id="month">
+    <input type="button" value="Tính lãi" onclick="tinhLai()">
+    <div id="result5"></div>
+    <script>
+        function tinhLai(){
+            let amount = parseFloat(document.getElementById("amount").value);
+            let laiSuat = parseFloat(document.getElementById("laisuat").value);
+            let month = parseFloat(document.getElementById("month").value);
+            let result = 0;
+            if (isNaN(amount) || isNaN(laiSuat) || isNaN(month)){
+                document.getElementById("result5").innerHTML = "Phải nhập vào là số"
+            }
+            else {
+                result = amount * laiSuat * (month/12);
+                document.getElementById("result5").innerHTML = result;
+            }
+        }
+    </script>
 </body>
 </html>

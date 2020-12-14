@@ -246,6 +246,28 @@
     </script><hr>
 
     <h3>Bài 12: Viết chương trình tính lãi ngân hàng (lãi mẹ đẻ lãi con) khi biết số tiền ban đầu, số tháng cho vay và lãi xuất hàng tháng.</h3>
-
+    <p>Số tiền gửi vào ngân hàng</p>
+    <input type="text" id="amount">
+    <p>Lãi suất (%)</p>
+    <input type="text" id="laisuat">
+    <p>Số tháng gửi</p>
+    <input type="text" id="month">
+    <input type="button" value="Tính lãi" onclick="tinhLai()">
+    <div id="result12"></div>
+    <script>
+        function tinhLai(){
+            let amount = parseFloat(document.getElementById("amount").value);
+            let laiSuat = parseFloat(document.getElementById("laisuat").value);
+            let month = parseFloat(document.getElementById("month").value);
+            let result = 0;
+            if (isNaN(amount) || isNaN(laiSuat) || isNaN(month)){
+                document.getElementById("result12").innerHTML = "Phải nhập vào là số"
+            }
+            else {
+                result = amount * laiSuat * (month/12);
+                document.getElementById("result12").innerHTML = result;
+            }
+        }
+    </script>
 </body>
 </html>

@@ -15,17 +15,71 @@
                 this.status = status;
                 }
 
-                statusOnOff(Mobile){
-                if (Mobile.status === "off"){
-                    console.log("Điện thoại đang tắt")
+                statusOnOff(){
+                    if (this.status === 'off' || this.pin === 0){
+                        console.log("Điện thoại đang tắt")
+                    }
+                    else{
+                        console.log("Điện thoại đã bật")
+                    }
                 }
-                else{
-                    console.log("Điện thoại đã bật")
+
+                statusPin(){
+                    if (this.pin === 0){
+                        console.log("Điện thoại hết pin rồi, cần phải xạc")
+                    }
                 }
-            }
+
+                giamPin(){
+                    this.pin -= 1
+                }
+
+                soanMess(mess){
+                    if (this.status === 'off' || this.pin === 0 ){
+                        this.status = "off"
+                    }
+                    else {
+                        this.giamPin();
+                        this.messSoanThao += mess;
+                    }
+                }
+
+                guiMess(phoneKhac){
+                    if (this.status === 'off' || this.pin === 0 ){
+                        this.status = "off"
+                    }
+                    else {
+                        phoneKhac.nhanMess(this.messSoanThao);
+                        this.messDaGui = this.messSoanThao;
+                        this.messSoanThao = "";
+                        this.giamPin();
+                    }
+                }
+
+                nhanMess(mess){
+                    if (this.status === 'off' || this.pin === 0 ){
+                        this.status = "off"
+                    }
+                    else {
+                        this.messHopThuDen += mess;
+                        this.giamPin();
+                    }
+                }
+
         }
-        let samsung = new Mobile();
-        samsung.statusOnOff("on")
+        let samsung = new Mobile(100, 'on');
+        let nokia = new Mobile(50, 'on');
+
+        samsung.statusOnOff();
+        samsung.statusPin();
+        console.log(samsung);
+        nokia.statusOnOff();
+        nokia.statusPin();
+        console.log(nokia);
+
+        samsung.soanMess("hello");
+        samsung.guiMess(nokia);
+
     </script>
 </body>
 </html>

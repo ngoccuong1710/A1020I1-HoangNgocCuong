@@ -14,11 +14,13 @@
             for(let i = 0; i < num; i++){
                 str[i] = parseInt(prompt("Nhập phần tử thứ " + i))
             }
+            let max = 0;
             for (let i = 0; i != str.length; i++){
                 if (str[i] > max){
                     max = str[i]
                 }
             }
+            console.log(max)
         }
     </script>
 </body>

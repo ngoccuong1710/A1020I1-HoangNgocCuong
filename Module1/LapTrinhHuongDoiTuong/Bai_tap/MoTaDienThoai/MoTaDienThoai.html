@@ -34,6 +34,12 @@
                     this.pin -= 1
                 }
 
+                xacPin(){
+                    if(this.pin == 10){
+                        this.pin = 100;
+                    }
+                }
+
                 soanMess(mess){
                     if (this.status === 'off' || this.pin === 0 ){
                         this.status = "off"
@@ -68,7 +74,7 @@
 
         }
         let samsung = new Mobile(100, 'on');
-        let nokia = new Mobile(50, 'on');
+        let nokia = new Mobile(4, 'on');
 
         samsung.statusOnOff();
         samsung.statusPin();
@@ -76,7 +82,6 @@
         nokia.statusOnOff();
         nokia.statusPin();
         console.log(nokia);
-
         samsung.soanMess("hello");
         samsung.guiMess(nokia);
 

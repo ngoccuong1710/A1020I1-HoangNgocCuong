@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let name = "Hoàng Ngọc Cường";
+    let CMND = "201783537";
+    let birthday = "17/10/1999";
+    let email = "ngoccuong1710@gmail.com";
+    let address = "Đà nẵng";
+    let typeCustomer = "Platinum";
+    let discount = 10;
+    let quantinyIncluded = 4;
+    let rendDays = 7;
+    let typeService = "House";
+    let typeRoom  = "Vip";
+
+    let choose = prompt("1. Hiển thị thông tin khách hàng." + "\n" +
+        "2. Chỉnh sửa thông tin khách hàng." + "\n" +
+        "3. Hiển thị giá sau khi được giảm giá." + "\n");
+
+    switch (choose) {
+        case "1": {
+            alert(
+                "1. Tên: " + name + "\n" +
+                "2. CMND: " + CMND + "\n" +
+                "3. Ngày tháng năm sinh: " + birthday + "\n" +
+                "4. Email: " + email + "\n" +
+                "5. Địa chỉ: " + address + "\n" +
+                "6. Loại khách hàng: " + typeCustomer + "\n" +
+                "7. Giảm giá: " + discount + "\n" +
+                "8. Số lượng đi kèm: " + quantinyIncluded + "\n" +
+                "9. Số ngày thuê: " + rendDays + "\n" +
+                "10. Loại dịch vụ: " + typeService + "\n" +
+                "11. Loại phòng: " + typeRoom);
+            break;
+        }
+
+        case "2": {
+            let chooseEdit = prompt(
+                "1. Tên: " + name + "\n" +
+                "2. CMND: " + CMND + "\n" +
+                "3. Ngày tháng năm sinh: " + birthday + "\n" +
+                "4. Email: " + email + "\n" +
+                "5. Địa chỉ: " + address + "\n" +
+                "6. Loại khách hàng: " + typeCustomer + "\n" +
+                "7. Giảm giá: " + discount + "\n" +
+                "8. Số lượng đi kèm: " + quantinyIncluded + "\n" +
+                "9. Số ngày thuê: " + rendDays + "\n" +
+                "10. Loại dịch vụ: " + typeService + "\n" +
+                "11. Loại phòng: " + typeRoom);
+
+            switch (chooseEdit) {
+                case "1": {
+                    name = prompt("Nhập tên: ");
+                    break;
+                }
+                case "2": {
+                    CMND = prompt("Nhập Chứng minh nhân dân: ");
+                    break;
+                }
+                case "3": {
+                    birthday = prompt("Nhập ngày thắng năm sinh: ");
+                    break;
+                }
+                case "4": {
+                    email = prompt("Nhập email: ");
+                    break;
+                }
+                case "5": {
+                    address = prompt("Nhập địa chỉ: ");
+                    break;
+                }
+                case "6": {
+                    typeCustomer = prompt("Nhập loại khách hàng: " + "\n" + "1. Diamond" + "\n" + "2. Platinum" + "\n" + "3. Gold" + "\n" + "4. Silver" + "\n" + "5. Member");
+                    break;
+                }
+                case "7": {
+                    discount = prompt("Nhập giảm giá: ");
+                    break;
+                }
+                case "8": {
+                    quantinyIncluded = prompt("Nhập số lượng đi kèm: ");
+                    break;
+                }
+                case "9": {
+                    rendDays = prompt("Nhập số ngày thuê: ");
+                    break;
+                }
+                case "10": {
+                    typeService = prompt("Nhập loại dịch vụ: " + "\n" + "1. Vila" + "\n" + "2. House" + "\n" + "3. Room");
+                    break;
+                }
+                case "11": {
+                    typeRoom = prompt("Nhập loại phòng: " + "\n" + "1. Vip" + "\n" + "2. Business" + "\n" + "3. Normal");
+                    break;
+                }
+                default: {
+                    alert("Sự lựa chọn của bạn không có trong trình đơn.")
+                }
+            }
+            alert(
+                "1. Tên: " + name + "\n" +
+                "2. CMND" + CMND + "\n" +
+                "3. Ngày tháng năm sinh: " + birthday + "\n" +
+                "4. Email: " + email + "\n" +
+                "5. Địa chỉ: " + address + "\n" +
+                "6. Loại khách hàng: " + typeCustomer + "\n" +
+                "7. Giảm giá: " + discount + "\n" +
+                "8. Số lượng đi kèm: " + quantinyIncluded + "\n" +
+                "9. Số ngày thuê: " + rendDays + "\n" +
+                "10. Loại dịch vụ: " + typeService + "\n" +
+                "11. Loại phòng: " + typeRoom);
+            break;
+        }
+
+        case "3":
+            let money = 0;
+            if(typeService === "Villa"){
+                money = 500;
+            }
+            else if(typeService === "House"){
+                money = 300;
+            }
+            else if(typeService === "Room"){
+                money = 100;
+            }
+
+            let temp = 0;
+            if(address === "Đà nẵng"){
+                temp += 20;
+            }
+            else if(address === "Huế"){
+                temp += 10;
+            }
+            else if(address === "Quảng Nam"){
+                temp += 5;
+            }
+
+            let rendDaysDiscound = 0;
+            if (rendDays > 7){
+                rendDaysDiscound += 30;
+            }
+            else if (rendDays > 5){
+                rendDaysDiscound += 20;
+            }
+            else if (rendDays > 2){
+                rendDaysDiscound += 10;
+            }
+
+            let moneyCustomer = 0;
+            if (typeCustomer === "Diamond"){
+                moneyCustomer = 15;
+            }
+            else if (typeCustomer === "Platinum"){
+                moneyCustomer = 10;
+            }
+            else if (typeCustomer === "Gold"){
+                moneyCustomer = 5;
+            }
+            else if (typeCustomer === "Silver"){
+                moneyCustomer = 2;
+            }
+            else if (typeCustomer === "Member"){
+                moneyCustomer = 0;
+            }
+
+            alert("Số tiền phải trả là: " + (money * rendDays - discount) + "\n" +
+                "Số tiền giảm giá là: " + (temp + rendDaysDiscound + moneyCustomer));
+            break;
+
+        default: {
+            alert("Sự lựa chọn của bạn không có trong trình đơn.")
+        }
+    }
+</script>
+</body>
+</html>

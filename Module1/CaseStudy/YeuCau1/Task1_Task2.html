@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let name = prompt("Nhập tên: ");
+    let CMND = prompt("Nhập chứng minh nhân dân: ");
+    let birthday = prompt("Nhập ngày tháng năm sinh: ");
+    let email = prompt("Nhập email: ");
+    let address = prompt("Nhập địa chỉ: ");
+    let typeCustomer = prompt("Nhập loại khách hàng: " + "\n" + "1. Diamond" + "\n" + "2. Platinum" + "\n" + "3. Gold" + "\n" + "4. Silver" + "\n" + "5. Member" + "\n");
+    let discount = prompt("Nhập giảm giá: ");
+    let quantinyIncluded = prompt("Nhập số lượng đi kèm: ");
+    let rendDays = prompt("Nhập số ngày thuê: ");
+    let typeService = prompt("Nhập loại dịch vụ: " + "\n" + "1. Vila" + "\n" + "2. House" + "\n" + "3. Room" + "\n" );
+    let typeRoom  = prompt("Nhập loại phòng: " + "\n" + "1. Vip" + "\n" + "2. Business" + "\n" + "3. Normal" + "\n" );
+    let totalPay = 300 * rendDays - (1 - discount / 100);
+
+    alert(
+        "Tên: " + name + "\n" +
+        "CMND" + CMND + "\n" +
+        "Ngày tháng năm sinh: " + birthday + "\n" +
+        "Email: " + email + "\n" +
+        "Địa chỉ: " + address + "\n" +
+        "Loại khách hàng: " + typeCustomer + "\n" +
+        "Giảm giá: " + discount + "\n" +
+        "Số lượng đi kèm: " + quantinyIncluded + "\n" +
+        "Số ngày thuê: " + rendDays + "\n" +
+        "Loại dịch vụ: " + typeService + "\n" +
+        "Loại phòng: " + typeRoom + "\n" +
+        "Số tiền phải trả: " +totalPay)
+</script>
+</body>
+</html>

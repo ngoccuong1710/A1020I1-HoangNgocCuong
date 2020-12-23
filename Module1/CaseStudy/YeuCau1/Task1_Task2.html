@@ -17,7 +17,7 @@
     let rendDays = prompt("Nhập số ngày thuê: ");
     let typeService = prompt("Nhập loại dịch vụ: " + "\n" + "1. Vila" + "\n" + "2. House" + "\n" + "3. Room" + "\n" );
     let typeRoom  = prompt("Nhập loại phòng: " + "\n" + "1. Vip" + "\n" + "2. Business" + "\n" + "3. Normal" + "\n" );
-    let totalPay = 300 * rendDays - (1 - discount / 100);
+    let totalPay = 300 * rendDays * (1 - discount / 100);
 
     alert(
         "Tên: " + name + "\n" +

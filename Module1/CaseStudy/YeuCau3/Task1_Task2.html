@@ -7,10 +7,24 @@
 <body>
     <script>
         let check = false;
+
+        let tempName = "";
         let name = prompt("Nhập tên: ");
+        name = name.trim().toLowerCase();
+        for (let i = 0; i <name.length; i++){
+            if (name.charAt(i) === " " && name.charAt(i + 1) === " "){
+                continue;
+            }
+            if (i === 0 || name.charAt(i - 1) === " "){
+                tempName += name.charAt(i).toUpperCase();
+                continue;
+            }
+            tempName += name.charAt(i);
+        }
+        name = tempName;
 
         do {
-            CMND = prompt("Nhập chứng minh nhân dân: ");
+            let CMND = prompt("Nhập chứng minh nhân dân: ");
             if (!isNaN(CMND)){
                 CMND = Number.parseFloat(CMND);
             }
@@ -24,13 +38,35 @@
             }
             check = true;
         }while (!check);
+        check = false;
 
-        let birthday = prompt("Nhập ngày tháng năm sinh: ");
+        do{
+            birthday = prompt("Nhập ngày tháng năm sinh: ");
+            if (birthday.charAt(2) === "/" && birthday.charAt(5) === "/"){
+                let day = birthday.substring(0, 2);
+                let month = birthday.substring(3, 5);
+                let year = birthday.substring(6, 10);
+                if (!isNaN(day) && !isNaN(month) && !isNaN(year)){
+                    day = Number.parseFloat(day);
+                    month = Number.parseFloat(month);
+                    year = Number.parseFloat(year);
+                    if (Number.isInteger(day) && Number.isInteger(month) && Number.isInteger(year)){
+                        if (day < 32 && month < 13 && year > 1900){
+                            check = true;
+                        }
+                    }
+                }
+            }
+            if (!check){
+                alert("Ngày tháng năm sinh không đúng định dạng");
+            }
+        }while(!check);
+        check = false;
 
         do{
             let countAt = 0;
             let counDoc = 0;
-            email = prompt("Nhập email: ");
+            let email = prompt("Nhập email: ");
             for (let i = 0; i < email.length; i++){
                 if (email.charAt(i) === "@"){
                     countAt++;
@@ -48,12 +84,42 @@
                 check = true;
             }
         }while (!check);
+        check = false;
 
         let address = prompt("Nhập địa chỉ: ");
         let typeCustomer = prompt("Nhập loại khách hàng: " + "\n" + "1. Diamond" + "\n" + "2. Platinum" + "\n" + "3. Gold" + "\n" + "4. Silver" + "\n" + "5. Member" + "\n");
         let discount = prompt("Nhập giảm giá: ");
-        let quantinyIncluded = prompt("Nhập số lượng đi kèm: ");
-        let rendDays = prompt("Nhập số ngày thuê: ");
+
+        do {
+            let quantinyIncluded = prompt("Nhập số lượng đi kèm: ");
+            if (!isNaN(quantinyIncluded)){
+                quantinyIncluded = Number.parseFloat(quantinyIncluded);
+                if (Number.isInteger(quantinyIncluded) && quantinyIncluded > 0){
+                    check = true;
+                }
+                if (!check){
+                    alert("Số lượng đi kèm không phải là số nguyên dương")
+                }
+            }
+            else alert("Không đúng định dạng")
+        }while (!check);
+        check = false;
+
+        do {
+            let rendDays = prompt("Nhập số ngày thuê: ");
+            if (!isNaN(rendDays)){
+                rendDays = Number.parseFloat(rendDays);
+                if (Number.isInteger(rendDays) && rendDays > 0){
+                    check = true;
+                }
+                if (!check){
+                    alert("Số ngày thuê không phải là số nguyên dương")
+                }
+            }
+            else alert("Không đúng định dạng")
+        }while (!check);
+        check = false;
+
         let typeService = prompt("Nhập loại dịch vụ: " + "\n" + "1. Vila" + "\n" + "2. House" + "\n" + "3. Room" + "\n" );
         let typeRoom  = prompt("Nhập loại phòng: " + "\n" + "1. Vip" + "\n" + "2. Business" + "\n" + "3. Normal" + "\n" );
         let totalPay = 300 * rendDays - (1 - discount / 100);

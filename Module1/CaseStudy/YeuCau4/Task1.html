@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        let arrNameCustomer = [];2
+        while (true) {
+            let choose = parseInt(prompt("1. Thêm mới khách hàng" + "\n" +
+                "2. Xóa khách hàng"));
+            switch (choose) {
+                case 1: {
+                    let number = parseInt(prompt("Nhập số lượng khách hàng:  "));
+                    for (let i = 0; i < number; i++) {
+                        let nameCustomer = prompt("Nhập tên khách hàng: ");
+                        arrNameCustomer.push(nameCustomer);
+                    }
+                    let result = "";
+                    arrNameCustomer.sort();
+                    for (let i = 0; i < arrNameCustomer.length; i++) {
+                        result += (i + 1) + ". " + arrNameCustomer[i] + "\n";
+                    }
+                    alert(result)
+                }
+                break;
+
+                case 2: {
+                    let nameCustomer = prompt("Nhập tên khách hàng muốn xóa: ");
+                    for (let i = 0; i < arrNameCustomer.length; i++){
+                        if (arrNameCustomer[i] === nameCustomer){
+                            arrNameCustomer.splice(i, 1);
+                        }
+                    }
+                    let result = "";
+                    arrNameCustomer.sort();
+                    for (let i = 0; i < arrNameCustomer.length; i++) {
+                        result += (i + 1) + ". " + arrNameCustomer[i] + "\n";
+                    }
+                    alert(result)
+                }
+                break;
+
+                default: {
+                    alert("Failed");
+                }
+            }
+        }
+    </script>
+</body>
+</html>

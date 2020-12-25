@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var array = new Array(10);
+        for(let i = 0 ; i < array.length ; i ++){
+            array[i] = parseInt(prompt("nhap vao phan tu thu " + i))
+        }
+        var max = array[0];
+        var vitri = 0;
+        var dodai = array.length;
+        var n = 0;
+        for(let i = 0 ; i < array.length ; i++){
+            if(array[i]>max){
+                max = array[i]
+                vitri = i
+            }
+            n = n + array[i]
+        }    
+        document.write("gia tri trung binh là : " + n/dodai + "<br>" )
+        document.write("phần tử thứ "+vitri+ " có giá trị " + max + " lớn nhất")
+    </script>
+</body>
+</html>

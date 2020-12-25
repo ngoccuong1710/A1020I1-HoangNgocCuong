@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var n = parseInt(prompt("nhập vào số lượng phần tử : "))
+        var array = new Array(n);
+        for(let i = 0 ; i < array.length ; i ++){
+            array[i] = parseInt(prompt("nhap vao phan tu thu " + i))
+        }
+        var arr = [];
+        var v = parseInt(prompt("nhập vào phần tử muốn kiểm tra : "))
+        for(let i = 0 ; i < array.length ; i++){
+            if(array[i] !== v){
+                 arr.push(array[i])
+            } 
+        }
+        document.write("mảng sau khi xóa phần tử trùng : "+ arr)
+    </script>
+</body>
+</html>

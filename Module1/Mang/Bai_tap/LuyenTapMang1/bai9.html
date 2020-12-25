@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var n = parseInt(prompt("nhập vào số lượng phần tử mảng 1 : "))
+        var a = new Array(n);
+        for(let i = 0 ; i < a.length ; i ++){
+            a[i] = parseInt(prompt("nhap vao phan tu thu " + i))
+        }
+        var m = parseInt(prompt("nhập vào số lượng phần tử mảng 2 : "))
+        var b = new Array(m);
+        for(let i = 0 ; i < b.length ; i ++){
+            b[i] = parseInt(prompt("nhap vao phan tu thu " + i))
+        }
+        var c = a.concat(b);
+        document.write(c)
+    </script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        function ucln(a, b) {
+            while (a != b){
+                if (a > b){
+                    a = a - b;
+                }
+                else b = b - a;
+            }
+            return a;
+        }
+        function bcnn(a, b) {
+            let result = ucln(a, b);
+            return a * b / result;
+        }
+        function main() {
+            let a = parseInt(prompt("Nhập số a: "));
+            let b = parseInt(prompt("Nhập số b: "));
+            alert("Ước chung lớn nhất là: " + ucln(a ,b) + "\n" +
+                    "Bội chung nhỏ nhất là: " + bcnn(a ,b));
+        }
+        main()
+    </script>
+</body>
+</html>

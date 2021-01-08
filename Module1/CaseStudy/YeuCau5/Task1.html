@@ -41,7 +41,7 @@
         function addNewCustomer() {
             let cusInfo = [];
             let name = prompt("Nhập tên: ");
-            let CMND = prompt("Nhập chứng minh nhân dân: ");
+            let cmnd = prompt("Nhập chứng minh nhân dân: ");
             let birthday = prompt("Nhập ngày tháng năm sinh: ");
             let email = prompt("Nhập email: ");
             let address = prompt("Nhập địa chỉ: ");
@@ -53,7 +53,7 @@
             let typeRoom  = prompt("Nhập loại phòng: " + "\n" + "1. Vip" + "\n" + "2. Business" + "\n" + "3. Normal" + "\n" );
 
             cusInfo.push(name);
-            cusInfo.push(CMND);
+            cusInfo.push(cmnd);
             cusInfo.push(birthday);
             cusInfo.push(email);
             cusInfo.push(address);
@@ -65,7 +65,7 @@
             cusInfo.push(typeRoom);
 
             arrListCustomer.push(cusInfo);
-            alert("Bạn đã thêm thành công")
+            alert("Bạn đã thêm thành công");
             displayMainMenu()
         }
 
@@ -77,7 +77,7 @@
             let chooseDisplay = parseInt(prompt(temp));
             alert(
                 "Tên: " + arrListCustomer[chooseDisplay][0] + "\n" +
-                "CMND" + arrListCustomer[chooseDisplay][1] + "\n" +
+                "Cmnd" + arrListCustomer[chooseDisplay][1] + "\n" +
                 "Ngày tháng năm sinh: " + arrListCustomer[chooseDisplay][2] + "\n" +
                 "Email: " + arrListCustomer[chooseDisplay][3] + "\n" +
                 "Địa chỉ: " + arrListCustomer[chooseDisplay][4] + "\n" +
@@ -98,7 +98,7 @@
             let chooseDisplay = parseInt(prompt(temp));
             let chooseEdit = prompt(
                 "1. Tên: " + arrListCustomer[chooseDisplay][0] + "\n" +
-                "2. CMND: " + arrListCustomer[chooseDisplay][1] + "\n" +
+                "2. Cmnd: " + arrListCustomer[chooseDisplay][1] + "\n" +
                 "3. Ngày tháng năm sinh: " + arrListCustomer[chooseDisplay][2] + "\n" +
                 "4. Email: " + arrListCustomer[chooseDisplay][3] + "\n" +
                 "5. Địa chỉ: " + arrListCustomer[chooseDisplay][4] + "\n" +

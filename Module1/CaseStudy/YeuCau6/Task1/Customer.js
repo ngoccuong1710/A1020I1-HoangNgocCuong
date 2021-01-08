@@ -1,7 +1,7 @@
 class Customer {
-    constructor(name, CMND, birthday, email, address, typeCustomer, discount, quantinyIncluded, rendDays, typeService, typeRoom) {
+    constructor(name, cmnd, birthday, email, address, typeCustomer, discount, quantinyIncluded, rendDays, typeService, typeRoom) {
         this.name = name;
-        this.CMND = CMND;
+        this.cmnd = cmnd;
         this.birthday = birthday;
         this.email = email;
         this.address = address;
@@ -15,8 +15,8 @@ class Customer {
     getName(){
         return this.name;
     }
-    getCMND(){
-        return this.CMND;
+    getCmnd(){
+        return this.cmnd;
     }
     getBirthday(){
         return this.birthday;
@@ -48,8 +48,8 @@ class Customer {
     setName(name){
         this.name = name;
     }
-    setCMND(CMND){
-        this.CMND = CMND;
+    setCmnd(cmnd){
+        this.cmnd = cmnd;
     }
     setBirthday(birthday){
         this.birthday = birthday;

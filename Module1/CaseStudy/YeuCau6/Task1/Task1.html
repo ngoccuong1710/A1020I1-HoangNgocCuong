@@ -51,11 +51,11 @@
         let cus = new Customer();
         let name = prompt("Nhập tên: ");
 
-        let regexCMND = /^[\d]{8,8}$/;
-        let CMND
+        let regexcmnd = /^[\d]{9,9}$/;
+        let cmnd;
         do {
-            CMND = prompt("Nhập chứng minh nhân dân: ");
-            if (regexCMND.test(CMND)){
+            cmnd = prompt("Nhập chứng minh nhân dân: ");
+            if (regexcmnd.test(cmnd)){
                 checkValid = true;
             }
             else {
@@ -78,7 +78,7 @@
         checkValid = false;
 
         let regexEmail = /\S+@\S+\.\S+/;
-        let email
+        let email;
         do {
             email = prompt("Nhập email: ");
             if (regexEmail.test(email)){
@@ -134,7 +134,7 @@
         let typeRoom  = prompt("Nhập loại phòng: " + "\n" + "1. Vip" + "\n" + "2. Business" + "\n" + "3. Normal" + "\n" );
 
         cus.setName(name);
-        cus.setCMND(CMND);
+        cus.setCmnd(cmnd);
         cus.setBirthday(birthday);
         cus.setEmail(email);
         cus.setAddress(address);
@@ -157,7 +157,7 @@
         let chooseDisplay = parseInt(prompt(temp));
         alert(
             "Tên: " + listCustomer[chooseDisplay].getName() + "\n" +
-            "CMND: " + listCustomer[chooseDisplay].getCMND() + "\n" +
+            "cmnd: " + listCustomer[chooseDisplay].getCmnd() + "\n" +
             "Ngày tháng năm sinh: " + listCustomer[chooseDisplay].getBirthday() + "\n" +
             "Email: " +listCustomer[chooseDisplay].getEmail() + "\n" +
             "Địa chỉ: " + listCustomer[chooseDisplay].getAddress() + "\n" +
@@ -178,7 +178,7 @@
         let chooseDisplay = parseInt(prompt(temp));
         let chooseEdit = parseInt(prompt(
             "1. Tên: " + listCustomer[chooseDisplay].getName() + "\n" +
-            "2. CMND: " + listCustomer[chooseDisplay].getCMND() + "\n" +
+            "2. cmnd: " + listCustomer[chooseDisplay].getCmnd() + "\n" +
             "3. Ngày tháng năm sinh: " + listCustomer[chooseDisplay].getBirthday() + "\n" +
             "4. Email: " +listCustomer[chooseDisplay].getEmail() + "\n" +
             "5. Địa chỉ: " + listCustomer[chooseDisplay].getAddress() + "\n" +
@@ -194,7 +194,7 @@
                 break;
             }
             case 2: {
-                listCustomer[chooseDisplay].CMND = prompt("Nhập Chứng minh nhân dân: ");
+                listCustomer[chooseDisplay].cmnd = prompt("Nhập Chứng minh nhân dân: ");
                 break;
             }
             case 3: {

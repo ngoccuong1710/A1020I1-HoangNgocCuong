@@ -7,7 +7,7 @@
 </head>
 <body>
     <script>
-        let listEmployee = []
+        let listEmployee = [];
         function displayMainMenu() {
             let choose = parseInt(prompt("1. Add new Employees." + "\n" +
                 "2. Display information Employees." + "\n" +
@@ -44,7 +44,7 @@
             employee.setTrinhDo(prompt("Nhập trình độ: "));
             employee.setViTri(prompt("Nhập vị trí: "));
             listEmployee.push(employee);
-            alert("Bạn đã thêm thành công employee")
+            alert("Bạn đã thêm thành công employee");
             displayMainMenu();
         }
 
@@ -60,7 +60,7 @@
                 "Email: " + listEmployee[chooseDisplay].getEmail() + "\n" +
                 "Số điện thoại: " + listEmployee[chooseDisplay].getSdt() + "\n" +
                 "Trình độ: " + listEmployee[chooseDisplay].getTrinhDo() + "\n" +
-                "Vị trí: " + listEmployee[chooseDisplay].getViTri())
+                "Vị trí: " + listEmployee[chooseDisplay].getViTri());
             displayMainMenu();
         }
 

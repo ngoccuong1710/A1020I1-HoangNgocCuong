@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        let n = parseInt(prompt("Nhập số n: "));
+        let s = 0;
+        for (let i = 1; i < n; i++){
+            if (n % i == 0){
+                s += i;
+            }
+        }
+        if (s == n){
+            alert("Là số hoàn thiện")
+        }
+        else alert("Không là số hoàn thiện")
+    </script>
+</body>
+</html>

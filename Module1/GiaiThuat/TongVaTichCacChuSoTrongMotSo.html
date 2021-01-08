@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        function cong(n){
+            let sotachra;
+            let s = 0;
+            while (n != 0){
+                sotachra = n % 10;
+                s += sotachra;
+                n /= 10;
+            }
+            return s;
+        }
+
+        function main() {
+            let n = parseInt(prompt("Nhập dãy số: "));
+            let s = cong(n);
+            alert(s)
+        }
+        main()
+    </script>
+</body>
+</html>

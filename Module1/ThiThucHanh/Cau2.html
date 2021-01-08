@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        function LamTronDiem(n) {
+            if (n >= 0 && n <= 100){
+                if (n < 50){
+                    alert("trượt")
+                }
+                else {
+                    if (n % 5 == 0){
+                        alert("Số điểm là: " + n);
+                    }
+                    else {
+                        if (n % 5 == 1){
+                            alert("Số điểm là: " + n)
+                        }
+                        else if (n % 5 == 2){
+                            alert("Số điểm là: " + n)
+                        }
+                        else if (n % 5 == 3){
+                            while (n % 5 != 0){
+                                n++;
+                            }
+                            alert("Số điểm làm tròn là: " +n);
+                        }
+                        else {
+                            while (n % 5 != 0){
+                                n++;
+                            }
+                            alert("Số điểm làm tròn là: " +n);
+                        }
+                    }
+                }
+            }
+        }
+        LamTronDiem(prompt("Nhập điểm:"));
+    </script>
+</body>
+</html>

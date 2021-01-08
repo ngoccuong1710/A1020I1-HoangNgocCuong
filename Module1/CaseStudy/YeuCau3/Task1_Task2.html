@@ -22,23 +22,25 @@
             tempName += name.charAt(i);
         }
         name = tempName;
+        console.log(name);
 
         do {
-            let CMND = prompt("Nhập chứng minh nhân dân: ");
-            if (!isNaN(CMND)){
-                CMND = Number.parseFloat(CMND);
+            let cmnd = prompt("Nhập chứng minh nhân dân: ");
+            if (!isNaN(cmnd)){
+                cmnd = Number.parseFloat(cmnd);
             }
-            if(!Number.isInteger(CMND)){
-                alert("CMND không phải là số nguyên");
+            if(!Number.isInteger(cmnd)){
+                alert("Cmnd không phải là số nguyên");
                 continue;
             }
-            if (CMND < 100000000 || CMND > 999999999){
-                alert("CMND không đúng định dạng");
+            if (cmnd < 100000000 || cmnd > 999999999){
+                alert("Cmnd không đúng định dạng");
                 continue;
             }
             check = true;
+            console.log(cmnd)
         }while (!check);
-        check = false;
+        //check = false;
 
         do{
             birthday = prompt("Nhập ngày tháng năm sinh: ");
@@ -60,31 +62,33 @@
             if (!check){
                 alert("Ngày tháng năm sinh không đúng định dạng");
             }
+            console.log(birthday);
         }while(!check);
-        check = false;
+        //check = false;
 
         do{
             let countAt = 0;
-            let counDoc = 0;
+            let countDoc = 0;
             let email = prompt("Nhập email: ");
             for (let i = 0; i < email.length; i++){
                 if (email.charAt(i) === "@"){
                     countAt++;
                     for (let j = i + 1; j < email.length; j++){
                         if (email.charAt(j) === "."){
-                            counDoc++;
+                            countDoc++;
                         }
                     }
                 }
             }
-            if (countAt != 1 || counDoc < 1){
+            if (countAt != 1 || countDoc < 1){
                 alert("Email bạn nhập không đúng")
             }
             else {
                 check = true;
             }
+            console.log(email);
         }while (!check);
-        check = false;
+        //check = false;
 
         let address = prompt("Nhập địa chỉ: ");
         let typeCustomer = prompt("Nhập loại khách hàng: " + "\n" + "1. Diamond" + "\n" + "2. Platinum" + "\n" + "3. Gold" + "\n" + "4. Silver" + "\n" + "5. Member" + "\n");
@@ -101,9 +105,10 @@
                     alert("Số lượng đi kèm không phải là số nguyên dương")
                 }
             }
-            else alert("Không đúng định dạng")
+            else alert("Không đúng định dạng");
+            console.log(quantinyIncluded);
         }while (!check);
-        check = false;
+        //check = false;
 
         do {
             let rendDays = prompt("Nhập số ngày thuê: ");
@@ -117,12 +122,13 @@
                 }
             }
             else alert("Không đúng định dạng")
+            console.log(rendDays);
         }while (!check);
         check = false;
 
         let typeService = prompt("Nhập loại dịch vụ: " + "\n" + "1. Vila" + "\n" + "2. House" + "\n" + "3. Room" + "\n" );
         let typeRoom  = prompt("Nhập loại phòng: " + "\n" + "1. Vip" + "\n" + "2. Business" + "\n" + "3. Normal" + "\n" );
-        let totalPay = 300 * rendDays - (1 - discount / 100);
+
     </script>
 </body>
 </html>

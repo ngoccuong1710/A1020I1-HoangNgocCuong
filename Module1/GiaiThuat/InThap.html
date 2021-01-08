@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div id="result"></div>
+    <script>
+       function InThap() {
+           let i = 1;
+           let n = 6;
+           let inThap = '';
+           while(i <= n){
+               for (let j = 0; j < 5; j++){
+                   inThap += '*'
+               }
+               inThap += "<br>";
+               i++
+           }
+           document.getElementById('result').innerHTML = inThap;
+       }
+       InThap();
+    </script>
+</body>
+</html>

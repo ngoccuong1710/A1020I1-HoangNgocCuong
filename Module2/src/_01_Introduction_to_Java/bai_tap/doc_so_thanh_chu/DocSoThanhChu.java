@@ -10,6 +10,7 @@ public class DocSoThanhChu {
         int hangChuc = number / 10;
         String strHangChuc = hangChuc + "0";
         int hangDonVi = number % 10;
+        //String result = read11To19(number);
         String result = readNumberTy(Integer.parseInt(strHangChuc)) + " " + read1To10(hangDonVi);
         System.out.println("Result: " + result);
     }

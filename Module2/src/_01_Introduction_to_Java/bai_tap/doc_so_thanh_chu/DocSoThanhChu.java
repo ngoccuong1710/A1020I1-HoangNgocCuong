@@ -4,109 +4,105 @@ import java.util.Scanner;
 
 public class DocSoThanhChu {
     public static void main(String[] args) {
-        System.out.println("Nhập số: ");
-        Scanner sc = new Scanner(System.in);
-        int donVi = 0;
-        int hangChuc = 10;
-        int n = sc.nextInt();
-        if (n < 10 || 0 <= n){
-            donVi = n;
-            System.out.println(donVi);
-        }
-        else if (n < 20 || 10 <= n){
-            hangChuc = n;
-            System.out.println(hangChuc);
-        }
-        else if (n < 999 || 100 <= n){
-            
-        }
-        switch (donVi){
-            case 1:
-                System.out.println("one");
-                break;
-            case 2:
-                System.out.println("two");
-                break;
-            case 3:
-                System.out.println("three");
-                break;
-            case 4:
-                System.out.println("four");
-                break;
-            case 5:
-                System.out.println("five");
-                break;
-            case 6:
-                System.out.println("six");
-                break;
-            case 7:
-                System.out.println("seven");
-                break;
-            case 8:
-                System.out.println("eight");
-                break;
-            case 9:
-                System.out.println("nine");
-                break;
-            case 0:
-                System.out.println("nine");
-                break;
-        }
-
-        switch (hangChuc){
-            case 11:
-                System.out.println("eleven");
-                break;
-            case 12:
-                System.out.println("twelve");
-                break;
-            case 13:
-                System.out.println("thirteen");
-                break;
-            case 14:
-                System.out.println("fourteen");
-                break;
-            case 15:
-                System.out.println("fifteen");
-                break;
-            case 16:
-                System.out.println("sixteen");
-                break;
-            case 17:
-                System.out.println("seventeen");
-                break;
-            case 18:
-                System.out.println("eighteen");
-                break;
-            case 19:
-                System.out.println("nineteen");
-                break;
-        }
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Please input number: ");
+        int number = scanner.nextInt();
+        int hangChuc = number / 10;
+        String strHangChuc = hangChuc + "0";
+        int hangDonVi = number % 10;
+        String result = readNumberTy(Integer.parseInt(strHangChuc)) + " " + read1To10(hangDonVi);
+        System.out.println("Result: " + result);
     }
 
-    private String hang_tram(int num){
-        switch (num){
+    static String read1To10(int number) {
+        String str = "";
+        switch(number) {
             case 1:
-                return "one hundred";
+                str = "one";
+                break;
             case 2:
-                return "two hundred";
+                str = "two";
+                break;
             case 3:
-                return "three hundred";
+                str = "three";
+                break;
             case 4:
-                return "four hundred";
+                str = "four";
+                break;
             case 5:
-                return "five hundred";
+                str = "five";
+                break;
             case 6:
-                return "six hundred";
+                str = "six";
+                break;
             case 7:
-                return "seven hundred";
+                str = "seven";
+                break;
             case 8:
-                return "eight hundred";
+                str = "eight";
+                break;
             case 9:
-                return "nine hundred";
-            default:
-                return "hundred";
-
+                str = "nine";
+                break;
+            case 10:
+                str = "ten";
+                break;
         }
+        return str;
+    }
+
+    static String read11To19(int number) {
+        String str = null;
+        switch(number) {
+            case 11:
+                str = "eleven";
+                break;
+            case 12:
+                str = "twelve";
+                break;
+            case 13:
+                str = "thirteen";
+                break;
+            case 14:
+                str = "forteen";
+                break;
+            case 15:
+                str = "fifteen";
+                break;
+            case 16:
+            case 17:
+            case 18:
+            case 19:
+                int hangDonVi = number % 10;
+                str = read1To10(hangDonVi) + "teen";
+                break;
+        }
+        return str;
+    }
+
+    static String readNumberTy(int number) {
+        String str = null;
+        switch (number) {
+            case 20:
+                str = "twenty";
+                break;
+            case 30:
+                str = "thirty";
+                break;
+            case 40:
+                str = "forty";
+                break;
+            case 50:
+                str = "fifty";
+                break;
+            case 60:
+            case 70:
+            case 80:
+            case 90:
+                int hangChuc = number / 10;
+                str = read1To10(hangChuc) + "ty";
+                break;
+        }
+        return str;
     }
 }

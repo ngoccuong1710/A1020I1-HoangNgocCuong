@@ -23,14 +23,12 @@ public class GopMang {
             arr2[i] = sc.nextInt();
         }
 
-        int count = 0;
         int[] arr3 = new int[n + m];
         for (int i = 0; i < n; i++){
             arr3[i] = arr1[i];
-            count++;
         }
-        for (int i = 0; i < m; i++){
-                arr3[count++] = arr2[i];
+        for (int i = arr3.length - m; i < arr3.length; i++){
+            arr3[i] = arr2[i - n];
         }
 
         System.out.println("Mảng sau khi gộp là:\n " + Arrays.toString(arr3));

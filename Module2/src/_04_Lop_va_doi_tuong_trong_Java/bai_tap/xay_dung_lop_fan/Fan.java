@@ -42,6 +42,10 @@ public class Fan {
         this.color = color;
     }
 
+    public void fan(){
+        System.out.println(speed);;
+    }
+
     @Override
     public String toString() {
         return "Fan{" +

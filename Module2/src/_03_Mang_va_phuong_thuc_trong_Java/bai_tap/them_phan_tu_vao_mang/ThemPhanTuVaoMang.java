@@ -13,12 +13,15 @@ public class ThemPhanTuVaoMang {
         int x = sc.nextInt();
         System.out.println("Nhập vị trí cần chèn:");
         int index = sc.nextInt();
-
-        for (int i = arr.length - 1; i > index; i--) {
-            arr[i] = arr[i - 1];
+        if (index <= 1 || index >= arr.length-1) {
+            System.out.println("Không chèn dc");
         }
-        arr[index] = x;
-
-        System.out.println("Mảng sau khi chèn phần tử:\n " + Arrays.toString(arr));
+        else {
+            for (int i = arr.length - 1; i > index; i--) {
+                arr[i] = arr[i - 1];
+            }
+            arr[index] = x;
+            System.out.println("Mảng sau khi chèn phần tử:\n " + Arrays.toString(arr));
+        }
     }
 }

@@ -5,10 +5,17 @@ public class Fan {
     private static final int MEDIUM = 2;
     private static final int FAST = 3;
 
-    private int speed = SLOW;
-    private boolean on = false;
-    private double radius = 5;
-    private String color = "Blue";
+    private int speed;
+    private boolean on;
+    private double radius;
+    private String color;
+
+    public Fan() {
+        this.speed = SLOW;
+        this.on = false;
+        this.radius = 5;
+        this.color = "Blue";
+    }
 
     public int getSpeed() {
         return speed;
@@ -40,10 +47,6 @@ public class Fan {
 
     public void setColor(String color) {
         this.color = color;
-    }
-
-    public void fan(){
-        System.out.println(speed);;
     }
 
     @Override

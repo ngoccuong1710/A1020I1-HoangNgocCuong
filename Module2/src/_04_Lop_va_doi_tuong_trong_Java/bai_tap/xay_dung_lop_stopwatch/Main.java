@@ -3,7 +3,7 @@ package _04_Lop_va_doi_tuong_trong_Java.bai_tap.xay_dung_lop_stopwatch;
 import java.time.LocalTime;
 
 public class Main {
-    public static int[] selectionSort(int...a){
+    public static int[] selectionSort(int[] a){
         for(int i=0;i<a.length-1;i++){
             for(int j=i+1;j<a.length;j++){
                 if(a[j]<a[i]){

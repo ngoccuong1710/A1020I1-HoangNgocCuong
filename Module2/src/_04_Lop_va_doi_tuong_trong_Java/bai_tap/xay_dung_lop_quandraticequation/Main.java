@@ -16,7 +16,7 @@ public class Main {
 
         if (quadraticEquation.getA() != 0) {
             if (quadraticEquation.getDiscriminant() < 0) {
-                System.out.println("The equation há no roots");
+                System.out.println("The equation has no roots");
             } else if (quadraticEquation.getDiscriminant() == 0) {
                 System.out.println("Phương trình có nghiệm kép: " + quadraticEquation.getNghiemKep());
             } else {

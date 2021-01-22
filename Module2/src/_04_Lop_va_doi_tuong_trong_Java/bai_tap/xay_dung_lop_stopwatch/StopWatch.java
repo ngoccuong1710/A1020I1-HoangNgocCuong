@@ -10,7 +10,8 @@ public class StopWatch {
         this.endTime = endTime;
     }
 
-    public StopWatch(int[] arr) {
+    public StopWatch() {
+
     }
 
     public long getStartTime() {

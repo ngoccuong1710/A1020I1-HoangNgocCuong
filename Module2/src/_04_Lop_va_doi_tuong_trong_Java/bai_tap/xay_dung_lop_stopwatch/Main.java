@@ -21,7 +21,7 @@ public class Main {
         for (int i = 0; i < 100000; i++) {
             arr[i] = (int)(Math.random() * 1000);
         }
-        StopWatch stopwatch = new StopWatch(arr);
+        StopWatch stopwatch = new StopWatch();
         stopwatch.start();
         selectionSort(arr);
         stopwatch.stop();

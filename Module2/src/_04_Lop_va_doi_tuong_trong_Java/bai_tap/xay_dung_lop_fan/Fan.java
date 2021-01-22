@@ -1,26 +1,29 @@
 package _04_Lop_va_doi_tuong_trong_Java.bai_tap.xay_dung_lop_fan;
 
 public class Fan {
-    private static final int SLOW = 1;
-    private static final int MEDIUM = 2;
-    private static final int FAST = 3;
+    public static final int SLOW = 1;
+    public static final int MEDIUM = 2;
+    public static final int FAST = 3;
 
     private int speed;
     private boolean on;
     private double radius;
     private String color;
 
-    public Fan(int speed, double radius, String color) {
+    public Fan(){
+        this.speed = SLOW;
+        this.radius = 5;
+        this.color = "blue";
+    }
+
+    public Fan(int speed, boolean on, double radius, String color) {
         this.speed = speed;
-        this.on = false;
+        this.on = on;
         this.radius = radius;
         this.color = color;
     }
 
     public int getSpeed() {
-        if (!isOn()){
-            return 0;
-        }
         return speed;
     }
 
@@ -28,12 +31,6 @@ public class Fan {
         this.speed = speed;
     }
 
-    public boolean isOn() {
-        if (!false) {
-            return on;
-        }
-        return false;
-    }
 
     public void setOn(boolean on) {
         this.on = on;
@@ -57,11 +54,10 @@ public class Fan {
 
     @Override
     public String toString() {
-        return "Fan{" +
-                "speed=" + getSpeed() +
-                ", on=" + isOn() +
-                ", radius=" + getRadius() +
-                ", color='" + getColor() + '\'' +
-                '}';
+        if (on) {
+            return "speed: " + this.getSpeed() + ", radius: " + this.getRadius() + ", color: " + this.getColor() + ", fan is on";
+        } else {
+            return "radius: " + this.getRadius() + ", color: " + this.getColor() + ", fan is off";
+        }
     }
 }

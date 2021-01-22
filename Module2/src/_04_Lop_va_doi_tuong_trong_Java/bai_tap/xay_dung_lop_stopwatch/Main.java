@@ -17,17 +17,14 @@ public class Main {
     }
 
     public static void main(String[] args) {
-        int[] a = new int [100000];
+        int[] arr = new int [100000];
         for (int i = 0; i < 100000; i++) {
-            a[i] = (int)(Math.random() * 1000);
+            arr[i] = (int)(Math.random() * 1000);
         }
-        LocalTime start = LocalTime.now();
-        a = selectionSort(a);
-        LocalTime end = LocalTime.now();
-        StopWatch sw = new StopWatch(start, end);
-        System.out.println("Time: "+sw.getElapsedTime());
-        for(int x : a){
-            System.out.println(x);
-        }
+        StopWatch stopwatch = new StopWatch(arr);
+        stopwatch.start();
+        selectionSort(arr);
+        stopwatch.stop();
+        System.out.println("Thời gian thực thi: "+stopwatch.getElapsedTime());
     }
 }

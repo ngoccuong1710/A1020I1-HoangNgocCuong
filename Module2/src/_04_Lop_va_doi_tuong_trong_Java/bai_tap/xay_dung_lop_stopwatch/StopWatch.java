@@ -1,39 +1,39 @@
 package _04_Lop_va_doi_tuong_trong_Java.bai_tap.xay_dung_lop_stopwatch;
 
-import java.time.LocalTime;
 
 public class StopWatch {
-    private LocalTime startTime, endTime;
+    private long startTime;
+    private long endTime;
 
-    public StopWatch(){
-        startTime = LocalTime.now();
-    }
-
-    public StopWatch(LocalTime startTime, LocalTime endTime) {
+    public StopWatch(long startTime, long endTime) {
         this.startTime = startTime;
         this.endTime = endTime;
     }
 
-    public LocalTime getStartTime(){
+    public StopWatch(int[] arr) {
+    }
+
+    public long getStartTime() {
         return startTime;
     }
 
-    public LocalTime getEndTime(){
+    public long getEndTime() {
         return endTime;
     }
 
-    public void stop(){
-        startTime = LocalTime.now();
+    public long startTime(){
+        return startTime = System.currentTimeMillis();
     }
 
-    public void start(){
-        endTime = LocalTime.now();
+    public void start() {
+        startTime = System.currentTimeMillis();
     }
 
-    public int getElapsedTime(){
-        int miliSecond = ((endTime.getHour() - startTime.getHour()) * 3600 +
-                        (endTime.getMinute() - startTime.getMinute()) * 60 +
-                        (endTime.getSecond() - startTime.getSecond()) * 1000);
-        return miliSecond;
+    public void stop() {
+        endTime = System.currentTimeMillis();
+    }
+
+    public long getElapsedTime(){
+        return this.getEndTime() - this.getStartTime();
     }
 }

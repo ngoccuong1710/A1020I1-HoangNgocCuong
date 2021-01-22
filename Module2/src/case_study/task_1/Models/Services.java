@@ -1,4 +1,4 @@
-package case_study.task_1.models;
+package case_study.task_1.Models;
 
 abstract class Services {
     private String id;
@@ -65,6 +65,16 @@ abstract class Services {
         this.kieuThue = kieuThue;
     }
 
-    public abstract void showInfor();
-
+    @Override
+    public String toString() {
+        return "Services{" +
+                "id='" + id + '\'' +
+                ", tenDichVu='" + tenDichVu + '\'' +
+                ", dienTichSuDung=" + dienTichSuDung +
+                ", chiPhiThue=" + chiPhiThue +
+                ", soLuongNguoi=" + soLuongNguoi +
+                ", kieuThue='" + kieuThue + '\'' +
+                '}';
+    }
 }
+

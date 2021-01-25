@@ -1,4 +1,4 @@
-package case_study.task_1.Models;
+package case_study.Models;
 
 abstract class Services {
     private String id;

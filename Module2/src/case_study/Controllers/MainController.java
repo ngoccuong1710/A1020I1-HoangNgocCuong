@@ -1,4 +1,4 @@
-package case_study.task_1.Controllers;
+package case_study.Controllers;
 
 import java.util.Scanner;
 
@@ -36,7 +36,7 @@ public class MainController {
             }
         }while (chooseMenu != 0);
     }
-
+    
     public static void addNewServices(){
         Scanner sc = new Scanner(System.in);
         int chooseServices;

@@ -1,5 +1,10 @@
 package case_study.Controllers;
-
+import case_study.Models.House;
+import case_study.Models.Room;
+import case_study.Models.Villa;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import java.util.Scanner;
 
 public class MainController {
@@ -21,7 +26,8 @@ public class MainController {
                     addNewServices();
                     break;
                 case 2:
-
+                    showServices();
+                    break;
                 case 3:
 
                 case 4:
@@ -39,6 +45,9 @@ public class MainController {
     
     public static void addNewServices(){
         Scanner sc = new Scanner(System.in);
+        List<Villa> listInfoVilla = new ArrayList<>();
+        List<House> listInfoHouse = new ArrayList<>();
+        List<Room> listInfoRoom = new ArrayList<>();
         int chooseServices;
         do {
             System.out.println("1. Add New Villa");
@@ -51,7 +60,7 @@ public class MainController {
             switch (chooseServices){
                 case 1:
                     System.out.println("Nhập id: ");
-                    int idVilla = sc.nextInt();
+                    String idVilla = sc.nextLine();
                     sc.nextLine();
                     System.out.println("Nhập tên dịch vụ: ");
                     String tenDichVuVilla  = sc.nextLine();
@@ -72,10 +81,13 @@ public class MainController {
                     int dienTichHoBoiVilla  = sc.nextInt();
                     System.out.println("Nhập số tầng: ");
                     int soTangVilla  = sc.nextInt();
+                    Villa infoVilla = new Villa(idVilla, tenDichVuVilla, dienTichSuDungVilla, chiPhiThueVilla, soLuongNguoiVilla,
+                            kieuThueVilla, tieuChuanPhongVilla, tienNghiKhacVilla, dienTichHoBoiVilla, soTangVilla);
+                    listInfoVilla.add(infoVilla);
                     break;
                 case 2:
                     System.out.println("Nhập id: ");
-                    int idHouse = sc.nextInt();
+                    String idHouse = sc.nextLine();
                     sc.nextLine();
                     System.out.println("Nhập tên dịch vụ: ");
                     String tenDichVuHouse  = sc.nextLine();
@@ -94,10 +106,13 @@ public class MainController {
                     String tienNghiKhacHouse  = sc.nextLine();
                     System.out.println("Nhập số tầng: ");
                     int soTangHouse = sc.nextInt();
+                    House infoHouse = new House(idHouse, tenDichVuHouse, dienTichSuDungHouse, chiPhiThueHouse, soLuongNguoiHouse,
+                            kieuThueHouse, tieuChuanPhongHouse, tienNghiKhacHouse, soTangHouse);
+                    listInfoHouse.add(infoHouse);
                     break;
                 case 3:
                     System.out.println("Nhập id: ");
-                    int idRoom = sc.nextInt();
+                    String idRoom = sc.nextLine();
                     sc.nextLine();
                     System.out.println("Nhập tên dịch vụ: ");
                     String tenDichVuRoom  = sc.nextLine();
@@ -112,6 +127,9 @@ public class MainController {
                     String kieuThueRoom  = sc.nextLine();
                     System.out.println("Nhập dịch vụ miễn phí đi kèm: ");
                     String dichVuMienPhiDiKem   = sc.nextLine();
+                    Room infoRoom = new Room(idRoom, tenDichVuRoom, dienTichSuDungRoom, chiPhiThueRoom, soLuongNguoiRoom,
+                            kieuThueRoom, dichVuMienPhiDiKem);
+                    listInfoRoom.add(infoRoom);
                     break;
                 case 4:
                     displayMainMenu();
@@ -123,7 +141,37 @@ public class MainController {
         }while (chooseServices != 0);
     }
 
+    public static void showServices(){
+        Scanner sc = new Scanner(System.in);
+        int chooseServices;
+        do {
+            System.out.println("1. Show all Villa");
+            System.out.println("2. Show all House");
+            System.out.println("3. Show all Room");
+            System.out.println("4. Show all Name Villa Not Duplicate");
+            System.out.println("5. Show all Name House Not Duplicate");
+            System.out.println("6. Show all Name Room Not Duplicate");
+            System.out.println("7. Back to menu");
+            System.out.println("8. Exit");
+            chooseServices = sc.nextInt();
 
+            switch (chooseServices){
+                case 1:
+
+                case 2:
+                case 3:
+                case 4:
+                case 5:
+                case 6:
+                case 7:
+                    displayMainMenu();
+                    break;
+                case 8:
+                    System.out.println("Đã thoát!");
+                    System.exit(0);
+            }
+        }while (chooseServices != 0);
+    }
 
     public static void main(String[] args) {
         displayMainMenu();

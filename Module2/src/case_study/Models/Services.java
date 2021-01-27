@@ -1,14 +1,17 @@
 package case_study.Models;
 
 abstract class Services {
-    private int id;
+    private String id;
     private String tenDichVu;
     private int dienTichSuDung;
     private double chiPhiThue;
     private int soLuongNguoi;
     private String kieuThue;
 
-    public Services(int id, String tenDichVu, int dienTichSuDung, double chiPhiThue, int soLuongNguoi, String kieuThue) {
+    public Services(){
+    }
+
+    public Services(String id, String tenDichVu, int dienTichSuDung, double chiPhiThue, int soLuongNguoi, String kieuThue) {
         this.id = id;
         this.tenDichVu = tenDichVu;
         this.dienTichSuDung = dienTichSuDung;
@@ -17,11 +20,11 @@ abstract class Services {
         this.kieuThue = kieuThue;
     }
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -64,6 +67,8 @@ abstract class Services {
     public void setKieuThue(String kieuThue) {
         this.kieuThue = kieuThue;
     }
+
+    public abstract void showInfo();
 
     @Override
     public String toString() {

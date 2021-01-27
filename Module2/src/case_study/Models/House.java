@@ -5,7 +5,7 @@ public class House extends Services {
     private String moTaTienNghiKhac;
     private int soTang;
 
-    public House(String id, String tenDichVu, int dienTichSuDung, double chiPhiThue, int soLuongNguoi, String kieuThue, String tieuChuanPhong, String moTaTienNghiKhac, int soTang) {
+    public House(int id, String tenDichVu, int dienTichSuDung, double chiPhiThue, int soLuongNguoi, String kieuThue, String tieuChuanPhong, String moTaTienNghiKhac, int soTang) {
         super(id, tenDichVu, dienTichSuDung, chiPhiThue, soLuongNguoi, kieuThue);
         this.tieuChuanPhong = tieuChuanPhong;
         this.moTaTienNghiKhac = moTaTienNghiKhac;
@@ -38,7 +38,7 @@ public class House extends Services {
 
     @Override
     public String toString() {
-        return "House{" + super.toString() +
+        return "House{" +
                 "tieuChuanPhong='" + tieuChuanPhong + '\'' +
                 ", moTaTienNghiKhac='" + moTaTienNghiKhac + '\'' +
                 ", soTang=" + soTang +

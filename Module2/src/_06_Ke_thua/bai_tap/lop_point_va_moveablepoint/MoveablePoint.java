@@ -44,17 +44,17 @@ public class MoveablePoint extends Point{
         System.out.println("xSpeed: " + xSpeed + ", ySpeed: " + ySpeed);
     }
 
-    public float move(float x, float y){
-        x += this.xSpeed;
-        y += this.ySpeed;
-        return this.move(x, y);
+    public MoveablePoint move(){
+        this.x += this.xSpeed;
+        this.y += this.ySpeed;
+        return this;
     }
 
     @Override
     public String toString() {
         return "MoveablePoint{" +
-                "xSpeed=" + xSpeed +
-                ", ySpeed=" + ySpeed +
+                "xSpeed=" + getxSpeed() +
+                ", ySpeed=" + getySpeed() +
                 '}';
     }
 }

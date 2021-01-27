@@ -6,7 +6,7 @@ public class Villa extends Services {
     private int dienTichHoBoi;
     private int soTang;
 
-    public Villa(String id, String tenDichVu, int dienTichSuDung, double chiPhiThue, int soLuongNguoi, String kieuThue, String tieuChuanPhong, String moTaTienNghiKhac, int dienTichHoBoi, int soTang) {
+    public Villa(int id, String tenDichVu, int dienTichSuDung, double chiPhiThue, int soLuongNguoi, String kieuThue, String tieuChuanPhong, String moTaTienNghiKhac, int dienTichHoBoi, int soTang) {
         super(id, tenDichVu, dienTichSuDung, chiPhiThue, soLuongNguoi, kieuThue);
         this.tieuChuanPhong = tieuChuanPhong;
         this.moTaTienNghiKhac = moTaTienNghiKhac;
@@ -48,7 +48,7 @@ public class Villa extends Services {
 
     @Override
     public String toString() {
-        return "Villa{" + super.toString() +
+        return "Villa{" +
                 "tieuChuanPhong='" + tieuChuanPhong + '\'' +
                 ", moTaTienNghiKhac='" + moTaTienNghiKhac + '\'' +
                 ", dienTichHoBoi=" + dienTichHoBoi +

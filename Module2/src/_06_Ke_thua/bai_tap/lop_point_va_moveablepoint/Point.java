@@ -1,8 +1,8 @@
 package _06_Ke_thua.bai_tap.lop_point_va_moveablepoint;
 
 public class Point {
-    private float x = 0.0f;
-    private float y = 0.0f;
+    float x = 0.0f;
+    float y = 0.0f;
 
     public Point(){
 
@@ -41,8 +41,8 @@ public class Point {
     @Override
     public String toString() {
         return "Point{" +
-                "x=" + x +
-                ", y=" + y +
+                "x=" + getX() +
+                ", y=" + getY() +
                 '}';
     }
 }

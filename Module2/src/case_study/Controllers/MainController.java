@@ -50,14 +50,82 @@ public class MainController {
 
             switch (chooseServices){
                 case 1:
-
+                    System.out.println("Nhập id: ");
+                    int idVilla = sc.nextInt();
+                    sc.nextLine();
+                    System.out.println("Nhập tên dịch vụ: ");
+                    String tenDichVuVilla  = sc.nextLine();
+                    System.out.println("Nhập diện tích sử dụng: ");
+                    int dienTichSuDungVilla  = sc.nextInt();
+                    System.out.println("Nhập chi phí thuê: ");
+                    double chiPhiThueVilla  = sc.nextInt();
+                    System.out.println("Nhập so lượng người tối đa: ");
+                    int soLuongNguoiVilla  = sc.nextInt();
+                    sc.nextLine();
+                    System.out.println("Nhập kiểu thuê: ");
+                    String kieuThueVilla  = sc.nextLine();
+                    System.out.println("Nhập tiêu chuẩn phòng: ");
+                    String tieuChuanPhongVilla  = sc.nextLine();
+                    System.out.println("Nhập mô tả tiện nghi khác: ");
+                    String tienNghiKhacVilla  = sc.nextLine();
+                    System.out.println("Nhập diện tích hồ bơi: ");
+                    int dienTichHoBoiVilla  = sc.nextInt();
+                    System.out.println("Nhập số tầng: ");
+                    int soTangVilla  = sc.nextInt();
+                    break;
                 case 2:
+                    System.out.println("Nhập id: ");
+                    int idHouse = sc.nextInt();
+                    sc.nextLine();
+                    System.out.println("Nhập tên dịch vụ: ");
+                    String tenDichVuHouse  = sc.nextLine();
+                    System.out.println("Nhập diện tích sử dụng: ");
+                    int dienTichSuDungHouse  = sc.nextInt();
+                    System.out.println("Nhập chi phí thuê: ");
+                    double chiPhiThueHouse  = sc.nextInt();
+                    System.out.println("Nhập so lượng người tối đa: ");
+                    int soLuongNguoiHouse  = sc.nextInt();
+                    System.out.println("Nhập kiểu thuê: ");
+                    sc.nextLine();
+                    String kieuThueHouse = sc.nextLine();
+                    System.out.println("Nhập tiêu chuẩn phòng: ");
+                    String tieuChuanPhongHouse  = sc.nextLine();
+                    System.out.println("Nhập mô tả tiện nghi khác: ");
+                    String tienNghiKhacHouse  = sc.nextLine();
+                    System.out.println("Nhập số tầng: ");
+                    int soTangHouse = sc.nextInt();
+                    break;
                 case 3:
+                    System.out.println("Nhập id: ");
+                    int idRoom = sc.nextInt();
+                    sc.nextLine();
+                    System.out.println("Nhập tên dịch vụ: ");
+                    String tenDichVuRoom  = sc.nextLine();
+                    System.out.println("Nhập diện tích sử dụng: ");
+                    int dienTichSuDungRoom   = sc.nextInt();
+                    System.out.println("Nhập chi phí thuê: ");
+                    double chiPhiThueRoom   = sc.nextInt();
+                    System.out.println("Nhập so lượng người tối đa: ");
+                    int soLuongNguoiRoom   = sc.nextInt();
+                    System.out.println("Nhập kiểu thuê: ");
+                    sc.nextLine();
+                    String kieuThueRoom  = sc.nextLine();
+                    System.out.println("Nhập dịch vụ miễn phí đi kèm: ");
+                    String dichVuMienPhiDiKem   = sc.nextLine();
+                    break;
                 case 4:
+                    displayMainMenu();
+                    break;
                 case 5:
                     System.out.println("Đã thoát!");
                     System.exit(0);
             }
         }while (chooseServices != 0);
+    }
+
+
+
+    public static void main(String[] args) {
+        displayMainMenu();
     }
 }

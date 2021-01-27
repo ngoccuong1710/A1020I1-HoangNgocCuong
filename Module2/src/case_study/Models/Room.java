@@ -3,7 +3,7 @@ package case_study.Models;
 public class Room extends Services {
     private String dichVuMienPhiDiKem;
 
-    public Room(String id, String tenDichVu, int dienTichSuDung, double chiPhiThue, int soLuongNguoi, String kieuThue, String dichVuMienPhiDiKem) {
+    public Room(int id, String tenDichVu, int dienTichSuDung, double chiPhiThue, int soLuongNguoi, String kieuThue, String dichVuMienPhiDiKem) {
         super(id, tenDichVu, dienTichSuDung, chiPhiThue, soLuongNguoi, kieuThue);
         this.dichVuMienPhiDiKem = dichVuMienPhiDiKem;
     }
@@ -18,7 +18,7 @@ public class Room extends Services {
 
     @Override
     public String toString() {
-        return "Room{" + super.toString() +
+        return "Room{" +
                 "dichVuMienPhiDiKem='" + dichVuMienPhiDiKem + '\'' +
                 '}';
     }

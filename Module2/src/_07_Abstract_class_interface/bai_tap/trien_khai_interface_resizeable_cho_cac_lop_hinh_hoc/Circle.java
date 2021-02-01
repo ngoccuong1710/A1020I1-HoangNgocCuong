@@ -1,6 +1,6 @@
 package _07_Abstract_class_interface.bai_tap.trien_khai_interface_resizeable_cho_cac_lop_hinh_hoc;
 
-public class Circle implements Comparable<Circle> {
+public class Circle implements Resizeable {
     protected double radius = 1.0;
 
     public Circle() {
@@ -16,12 +16,12 @@ public class Circle implements Comparable<Circle> {
 
     @Override
     public String toString() {
-        return "A Circle with radius="
+        return "A Circle with radius = "
                 + radius;
     }
 
     @Override
-    public int compareTo(Circle o) {
-        return (int) getArea();
+    public void resize(double percent) {
+        radius *= percent / 100;
     }
 }

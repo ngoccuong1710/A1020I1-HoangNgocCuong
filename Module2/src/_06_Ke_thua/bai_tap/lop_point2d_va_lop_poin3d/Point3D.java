@@ -18,11 +18,15 @@ public class Point3D extends Point2D {
 
     public float[] getXYZ(){
         float[] arrXYZ = new float[3];
+        arrXYZ[0] = this.z;
+        arrXYZ[1] = this.z;
+        arrXYZ[2] = this.z;
         return arrXYZ;
     }
 
     public void setXYZ(float x, float y, float z){
-        System.out.println("x: " + x + ", y: " + y + ", z: " + z);
+        setXY(x, y);
+        this.z = z;
     }
 
     @Override

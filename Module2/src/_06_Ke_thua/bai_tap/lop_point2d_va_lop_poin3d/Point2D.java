@@ -33,11 +33,14 @@ public class Point2D {
 
     public float[] getXY(){
         float[] arrXY = new float[2];
+        arrXY[0] = this.x;
+        arrXY[1] = this.y;
         return arrXY;
     }
 
     public void setXY(float x, float y){
-        System.out.println("x: " + x + ", y: " + y);
+        this.x = x;
+        this.y = y;
     }
 
     @Override

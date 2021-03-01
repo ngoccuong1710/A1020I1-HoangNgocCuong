@@ -1,17 +1,17 @@
 package case_study.Models;
 
-abstract class Services {
+public abstract class Services {
     private String id;
     private String tenDichVu;
     private int dienTichSuDung;
-    private double chiPhiThue;
+    private int chiPhiThue;
     private int soLuongNguoi;
     private String kieuThue;
 
     public Services(){
     }
 
-    public Services(String id, String tenDichVu, int dienTichSuDung, double chiPhiThue, int soLuongNguoi, String kieuThue) {
+    public Services(String id, String tenDichVu, int dienTichSuDung, int chiPhiThue, int soLuongNguoi, String kieuThue) {
         this.id = id;
         this.tenDichVu = tenDichVu;
         this.dienTichSuDung = dienTichSuDung;
@@ -44,11 +44,11 @@ abstract class Services {
         this.dienTichSuDung = dienTichSuDung;
     }
 
-    public double getChiPhiThue() {
+    public int getChiPhiThue() {
         return chiPhiThue;
     }
 
-    public void setChiPhiThue(double chiPhiThue) {
+    public void setChiPhiThue(int chiPhiThue) {
         this.chiPhiThue = chiPhiThue;
     }
 
@@ -68,18 +68,16 @@ abstract class Services {
         this.kieuThue = kieuThue;
     }
 
-    public abstract void showInfo();
+    public abstract void showInfor();
 
     @Override
     public String toString() {
-        return "Services{" +
-                "id='" + id + '\'' +
-                ", tenDichVu='" + tenDichVu + '\'' +
-                ", dienTichSuDung=" + dienTichSuDung +
-                ", chiPhiThue=" + chiPhiThue +
-                ", soLuongNguoi=" + soLuongNguoi +
-                ", kieuThue='" + kieuThue + '\'' +
-                '}';
+        return "\n1. Id: " + getId() +
+                "\n2. Tên dịch vụ: " + getTenDichVu() +
+                "\n3. Diện tích sử dụng " + getDienTichSuDung() +
+                "\n4. Chi phí thuê: " + getChiPhiThue() +
+                "\n5. Số lượng người tối đa: " + getSoLuongNguoi() +
+                "\n6. Kiểu thuê: " + getKieuThue();
     }
 }
 

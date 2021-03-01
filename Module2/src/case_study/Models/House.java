@@ -5,7 +5,7 @@ public class House extends Services {
     private String moTaTienNghiKhac;
     private int soTang;
 
-    public House(String id, String tenDichVu, int dienTichSuDung, double chiPhiThue, int soLuongNguoi, String kieuThue, String tieuChuanPhong, String moTaTienNghiKhac, int soTang) {
+    public House(String id, String tenDichVu, int dienTichSuDung, int chiPhiThue, int soLuongNguoi, String kieuThue, String tieuChuanPhong, String moTaTienNghiKhac, int soTang) {
         super(id, tenDichVu, dienTichSuDung, chiPhiThue, soLuongNguoi, kieuThue);
         this.tieuChuanPhong = tieuChuanPhong;
         this.moTaTienNghiKhac = moTaTienNghiKhac;
@@ -37,25 +37,29 @@ public class House extends Services {
     }
 
     @Override
-    public void showInfo() {
+    public void showInfor() {
         System.out.println(
-                "1. Id: " + getId() +
-                "2. Tên dịch vụ: " + getTenDichVu() +
-                "3. Diện tích sử dụng " + getDienTichSuDung() +
-                "4. Chi phí thuê: " + getChiPhiThue() +
-                "5. Số lượng người tối đa: " + getSoLuongNguoi() +
-                "6. Kiểu thuê: " + getKieuThue() +
-                "7. Tiêu chuẩn phòng: " + getTieuChuanPhong() +
-                "8. Mô tả tiện nghi khác: " + getMoTaTienNghiKhac() +
-                "9. Số tầng: " + getSoTang());
+                "\n1. Id: " + getId() +
+                "\n2. Tên dịch vụ: " + getTenDichVu() +
+                "\n3. Diện tích sử dụng " + getDienTichSuDung() +
+                "\n4. Chi phí thuê: " + getChiPhiThue() +
+                "\n5. Số lượng người tối đa: " + getSoLuongNguoi() +
+                "\n6. Kiểu thuê: " + getKieuThue() +
+                "\n7. Tiêu chuẩn phòng: " + getTieuChuanPhong() +
+                "\n8. Mô tả tiện nghi khác: " + getMoTaTienNghiKhac() +
+                "\n9. Số tầng: " + getSoTang());
     }
 
     @Override
     public String toString() {
-        return "House{" +
-                "tieuChuanPhong='" + tieuChuanPhong + '\'' +
-                ", moTaTienNghiKhac='" + moTaTienNghiKhac + '\'' +
-                ", soTang=" + soTang +
-                '}';
+        return "\n1. Id: " + getId() +
+                "\n2. Tên dịch vụ: " + getTenDichVu() +
+                "\n3. Diện tích sử dụng " + getDienTichSuDung() +
+                "\n4. Chi phí thuê: " + getChiPhiThue() +
+                "\n5. Số lượng người tối đa: " + getSoLuongNguoi() +
+                "\n6. Kiểu thuê: " + getKieuThue() +
+                "\n7. Tiêu chuẩn phòng: " + getTieuChuanPhong() +
+                "\n8. Mô tả tiện nghi khác: " + getMoTaTienNghiKhac() +
+                "\n9. Số tầng: " + getSoTang();
     }
 }

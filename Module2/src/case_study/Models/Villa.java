@@ -6,7 +6,7 @@ public class Villa extends Services {
     private int dienTichHoBoi;
     private int soTang;
 
-    public Villa(String id, String tenDichVu, int dienTichSuDung, double chiPhiThue, int soLuongNguoi, String kieuThue, String tieuChuanPhong, String moTaTienNghiKhac, int dienTichHoBoi, int soTang) {
+    public Villa(String id, String tenDichVu, int dienTichSuDung, int chiPhiThue, int soLuongNguoi, String kieuThue, String tieuChuanPhong, String moTaTienNghiKhac, int dienTichHoBoi, int soTang) {
         super(id, tenDichVu, dienTichSuDung, chiPhiThue, soLuongNguoi, kieuThue);
         this.tieuChuanPhong = tieuChuanPhong;
         this.moTaTienNghiKhac = moTaTienNghiKhac;
@@ -47,27 +47,31 @@ public class Villa extends Services {
     }
 
     @Override
-    public void showInfo() {
+    public void showInfor() {
         System.out.println(
-                "1. Id: " + getId() +
-                "2. Tên dịch vụ: " + getTenDichVu() +
-                "3. Diện tích sử dụng " + getDienTichSuDung() +
-                "4. Chi phí thuê: " + getChiPhiThue() +
-                "5. Số lượng người tối đa: " + getSoLuongNguoi() +
-                "6. Kiểu thuê: " + getKieuThue() +
-                "7. Tiêu chuẩn phòng: " + getTieuChuanPhong() +
-                "8. Mô tả tiện nghi khác: " + getMoTaTienNghiKhac() +
-                "9. Diện tích hồ bơi " + getDienTichHoBoi() +
-                "10. Số tầng: " + getSoTang());
+                "\n1. Id: " + getId() +
+                "\n2. Tên dịch vụ: " + getTenDichVu() +
+                "\n3. Diện tích sử dụng " + getDienTichSuDung() +
+                "\n4. Chi phí thuê: " + getChiPhiThue() +
+                "\n5. Số lượng người tối đa: " + getSoLuongNguoi() +
+                "\n6. Kiểu thuê: " + getKieuThue() +
+                "\n7. Tiêu chuẩn phòng: " + getTieuChuanPhong() +
+                "\n8. Mô tả tiện nghi khác: " + getMoTaTienNghiKhac() +
+                "\n9. Diện tích hồ bơi " + getDienTichHoBoi() +
+                "\n10. Số tầng: " + getSoTang());
     }
 
     @Override
     public String toString() {
-        return "Villa{" +
-                "tieuChuanPhong='" + tieuChuanPhong + '\'' +
-                ", moTaTienNghiKhac='" + moTaTienNghiKhac + '\'' +
-                ", dienTichHoBoi=" + dienTichHoBoi +
-                ", soTang=" + soTang +
-                '}';
+        return "\n1. Id: " + getId() +
+                "\n2. Tên dịch vụ: " + getTenDichVu() +
+                "\n3. Diện tích sử dụng " + getDienTichSuDung() +
+                "\n4. Chi phí thuê: " + getChiPhiThue() +
+                "\n5. Số lượng người tối đa: " + getSoLuongNguoi() +
+                "\n6. Kiểu thuê: " + getKieuThue() +
+                "\n7. Tiêu chuẩn phòng: " + getTieuChuanPhong() +
+                "\n8. Mô tả tiện nghi khác: " + getMoTaTienNghiKhac() +
+                "\n9. Diện tích hồ bơi " + getDienTichHoBoi() +
+                "\n10. Số tầng: " + getSoTang();
     }
 }

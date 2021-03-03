@@ -89,10 +89,38 @@ public class MainController {
     }
 
     private static void addNewVilla(Scanner sc, List<Villa> listInfoVilla) {
-        System.out.println("Nhập id: ");
-        String idVilla = sc.nextLine();
+        boolean checkValid = false;
+
+        String regexIdVilla = "^(SVVL)([\\\\w-])([\\d]{4})";
+        String idVilla;
+        do {
+            System.out.println("Nhập id: ");
+            idVilla = sc.nextLine();
+            if (Pattern.matches(regexIdVilla, idVilla)){
+                checkValid = true;
+            }
+            else {
+                System.out.println("Id ko hợp lệ, nhập lại.");
+            }
+        }while (!checkValid);
+        checkValid = false;
+
         System.out.println("Nhập tên dịch vụ: ");
-        String tenDichVuVilla  = sc.nextLine();
+        String tenDichVuVilla = sc.nextLine();
+
+//        String regexNameVilla = "^[a-zA-Z]";
+//        String tenDichVuVilla;
+//        do {
+//            System.out.println("Nhập tên dịch vụ: ");
+//            tenDichVuVilla = sc.nextLine();
+//            if (Pattern.matches(regexNameVilla, tenDichVuVilla)){
+//                checkValid = true;
+//            }
+//            else {
+//                System.out.println("Tên dịch vụ ko hợp lệ, nhập lại.");
+//        }while (!checkValid);
+
+
         System.out.println("Nhập diện tích sử dụng: ");
         int dienTichSuDungVilla  = Integer.parseInt(sc.nextLine());
         System.out.println("Nhập chi phí thuê: ");
@@ -125,8 +153,21 @@ public class MainController {
     }
 
     private static void addNewHouse(Scanner sc, List<House> listInfoHouse) {
-        System.out.println("Nhập id: ");
-        String idHouse = sc.nextLine();
+        boolean checkValid = false;
+
+        String regexIdHouse = "^(SVHO)([\\\\w-])([\\d]{4})";
+        String idHouse;
+        do {
+            System.out.println("Nhập id: ");
+            idHouse = sc.nextLine();
+            if (Pattern.matches(regexIdHouse, idHouse)){
+                checkValid = true;
+            }
+            else {
+                System.out.println("Id ko hợp lệ, nhập lại.");
+            }
+        }while (!checkValid);
+
         System.out.println("Nhập tên dịch vụ: ");
         String tenDichVuHouse  = sc.nextLine();
         System.out.println("Nhập diện tích sử dụng: ");
@@ -158,8 +199,22 @@ public class MainController {
     }
 
     private static void addNewRoom(Scanner sc, List<Room> listInfoRoom) {
-        System.out.println("Nhập id: ");
-        String idRoom = sc.nextLine();
+        boolean checkValid = false;
+
+        String regexIdRoom = "^(SVRO)([\\\\w-])([\\d]{4})";
+        String idRoom;
+        do {
+            System.out.println("Nhập id: ");
+            idRoom = sc.nextLine();
+            if (Pattern.matches(regexIdRoom, idRoom)){
+                checkValid = true;
+            }
+            else {
+                System.out.println("Id ko hợp lệ, nhập lại.");
+            }
+        }while (!checkValid);
+
+
         System.out.println("Nhập tên dịch vụ: ");
         String tenDichVuRoom = sc.nextLine();
         System.out.println("Nhập diện tích sử dụng: ");

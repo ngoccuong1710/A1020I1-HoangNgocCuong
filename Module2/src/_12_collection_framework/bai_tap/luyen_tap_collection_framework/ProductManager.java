@@ -38,15 +38,10 @@ public class ProductManager {
     public static void xoaSPTheoId(Scanner sc){
         System.out.println("Nhập id sản phẩm cần xóa:");
         int idSP = Integer.parseInt(sc.nextLine());
-        Product product = null;
-
         for (int i = 0; i < listProduct.size(); i++){
             if (listProduct.get(i).getId() == idSP){
-                product = listProduct.get(i);
+                listProduct.remove(i);
             }
-        }
-        if (product != null){
-            listProduct.remove(product);
         }
     }
 

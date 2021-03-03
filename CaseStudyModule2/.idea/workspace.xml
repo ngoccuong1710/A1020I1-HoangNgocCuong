@@ -53,6 +53,17 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/src/Data" />
   </component>
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="Commons" />
+      <recent name="Controllers" />
+      <recent name="Models" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\A1020I1-HoangNgocCuong\CaseStudyModule2\src\Data" />
+      <recent name="E:\A1020I1-HoangNgocCuong\CaseStudyModule2\src\Models" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="MainController" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Controllers.MainController" />

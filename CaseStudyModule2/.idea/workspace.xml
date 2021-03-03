@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="869bc2b3-0382-46c1-b255-d23ddb2f1f74" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CaseStudyModule2.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Commons/FileUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Controllers/MainController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Data/House.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Data/Room.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Data/Villa.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Models/Customer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Models/House.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Models/Room.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Models/Services.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Models/Villa.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Module1/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Module1/.idea/Module1.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Module1/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Module1/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Module1/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Module2/out/production/Module2/case_study/Controllers/MainController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Module2/out/production/Module2/case_study/Controllers/MainController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Module2/src/case_study/Controllers/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Module2/src/case_study/Controllers/MainController.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectId" id="1pFVvYx6dYuUtYTXQ3pGQkKWsLw" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/Data" />
+  </component>
+  <component name="RunManager">
+    <configuration name="MainController" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Controllers.MainController" />
+      <module name="CaseStudyModule2" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Controllers.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.MainController" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="869bc2b3-0382-46c1-b255-d23ddb2f1f74" name="Default Changelist" comment="" />
+      <created>1614779056216</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1614779056216</updated>
+      <workItem from="1614779060836" duration="327000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+  </component>
+</project>

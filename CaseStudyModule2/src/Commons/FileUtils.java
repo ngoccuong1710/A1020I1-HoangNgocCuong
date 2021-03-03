@@ -1,8 +1,5 @@
-package case_study.Commons;
+package Commons;
 
-import case_study.Models.Villa;
-
-import java.awt.image.VolatileImage;
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;

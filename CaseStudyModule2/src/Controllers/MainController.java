@@ -1,9 +1,13 @@
-package case_study.Controllers;
-import case_study.Commons.FileUtils;
-import case_study.Models.Customer;
-import case_study.Models.House;
-import case_study.Models.Room;
-import case_study.Models.Villa;
+package Controllers;
+
+
+
+import Commons.FileUtils;
+import Models.Customer;
+import Models.House;
+import Models.Room;
+import Models.Villa;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -96,47 +100,94 @@ public class MainController {
         do {
             System.out.println("Nhập id: ");
             idVilla = sc.nextLine();
-            if (Pattern.matches(regexIdVilla, idVilla)){
+            if (Pattern.matches(regexIdVilla, idVilla)) {
                 checkValid = true;
             }
             else {
-                System.out.println("Id ko hợp lệ, nhập lại.");
+                System.out.println("Id ko hợp lệ, mời nhập lại.");
             }
-        }while (!checkValid);
+        } while (!checkValid);
         checkValid = false;
+
+
 
         System.out.println("Nhập tên dịch vụ: ");
         String tenDichVuVilla = sc.nextLine();
 
-//        String regexNameVilla = "^[a-zA-Z]";
-//        String tenDichVuVilla;
-//        do {
-//            System.out.println("Nhập tên dịch vụ: ");
-//            tenDichVuVilla = sc.nextLine();
-//            if (Pattern.matches(regexNameVilla, tenDichVuVilla)){
-//                checkValid = true;
-//            }
-//            else {
-//                System.out.println("Tên dịch vụ ko hợp lệ, nhập lại.");
-//        }while (!checkValid);
 
+        int dienTichSuDungVilla;
+        do {
+            System.out.println("Nhập diện tích sử dụng: ");
+            dienTichSuDungVilla = Integer.parseInt(sc.nextLine());
+            if (dienTichSuDungVilla > 30){
+                checkValid = true;
+            }
+            else {
+                System.out.println("Diện tích phải lớn hơn 30, mời nhập lại");
+            }
+        }while (!checkValid);
+        checkValid=false;
 
-        System.out.println("Nhập diện tích sử dụng: ");
-        int dienTichSuDungVilla  = Integer.parseInt(sc.nextLine());
-        System.out.println("Nhập chi phí thuê: ");
-        int chiPhiThueVilla  = Integer.parseInt(sc.nextLine());
-        System.out.println("Nhập so lượng người tối đa: ");
-        int soLuongNguoiVilla  = Integer.parseInt(sc.nextLine());
+        int chiPhiThueVilla;
+        do {
+            System.out.println("Nhập chi phí thuê: ");
+            chiPhiThueVilla  = Integer.parseInt(sc.nextLine());
+            if (chiPhiThueVilla > 0){
+                checkValid = true;
+            }
+            else {
+                System.out.println("Chi phí thuê phải là số dương, mới nhập lại");
+            }
+        }while (!checkValid);
+        checkValid = false;
+
+        int soLuongNguoiVilla;
+        do {
+            System.out.println("Nhập so lượng người tối đa: ");
+            soLuongNguoiVilla  = Integer.parseInt(sc.nextLine());
+            if (soLuongNguoiVilla > 0 && soLuongNguoiVilla < 20){
+                checkValid = true;
+            }
+            else {
+                System.out.println("Số lượng người ko hợp lệ, mời nhập lại");
+            }
+        }while (!checkValid);
+        checkValid = false;
+
         System.out.println("Nhập kiểu thuê: ");
         String kieuThueVilla  = sc.nextLine();
+
         System.out.println("Nhập tiêu chuẩn phòng: ");
         String tieuChuanPhongVilla  = sc.nextLine();
+
         System.out.println("Nhập mô tả tiện nghi khác: ");
         String tienNghiKhacVilla  = sc.nextLine();
-        System.out.println("Nhập diện tích hồ bơi: ");
-        int dienTichHoBoiVilla  = Integer.parseInt(sc.nextLine());
-        System.out.println("Nhập số tầng: ");
-        int soTangVilla  = Integer.parseInt(sc.nextLine());
+
+        int dienTichHoBoiVilla;
+        do {
+            System.out.println("Nhập diện tích hồ bơi: ");
+            dienTichHoBoiVilla  = Integer.parseInt(sc.nextLine());
+            if (dienTichHoBoiVilla > 30){
+                checkValid = true;
+            }
+            else {
+                System.out.println("Diện tích hồ bơi phải lớn hơn 30, mời nhập lại");
+            }
+        }while (!checkValid);
+        checkValid = false;
+
+        int soTangVilla;
+        do {
+            System.out.println("Nhập số tầng: ");
+            soTangVilla  = Integer.parseInt(sc.nextLine());
+            if (soTangVilla > 0){
+                checkValid = true;
+            }
+            else {
+                System.out.println("Số tầng phải là số nguyên dương, mời nhập lại");
+            }
+        }while (!checkValid);
+
         Villa infoVilla = new Villa(idVilla, tenDichVuVilla, dienTichSuDungVilla, chiPhiThueVilla, soLuongNguoiVilla,
                 kieuThueVilla, tieuChuanPhongVilla, tienNghiKhacVilla, dienTichHoBoiVilla, soTangVilla);
         listInfoVilla.add(infoVilla);

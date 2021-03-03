@@ -1,14 +1,16 @@
-package case_study.Models;
+package Models;
 
-public class House extends Services {
+public class Villa extends Services {
     private String tieuChuanPhong;
     private String moTaTienNghiKhac;
+    private int dienTichHoBoi;
     private int soTang;
 
-    public House(String id, String tenDichVu, int dienTichSuDung, int chiPhiThue, int soLuongNguoi, String kieuThue, String tieuChuanPhong, String moTaTienNghiKhac, int soTang) {
+    public Villa(String id, String tenDichVu, int dienTichSuDung, int chiPhiThue, int soLuongNguoi, String kieuThue, String tieuChuanPhong, String moTaTienNghiKhac, int dienTichHoBoi, int soTang) {
         super(id, tenDichVu, dienTichSuDung, chiPhiThue, soLuongNguoi, kieuThue);
         this.tieuChuanPhong = tieuChuanPhong;
         this.moTaTienNghiKhac = moTaTienNghiKhac;
+        this.dienTichHoBoi = dienTichHoBoi;
         this.soTang = soTang;
     }
 
@@ -26,6 +28,14 @@ public class House extends Services {
 
     public void setMoTaTienNghiKhac(String moTaTienNghiKhac) {
         this.moTaTienNghiKhac = moTaTienNghiKhac;
+    }
+
+    public int getDienTichHoBoi() {
+        return dienTichHoBoi;
+    }
+
+    public void setDienTichHoBoi(int dienTichHoBoi) {
+        this.dienTichHoBoi = dienTichHoBoi;
     }
 
     public int getSoTang() {
@@ -47,7 +57,8 @@ public class House extends Services {
                 "\n6. Kiểu thuê: " + getKieuThue() +
                 "\n7. Tiêu chuẩn phòng: " + getTieuChuanPhong() +
                 "\n8. Mô tả tiện nghi khác: " + getMoTaTienNghiKhac() +
-                "\n9. Số tầng: " + getSoTang());
+                "\n9. Diện tích hồ bơi " + getDienTichHoBoi() +
+                "\n10. Số tầng: " + getSoTang());
     }
 
     @Override
@@ -60,6 +71,7 @@ public class House extends Services {
                 "\n6. Kiểu thuê: " + getKieuThue() +
                 "\n7. Tiêu chuẩn phòng: " + getTieuChuanPhong() +
                 "\n8. Mô tả tiện nghi khác: " + getMoTaTienNghiKhac() +
-                "\n9. Số tầng: " + getSoTang();
+                "\n9. Diện tích hồ bơi " + getDienTichHoBoi() +
+                "\n10. Số tầng: " + getSoTang();
     }
 }

@@ -1,6 +1,5 @@
-package _12_colection_framework.bai_tap.luyen_tap_collection_framework;
+package _12_collection_framework.bai_tap.luyen_tap_collection_framework;
 
-import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main {

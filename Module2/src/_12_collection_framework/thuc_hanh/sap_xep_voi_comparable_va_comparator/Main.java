@@ -1,4 +1,4 @@
-package _12_colection_framework.thuc_hanh.sap_xep_voi_comparable_va_comparator;
+package _12_collection_framework.thuc_hanh.sap_xep_voi_comparable_va_comparator;
 
 import java.util.ArrayList;
 import java.util.Collections;

@@ -1,4 +1,4 @@
-package _12_colection_framework.thuc_hanh.phan_biet_hashmap_va_hashset;
+package _12_collection_framework.thuc_hanh.phan_biet_hashmap_va_hashset;
 
 import java.util.HashMap;
 import java.util.HashSet;

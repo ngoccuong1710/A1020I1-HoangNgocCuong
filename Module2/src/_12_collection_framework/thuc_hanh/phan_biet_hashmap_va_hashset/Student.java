@@ -1,12 +1,15 @@
-package _12_colection_framework.thuc_hanh.sap_xep_voi_comparable_va_comparator;
+package _12_collection_framework.thuc_hanh.phan_biet_hashmap_va_hashset;
 
-public class Student implements Comparable <Student> {
-
+public class Student {
     private String name;
-    private Integer age;
+    private int age;
     private String address;
 
-    public Student(String name, Integer age, String address) {
+    public Student() {
+    }
+
+    public Student(String name, int age, String address) {
+        super();
         this.name = name;
         this.age = age;
         this.address = address;
@@ -20,11 +23,11 @@ public class Student implements Comparable <Student> {
         this.name = name;
     }
 
-    public Integer getAge() {
+    public int getAge() {
         return age;
     }
 
-    public void setAge(Integer age) {
+    public void setAge(int age) {
         this.age = age;
     }
 
@@ -38,13 +41,6 @@ public class Student implements Comparable <Student> {
 
     @Override
     public String toString() {
-        return "Student{" +
-                "name='" + name + '\'' +
-                '}';
-    }
-
-    @Override
-    public int compareTo(Student student) {
-        return this.getName().compareTo(student.getName());
+        return "Student@name=" + name + ",age=" + age + ",address=" + address;
     }
 }

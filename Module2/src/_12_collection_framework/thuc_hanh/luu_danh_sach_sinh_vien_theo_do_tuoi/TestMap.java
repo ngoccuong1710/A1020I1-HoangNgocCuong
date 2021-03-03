@@ -1,4 +1,4 @@
-package _12_colection_framework.thuc_hanh.luu_danh_sach_sinh_vien_theo_do_tuoi;
+package _12_collection_framework.thuc_hanh.luu_danh_sach_sinh_vien_theo_do_tuoi;
 
 import java.util.HashMap;
 import java.util.LinkedHashMap;

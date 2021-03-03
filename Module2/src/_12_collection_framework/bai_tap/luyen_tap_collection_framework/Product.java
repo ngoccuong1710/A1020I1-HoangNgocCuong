@@ -1,4 +1,4 @@
-package _12_colection_framework.bai_tap.luyen_tap_collection_framework;
+package _12_collection_framework.bai_tap.luyen_tap_collection_framework;
 
 public class Product {
     private int id;

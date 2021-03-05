@@ -109,11 +109,19 @@ public class MainController {
         } while (!checkValid);
         checkValid = false;
 
-
-
-        System.out.println("Nhập tên dịch vụ: ");
-        String tenDichVuVilla = sc.nextLine();
-
+        String tenDichVuVilla;
+        do {
+            System.out.println("Nhập tên dịch vụ: ");
+            tenDichVuVilla = sc.nextLine();
+            String firstIndex = tenDichVuVilla.substring(0, 1);
+            if (firstIndex.matches("^[A-Z]")){
+                checkValid = true;
+            }
+            else {
+                System.out.println("Tên dịch vụ ko hợp lệ, mời nhập lại");
+            }
+        }while (!checkValid);
+        checkValid = false;
 
         int dienTichSuDungVilla;
         do {
@@ -154,11 +162,33 @@ public class MainController {
         }while (!checkValid);
         checkValid = false;
 
-        System.out.println("Nhập kiểu thuê: ");
-        String kieuThueVilla  = sc.nextLine();
+        String kieuThueVilla;
+        do {
+            System.out.println("Nhập kiểu thuê: ");
+            kieuThueVilla  = sc.nextLine();
+            String firstIndex = kieuThueVilla.substring(0, 1);
+            if (firstIndex.matches("^[A-Z]")){
+                checkValid = true;
+            }
+            else {
+                System.out.println("Tên dịch vụ ko hợp lệ, mời nhập lại");
+            }
+        }while (!checkValid);
+        checkValid = false;
 
-        System.out.println("Nhập tiêu chuẩn phòng: ");
-        String tieuChuanPhongVilla  = sc.nextLine();
+        String tieuChuanPhongVilla;
+        do {
+            System.out.println("Nhập tiêu chuẩn phòng: ");
+            tieuChuanPhongVilla  = sc.nextLine();
+            String firstIndex = tieuChuanPhongVilla.substring(0, 1);
+            if (firstIndex.matches("^[A-Z]")){
+                checkValid = true;
+            }
+            else {
+                System.out.println("Tên dịch vụ ko hợp lệ, mời nhập lại");
+            }
+        }while (!checkValid);
+        checkValid = false;
 
         System.out.println("Nhập mô tả tiện nghi khác: ");
         String tienNghiKhacVilla  = sc.nextLine();

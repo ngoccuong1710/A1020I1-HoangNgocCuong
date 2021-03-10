@@ -1,8 +1,9 @@
 package Commons;
 
+import Models.Villa;
+
 import java.io.*;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 public class FileUtils {
     public static void writeFile(String pathFile, String line){
@@ -146,13 +147,7 @@ public class FileUtils {
                 "\n5. Số điện thoại: " + customer.get(4) +
                 "\n6. Email: " + customer.get(5) +
                 "\n7. loại khách: " + customer.get(6) +
-                "\n8. Địa chỉ: " + customer.get(7) +
-                "\n9. Id dịch vụ: " + customer.get(8) +
-                "\n10. Tên dịch vụ: " + customer.get(9) +
-                "\n11. Diện tích sử dụng: " + customer.get(10) +
-                "\n12. Chi phí thuê: " + customer.get(11) +
-                "\n13. Số lượng người: " + customer.get(12) +
-                "\n14. Kiểu thuê: " + customer.get(13));
+                "\n8. Địa chỉ: " + customer.get(7));
     }
 }
 

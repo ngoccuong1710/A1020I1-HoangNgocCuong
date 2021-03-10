@@ -2,25 +2,27 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ad04cb04-d185-46f0-8d7e-c77afbfd8877" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Data/Customer.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Commons/NameException.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/CaseStudyModule2/Commons/FileUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CaseStudyModule2/Commons/FileUtils.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/CaseStudyModule2/Controllers/MainController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CaseStudyModule2/Controllers/MainController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CaseStudyModule2/Data/House.csv" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CaseStudyModule2/Data/House.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CaseStudyModule2/Data/Room.csv" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CaseStudyModule2/Data/Room.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CaseStudyModule2/Data/Villa.csv" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CaseStudyModule2/Data/Villa.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CaseStudyModule2/Models/Customer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CaseStudyModule2/Models/Customer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CaseStudyModule2/Data/Customer.csv" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CaseStudyModule2/Data/Customer.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Commons/FileUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Commons/FileUtils.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controllers/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/MainController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Data/House.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/Data/House.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Data/Room.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/Data/Room.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Data/Villa.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/Data/Villa.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Models/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Models/Customer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Data/Customer.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/Data/Customer.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Module2/src/_15_xu_li_ngoai_le_debug/bai_tap/su_dung_lop_illegaltriangleexception/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Module2/src/_15_xu_li_ngoai_le_debug/bai_tap/su_dung_lop_illegaltriangleexception/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
@@ -77,6 +79,7 @@
       <workItem from="1614940828200" duration="97000" />
       <workItem from="1614947976696" duration="5521000" />
       <workItem from="1615199717312" duration="160000" />
+      <workItem from="1615380886072" duration="2865000" />
     </task>
     <servers />
   </component>
@@ -88,29 +91,29 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="1145" y="239" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1614953348787" />
-    <state x="1119" y="283" key="FileChooserDialogImpl" timestamp="1615199875340">
+    <state x="1119" y="283" key="FileChooserDialogImpl" timestamp="1615383354206">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="1119" y="283" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1615199875340" />
-    <state width="1114" height="268" key="GridCell.Tab.0.bottom" timestamp="1614953523686">
+    <state x="1119" y="283" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1615383354206" />
+    <state width="1049" height="574" key="GridCell.Tab.0.bottom" timestamp="1615383277425">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1114" height="268" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1614953523686" />
-    <state width="1114" height="268" key="GridCell.Tab.0.center" timestamp="1614953523686">
+    <state width="1049" height="574" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1615383277425" />
+    <state width="1049" height="574" key="GridCell.Tab.0.center" timestamp="1615383277425">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1114" height="268" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1614953523686" />
-    <state width="1114" height="268" key="GridCell.Tab.0.left" timestamp="1614953523686">
+    <state width="1049" height="574" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1615383277425" />
+    <state width="1049" height="574" key="GridCell.Tab.0.left" timestamp="1615383277425">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1114" height="268" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1614953523686" />
-    <state width="1114" height="268" key="GridCell.Tab.0.right" timestamp="1614953523686">
+    <state width="1049" height="574" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1615383277425" />
+    <state width="1049" height="574" key="GridCell.Tab.0.right" timestamp="1615383277425">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1114" height="268" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1614953523686" />
-    <state x="920" y="178" key="editAsTableFormatDialogDimension" timestamp="1614950213071">
+    <state width="1049" height="574" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1615383277425" />
+    <state x="920" y="178" key="editAsTableFormatDialogDimension" timestamp="1615381425269">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="920" y="178" key="editAsTableFormatDialogDimension/0.0.1920.1040@0.0.1920.1040" timestamp="1614950213071" />
+    <state x="920" y="178" key="editAsTableFormatDialogDimension/0.0.1920.1040@0.0.1920.1040" timestamp="1615381425269" />
   </component>
 </project>

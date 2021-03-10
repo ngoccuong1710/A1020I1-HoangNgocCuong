@@ -3,6 +3,7 @@ package Controllers;
 
 
 import Commons.FileUtils;
+import Commons.NameException;
 import Models.*;
 
 import java.util.ArrayList;
@@ -511,8 +512,17 @@ public class MainController {
     }
 
     private static void addNewCustomer(Scanner sc, List<Customer> listInfoCustomer){
+
         System.out.println("Nhập họ tên customer: ");
         String tenCustomer = sc.nextLine();
+        try{
+            if (CheckNameException(tenCustomer)){
+
+            }
+        }catch (NameException e){
+            e.printStackTrace();
+        }
+
         System.out.println("Nhập ngày sinh: ");
         String ngaySinhCustomer = sc.nextLine();
         System.out.println("Nhập giới tính: ");
@@ -557,6 +567,12 @@ public class MainController {
         FileUtils.readFileCustomer(FILE_NAME_CUSTOMER);
     }
 
+    private static boolean CheckNameException(String tenKhachHang) throws NameException {
+        if (tenKhachHang.matches("^[A-Z]")){
+            throw new NameException();
+        }
+        return true;
+    }
     public static void main(String[] args) {
         displayMainMenu();
     }

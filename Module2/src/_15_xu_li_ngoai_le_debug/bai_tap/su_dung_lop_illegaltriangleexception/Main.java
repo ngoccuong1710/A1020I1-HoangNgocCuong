@@ -4,13 +4,17 @@ import java.util.Scanner;
 
 public class Main {
 
-    public static boolean checkTamGIac(int a, int b, int c) throws IllegalTriangleException {
+    public static boolean checkCanhAm(int a, int b, int c) throws IllegalTriangleException {
         if (a < 0 || b < 0 || c < 0){
-            if (a + b < c || a + c < b || b + c < a){
-                throw  new IllegalTriangleException();
-            }
+            throw  new IllegalTriangleException();
         }
+        return true;
+    }
 
+    public static boolean checkTongCanh(int a, int b, int c) throws IllegalTriangleException {
+        if (a + b < c || a + c < b || b + c < a){
+            throw  new IllegalTriangleException();
+        }
         return true;
     }
 
@@ -23,11 +27,11 @@ public class Main {
         System.out.println("Nhập cạnh c: ");
         int c = sc.nextInt();
         try{
-            if (checkTamGIac(a, b, c)){
+            if (checkCanhAm(a, b, c) && checkTongCanh(a, b, c)){
                 System.out.println("Tam giác có 3 cạnh: " + a + ", " + b + ", " + c);
             }
         }catch (IllegalTriangleException e){
-            e.printStackTrace();
+            System.err.println("Lỗi");
         }
 
     }

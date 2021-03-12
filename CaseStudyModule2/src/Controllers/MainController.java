@@ -1,11 +1,8 @@
 package Controllers;
 
-
-
 import Commons.FileUtils;
 import Commons.NameException;
 import Models.*;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -50,6 +47,7 @@ public class MainController {
                     showInformationCustomer();
                     break;
                 case 5:
+                    addNewBooking();
                     break;
                 case 6:
                     break;
@@ -516,13 +514,10 @@ public class MainController {
         System.out.println("Nhập họ tên customer: ");
         String tenCustomer = sc.nextLine();
         try{
-            if (CheckNameException(tenCustomer)){
-
-            }
-        }catch (NameException e){
+            CheckNameException(tenCustomer);
+        } catch (NameException e) {
             e.printStackTrace();
         }
-
         System.out.println("Nhập ngày sinh: ");
         String ngaySinhCustomer = sc.nextLine();
         System.out.println("Nhập giới tính: ");
@@ -537,20 +532,20 @@ public class MainController {
         String loaiCustomer = sc.nextLine();
         System.out.println("Nhập địa chỉ: ");
         String diaChiCustomer = sc.nextLine();
-        System.out.println("Nhập id dịch vụ: ");
-        String idDichVu = sc.nextLine();
-        System.out.println("Nhập tên dịch vụ: ");
-        String tenDichVu = sc.nextLine();
-        System.out.println("Nhập diện tích sử dụng: ");
-        int dienTichSuDung = Integer.parseInt(sc.nextLine());
-        System.out.println("Nhập chi phí thuê: ");
-        int chiPhiThue = Integer.parseInt(sc.nextLine());
-        System.out.println("Nhập số lượng người: ");
-        int soLuongNguoi = Integer.parseInt(sc.nextLine());
-        System.out.println("Nhập kiểu thuê: ");
-        String kieuThue = sc.nextLine();
+//        System.out.println("Nhập id dịch vụ: ");
+//        String idDichVu = sc.nextLine();
+//        System.out.println("Nhập tên dịch vụ: ");
+//        String tenDichVu = sc.nextLine();
+//        System.out.println("Nhập diện tích sử dụng: ");
+//        int dienTichSuDung = Integer.parseInt(sc.nextLine());
+//        System.out.println("Nhập chi phí thuê: ");
+//        int chiPhiThue = Integer.parseInt(sc.nextLine());
+//        System.out.println("Nhập số lượng người: ");
+//        int soLuongNguoi = Integer.parseInt(sc.nextLine());
+//        System.out.println("Nhập kiểu thuê: ");
+//        String kieuThue = sc.nextLine();
         Customer inforCustomer = new Customer(tenCustomer, ngaySinhCustomer, gioiTinhCustomer, cMNDCustomer, soDTCustomer,
-                emailCustomer, loaiCustomer, diaChiCustomer, idDichVu, tenDichVu, dienTichSuDung, chiPhiThue, soLuongNguoi, kieuThue);
+                emailCustomer, loaiCustomer, diaChiCustomer);
         listInfoCustomer.add(inforCustomer);
 
         String line = null;
@@ -568,11 +563,53 @@ public class MainController {
     }
 
     private static boolean CheckNameException(String tenKhachHang) throws NameException {
-        if (tenKhachHang.matches("^[A-Z]")){
+        final String FULLNAME_PATTERN =
+                "^[A-Za-z_ÀÁÂÃÈÉÊÌÍÒÓÔÕÙÚĂĐĨŨƠàáâãèéêìíòóôõùúăđĩũơƯĂẠẢẤẦẨẪẬẮẰẲẴẶ" +
+                        "A-Za-z_ẸẺẼỀỀỂưăạảấầẩẫậắằẳẵặẹẻẽềềểỄỆỈỊỌỎỐỒỔỖỘỚỜỞỠỢỤỦỨỪễệỉịọỏốồổỗộớờởỡợ" +
+                        "A-Za-z_ụủứừỬỮỰỲỴÝỶỸửữựỳỵỷỹ\\s]+$";
+
+        if (tenKhachHang.matches(FULLNAME_PATTERN)){
+            return true;
+        }
+        else {
             throw new NameException();
         }
-        return true;
+//        return true;
     }
+
+    private static void addNewBooking(){
+        Scanner sc = new Scanner(System.in);
+        int chooseBooking;
+        do {
+            System.out.println("-----------------------------");
+            System.out.println("1. Booking Villa");
+            System.out.println("2. Booking House");
+            System.out.println("3. Booking Room");
+            System.out.println("4. Back to menu");
+            System.out.println("5. Exit");
+            System.out.print("Choose: ");
+            chooseBooking = Integer.parseInt(sc.nextLine());
+
+            switch (chooseBooking){
+                case 1:
+                    
+                    break;
+                case 2:
+
+                    break;
+                case 3:
+
+                    break;
+                case 4:
+                    displayMainMenu();
+                    break;
+                case 5:
+                    System.out.println("Đã thoát!");
+                    System.exit(0);
+            }
+        }while (chooseBooking != 0);
+    }
+
     public static void main(String[] args) {
         displayMainMenu();
     }

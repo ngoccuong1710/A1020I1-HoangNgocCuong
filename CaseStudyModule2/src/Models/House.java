@@ -5,6 +5,9 @@ public class House extends Services {
     private String moTaTienNghiKhac;
     private int soTang;
 
+    public House() {
+    }
+
     public House(String id, String tenDichVu, int dienTichSuDung, int chiPhiThue, int soLuongNguoi, String kieuThue, String tieuChuanPhong, String moTaTienNghiKhac, int soTang) {
         super(id, tenDichVu, dienTichSuDung, chiPhiThue, soLuongNguoi, kieuThue);
         this.tieuChuanPhong = tieuChuanPhong;
@@ -52,14 +55,10 @@ public class House extends Services {
 
     @Override
     public String toString() {
-        return "\n1. Id: " + getId() +
-                "\n2. Tên dịch vụ: " + getTenDichVu() +
-                "\n3. Diện tích sử dụng " + getDienTichSuDung() +
-                "\n4. Chi phí thuê: " + getChiPhiThue() +
-                "\n5. Số lượng người tối đa: " + getSoLuongNguoi() +
-                "\n6. Kiểu thuê: " + getKieuThue() +
-                "\n7. Tiêu chuẩn phòng: " + getTieuChuanPhong() +
-                "\n8. Mô tả tiện nghi khác: " + getMoTaTienNghiKhac() +
-                "\n9. Số tầng: " + getSoTang();
+        return "House{" +
+                "tieuChuanPhong='" + tieuChuanPhong + '\'' +
+                ", moTaTienNghiKhac='" + moTaTienNghiKhac + '\'' +
+                ", soTang=" + soTang +
+                '}';
     }
 }

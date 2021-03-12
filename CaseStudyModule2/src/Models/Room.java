@@ -3,6 +3,9 @@ package Models;
 public class Room extends Services {
     private String dichVuMienPhiDiKem;
 
+    public Room() {
+    }
+
     public Room(String id, String tenDichVu, int dienTichSuDung, int chiPhiThue, int soLuongNguoi, String kieuThue, String dichVuMienPhiDiKem) {
         super(id, tenDichVu, dienTichSuDung, chiPhiThue, soLuongNguoi, kieuThue);
         this.dichVuMienPhiDiKem = dichVuMienPhiDiKem;
@@ -30,12 +33,8 @@ public class Room extends Services {
 
     @Override
     public String toString() {
-        return  "\n1. Id: " + getId() +
-                "\n2. Tên dịch vụ: " + getTenDichVu() +
-                "\n3. Diện tích sử dụng " + getDienTichSuDung() +
-                "\n4. Chi phí thuê: " + getChiPhiThue() +
-                "\n5. Số lượng người tối đa: " + getSoLuongNguoi() +
-                "\n6. Kiểu thuê: " + getKieuThue() +
-                "\n7. Dịch vụ miễn phí đi kèm: " + getDichVuMienPhiDiKem();
+        return "Room{" +
+                "dichVuMienPhiDiKem='" + dichVuMienPhiDiKem + '\'' +
+                '}';
     }
 }

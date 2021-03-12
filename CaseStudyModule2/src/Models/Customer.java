@@ -10,6 +10,20 @@ public class Customer extends Services {
     private String loaiKhach;
     private String diaChi;
 
+    public Customer() {
+    }
+
+    public Customer(String tenCustomer, String ngaySinh, String gioiTinh, String cmnd, String soDT, String email, String loaiKhach, String diaChi) {
+        this.tenCustomer = tenCustomer;
+        this.ngaySinh = ngaySinh;
+        this.gioiTinh = gioiTinh;
+        this.cmnd = cmnd;
+        this.soDT = soDT;
+        this.email = email;
+        this.loaiKhach = loaiKhach;
+        this.diaChi = diaChi;
+    }
+
     public Customer(String tenCustomer, String ngaySinh, String gioiTinh, String cmnd, String soDT, String email, String loaiKhach, String diaChi, String id, String tenDichVu, int dienTichSuDung, int chiPhiThue, int soLuongNguoi, String kieuThue) {
         super(id, tenDichVu, dienTichSuDung, chiPhiThue, soLuongNguoi, kieuThue);
         this.tenCustomer = tenCustomer;

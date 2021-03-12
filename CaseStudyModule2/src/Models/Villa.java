@@ -6,6 +6,9 @@ public class Villa extends Services {
     private int dienTichHoBoi;
     private int soTang;
 
+    public Villa() {
+    }
+
     public Villa(String id, String tenDichVu, int dienTichSuDung, int chiPhiThue, int soLuongNguoi, String kieuThue, String tieuChuanPhong, String moTaTienNghiKhac, int dienTichHoBoi, int soTang) {
         super(id, tenDichVu, dienTichSuDung, chiPhiThue, soLuongNguoi, kieuThue);
         this.tieuChuanPhong = tieuChuanPhong;
@@ -63,15 +66,11 @@ public class Villa extends Services {
 
     @Override
     public String toString() {
-        return "\n1. Id: " + getId() +
-                "\n2. Tên dịch vụ: " + getTenDichVu() +
-                "\n3. Diện tích sử dụng " + getDienTichSuDung() +
-                "\n4. Chi phí thuê: " + getChiPhiThue() +
-                "\n5. Số lượng người tối đa: " + getSoLuongNguoi() +
-                "\n6. Kiểu thuê: " + getKieuThue() +
-                "\n7. Tiêu chuẩn phòng: " + getTieuChuanPhong() +
-                "\n8. Mô tả tiện nghi khác: " + getMoTaTienNghiKhac() +
-                "\n9. Diện tích hồ bơi " + getDienTichHoBoi() +
-                "\n10. Số tầng: " + getSoTang();
+        return "Villa{" +
+                "tieuChuanPhong='" + tieuChuanPhong + '\'' +
+                ", moTaTienNghiKhac='" + moTaTienNghiKhac + '\'' +
+                ", dienTichHoBoi=" + dienTichHoBoi +
+                ", soTang=" + soTang +
+                '}';
     }
 }

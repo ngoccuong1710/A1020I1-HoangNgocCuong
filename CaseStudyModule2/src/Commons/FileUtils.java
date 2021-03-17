@@ -1,7 +1,5 @@
 package Commons;
 
-import Models.Villa;
-
 import java.io.*;
 import java.util.*;
 
@@ -10,11 +8,10 @@ public class FileUtils {
         try {
             FileWriter fileWriter = new FileWriter(pathFile, true);
             BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
-
-            bufferedWriter.write(line);
             bufferedWriter.newLine();
-
+            bufferedWriter.write(line);
             bufferedWriter.close();
+
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -24,10 +21,10 @@ public class FileUtils {
         try {
             FileReader fileReader = new FileReader(pathFile);
             BufferedReader bufferedReader = new BufferedReader(fileReader);
-            String lineVilla = null;
+            String lineVilla;
 
             while ((lineVilla = bufferedReader.readLine()) != null){
-                villaInfor((parseCsvLine(lineVilla)));
+                villaInfor(parseCsvLine(lineVilla));
             }
 
         } catch (FileNotFoundException e) {
@@ -41,7 +38,7 @@ public class FileUtils {
         try {
             FileReader fileReader = new FileReader(pathFile);
             BufferedReader bufferedReader = new BufferedReader(fileReader);
-            String lineHouse = null;
+            String lineHouse;
 
             while ((lineHouse = bufferedReader.readLine()) != null){
                 houseInfor((parseCsvLine(lineHouse)));
@@ -58,7 +55,7 @@ public class FileUtils {
         try {
             FileReader fileReader = new FileReader(pathFile);
             BufferedReader bufferedReader = new BufferedReader(fileReader);
-            String lineRoom = null;
+            String lineRoom;
 
             while ((lineRoom = bufferedReader.readLine()) != null){
                 roomInfor((parseCsvLine(lineRoom)));
@@ -75,7 +72,7 @@ public class FileUtils {
         try {
             FileReader fileReader = new FileReader(pathFile);
             BufferedReader bufferedReader = new BufferedReader(fileReader);
-            String lineCustomer = null;
+            String lineCustomer;
 
             while ((lineCustomer = bufferedReader.readLine()) != null){
                 customerInfor((parseCsvLine(lineCustomer)));

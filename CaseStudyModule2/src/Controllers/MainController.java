@@ -1,18 +1,10 @@
 package Controllers;
 
 import Commons.FileUtils;
-import Commons.NameException;
 import Models.*;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
-import java.util.regex.Pattern;
+import java.util.*;
 
 public class MainController {
-    public static List<Villa> listInfoVilla = new ArrayList<>();
-    public static List<House> listInfoHouse = new ArrayList<>();
-    public static List<Room> listInfoRoom = new ArrayList<>();
-    public static List<Customer> listInfoCustomer = new ArrayList<>();
     public static final String FILE_NAME_VILLA = "src/Data/Villa.csv";
     public static final String FILE_NAME_HOUSE = "src/Data/House.csv";
     public static final String FILE_NAME_ROOM = "src/Data/Room.csv";
@@ -41,7 +33,7 @@ public class MainController {
                     showServices();
                     break;
                 case 3:
-                    addNewCustomer(sc, listInfoCustomer);
+                    addNewCustomer();
                     break;
                 case 4:
                     showInformationCustomer();
@@ -73,13 +65,13 @@ public class MainController {
 
             switch (chooseServices){
                 case 1:
-                    addNewVilla(sc, listInfoVilla);
+                    addNewVilla();
                     break;
                 case 2:
-                    addNewHouse(sc, listInfoHouse);
+                    addNewHouse();
                     break;
                 case 3:
-                    addNewRoom(sc, listInfoRoom);
+                    addNewRoom();
                     break;
                 case 4:
                     displayMainMenu();
@@ -91,7 +83,9 @@ public class MainController {
         }while (chooseServices != 0);
     }
 
-    private static void addNewVilla(Scanner sc, List<Villa> listInfoVilla) {
+    private static void addNewVilla() {
+        List<Villa> listInfoVilla = new ArrayList<>();
+        Scanner sc = new Scanner(System.in);
         boolean checkValid = false;
 
         String regexIdVilla = "^(SVVL)([\\\\w-])([\\d]{4})";
@@ -99,7 +93,7 @@ public class MainController {
         do {
             System.out.println("Nhập id: ");
             idVilla = sc.nextLine();
-            if (Pattern.matches(regexIdVilla, idVilla)) {
+            if (idVilla.matches(regexIdVilla)) {
                 checkValid = true;
             }
             else {
@@ -113,7 +107,7 @@ public class MainController {
             System.out.println("Nhập tên dịch vụ: ");
             tenDichVuVilla = sc.nextLine();
             String firstIndex = tenDichVuVilla.substring(0, 1);
-            if (firstIndex.matches("^[A-Z]")){
+            if (firstIndex.matches("^[A-Z][a-z0-9]+$")){
                 checkValid = true;
             }
             else {
@@ -166,7 +160,7 @@ public class MainController {
             System.out.println("Nhập kiểu thuê: ");
             kieuThueVilla  = sc.nextLine();
             String firstIndex = kieuThueVilla.substring(0, 1);
-            if (firstIndex.matches("^[A-Z]")){
+            if (firstIndex.matches("^[A-Z][a-z0-9]+")){
                 checkValid = true;
             }
             else {
@@ -180,7 +174,7 @@ public class MainController {
             System.out.println("Nhập tiêu chuẩn phòng: ");
             tieuChuanPhongVilla  = sc.nextLine();
             String firstIndex = tieuChuanPhongVilla.substring(0, 1);
-            if (firstIndex.matches("^[A-Z]")){
+            if (firstIndex.matches("^[A-Z][a-z0-9]+")){
                 checkValid = true;
             }
             else {
@@ -221,7 +215,7 @@ public class MainController {
                 kieuThueVilla, tieuChuanPhongVilla, tienNghiKhacVilla, dienTichHoBoiVilla, soTangVilla);
         listInfoVilla.add(inforVilla);
 
-        String line = null;
+        String line;
         for (Villa villa: listInfoVilla){
             line = villa.getId() + ", " + villa.getTenDichVu() + ", " + villa.getDienTichSuDung() + ", " +
                     villa.getChiPhiThue() + ", " + villa.getSoLuongNguoi() + ", " + villa.getKieuThue() + ", " +
@@ -232,7 +226,9 @@ public class MainController {
         }
     }
 
-    private static void addNewHouse(Scanner sc, List<House> listInfoHouse) {
+    private static void addNewHouse() {
+        List<House> listInfoHouse = new ArrayList<>();
+        Scanner sc = new Scanner(System.in);
         boolean checkValid = false;
 
         String regexIdHouse = "^(SVHO)([\\\\w-])([\\d]{4})";
@@ -240,20 +236,21 @@ public class MainController {
         do {
             System.out.println("Nhập id: ");
             idHouse = sc.nextLine();
-            if (Pattern.matches(regexIdHouse, idHouse)){
+            if (idHouse.matches(regexIdHouse)){
                 checkValid = true;
             }
             else {
                 System.out.println("Id ko hợp lệ, nhập lại.");
             }
         }while (!checkValid);
+        checkValid = false;
 
         String tenDichVuHouse;
         do {
             System.out.println("Nhập tên dịch vụ: ");
             tenDichVuHouse = sc.nextLine();
             String firstIndex = tenDichVuHouse.substring(0, 1);
-            if (firstIndex.matches("^[A-Z]")){
+            if (firstIndex.matches("^[A-Z][a-z0-9]+")){
                 checkValid = true;
             }
             else {
@@ -306,7 +303,7 @@ public class MainController {
             System.out.println("Nhập kiểu thuê: ");
             kieuThueHouse  = sc.nextLine();
             String firstIndex = kieuThueHouse.substring(0, 1);
-            if (firstIndex.matches("^[A-Z]")){
+            if (firstIndex.matches("^[A-Z][a-z0-9]+")){
                 checkValid = true;
             }
             else {
@@ -320,7 +317,7 @@ public class MainController {
             System.out.println("Nhập tiêu chuẩn phòng: ");
             tieuChuanPhongHouse  = sc.nextLine();
             String firstIndex = tieuChuanPhongHouse.substring(0, 1);
-            if (firstIndex.matches("^[A-Z]")){
+            if (firstIndex.matches("^[A-Z][a-z0-9]+")){
                 checkValid = true;
             }
             else {
@@ -358,7 +355,9 @@ public class MainController {
         }
     }
 
-    private static void addNewRoom(Scanner sc, List<Room> listInfoRoom) {
+    private static void addNewRoom() {
+        List<Room> listInfoRoom = new ArrayList<>();
+        Scanner sc = new Scanner(System.in);
         boolean checkValid = false;
 
         String regexIdRoom = "^(SVRO)([\\\\w-])([\\d]{4})";
@@ -366,21 +365,21 @@ public class MainController {
         do {
             System.out.println("Nhập id: ");
             idRoom = sc.nextLine();
-            if (Pattern.matches(regexIdRoom, idRoom)){
+            if (idRoom.matches(regexIdRoom)){
                 checkValid = true;
             }
             else {
                 System.out.println("Id ko hợp lệ, nhập lại.");
             }
         }while (!checkValid);
-
+        checkValid = false;
 
         String tenDichVuRoom;
         do {
             System.out.println("Nhập tên dịch vụ: ");
             tenDichVuRoom = sc.nextLine();
             String firstIndex = tenDichVuRoom.substring(0, 1);
-            if (firstIndex.matches("^[A-Z]")){
+            if (firstIndex.matches("^[A-Z][a-z0-9]+")){
                 checkValid = true;
             }
             else {
@@ -433,7 +432,7 @@ public class MainController {
             System.out.println("Nhập kiểu thuê: ");
             kieuThueRoom  = sc.nextLine();
             String firstIndex = kieuThueRoom.substring(0, 1);
-            if (firstIndex.matches("^[A-Z]")){
+            if (firstIndex.matches("^[A-Z][a-z0-9]+")){
                 checkValid = true;
             }
             else {
@@ -509,46 +508,62 @@ public class MainController {
         }while (chooseServices != 0);
     }
 
-    private static void addNewCustomer(Scanner sc, List<Customer> listInfoCustomer){
+    private static void addNewCustomer(){
+        List<Customer> listInfoCustomer = new ArrayList<>();
+        Scanner sc = new Scanner(System.in);
 
         System.out.println("Nhập họ tên customer: ");
         String tenCustomer = sc.nextLine();
         try{
-            CheckNameException(tenCustomer);
-        } catch (NameException e) {
-            e.printStackTrace();
+            checkNameException(tenCustomer);
+        } catch (Exception e) {
+            System.err.println("Tên khách hàng phải in hoa ký tự đầu tiên trong mỗi từ");
         }
+
         System.out.println("Nhập ngày sinh: ");
         String ngaySinhCustomer = sc.nextLine();
+        try{
+            checkBirthdayException(ngaySinhCustomer);
+        } catch (Exception e) {
+            System.err.println("Năm sinh phải > 1900 và nhỏ hơn năm hiện tại 18 năm, đúng định dạng dd/mm/yyyy");
+        }
+
         System.out.println("Nhập giới tính: ");
         String gioiTinhCustomer = sc.nextLine();
+        try{
+            checkGenderException(gioiTinhCustomer);
+        } catch (Exception e) {
+            System.err.println("Giới tính phải đúng định dạng");
+        }
+
         System.out.println("Nhập số CMND: ");
         String cMNDCustomer = sc.nextLine();
+        try{
+            checkIdCardException(cMNDCustomer);
+        } catch (Exception e) {
+            System.err.println("Id Card phải có 9 chữ số và theo định dạng XXX XXX XXX");
+        }
+
         System.out.println("Nhập số điện thoại: ");
         String soDTCustomer = sc.nextLine();
+
         System.out.println("Nhập email: ");
         String emailCustomer = sc.nextLine();
+        try{
+            checkEmailException(emailCustomer);
+        } catch (Exception e) {
+            System.err.println("Email phải đúng định dạng abc@abc.abc");
+        }
+
         System.out.println("Nhập loại khách: ");
         String loaiCustomer = sc.nextLine();
         System.out.println("Nhập địa chỉ: ");
         String diaChiCustomer = sc.nextLine();
-//        System.out.println("Nhập id dịch vụ: ");
-//        String idDichVu = sc.nextLine();
-//        System.out.println("Nhập tên dịch vụ: ");
-//        String tenDichVu = sc.nextLine();
-//        System.out.println("Nhập diện tích sử dụng: ");
-//        int dienTichSuDung = Integer.parseInt(sc.nextLine());
-//        System.out.println("Nhập chi phí thuê: ");
-//        int chiPhiThue = Integer.parseInt(sc.nextLine());
-//        System.out.println("Nhập số lượng người: ");
-//        int soLuongNguoi = Integer.parseInt(sc.nextLine());
-//        System.out.println("Nhập kiểu thuê: ");
-//        String kieuThue = sc.nextLine();
         Customer inforCustomer = new Customer(tenCustomer, ngaySinhCustomer, gioiTinhCustomer, cMNDCustomer, soDTCustomer,
                 emailCustomer, loaiCustomer, diaChiCustomer);
         listInfoCustomer.add(inforCustomer);
 
-        String line = null;
+        String line;
         for (Customer customer: listInfoCustomer){
             line = customer.getTenCustomer() + ", " + customer.getNgaySinh() + ", " + customer.getGioiTinh() + ", " +
                     customer.getCmnd() + ", " + customer.getSoDT() + ", " + customer.getEmail() + ", " +
@@ -560,21 +575,80 @@ public class MainController {
 
     private static void showInformationCustomer(){
         FileUtils.readFileCustomer(FILE_NAME_CUSTOMER);
+//        Collections.sort(listInfoCustomer, new Comparator<Customer>() {
+//            @Override
+//            public int compare(Customer o1, Customer o2) {
+//                if (o2.getTenCustomer().compareTo(o1.getTenCustomer()) != 0){
+//                    return o2.getTenCustomer().compareTo(o1.getTenCustomer());
+//                }
+//                else {
+//                    int yearO1 = Integer.parseInt(o1.getNgaySinh().substring(6, 10));
+//                    int yearO2 = Integer.parseInt(o2.getNgaySinh().substring(6, 10));
+//                    return yearO1 - yearO2;
+//                }
+//            }
+//        });
+//        for (Customer customer: listInfoCustomer){
+//            System.out.println(customer.toString());
+//        }
     }
 
-    private static boolean CheckNameException(String tenKhachHang) throws NameException {
+    private static boolean checkNameException(String tenCustomer) throws Exception {
         final String FULLNAME_PATTERN =
-                "^[A-Za-z_ÀÁÂÃÈÉÊÌÍÒÓÔÕÙÚĂĐĨŨƠàáâãèéêìíòóôõùúăđĩũơƯĂẠẢẤẦẨẪẬẮẰẲẴẶ" +
-                        "A-Za-z_ẸẺẼỀỀỂưăạảấầẩẫậắằẳẵặẹẻẽềềểỄỆỈỊỌỎỐỒỔỖỘỚỜỞỠỢỤỦỨỪễệỉịọỏốồổỗộớờởỡợ" +
-                        "A-Za-z_ụủứừỬỮỰỲỴÝỶỸửữựỳỵỷỹ\\s]+$";
+                "^([A-Z_ÁÀÃẢẠĂẮẰẲẴẶÂẤẦẨẪẬĐÉÈẺẼẸÊẾỀỂỄỆÍÌỈĨỊÔỐỒỔỖỘƠỚỜỞỠỢÓÒÕỎỌƯỨỪỬỮỰÚÙỦŨỤÝỲỶỸỴ][a-z_áàãảạăắằẳẵặâấầẩẫậđéèẻẽẹêếềểễệíìỉĩịôốồổỗộơớờởỡợóòõỏọưứừửữựúùủũụýỳỷỹỵ \\s]+)+";
 
-        if (tenKhachHang.matches(FULLNAME_PATTERN)){
+        if (tenCustomer.matches(FULLNAME_PATTERN)){
             return true;
         }
         else {
-            throw new NameException();
+            throw new Exception();
         }
-//        return true;
+    }
+
+    private static boolean checkBirthdayException(String ngaySinhCustomer) throws Exception {
+        final String BIRTHDAY_PATTERN = "^([0-2][0-9]|(3)[0-1])(\\/)(((0)[0-9])|((1)[0-2]))(\\/)\\d{4}$";
+
+        if (ngaySinhCustomer.matches(BIRTHDAY_PATTERN)){
+            return true;
+        }
+        throw new Exception();
+    }
+
+    private static String checkGenderException(String gioiTinhCustomer) throws Exception {
+        if (gioiTinhCustomer.equalsIgnoreCase("Male")){
+            return "Male";
+        }
+        if (gioiTinhCustomer.equalsIgnoreCase("Female")){
+            return "Female";
+        }
+        if (gioiTinhCustomer.equalsIgnoreCase("Unknown")){
+            return "Unknown";
+        }
+        else {
+            throw new Exception();
+        }
+    }
+
+    private static boolean checkIdCardException(String cMNDCustomer) throws Exception {
+        final String EMAIL_PATTERN = "^[0-9]{3} [0-9]{3} [0-9]{3}";
+
+        if (cMNDCustomer.matches(EMAIL_PATTERN)){
+            return true;
+        }
+        else {
+            throw new Exception();
+        }
+    }
+
+    private static boolean checkEmailException(String emailCustomer) throws Exception {
+        final String EMAIL_PATTERN = "^[\\w-\\.]+@([\\w-]+\\.)+[\\w-]{2,4}$";
+
+        if (emailCustomer.matches(EMAIL_PATTERN)){
+            return true;
+        }
+        else {
+            throw new Exception();
+        }
     }
 
     private static void addNewBooking(){

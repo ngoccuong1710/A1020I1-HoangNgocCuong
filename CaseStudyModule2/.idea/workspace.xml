@@ -2,21 +2,25 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ad04cb04-d185-46f0-8d7e-c77afbfd8877" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../Module2/src/_19_string_regex/bai_tap/validate_so_dien_thoai/CheckPhone.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Module2/src/_19_string_regex/bai_tap/validate_ten_lop_hoc/CheckNameClass.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Module2/src/_19_string_regex/thuc_hanh/crawl_danh_sach_bai_hat/CrawlSongExample.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Module2/src/_19_string_regex/thuc_hanh/validate_account/AccountExample.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Module2/src/_19_string_regex/thuc_hanh/validate_account/AccountExampleTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Module2/src/_19_string_regex/thuc_hanh/validate_email/EmailExample.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Module2/src/_19_string_regex/thuc_hanh/validate_email/EmailExampleTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CaseStudyModule2/Commons/FileUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CaseStudyModule2/Commons/FileUtils.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CaseStudyModule2/Commons/NameException.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/CaseStudyModule2/Controllers/MainController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CaseStudyModule2/Controllers/MainController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/CaseStudyModule2/Data/Customer.csv" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CaseStudyModule2/Data/Customer.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CaseStudyModule2/Data/Villa.csv" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CaseStudyModule2/Data/Villa.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CaseStudyModule2/Models/Customer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CaseStudyModule2/Models/Customer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CaseStudyModule2/Models/House.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CaseStudyModule2/Models/House.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CaseStudyModule2/Models/Room.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CaseStudyModule2/Models/Room.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CaseStudyModule2/Models/Villa.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CaseStudyModule2/Models/Villa.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CaseStudyModule2/Data/Room.csv" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CaseStudyModule2/Data/Room.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Commons/FileUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Commons/FileUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Commons/NameException.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controllers/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/MainController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Data/Customer.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/Data/Customer.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Data/Villa.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/Data/Villa.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Models/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Models/Customer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Models/House.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Models/House.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Models/Room.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Models/Room.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Models/Villa.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Models/Villa.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Data/Room.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/Data/Room.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Module2/out/production/Module2/_16_io_text_file/bai_tap/copy_file_text/file_2.csv" beforeDir="false" afterPath="$PROJECT_DIR$/../Module2/out/production/Module2/_16_io_text_file/bai_tap/copy_file_text/file_2.csv" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,7 +38,9 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="ProjectId" id="1pKnoLiP08Y6nCr5epDpgosJMdR" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -88,6 +94,11 @@
       <workItem from="1615380886072" duration="4397000" />
       <workItem from="1615537291522" duration="5957000" />
       <workItem from="1615545350853" duration="1190000" />
+      <workItem from="1615552880084" duration="4690000" />
+      <workItem from="1615735587456" duration="7447000" />
+      <workItem from="1615804377280" duration="42000" />
+      <workItem from="1615804827653" duration="94000" />
+      <workItem from="1615811180502" duration="6277000" />
     </task>
     <servers />
   </component>
@@ -95,37 +106,45 @@
     <option name="version" value="2" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="1145" y="239" key="#com.intellij.ide.util.MemberChooser" timestamp="1615540511482">
+    <state x="1145" y="239" key="#com.intellij.ide.util.MemberChooser" timestamp="1615740550230">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="1145" y="239" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1615540511482" />
+    <state x="1145" y="239" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1615740550230" />
+    <state x="1112" y="270" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1615557213239">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="1112" y="270" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1615557213239" />
     <state x="314" y="271" key="#com.intellij.refactoring.typeMigration.ui.FailedConversionsDialog" timestamp="1615540102384">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="314" y="271" key="#com.intellij.refactoring.typeMigration.ui.FailedConversionsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1615540102384" />
-    <state x="1119" y="283" key="FileChooserDialogImpl" timestamp="1615551015583">
+    <state x="1119" y="283" key="FileChooserDialogImpl" timestamp="1615815994148">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="1119" y="283" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1615551015583" />
-    <state width="1029" height="649" key="GridCell.Tab.0.bottom" timestamp="1615551017000">
+    <state x="1119" y="283" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1615815994148" />
+    <state width="1877" height="381" key="GridCell.Tab.0.bottom" timestamp="1615817793928">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1029" height="649" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1615551017000" />
-    <state width="1029" height="649" key="GridCell.Tab.0.center" timestamp="1615551017000">
+    <state width="1877" height="381" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1615817793928" />
+    <state width="1877" height="381" key="GridCell.Tab.0.center" timestamp="1615817793928">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1029" height="649" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1615551017000" />
-    <state width="1029" height="649" key="GridCell.Tab.0.left" timestamp="1615551017000">
+    <state width="1877" height="381" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1615817793928" />
+    <state width="1877" height="381" key="GridCell.Tab.0.left" timestamp="1615817793928">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1029" height="649" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1615551017000" />
-    <state width="1029" height="649" key="GridCell.Tab.0.right" timestamp="1615551017000">
+    <state width="1877" height="381" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1615817793928" />
+    <state width="1877" height="381" key="GridCell.Tab.0.right" timestamp="1615817793928">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1029" height="649" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1615551017000" />
-    <state x="572" y="216" key="editAsTableFormatDialogDimension" timestamp="1615540237758">
+    <state width="1877" height="381" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1615817793928" />
+    <state x="807" y="434" key="VCS.ChangelistChooser" timestamp="1615815742489">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="572" y="216" key="editAsTableFormatDialogDimension/0.0.1920.1040@0.0.1920.1040" timestamp="1615540237757" />
+    <state x="807" y="434" key="VCS.ChangelistChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1615815742489" />
+    <state x="572" y="216" key="editAsTableFormatDialogDimension" timestamp="1615814437579">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="572" y="216" key="editAsTableFormatDialogDimension/0.0.1920.1040@0.0.1920.1040" timestamp="1615814437579" />
   </component>
 </project>

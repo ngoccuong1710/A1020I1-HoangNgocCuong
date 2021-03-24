@@ -1,135 +1,133 @@
 package Models;
 
 public class Customer extends Services {
-    private String tenCustomer;
-    private String ngaySinh;
-    private String gioiTinh;
-    private String cmnd;
-    private String soDT;
-    private String email;
-    private String loaiKhach;
-    private String diaChi;
+    private String nameCus;
+    private String birthdayCus;
+    private String genderCus;
+    private String idCardCus;
+    private String phoneCus;
+    private String emailCus;
+    private String typeCus;
+    private String addressCus;
 
     public Customer() {
     }
 
-    public Customer(String tenCustomer, String ngaySinh, String gioiTinh, String cmnd, String soDT, String email, String loaiKhach, String diaChi) {
-        this.tenCustomer = tenCustomer;
-        this.ngaySinh = ngaySinh;
-        this.gioiTinh = gioiTinh;
-        this.cmnd = cmnd;
-        this.soDT = soDT;
-        this.email = email;
-        this.loaiKhach = loaiKhach;
-        this.diaChi = diaChi;
+    public Customer(String nameCus, String birthdayCus, String genderCus, String idCardCus, String phoneCus, String emailCus, String typeCus, String addressCus) {
+        this.nameCus = nameCus;
+        this.birthdayCus = birthdayCus;
+        this.genderCus = genderCus;
+        this.idCardCus = idCardCus;
+        this.phoneCus = phoneCus;
+        this.emailCus = emailCus;
+        this.typeCus = typeCus;
+        this.addressCus = addressCus;
     }
 
-    public Customer(String tenCustomer, String ngaySinh, String gioiTinh, String cmnd, String soDT, String email, String loaiKhach, String diaChi, String id, String tenDichVu, int dienTichSuDung, int chiPhiThue, int soLuongNguoi, String kieuThue) {
+    public Customer(String nameCus, String birthdayCus, String genderCus, String idCardCus, String phoneCus, String emailCus, String typeCus, String addressCus, String id, String tenDichVu, int dienTichSuDung, int chiPhiThue, int soLuongNguoi, String kieuThue) {
         super(id, tenDichVu, dienTichSuDung, chiPhiThue, soLuongNguoi, kieuThue);
-        this.tenCustomer = tenCustomer;
-        this.ngaySinh = ngaySinh;
-        this.gioiTinh = gioiTinh;
-        this.cmnd = cmnd;
-        this.soDT = soDT;
-        this.email = email;
-        this.loaiKhach = loaiKhach;
-        this.diaChi = diaChi;
+        this.nameCus = nameCus;
+        this.birthdayCus = birthdayCus;
+        this.genderCus = genderCus;
+        this.idCardCus = idCardCus;
+        this.phoneCus = phoneCus;
+        this.emailCus = emailCus;
+        this.typeCus = typeCus;
+        this.addressCus = addressCus;
     }
 
-    public String getTenCustomer() {
-        return tenCustomer;
+    public String getNameCus() {
+        return nameCus;
     }
 
-    public void setTenCustomer(String tenCustomer) {
-        this.tenCustomer = tenCustomer;
+    public void setNameCus(String nameCus) {
+        this.nameCus = nameCus;
     }
 
-    public String getNgaySinh() {
-        return ngaySinh;
+    public String getBirthdayCus() {
+        return birthdayCus;
     }
 
-    public void setNgaySinh(String ngaySinh) {
-        this.ngaySinh = ngaySinh;
+    public void setBirthdayCus(String birthdayCus) {
+        this.birthdayCus = birthdayCus;
     }
 
-    public String getGioiTinh() {
-        return gioiTinh;
+    public String getGenderCus() {
+        return genderCus;
     }
 
-    public void setGioiTinh(String gioiTinh) {
-        this.gioiTinh = gioiTinh;
+    public void setGenderCus(String genderCus) {
+        this.genderCus = genderCus;
     }
 
-    public String getCmnd() {
-        return cmnd;
+    public String getIdCardCus() {
+        return idCardCus;
     }
 
-    public void setCmnd(String cmnd) {
-        this.cmnd = cmnd;
+    public void setIdCardCus(String idCardCus) {
+        this.idCardCus = idCardCus;
     }
 
-    public String getSoDT() {
-        return soDT;
+    public String getPhoneCus() {
+        return phoneCus;
     }
 
-    public void setSoDT(String soDT) {
-        this.soDT = soDT;
+    public void setPhoneCus(String phoneCus) {
+        this.phoneCus = phoneCus;
     }
 
-    public String getEmail() {
-        return email;
+    public String getEmailCus() {
+        return emailCus;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setEmailCus(String emailCus) {
+        this.emailCus = emailCus;
     }
 
-    public String getLoaiKhach() {
-        return loaiKhach;
+    public String getTypeCus() {
+        return typeCus;
     }
 
-    public void setLoaiKhach(String loaiKhach) {
-        this.loaiKhach = loaiKhach;
+    public void setTypeCus(String typeCus) {
+        this.typeCus = typeCus;
     }
 
-    public String getDiaChi() {
-        return diaChi;
+    public String getAddressCus() {
+        return addressCus;
     }
 
-    public void setDiaChi(String diaChi) {
-        this.diaChi = diaChi;
+    public void setAddressCus(String addressCus) {
+        this.addressCus = addressCus;
     }
 
     @Override
     public void showInfor(){
         System.out.println(
-                "\n1. Họ tên Customer: " + getTenCustomer() +
-                "\n2. Ngày sinh: " + getNgaySinh() +
-                "\n3. Giới tính: " + getGioiTinh() +
-                "\n4. Số CMND: " + getCmnd() +
-                "\n5. Số điện thoại: " + getSoDT() +
-                "\n6. Email: " + getEmail() +
-                "\n7. loại khách: " + getLoaiKhach() +
-                "\n8. Địa chỉ: " + getDiaChi() +
-                "\n9. Id dịch vụ: " + getId() +
-                "\n10. Tên dịch vụ: " + getTenDichVu() +
-                "\n11. Diện tích sử dụng: " + getDienTichSuDung() +
-                "\n12. Chi phí thuê: " + getChiPhiThue() +
-                "\n13. Số lượng người: " + getSoLuongNguoi() +
-                "\n14. Kiểu thuê: " + getKieuThue());
+                "\nHọ tên Customer: " + getNameCus() +
+                "\nNgày sinh: " + getBirthdayCus() +
+                "\nGiới tính: " + getGenderCus() +
+                "\nSố cmnd: " + getIdCardCus() +
+                "\nSố điện thoại: " + getPhoneCus() +
+                "\nemail: " + getEmailCus() +
+                "\nloại khách: " + getTypeCus() +
+                "\nĐịa chỉ: " + getAddressCus() +
+                "\nId dịch vụ: " + getId() +
+                "\nTên dịch vụ: " + getTenDichVu() +
+                "\nDiện tích sử dụng: " + getDienTichSuDung() +
+                "\nChi phí thuê: " + getChiPhiThue() +
+                "\nSố lượng người: " + getSoLuongNguoi() +
+                "\nKiểu thuê: " + getKieuThue());
     }
 
     @Override
     public String toString() {
-        return "Customer{" +
-                "tenCustomer='" + tenCustomer + '\'' +
-                ", ngaySinh='" + ngaySinh + '\'' +
-                ", gioiTinh='" + gioiTinh + '\'' +
-                ", cmnd='" + cmnd + '\'' +
-                ", soDT='" + soDT + '\'' +
-                ", email='" + email + '\'' +
-                ", loaiKhach='" + loaiKhach + '\'' +
-                ", diaChi='" + diaChi + '\'' +
-                '}';
+        return "\n\tHọ tên Customer: " + getNameCus() +
+                "\n\tNgày sinh: " + getBirthdayCus() +
+                "\n\tGiới tính: " + getGenderCus() +
+                "\n\tSố cmnd: " + getIdCardCus() +
+                "\n\tSố điện thoại: " + getPhoneCus() +
+                "\n\temail: " + getEmailCus() +
+                "\n\tloại khách: " + getTypeCus() +
+                "\n\tĐịa chỉ: " + getAddressCus();
     }
 }

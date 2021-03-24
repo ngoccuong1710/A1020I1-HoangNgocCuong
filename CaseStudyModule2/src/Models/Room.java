@@ -1,5 +1,7 @@
 package Models;
 
+import java.util.List;
+
 public class Room extends Services {
     private String dichVuMienPhiDiKem;
 
@@ -22,19 +24,23 @@ public class Room extends Services {
     @Override
     public void showInfor(){
         System.out.println(
-                "\n1. Id: " + getId() +
-                "\n2. Tên dịch vụ: " + getTenDichVu() +
-                "\n3. Diện tích sử dụng " + getDienTichSuDung() +
-                "\n4. Chi phí thuê: " + getChiPhiThue() +
-                "\n5. Số lượng người tối đa: " + getSoLuongNguoi() +
-                "\n6. Kiểu thuê: " + getKieuThue() +
-                "\n7. Dịch vụ miễn phí đi kèm: " + getDichVuMienPhiDiKem());
+                "\nId: " + getId() +
+                "\nTên dịch vụ: " + getTenDichVu() +
+                "\nDiện tích sử dụng " + getDienTichSuDung() +
+                "\nChi phí thuê: " + getChiPhiThue() +
+                "\nSố lượng người tối đa: " + getSoLuongNguoi() +
+                "\nKiểu thuê: " + getKieuThue() +
+                "\nDịch vụ miễn phí đi kèm: " + getDichVuMienPhiDiKem());
     }
 
     @Override
     public String toString() {
-        return "Room{" +
-                "dichVuMienPhiDiKem='" + dichVuMienPhiDiKem + '\'' +
-                '}';
+        return "\n\tId: " + getId() +
+                "\n\tTên dịch vụ: " + getTenDichVu() +
+                "\n\tDiện tích sử dụng " + getDienTichSuDung() +
+                "\n\tChi phí thuê: " + getChiPhiThue() +
+                "\n\tSố lượng người tối đa: " + getSoLuongNguoi() +
+                "\n\tKiểu thuê: " + getKieuThue() +
+                "\n\tDịch vụ miễn phí đi kèm: " + getDichVuMienPhiDiKem();
     }
 }

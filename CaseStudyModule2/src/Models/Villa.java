@@ -1,5 +1,7 @@
 package Models;
 
+import java.util.List;
+
 public class Villa extends Services {
     private String tieuChuanPhong;
     private String moTaTienNghiKhac;
@@ -52,25 +54,29 @@ public class Villa extends Services {
     @Override
     public void showInfor() {
         System.out.println(
-                "\n1. Id: " + getId() +
-                "\n2. Tên dịch vụ: " + getTenDichVu() +
-                "\n3. Diện tích sử dụng " + getDienTichSuDung() +
-                "\n4. Chi phí thuê: " + getChiPhiThue() +
-                "\n5. Số lượng người tối đa: " + getSoLuongNguoi() +
-                "\n6. Kiểu thuê: " + getKieuThue() +
-                "\n7. Tiêu chuẩn phòng: " + getTieuChuanPhong() +
-                "\n8. Mô tả tiện nghi khác: " + getMoTaTienNghiKhac() +
-                "\n9. Diện tích hồ bơi " + getDienTichHoBoi() +
-                "\n10. Số tầng: " + getSoTang());
+                "\nId: " + getId() +
+                "\nTên dịch vụ: " + getTenDichVu() +
+                "\nDiện tích sử dụng: " + getDienTichSuDung() +
+                "\nChi phí thuê: " + getChiPhiThue() +
+                "\nSố lượng người tối đa: " + getSoLuongNguoi() +
+                "\nKiểu thuê: " + getKieuThue() +
+                "\nTiêu chuẩn phòng: " + getTieuChuanPhong() +
+                "\nMô tả tiện nghi khác: " + getMoTaTienNghiKhac() +
+                "\nDiện tích hồ bơi " + getDienTichHoBoi() +
+                "\nSố tầng: " + getSoTang());
     }
 
     @Override
     public String toString() {
-        return "Villa{" +
-                "tieuChuanPhong='" + tieuChuanPhong + '\'' +
-                ", moTaTienNghiKhac='" + moTaTienNghiKhac + '\'' +
-                ", dienTichHoBoi=" + dienTichHoBoi +
-                ", soTang=" + soTang +
-                '}';
+        return "\n\tId: " + getId() +
+                "\n\tTên dịch vụ: " + getTenDichVu() +
+                "\n\tDiện tích sử dụng: " + getDienTichSuDung() +
+                "\n\tChi phí thuê: " + getChiPhiThue() +
+                "\n\tSố lượng người tối đa: " + getSoLuongNguoi() +
+                "\n\tKiểu thuê: " + getKieuThue() +
+                "\n\tTiêu chuẩn phòng: " + getTieuChuanPhong() +
+                "\n\tMô tả tiện nghi khác: " + getMoTaTienNghiKhac() +
+                "\n\tDiện tích hồ bơi " + getDienTichHoBoi() +
+                "\n\tSố tầng: " + getSoTang();
     }
 }

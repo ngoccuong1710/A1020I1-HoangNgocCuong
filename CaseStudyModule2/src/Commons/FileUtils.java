@@ -1,10 +1,12 @@
 package Commons;
 
+import Models.*;
+
 import java.io.*;
 import java.util.*;
 
 public class FileUtils {
-    public static void writeFile(String pathFile, String line){
+    public static void writeFile(String pathFile, String line) {
         try {
             FileWriter fileWriter = new FileWriter(pathFile, true);
             BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
@@ -17,14 +19,49 @@ public class FileUtils {
         }
     }
 
-    public static void readFileVilla(String pathFile){
+    public static List<Villa> readFileVilla() {
+        List<Villa> villalist = new ArrayList<>();
         try {
-            FileReader fileReader = new FileReader(pathFile);
+            FileReader fileReader = new FileReader("src/Data/Villa.csv");
             BufferedReader bufferedReader = new BufferedReader(fileReader);
             String lineVilla;
+            String[] readLineVilla;
+            Villa villa;
+            while ((lineVilla = bufferedReader.readLine()) != null) {
+                readLineVilla = lineVilla.split(", ");
+                villa = new Villa(readLineVilla[0], readLineVilla[1], Integer.parseInt(readLineVilla[2]),
+                        Integer.parseInt(readLineVilla[3]), Integer.parseInt(readLineVilla[4]), readLineVilla[5],
+                        readLineVilla[6], readLineVilla[7], Integer.parseInt(readLineVilla[8]), Integer.parseInt(readLineVilla[9]));
+                villalist.add(villa);
+            }
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return villalist;
+    }
 
-            while ((lineVilla = bufferedReader.readLine()) != null){
-                villaInfor(parseCsvLine(lineVilla));
+    public static void readNameFileVilla() {
+        try {
+            FileReader fileReader = new FileReader("src/Data/Villa.csv");
+            BufferedReader bufferedReader = new BufferedReader(fileReader);
+            String lineVilla;
+            String[] readLineVilla;
+            Villa villa;
+            TreeSet<String> villaTreeSet = new TreeSet<>();
+            while ((lineVilla = bufferedReader.readLine()) != null) {
+                villa = new Villa();
+                readLineVilla = lineVilla.split(", ");
+                villa.setTenDichVu(readLineVilla[1]);
+                villaTreeSet.add(villa.getTenDichVu());
+            }
+            String[] arr = new String[villaTreeSet.size()];
+            villaTreeSet.toArray(arr);
+            int i = 1;
+            for (String temp: arr){
+                System.out.println(i + ". " + temp);
+                i++;
             }
 
         } catch (FileNotFoundException e) {
@@ -34,14 +71,50 @@ public class FileUtils {
         }
     }
 
-    public static void readFileHouse(String pathFile){
+    public static List<House> readFileHouse() {
+        List<House> houseList = new ArrayList<>();
         try {
-            FileReader fileReader = new FileReader(pathFile);
+            FileReader fileReader = new FileReader("src/Data/House.csv");
             BufferedReader bufferedReader = new BufferedReader(fileReader);
             String lineHouse;
+            String[] readLineHouse;
+            House house;
+            while ((lineHouse = bufferedReader.readLine()) != null) {
+                readLineHouse = lineHouse.split(", ");
+                house = new House(readLineHouse[0], readLineHouse[1], Integer.parseInt(readLineHouse[2]),
+                        Integer.parseInt(readLineHouse[3]), Integer.parseInt(readLineHouse[4]), readLineHouse[5],
+                        readLineHouse[6], readLineHouse[7], Integer.parseInt(readLineHouse[8]));
+                houseList.add(house);
+            }
 
-            while ((lineHouse = bufferedReader.readLine()) != null){
-                houseInfor((parseCsvLine(lineHouse)));
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return houseList;
+    }
+
+    public static void readNameFileHouse() {
+        try {
+            FileReader fileReader = new FileReader("src/Data/House.csv");
+            BufferedReader bufferedReader = new BufferedReader(fileReader);
+            String lineHouse;
+            String[] readLineHouse;
+            House house;
+            TreeSet<String> houseTreeSet = new TreeSet<>();
+            while ((lineHouse = bufferedReader.readLine()) != null) {
+                house = new House();
+                readLineHouse = lineHouse.split(", ");
+                house.setTenDichVu(readLineHouse[1]);
+                houseTreeSet.add(house.getTenDichVu());
+            }
+            String[] arr = new String[houseTreeSet.size()];
+            houseTreeSet.toArray(arr);
+            int i = 1;
+            for (String temp: arr){
+                System.out.println(i + ". " + temp);
+                i++;
             }
 
         } catch (FileNotFoundException e) {
@@ -51,14 +124,50 @@ public class FileUtils {
         }
     }
 
-    public static void readFileRoom(String pathFile){
+    public static List<Room> readFileRoom() {
+        List<Room> roomList = new ArrayList<>();
         try {
-            FileReader fileReader = new FileReader(pathFile);
+            FileReader fileReader = new FileReader("src/Data/Room.csv");
             BufferedReader bufferedReader = new BufferedReader(fileReader);
             String lineRoom;
+            String[] readLineRoom;
+            Room room;
+            while ((lineRoom = bufferedReader.readLine()) != null) {
+                readLineRoom = lineRoom.split(", ");
+                room = new Room(readLineRoom[0], readLineRoom[1], Integer.parseInt(readLineRoom[2]),
+                        Integer.parseInt(readLineRoom[3]), Integer.parseInt(readLineRoom[4]), readLineRoom[5],
+                        readLineRoom[6]);
+               roomList.add(room);
+            }
 
-            while ((lineRoom = bufferedReader.readLine()) != null){
-                roomInfor((parseCsvLine(lineRoom)));
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return roomList;
+    }
+
+    public static void readNameFileRoom() {
+        try {
+            FileReader fileReader = new FileReader("src/Data/Room.csv");
+            BufferedReader bufferedReader = new BufferedReader(fileReader);
+            String lineRoom;
+            String[] readLineRoom;
+            Room room;
+            TreeSet<String> roomTreeSet = new TreeSet<>();
+            while ((lineRoom = bufferedReader.readLine()) != null) {
+                room = new Room();
+                readLineRoom = lineRoom.split(", ");
+                room.setTenDichVu(readLineRoom[1]);
+                roomTreeSet.add(room.getTenDichVu());
+            }
+            String[] arr = new String[roomTreeSet.size()];
+            roomTreeSet.toArray(arr);
+            int i = 1;
+            for (String temp: arr){
+                System.out.println(i + ". " + temp);
+                i++;
             }
 
         } catch (FileNotFoundException e) {
@@ -68,14 +177,19 @@ public class FileUtils {
         }
     }
 
-    public static void readFileCustomer(String pathFile){
+    public static List<Customer> readFileCustomer(){
+        List<Customer> customerList = new ArrayList<>();
         try {
-            FileReader fileReader = new FileReader(pathFile);
+            FileReader fileReader = new FileReader("src/Data/Customer.csv");
             BufferedReader bufferedReader = new BufferedReader(fileReader);
             String lineCustomer;
-
+            String[] readLineCustomer;
+            Customer customer;
             while ((lineCustomer = bufferedReader.readLine()) != null){
-                customerInfor((parseCsvLine(lineCustomer)));
+                readLineCustomer = lineCustomer.split(", ");
+                customer = new Customer(readLineCustomer[0], readLineCustomer[1], readLineCustomer[2], readLineCustomer[3],
+                        readLineCustomer[4], readLineCustomer[5], readLineCustomer[6], readLineCustomer[7]);
+                customerList.add(customer);
             }
 
         } catch (FileNotFoundException e) {
@@ -83,68 +197,63 @@ public class FileUtils {
         } catch (IOException e) {
             e.printStackTrace();
         }
-
+        return customerList;
     }
 
-    public static List<String> parseCsvLine(String csvLine){
-        List<String> result = new ArrayList<>();
-        if (csvLine != null) {
-            String[] splitData = csvLine.split(", ");
-            for (int i = 0; i < splitData.length; i++) {
-                result.add(splitData[i]);
+    public static List<Employee> readFileEmployee(){
+        List<Employee> employeeList = new ArrayList<>();
+        try {
+            FileReader fileReader = new FileReader("src/Data/Employee.csv");
+            BufferedReader bufferedReader = new BufferedReader(fileReader);
+            String lineEmployee;
+            String[] readLineEmployee;
+            Employee employee;
+            while ((lineEmployee = bufferedReader.readLine()) != null) {
+                readLineEmployee = lineEmployee.split(", ");
+                employee = new Employee(readLineEmployee[0], Integer.parseInt(readLineEmployee[1]), readLineEmployee[2]);
+                employeeList.add(employee);
             }
+
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
         }
-        return result;
+        return employeeList;
     }
 
-    private static void villaInfor (List<String> villa){
-        System.out.println(
-                "\n1. Id: " + villa.get(0) +
-                "\n2. Tên dịch vụ: " + villa.get(1) +
-                "\n3. Diện tích sử dụng " + villa.get(2) +
-                "\n4. Chi phí thuê: " + villa.get(3) +
-                "\n5. Số lượng người tối đa: " + villa.get(4) +
-                "\n6. Kiểu thuê: " + villa.get(5) +
-                "\n7. Tiêu chuẩn phòng: " + villa.get(6) +
-                "\n8. Mô tả tiện nghi khác: " + villa.get(7) +
-                "\n9. Diện tích hồ bơi " + villa.get(8) +
-                "\n10. Số tầng: " + villa.get(9));
-    }
+    public static void readFileBooking(){
+        try {
+            FileReader fileReader = new FileReader("src/Data/Booking.csv");
+            BufferedReader bufferedReader = new BufferedReader(fileReader);
+            String lineCustomer;
+            String[] readLineCustomer;
+            Customer customer;
+            while ((lineCustomer = bufferedReader.readLine()) != null){
+                customer = new Customer();
+                readLineCustomer = lineCustomer.split(", ");
+                customer.setNameCus(readLineCustomer[0]);
+                customer.setBirthdayCus(readLineCustomer[1]);
+                customer.setGenderCus(readLineCustomer[2]);
+                customer.setIdCardCus(readLineCustomer[3]);
+                customer.setPhoneCus(readLineCustomer[4]);
+                customer.setEmailCus(readLineCustomer[5]);
+                customer.setTypeCus(readLineCustomer[6]);
+                customer.setAddressCus(readLineCustomer[7]);
+                customer.setId(readLineCustomer[8]);
+                customer.setTenDichVu(readLineCustomer[9]);
+                customer.setDienTichSuDung(Integer.parseInt(readLineCustomer[10]));
+                customer.setChiPhiThue(Integer.parseInt(readLineCustomer[11]));
+                customer.setSoLuongNguoi(Integer.parseInt(readLineCustomer[12]));
+                customer.setKieuThue(readLineCustomer[13]);
+                customer.showInfor();
 
-    private static void houseInfor (List<String> house){
-        System.out.println(
-                "\n1. Id: " + house.get(0) +
-                "\n2. Tên dịch vụ: " + house.get(1) +
-                "\n3. Diện tích sử dụng " + house.get(2) +
-                "\n4. Chi phí thuê: " + house.get(3) +
-                "\n5. Số lượng người tối đa: " + house.get(4) +
-                "\n6. Kiểu thuê: " + house.get(5) +
-                "\n7. Tiêu chuẩn phòng: " + house.get(6) +
-                "\n8. Mô tả tiện nghi khác: " + house.get(7) +
-                "\n9. Số tầng: " + house.get(8));
-    }
+            }
 
-    private static void roomInfor (List<String> room){
-        System.out.println(
-                "\n1. Id: " + room.get(0) +
-                "\n2. Tên dịch vụ: " + room.get(1) +
-                "\n3. Diện tích sử dụng " + room.get(2) +
-                "\n4. Chi phí thuê: " + room.get(3) +
-                "\n5. Số lượng người tối đa: " + room.get(4) +
-                "\n6. Kiểu thuê: " + room.get(5) +
-                "\n7. Dịch vụ miễn phí đi kèm: " + room.get(6));
-    }
-
-    private static void customerInfor (List<String> customer){
-        System.out.println(
-                "\n1. Họ tên Customer: " + customer.get(0) +
-                "\n2. Ngày sinh: " + customer.get(1) +
-                "\n3. Giới tính: " + customer.get(2) +
-                "\n4. Số CMND: " + customer.get(3) +
-                "\n5. Số điện thoại: " + customer.get(4) +
-                "\n6. Email: " + customer.get(5) +
-                "\n7. loại khách: " + customer.get(6) +
-                "\n8. Địa chỉ: " + customer.get(7));
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }
-

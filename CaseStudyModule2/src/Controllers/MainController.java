@@ -1,8 +1,8 @@
 package Controllers;
 
 import Commons.FileUtils;
-import Models.Customer;
-
+import Manager.*;
+import Models.*;
 import java.util.*;
 
 public class MainController {
@@ -18,7 +18,8 @@ public class MainController {
             System.out.println("5. Add New Booking");
             System.out.println("6. Show Information of Employee");
             System.out.println("7. Search Employee");
-            System.out.println("8. Exit");
+            System.out.println("8. Show Queue of Customer");
+            System.out.println("9. Exit");
             System.out.print("Choose: ");
             chooseMenu = Integer.parseInt(sc.nextLine());
 
@@ -30,21 +31,24 @@ public class MainController {
                     showServices();
                     break;
                 case 3:
-                    AddCustomer.addNewCustomer();
+                    CustomerManager.addNewCustomer();
                     break;
                 case 4:
-                    Show.showInformationCustomer();
+                    CustomerManager.showInformationCustomer();
                     break;
                 case 5:
-                    AddBooking.addNewBooking();
+                    addNewBooking();
                     break;
                 case 6:
-                    Show.showEmployee();
+                    EmployeeManager.showEmployee();
                     break;
                 case 7:
-                    CabinetsEmployee.searchEmployee();
+                    EmployeeManager.searchEmployee();
                     break;
                 case 8:
+                    showQueueOfCustomer();
+                    break;
+                case 9:
                     System.out.println("Đã thoát!");
                     System.exit(0);
             }
@@ -66,13 +70,13 @@ public class MainController {
 
             switch (chooseServices){
                 case 1:
-                    AddServices.addNewVilla();
+                    VillaManager.addNewVilla();
                     break;
                 case 2:
-                    AddServices.addNewHouse();
+                    HouseManager.addNewHouse();
                     break;
                 case 3:
-                    AddServices.addNewRoom();
+                    RoomManager.addNewRoom();
                     break;
                 case 4:
                     displayMainMenu();
@@ -102,13 +106,13 @@ public class MainController {
 
             switch (chooseServices){
                 case 1:
-                    Show.showVillaList();
+                    VillaManager.showVillaList();
                     break;
                 case 2:
-                    Show.showHouseList();
+                    HouseManager.showHouseList();
                     break;
                 case 3:
-                    Show.showRoomList();
+                    RoomManager.showRoomList();
                     break;
                 case 4:
                     FileUtils.readNameFileVilla();
@@ -127,6 +131,94 @@ public class MainController {
                     System.exit(0);
             }
         }while (chooseServices != 0);
+    }
+
+    public static void addNewBooking(){
+        Scanner sc = new Scanner(System.in);
+        List<Customer> customerList = FileUtils.readFileCustomer();
+        CustomerManager.showInformationCustomer();
+        System.out.println("Chọn customer: ");
+        int chooseCus = Integer.parseInt(sc.nextLine());
+        List<Villa> villaList = null;
+        List<House> houseList = null;
+        List<Room> roomList = null;
+        String line;
+
+        Customer customer = customerList.get(chooseCus);
+        line = customer.getNameCus() + ", " + customer.getBirthdayCus() + ", " + customer.getGenderCus() + ", " +
+                customer.getIdCardCus() + ", " + customer.getPhoneCus() + ", " + customer.getEmailCus() + ", " +
+                customer.getTypeCus() + ", " + customer.getAddressCus() + ", ";
+        FileUtils.writeFile("src/Data/Booking.csv", line);
+
+        do {
+            System.out.println("-----------------------------");
+            System.out.println("1. Booking Villa");
+            System.out.println("2. Booking House");
+            System.out.println("3. Booking Room");
+            System.out.println("4. Back to menu");
+            System.out.println("5. Exit");
+            System.out.print("Choose: ");
+            int chooseBooking = Integer.parseInt(sc.nextLine());
+
+            switch (chooseBooking){
+                case 1:
+                    villaList = FileUtils.readFileVilla();
+                    VillaManager.showVillaList();
+                    System.out.println("Chọn villa cần book: ");
+                    int chooseVilla = Integer.parseInt(sc.nextLine());
+                    Villa villa = villaList.get(chooseVilla - 1);
+                    line = villa.getId() + ", " + villa.getTenDichVu() + ", " + villa.getDienTichSuDung() + ", " +
+                            villa.getChiPhiThue() + ", " + villa.getSoLuongNguoi() + ", " + villa.getKieuThue() + ", " +
+                            villa.getTieuChuanPhong() + ", " + villa.getMoTaTienNghiKhac() + ", " +
+                            villa.getDienTichHoBoi() + ", " + villa.getSoTang();
+                    FileUtils.writeFileBooking("src/Data/Booking.csv", line);
+                    break;
+                case 2:
+                    houseList = FileUtils.readFileHouse();
+                    HouseManager.showHouseList();
+                    System.out.println("Chọn villa cần book: ");
+                    int chooseHouse = Integer.parseInt(sc.nextLine());
+                    House house = houseList.get(chooseHouse - 1);
+                    line = house.getId() + ", " + house.getTenDichVu() + ", " + house.getDienTichSuDung() + ", " +
+                            house.getChiPhiThue() + ", " + house.getSoLuongNguoi() + ", " + house.getKieuThue() + ", " +
+                            house.getMoTaTienNghiKhac() + ", " + house.getTieuChuanPhong() + ", " + house.getSoTang();
+                    FileUtils.writeFileBooking("src/Data/Booking.csv", line);
+                    break;
+                case 3:
+                    roomList = FileUtils.readFileRoom();
+                    RoomManager.showRoomList();
+                    System.out.println("Chọn villa cần book: ");
+                    int chooseRoom = Integer.parseInt(sc.nextLine());
+                    Room room = roomList.get(chooseRoom - 1);
+                    line = room.getId() + ", " + room.getTenDichVu() + ", " + room.getDienTichSuDung() + ", " +
+                            room.getChiPhiThue() + ", " + room.getSoLuongNguoi() + ", " + room.getKieuThue() + ", " +
+                            room.getDichVuMienPhiDiKem();
+                    FileUtils.writeFileBooking("src/Data/Booking.csv", line);
+                    break;
+                case 4:
+                    displayMainMenu();
+                    break;
+                case 5:
+                    System.out.println("Đã thoát!");
+                    System.exit(0);
+            }
+
+        }while (chooseCus != 0);
+    }
+
+    public static void showQueueOfCustomer(){
+        Queue<Customer> customerQueue = new LinkedList<>();
+        List<Customer> customerList = FileUtils.readFileCustomer();
+        CustomerManager.showInformationCustomer();
+
+        customerQueue.add(customerList.get(4));
+        customerQueue.add(customerList.get(2));
+        customerQueue.add(customerList.get(6));
+
+        System.out.println("Khách hàng mua vé");
+        while (!customerQueue.isEmpty()){
+            customerQueue.poll();
+        }
     }
 
     public static void main(String[] args) {

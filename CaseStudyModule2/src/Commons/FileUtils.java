@@ -19,6 +19,18 @@ public class FileUtils {
         }
     }
 
+    public static void writeFileBooking(String pathFile, String line) {
+        try {
+            FileWriter fileWriter = new FileWriter(pathFile, true);
+            BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
+            bufferedWriter.write(line);
+            bufferedWriter.close();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
     public static List<Villa> readFileVilla() {
         List<Villa> villalist = new ArrayList<>();
         try {
@@ -220,40 +232,5 @@ public class FileUtils {
             e.printStackTrace();
         }
         return employeeList;
-    }
-
-    public static void readFileBooking(){
-        try {
-            FileReader fileReader = new FileReader("src/Data/Booking.csv");
-            BufferedReader bufferedReader = new BufferedReader(fileReader);
-            String lineCustomer;
-            String[] readLineCustomer;
-            Customer customer;
-            while ((lineCustomer = bufferedReader.readLine()) != null){
-                customer = new Customer();
-                readLineCustomer = lineCustomer.split(", ");
-                customer.setNameCus(readLineCustomer[0]);
-                customer.setBirthdayCus(readLineCustomer[1]);
-                customer.setGenderCus(readLineCustomer[2]);
-                customer.setIdCardCus(readLineCustomer[3]);
-                customer.setPhoneCus(readLineCustomer[4]);
-                customer.setEmailCus(readLineCustomer[5]);
-                customer.setTypeCus(readLineCustomer[6]);
-                customer.setAddressCus(readLineCustomer[7]);
-                customer.setId(readLineCustomer[8]);
-                customer.setTenDichVu(readLineCustomer[9]);
-                customer.setDienTichSuDung(Integer.parseInt(readLineCustomer[10]));
-                customer.setChiPhiThue(Integer.parseInt(readLineCustomer[11]));
-                customer.setSoLuongNguoi(Integer.parseInt(readLineCustomer[12]));
-                customer.setKieuThue(readLineCustomer[13]);
-                customer.showInfor();
-
-            }
-
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
     }
 }

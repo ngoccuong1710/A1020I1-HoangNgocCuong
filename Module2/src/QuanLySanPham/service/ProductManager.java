@@ -1,7 +1,7 @@
-package service;
+package QuanLySanPham.service;
 
-import common.FuncWriteAndRead;
-import model.Product;
+import QuanLySanPham.common.FuncWriteAndRead;
+import QuanLySanPham.model.Product;
 
 import java.util.ArrayList;
 import java.util.List;

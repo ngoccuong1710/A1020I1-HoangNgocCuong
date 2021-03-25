@@ -1,6 +1,6 @@
-package controller;
+package QuanLySanPham.controller;
 
-import service.ProductManager;
+import QuanLySanPham.service.ProductManager;
 
 import java.util.Scanner;
 

@@ -1,4 +1,4 @@
-package model;
+package QuanLySanPham.model;
 
 public class Product {
     private String id;

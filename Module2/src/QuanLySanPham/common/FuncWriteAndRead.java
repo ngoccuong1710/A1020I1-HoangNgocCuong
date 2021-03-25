@@ -1,13 +1,13 @@
-package common;
+package QuanLySanPham.common;
 
-import model.Product;
+import QuanLySanPham.model.Product;
 
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
 public class FuncWriteAndRead {
-    static final String PATH_PRODUCT ="src/data/Product.csv";
+    static final String PATH_PRODUCT ="src/QuanLySanPham/data/Product.csv";
     static  File file = new File(PATH_PRODUCT);
     public static void writeProduct(List<Product> list, boolean selection){
         FileWriter fileWriter =null;

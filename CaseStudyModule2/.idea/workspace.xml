@@ -2,32 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ad04cb04-d185-46f0-8d7e-c77afbfd8877" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Manager/CustomerManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Manager/EmployeeManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Manager/HouseManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Manager/RoomManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Manager/VillaManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CaseStudyModule2/Commons/FileUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CaseStudyModule2/Commons/FileUtils.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CaseStudyModule2/Controllers/AddBooking.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CaseStudyModule2/Controllers/AddCustomer.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CaseStudyModule2/Controllers/AddServices.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CaseStudyModule2/Controllers/CabinetsEmployee.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CaseStudyModule2/Controllers/ExceptionCustomer.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/CaseStudyModule2/Controllers/MainController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CaseStudyModule2/Controllers/MainController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CaseStudyModule2/Controllers/Show.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CaseStudyModule2/Controllers/SortCustomer.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CaseStudyModule2/Data/Booking.csv" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CaseStudyModule2/Data/Booking.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Commons/FileUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Commons/FileUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controllers/AddBooking.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controllers/AddCustomer.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controllers/AddServices.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controllers/CabinetsEmployee.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controllers/ExceptionCustomer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Manager/ExceptionCustomer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controllers/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/MainController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controllers/Show.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controllers/SortCustomer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Manager/SortCustomer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Data/Booking.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/Data/Booking.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Models/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Models/Customer.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -122,7 +100,7 @@
       <workItem from="1616376778356" duration="4661000" />
       <workItem from="1616409307291" duration="8712000" />
       <workItem from="1616581818427" duration="8995000" />
-      <workItem from="1616654374719" duration="6966000" />
+      <workItem from="1616654374719" duration="8787000" />
     </task>
     <servers />
   </component>
@@ -150,22 +128,22 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="1119" y="283" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1616661282283" />
-    <state width="1877" height="385" key="GridCell.Tab.0.bottom" timestamp="1616661276676">
+    <state width="1103" height="680" key="GridCell.Tab.0.bottom" timestamp="1616663348696">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="385" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1616661276676" />
-    <state width="1877" height="385" key="GridCell.Tab.0.center" timestamp="1616661276675">
+    <state width="1103" height="680" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1616663348696" />
+    <state width="1103" height="680" key="GridCell.Tab.0.center" timestamp="1616663348696">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="385" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1616661276675" />
-    <state width="1877" height="385" key="GridCell.Tab.0.left" timestamp="1616661276675">
+    <state width="1103" height="680" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1616663348696" />
+    <state width="1103" height="680" key="GridCell.Tab.0.left" timestamp="1616663348696">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="385" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1616661276675" />
-    <state width="1877" height="385" key="GridCell.Tab.0.right" timestamp="1616661276675">
+    <state width="1103" height="680" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1616663348696" />
+    <state width="1103" height="680" key="GridCell.Tab.0.right" timestamp="1616663348696">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="385" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1616661276675" />
+    <state width="1103" height="680" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1616663348696" />
     <state width="1110" height="346" key="GridCell.Tab.1.bottom" timestamp="1616422327318">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

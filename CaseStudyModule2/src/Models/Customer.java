@@ -103,20 +103,20 @@ public class Customer extends Services {
     @Override
     public void showInfor(){
         System.out.println(
-                "\nHọ tên Customer: " + getNameCus() +
-                "\nNgày sinh: " + getBirthdayCus() +
-                "\nGiới tính: " + getGenderCus() +
-                "\nSố cmnd: " + getIdCardCus() +
-                "\nSố điện thoại: " + getPhoneCus() +
-                "\nemail: " + getEmailCus() +
-                "\nloại khách: " + getTypeCus() +
-                "\nĐịa chỉ: " + getAddressCus() +
-                "\nId dịch vụ: " + getId() +
-                "\nTên dịch vụ: " + getTenDichVu() +
-                "\nDiện tích sử dụng: " + getDienTichSuDung() +
-                "\nChi phí thuê: " + getChiPhiThue() +
-                "\nSố lượng người: " + getSoLuongNguoi() +
-                "\nKiểu thuê: " + getKieuThue());
+                "\n\tHọ tên Customer: " + getNameCus() +
+                "\n\tNgày sinh: " + getBirthdayCus() +
+                "\n\tGiới tính: " + getGenderCus() +
+                "\n\tSố cmnd: " + getIdCardCus() +
+                "\n\tSố điện thoại: " + getPhoneCus() +
+                "\n\temail: " + getEmailCus() +
+                "\n\tloại khách: " + getTypeCus());
+//                "\nĐịa chỉ: " + getAddressCus() +
+//                "\nId dịch vụ: " + getId() +
+//                "\nTên dịch vụ: " + getTenDichVu() +
+//                "\nDiện tích sử dụng: " + getDienTichSuDung() +
+//                "\nChi phí thuê: " + getChiPhiThue() +
+//                "\nSố lượng người: " + getSoLuongNguoi() +
+//                "\nKiểu thuê: " + getKieuThue());
     }
 
     @Override

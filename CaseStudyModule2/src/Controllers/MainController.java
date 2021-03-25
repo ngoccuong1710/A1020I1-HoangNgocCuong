@@ -211,13 +211,14 @@ public class MainController {
         List<Customer> customerList = FileUtils.readFileCustomer();
         CustomerManager.showInformationCustomer();
 
-        customerQueue.add(customerList.get(4));
-        customerQueue.add(customerList.get(2));
-        customerQueue.add(customerList.get(6));
-
+        customerQueue.add(customerList.get(3));
+        customerQueue.add(customerList.get(1));
+        customerQueue.add(customerList.get(5));
+        Customer customer = null;
         System.out.println("Khách hàng mua vé");
         while (!customerQueue.isEmpty()){
-            customerQueue.poll();
+            customer = customerQueue.poll();
+            customer.showInfor();
         }
     }
 

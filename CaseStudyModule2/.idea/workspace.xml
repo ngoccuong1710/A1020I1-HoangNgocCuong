@@ -3,24 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="ad04cb04-d185-46f0-8d7e-c77afbfd8877" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuanLySanPham/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuanLySanPham/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuanLySanPham/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuanLySanPham/.idea/uiDesigner.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuanLySanPham/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuanLySanPham/QuanLySanPham.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuanLySanPham/out/production/QuanLySanPham/ChuoiLienTiepDaiNhat1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuanLySanPham/out/production/QuanLySanPham/common/FuncWriteAndRead.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuanLySanPham/out/production/QuanLySanPham/controller/Controller.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuanLySanPham/out/production/QuanLySanPham/data/Product.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuanLySanPham/out/production/QuanLySanPham/model/Product.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuanLySanPham/out/production/QuanLySanPham/service/ProductManager.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuanLySanPham/src/ChuoiLienTiepDaiNhat1.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuanLySanPham/src/common/FuncWriteAndRead.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Module2/src/QuanLySanPham/common/FuncWriteAndRead.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuanLySanPham/src/controller/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Module2/src/QuanLySanPham/controller/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuanLySanPham/src/data/Product.csv" beforeDir="false" afterPath="$PROJECT_DIR$/../Module2/src/QuanLySanPham/data/Product.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuanLySanPham/src/model/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Module2/src/QuanLySanPham/model/Product.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuanLySanPham/src/service/ProductManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Module2/src/QuanLySanPham/service/ProductManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Models/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Models/Customer.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -115,7 +98,8 @@
       <workItem from="1616376778356" duration="4661000" />
       <workItem from="1616409307291" duration="8712000" />
       <workItem from="1616581818427" duration="8995000" />
-      <workItem from="1616654374719" duration="10240000" />
+      <workItem from="1616654374719" duration="10245000" />
+      <workItem from="1616666212572" duration="560000" />
     </task>
     <servers />
   </component>
@@ -143,22 +127,22 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="1119" y="283" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1616664221833" />
-    <state width="1103" height="680" key="GridCell.Tab.0.bottom" timestamp="1616663369288">
+    <state width="1103" height="680" key="GridCell.Tab.0.bottom" timestamp="1616665354473">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1103" height="680" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1616663369288" />
-    <state width="1103" height="680" key="GridCell.Tab.0.center" timestamp="1616663369288">
+    <state width="1103" height="680" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1616665354473" />
+    <state width="1103" height="680" key="GridCell.Tab.0.center" timestamp="1616665354473">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1103" height="680" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1616663369288" />
-    <state width="1103" height="680" key="GridCell.Tab.0.left" timestamp="1616663369287">
+    <state width="1103" height="680" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1616665354473" />
+    <state width="1103" height="680" key="GridCell.Tab.0.left" timestamp="1616665354473">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1103" height="680" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1616663369287" />
-    <state width="1103" height="680" key="GridCell.Tab.0.right" timestamp="1616663369288">
+    <state width="1103" height="680" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1616665354473" />
+    <state width="1103" height="680" key="GridCell.Tab.0.right" timestamp="1616665354473">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1103" height="680" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1616663369288" />
+    <state width="1103" height="680" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1616665354473" />
     <state width="1110" height="346" key="GridCell.Tab.1.bottom" timestamp="1616422327318">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

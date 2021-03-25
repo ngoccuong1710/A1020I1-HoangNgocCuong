@@ -109,8 +109,8 @@ public class Customer extends Services {
                 "\n\tSố cmnd: " + getIdCardCus() +
                 "\n\tSố điện thoại: " + getPhoneCus() +
                 "\n\temail: " + getEmailCus() +
-                "\n\tloại khách: " + getTypeCus());
-//                "\nĐịa chỉ: " + getAddressCus() +
+                "\n\tloại khách: " + getTypeCus() +
+                "\nĐịa chỉ: " + getAddressCus());
 //                "\nId dịch vụ: " + getId() +
 //                "\nTên dịch vụ: " + getTenDichVu() +
 //                "\nDiện tích sử dụng: " + getDienTichSuDung() +

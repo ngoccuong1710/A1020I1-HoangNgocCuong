@@ -30,7 +30,7 @@ public class Main {
             if (checkCanhAm(a, b, c) && checkTongCanh(a, b, c)){
                 System.out.println("Tam giác có 3 cạnh: " + a + ", " + b + ", " + c);
             }
-        }catch (IllegalTriangleException e){
+        } catch (IllegalTriangleException e){
             System.err.println("Lỗi");
         }
 

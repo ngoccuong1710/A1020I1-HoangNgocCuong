@@ -1,14 +1,15 @@
-package common;
+package KiemTra.common;
 
-import model.BenhAnThuong;
-import model.BenhAnVip;
+
+import KiemTra.model.BenhAnThuong;
+import KiemTra.model.BenhAnVip;
 
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
 public class WriteAndReadFile {
-    private static final String FILE_BENHAN = "src/data/medical_records.csv";
+    private static final String FILE_BENHAN = "src/KiemTra/data/medical_records.csv";
 
     public static void writeBenhNhanThuong(List<BenhAnThuong> list, boolean selection){
         FileWriter fileWriter =null;
@@ -59,7 +60,7 @@ public class WriteAndReadFile {
     public static List<BenhAnThuong> readFileBenhAn() {
         List<BenhAnThuong> benhAnThuongList = new ArrayList<>();
         try {
-            FileReader fileReader = new FileReader("src/data/medical_records.csv");
+            FileReader fileReader = new FileReader("src/KiemTra/data/medical_records.csv");
             BufferedReader bufferedReader = new BufferedReader(fileReader);
             String lineBenhAn;
             String[] readLineBenhAn;

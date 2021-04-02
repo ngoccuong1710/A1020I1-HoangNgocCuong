@@ -1,9 +1,11 @@
-package manager;
+package KiemTra.manager;
 
-import common.WriteAndReadFile;
-import controller.MainController;
-import model.BenhAnThuong;
-import model.BenhAnVip;
+
+
+import KiemTra.common.WriteAndReadFile;
+import KiemTra.controller.MainController;
+import KiemTra.model.BenhAnThuong;
+import KiemTra.model.BenhAnVip;
 
 import java.util.ArrayList;
 import java.util.List;

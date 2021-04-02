@@ -1,6 +1,8 @@
-package controller;
+package KiemTra.controller;
 
-import manager.BenhAnManager;
+
+
+import KiemTra.manager.BenhAnManager;
 
 import java.util.Scanner;
 

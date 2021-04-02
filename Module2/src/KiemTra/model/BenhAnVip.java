@@ -1,4 +1,4 @@
-package model;
+package KiemTra.model;
 
 public class BenhAnVip extends BenhAn{
     private String loaiVip;

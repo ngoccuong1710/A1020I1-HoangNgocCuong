@@ -1,4 +1,4 @@
-package model;
+package KiemTra.model;
 
 abstract class BenhAn {
     private int idBenhAn;

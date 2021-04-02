@@ -1,4 +1,4 @@
-package model;
+package KiemTra.model;
 
 public class BenhAnThuong extends BenhAn{
     private String phiNamVien;

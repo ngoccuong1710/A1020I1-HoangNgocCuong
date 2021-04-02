@@ -1,7 +1,7 @@
-drop database if exists classicmodels;
-create database classicmodels;
+drop database if exists classic_models;
+create database classic_models;
 
-use classicmodels;
+use classic_models;
 
 create table customers (
 	id int primary key auto_increment,

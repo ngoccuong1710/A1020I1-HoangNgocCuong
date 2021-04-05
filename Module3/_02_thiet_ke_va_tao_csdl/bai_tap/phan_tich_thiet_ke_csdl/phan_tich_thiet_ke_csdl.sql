@@ -16,8 +16,10 @@ create table customers(
     country varchar(50) not null,
     creditLimit double not null,
     
-    orderNumber int,
-    foreign key (orderNumber) references orders(orderNumber)
+    orders_orderNumber int,
+    payments_customerNumber int,
+    foreign key (orders_orderNumber) references orders(orderNumber),
+    foreign key (payments_customerNumber) references payments(customerNumber)
 );
 
 create table orders(
@@ -38,7 +40,7 @@ create table payments(
     amount double not null
 );
 
-create table producs(
+create table products(
 	productCode int primary key auto_increment not null,
     productName varchar(70) not null,
     productScale varchar(10) not null,
@@ -52,7 +54,10 @@ create table producs(
 create table productlines(
 	productLine int primary key auto_increment not null,
     textDescription text not null,
-    image varchar(50) not null
+    image varchar(50) not null,
+    
+    products_productCode int not null,
+    foreign key (products_productCode) references products(productCode)
 );
 
 create table employees(
@@ -60,7 +65,12 @@ create table employees(
     lastName varchar(50) not null,
     firstName varchar(50) not null,
     email varchar(100) not null,
-    jobTitle varchar(50) not null
+    jobTitle varchar(50) not null,
+    
+    customer_customerNumber int not null,
+    reportTo int not null,
+    foreign key (customer_customerNumber) references customers(customerNumber),
+    foreign key (reportTo) references employees(employeeNumber)
 );
 
 create table offices(
@@ -71,5 +81,17 @@ create table offices(
     addressLine2 varchar(50) not null,
     state varchar(50) not null,
     country varchar(50) not null,
-    postalCode varchar(15) not null
+    postalCode varchar(15) not null,
+    
+    employees_employeeNumber int not null,
+    foreign key (employees_employeeNumber) references employees(employeeNumber)
+);
+
+create table OrederDetails(
+	products_id int not null,
+    orders_id int not null,
+    
+    primary key(products_id, orders_id),
+    foreign key(products_id) references products(productCode),
+    foreign key(orders_id) references orders(orderNumber)
 );

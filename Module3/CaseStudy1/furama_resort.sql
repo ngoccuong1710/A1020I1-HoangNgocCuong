@@ -2,16 +2,7 @@ drop database if exists furama_resort;
 create database furama_resort;
 use furama_resort;
 
-create table HopDong(
-	IDHopDong int primary key,
-    IDNhanVien int,
-    IDKhachHang int,
-    IDDichVu int,
-	NgayLamHopDong date,
-    NgayKetThuc date,
-    TienDatCoc int,
-    TongTien int
-);
+
 
 create table NhanVien(
 	IDNhanVien int primary key,
@@ -26,28 +17,24 @@ create table NhanVien(
     Email varchar(45),
     DiaChi varchar(45),
     
-    foreign key (IDNhanVien) references HopDong(IDNhanVien)
+    foreign key (IDViTri) references ViTri(IDViTri),
+	foreign key (IDTrinhDo) references TrinhDo(IDTrinhDo),
+	foreign key (IDBoPhan) references NhanVien(IDBoPhan)
 );
 
 create table ViTri(
 	IDViTri int primary key,
-    TenViTri varchar(45),
-    
-    foreign key (IDViTri) references NhanVien(IDViTri)
+    TenViTri varchar(45)
 );
 
 create table TrinhDo(
 	IDTrinhDo int primary key,
-    TrinhDo varchar(45),
-    
-    foreign key (IDTrinhDo) references NhanVien(IDTrinhDo)
+    TrinhDo varchar(45)
 );
 
 create table BoPhan(
 	IDBoPhan int primary key,
-    TenBoPhan varchar(45),
-    
-    foreign key (IDBoPhan) references NhanVien(IDBoPhan)
+    TenBoPhan varchar(45)
 );
 
 create table KhachHang(
@@ -97,6 +84,19 @@ create table LoaiDichVu(
     TenLoaiDichVu varchar(45),
     
     foreign key (IDLoaiDichVu) references DichVu(IDLoaiDichVu)
+);
+
+create table HopDong(
+	IDHopDong int primary key,
+    IDNhanVien int,
+    IDKhachHang int,
+    IDDichVu int,
+	NgayLamHopDong date,
+    NgayKetThuc date,
+    TienDatCoc int,
+    TongTien int,
+    
+    foreign key (IDNhanVien) references NhanVien(IDNhanVien)
 );
 
 create table DichVuDiKem(

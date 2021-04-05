@@ -2,6 +2,37 @@ drop database if exists phan_tich_thiet_ke_csdl;
 create database phan_tich_thiet_ke_csdl;
 use phan_tich_thiet_ke_csdl;
 
+create table productlines(
+	productLine int primary key not null,
+    textDescription text not null,
+    image varchar(50) not null
+);
+
+create table offices(
+	officeCode int primary key not null,
+    city varchar(50) not null,
+	phone varchar(50) not null,
+    addressLine1 varchar(50) not null,
+    addressLine2 varchar(50) not null,
+    state varchar(50) not null,
+    country varchar(50) not null,
+    postalCode varchar(15) not null
+);
+
+create table employees(
+	employeeNumber int primary key not null,
+    lastName varchar(50) not null,
+    firstName varchar(50) not null,
+    email varchar(100) not null,
+    jobTitle varchar(50) not null,
+
+    reportTo int not null,
+    foreign key (reportTo) references employees(employeeNumber),
+    
+    officeCode int not null,
+    foreign key (officeCode) references employees(officeCode)
+);
+
 create table customers(
 	customerNumber int primary key not null,
     customerName varchar(50) not null,
@@ -16,10 +47,8 @@ create table customers(
     country varchar(50) not null,
     creditLimit double not null,
     
-    orders_orderNumber int,
-    payments_customerNumber int,
-    foreign key (orders_orderNumber) references orders(orderNumber),
-    foreign key (payments_customerNumber) references payments(customerNumber)
+    employeeNumber int,
+    foreign key (employeeNumber) references employees(employeeNumber)
 );
 
 create table orders(
@@ -30,14 +59,20 @@ create table orders(
     `status` varchar(15) not null,
     comments text not null,
     quantityOrdered int not null,
-    priceEach double not null
+    priceEach double not null,
+    
+    customerNumber int,
+    foreign key (customerNumber) references customers(customerNumber)
 );
 
 create table payments(
 	customerNumber int primary key not null,
     checkNumber varchar(50) not null,
     paymentDate date not null,
-    amount double not null
+    amount double not null,
+    
+    customerNumber int,
+    foreign key (customerNumber) references customers(customerNumber)
 );
 
 create table products(
@@ -48,43 +83,10 @@ create table products(
     productDescription text not null,
     quantityInStock int not null,
     buyPrice double not null,
-    MSRP double not null
-);
-
-create table productlines(
-	productLine int primary key not null,
-    textDescription text not null,
-    image varchar(50) not null,
+    MSRP double not null,
     
-    products_productCode int not null,
-    foreign key (products_productCode) references products(productCode)
-);
-
-create table employees(
-	employeeNumber int primary key not null,
-    lastName varchar(50) not null,
-    firstName varchar(50) not null,
-    email varchar(100) not null,
-    jobTitle varchar(50) not null,
-    
-    customer_customerNumber int not null,
-    reportTo int not null,
-    foreign key (customer_customerNumber) references customers(customerNumber),
-    foreign key (reportTo) references employees(employeeNumber)
-);
-
-create table offices(
-	officeCode int primary key not null,
-    city varchar(50) not null,
-	phone varchar(50) not null,
-    addressLine1 varchar(50) not null,
-    addressLine2 varchar(50) not null,
-    state varchar(50) not null,
-    country varchar(50) not null,
-    postalCode varchar(15) not null,
-    
-    employees_employeeNumber int not null,
-    foreign key (employees_employeeNumber) references employees(employeeNumber)
+    productLine int not null,
+    foreign key (productLine) references productlines(productLine)
 );
 
 create table OrederDetails(

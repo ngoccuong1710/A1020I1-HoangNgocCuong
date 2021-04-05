@@ -3,7 +3,7 @@ create database phan_tich_thiet_ke_csdl;
 use phan_tich_thiet_ke_csdl;
 
 create table customers(
-	customerNumber int primary key auto_increment not null,
+	customerNumber int primary key not null,
     customerName varchar(50) not null,
     contactLastName varchar(50) not null,
     contactFirstName varchar(50) not null,
@@ -23,7 +23,7 @@ create table customers(
 );
 
 create table orders(
-	orderNumber int primary key auto_increment not null,
+	orderNumber int primary key not null,
     orderDate date not null,
     requiredDate date not null,
     shippedDate date not null,
@@ -34,14 +34,14 @@ create table orders(
 );
 
 create table payments(
-	customerNumber int primary key auto_increment not null,
+	customerNumber int primary key not null,
     checkNumber varchar(50) not null,
     paymentDate date not null,
     amount double not null
 );
 
 create table products(
-	productCode int primary key auto_increment not null,
+	productCode int primary key not null,
     productName varchar(70) not null,
     productScale varchar(10) not null,
     productVendor varchar(50) not null,
@@ -52,7 +52,7 @@ create table products(
 );
 
 create table productlines(
-	productLine int primary key auto_increment not null,
+	productLine int primary key not null,
     textDescription text not null,
     image varchar(50) not null,
     
@@ -61,7 +61,7 @@ create table productlines(
 );
 
 create table employees(
-	employeeNumber int primary key auto_increment not null,
+	employeeNumber int primary key not null,
     lastName varchar(50) not null,
     firstName varchar(50) not null,
     email varchar(100) not null,
@@ -74,7 +74,7 @@ create table employees(
 );
 
 create table offices(
-	officeCode int primary key auto_increment not null,
+	officeCode int primary key not null,
     city varchar(50) not null,
 	phone varchar(50) not null,
     addressLine1 varchar(50) not null,

@@ -30,7 +30,7 @@ create table employees(
     foreign key (reportTo) references employees(employeeNumber),
     
     officeCode int not null,
-    foreign key (officeCode) references employees(officeCode)
+    foreign key (officeCode) references offices(officeCode)
 );
 
 create table customers(
@@ -71,7 +71,6 @@ create table payments(
     paymentDate date not null,
     amount double not null,
     
-    customerNumber int,
     foreign key (customerNumber) references customers(customerNumber)
 );
 

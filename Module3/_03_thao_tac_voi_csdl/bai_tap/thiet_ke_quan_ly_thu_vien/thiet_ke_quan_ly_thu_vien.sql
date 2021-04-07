@@ -3,43 +3,57 @@ create database quan_ly_thu_vien;
 use quan_ly_thu_vien;
 
 create table category(
-	ma_the_loai int primary key,
-    ten_the_loai varchar(50)
+	category_id int primary key,
+    category_name varchar(50)
+);
+
+create table address(
+	address_id int primary key,
+    city varchar(50),
+    country varchar(50)
 );
 
 create table book(
-	ma_sach int primary key,
-    ten_sach varchar(50),
-    nha_xuat_ban varchar(50),
-    tac_gia varchar(50),
-    nam_xuat_ban year,
-    so_lan_xuat_ban int,
-    gia double,
-    anh varchar(255),
-    ma_the_loai int,
+	book_id int primary key,
+    book_name varchar(50),
+    publishing_company varchar(50),
+    author varchar(50),
+    publishing_year year,
+    number_of_publishing int,
+    price double,
+    image varchar(255),
+    category_id int,
     
-    foreign key (ma_the_loai) references category(ma_the_loai)
+    foreign key (category_id) references category(category_id)
+);
+
+create table library_card(
+	library_card_id int primary key,
+    student_name varchar(50),
+    date_of_bỉthday date,
+    address_id int,
+    email varchar(50),
+    phone int(10),
+    image varchar(255),
+    
+    foreign key (address_id) references address(address_id)
 );
 
 create table borrow_order(
-	ma_the int primary key,
-    ten_sinh_vien varchar(50),
-    ngay_sinh date,
-    dia_chi varchar(50),
-    email varchar(50),
-    sdt int(10),
-    anh varchar(255),
+	library_card_id int,
+    book_id int,
+    amount int,
     
-    ma_sach int,
-    foreign key (ma_sach) references book(ma_sach)
+    foreign key (library_card_id) references library_card(library_card_id),
+    foreign key (book_id) references book(book_id)
 );
 
 create table student(
-	ma_sinh_vien int primary key,
-    ten_sinh_vien varchar(50),
-    dia_chi varchar(50),
-    anh varchar(255),
-    
-    ma_the int,
-    foreign key (ma_the) references borrow_order(ma_the)
+	student_number int primary key,
+    student_name varchar(50),
+    image varchar(255),
+    address_id int,
+    library_card_id int,
+    foreign key (library_card_id) references borrow_order(library_card_id),
+    foreign key (address_id) references address(address_id)
 );

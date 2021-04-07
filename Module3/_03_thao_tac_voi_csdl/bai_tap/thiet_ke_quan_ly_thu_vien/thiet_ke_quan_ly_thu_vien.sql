@@ -21,6 +21,19 @@ create table book(
     foreign key (ma_the_loai) references category(ma_the_loai)
 );
 
+create table borrow_order(
+	ma_the int primary key,
+    ten_sinh_vien varchar(50),
+    ngay_sinh date,
+    dia_chi varchar(50),
+    email varchar(50),
+    sdt int(10),
+    anh varchar(255),
+    
+    ma_sach int,
+    foreign key (ma_sach) references book(ma_sach)
+);
+
 create table student(
 	ma_sinh_vien int primary key,
     ten_sinh_vien varchar(50),
@@ -29,14 +42,4 @@ create table student(
     
     ma_the int,
     foreign key (ma_the) references borrow_order(ma_the)
-);
-
-create table borrow_order(
-	ma_the int primary key,
-    ten_sinh_vien varchar(50),
-    ngay_sinh date,
-    dia_chi varchar(50),
-    email varchar(50),
-    sdt int(10),
-    anh varchar(255)
 );

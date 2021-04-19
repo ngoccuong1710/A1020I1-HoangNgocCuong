@@ -1,0 +1,19 @@
+body{
+    background: lightblue;
+    background-size: cover;
+}
+
+a{
+    text-decoration: none;
+    font-size: 30px;
+}
+
+#head{
+    color: red;
+    font-size: 40px;
+
+}
+
+#truyen{
+    text-align: center;
+}

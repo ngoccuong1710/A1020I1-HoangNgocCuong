@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        .col-1 {width: 8.33%;}
+        .col-2 {width: 16.66%;}
+        .col-3 {width: 25%;}
+        .col-4 {width: 33.33%;}
+        .col-5 {width: 41.66%;}
+        .col-6 {width: 50%;}
+        .col-7 {width: 58.33%;}
+        .col-8 {width: 66.66%;}
+        .col-9 {width: 75%;}
+        .col-10 {width: 83.33%;}
+        .col-11 {width: 91.66%;}
+        .col-12 {width: 100%;}
+
+        [class*="col-"] {
+            float: left;
+            padding: 1px;
+        }
+
+        /*<= 768*/
+        @media only screen and (max-width: 768px) {
+            [class*="col-"] {
+                width: 100%;
+            }
+        }
+
+        /*<= 368*/
+        @media only screen and (max-width: 368px) {
+            [class*="col-"] {
+                width: 50%;
+            }
+        }
+
+        body{
+            font-family: Arial;
+            margin: 0;
+        }
+
+        .header .row{
+            background-color: #3a3b3c;
+            height: 54px;
+            width: 100%;
+        }
+        ul li a{
+            color: white;
+            text-decoration:none;
+            display: inline-block;
+            font-size: 20px;
+        }
+        #login{
+            color: white;
+            text-decoration:none;
+            display: inline-block;
+            font-size: 20px;
+            float: right;
+            padding: 14px;
+        }
+        #login:hover{
+            background: black;
+        }
+        ul{
+            display: inline;
+            margin: 0;
+            padding: 0;
+        }
+        ul li{
+            display: inline-block;
+            padding: 14px;
+        }
+        ul li:hover{
+            background-color: black;
+        }
+
+        .left-panel{
+            background-color: #e0e0e0;
+            height: 820px;
+            width: 100%;
+        }
+
+        .link{
+            text-align: center;
+            font-size: 15px;
+            padding: 20px;
+        }
+        .link a{
+            text-decoration:none;
+        }
+        .footer{
+            background-color: #535353;
+            height: 53px;
+            width: 100%;
+            color: white;
+        }
+        .footer{
+            text-align: center;
+            padding-top: 10px ;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="row">
+            <div class="col-4">
+                <ul>
+                    <li>
+                        <a href="#">Logo</a>
+                    </li>
+                    <li>
+                        <a href="#">Home</a>
+                    </li>
+                    <li>
+                        <a href="#">About</a>
+                    </li>
+                    <li>
+                        <a href="#">Procecis</a>
+                    </li>
+                    <li>
+                        <a href="#">Contact</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="col-4"></div>
+
+            <div class="col-4">
+                <a id="login" href="#">Login</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="left-panel">
+        <div class="row">
+            <div class="col-2">
+                <div class="row">
+                    <div class="col-12 link">
+                        <a href="#">Link</a>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 link">
+                        <a href="#">Link</a>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 link">
+                        <a href="#">Link</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-8">
+                <h5>Welcome</h5>
+            </div>
+            <div class="col-2">
+
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <div class="row">
+            <div class="col-12 footer">
+                <a>Footer Test</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

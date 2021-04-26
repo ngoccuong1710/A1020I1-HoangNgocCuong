@@ -1,0 +1,415 @@
+body{
+    margin: 0;
+    background-color: #18191a;
+}
+
+a{
+    color: white;
+}
+
+.header{
+    width: 100%;
+    height: 56px;
+    background-color: #242526;
+    display: flex;
+    align-items: center;
+    /*position: fixed;*/
+}
+
+#logo{
+    width: 40px;
+}
+
+.header .logo{
+    border-right: 5px;
+    text-align: center;
+    padding-left:1px;
+
+}
+
+.search{
+    width: 300px;
+    vertical-align: middle;
+    white-space: nowrap;
+    position: relative;
+}
+
+#search{
+    border: 0;
+    width: 240px;
+    height: 40px;
+    border-radius: 25px;
+    background-color: #3a3b3c;
+    font-size: 10pt;
+    color: white;
+}
+
+.fa-search{
+    padding-left: 6px;
+    margin-right: 10px;
+    color: #7c7d7e;
+}
+
+.search .icon{
+    position: absolute;
+    margin-left: 17px;
+    margin-top: 12px;
+    color: #a3a3a3;
+}
+
+.mid-header{
+    text-align: center;
+}
+
+.fa-home-alt{
+    color: white;
+}
+
+.fa-user-friends{
+    color: white;
+}
+
+.fa-tv{
+    color: white;
+}
+
+.fa-store{
+    color: white;
+}
+
+.fa-users{
+    color: white;
+}
+
+.mid-header .home{
+    padding: 15px 15px;
+    margin-right: 5px;
+}
+
+.mid-header .friend{
+    padding: 15px 15px;
+    margin-right: 5px;
+}
+
+.mid-header .watch{
+    padding: 15px 15px;
+    margin-right: 5px;
+}
+
+.mid-header .store{
+    padding: 15px 15px;
+    margin-right: 5px;
+}
+
+.mid-header .group{
+    padding: 15px 15px;
+    margin-right: 5px;
+}
+
+.home:hover{
+    background-color: #3b3b3b;
+    border-radius: 10px;
+}
+
+.friend:hover{
+    background-color: #3b3b3b;
+    border-radius: 10px;
+}
+
+.watch:hover{
+    background-color: #3b3b3b;
+    border-radius: 10px;
+}
+
+.store:hover{
+    background-color: #3b3b3b;
+    border-radius: 10px;
+}
+
+.group:hover{
+    background-color: #3b3b3b;
+    border-radius: 10px;
+}
+
+.right-header{
+    float: right;
+}
+
+.fa-plus{
+    color: white;
+    text-align: center;
+}
+.fa-facebook-messenger{
+    color: white;
+}
+.fa-bell{
+    color: white;
+}
+.fa-caret-down{
+    color: white;
+}
+
+.avatar1{
+    border-radius: 50%;
+    width: 30px;
+    margin-right: 5px;
+}
+
+.right-header{
+    display: flex;
+    align-items: center;
+}
+
+.right-header .avatar{
+    margin-right: 7px;
+    display: flex;
+    align-items: center;
+}
+
+.right-header .plus{
+    background-color: #3b3b3b;
+    border-radius: 50%;
+    margin-right: 7px;
+    text-align: center;
+}
+
+.right-header .mess{
+    background-color:#3b3b3b;
+    border-radius: 50%;
+    margin-right: 7px;
+    text-align: center;
+}
+
+.right-header .bell{
+    background-color: #3b3b3b;
+    border-radius: 50%;
+    margin-right: 7px;
+    text-align: center;
+}
+
+.right-header .caret{
+    background-color: #3b3b3b;
+    border-radius: 50%;
+    margin-right: 7px;
+    text-align: center;
+}
+
+.avatar:hover{
+    background-color: #5d5d5d;
+    border-radius: 10px;
+    padding: 5px 10px 5px 10px;
+}
+
+.plus:hover{
+    background-color: #5d5d5d;
+}
+
+.mess:hover{
+    background-color: #5d5d5d;
+}
+
+.bell:hover{
+    background-color: #5d5d5d;
+}
+
+.caret:hover{
+    background-color:#5d5d5d;
+}
+
+.panel .left-panel{
+    padding-top: 1px;
+    padding-left: 5px;
+}
+
+ul{
+    padding-left: 5px;
+    list-style: none;
+    margin-top: 0;
+}
+
+ul li{
+    display: flex;
+    align-items: center;
+    padding: 5px 50px 2px 5px;
+}
+
+ul li .col-1{
+    margin-right: 25px;
+}
+
+ul li .fa-user-friends{
+    color: #43a0ff;
+}
+
+ul li .fa-calendar-alt{
+    color: #43a0ff;
+}
+
+ul li .fa-star{
+    color: yellow;
+}
+
+ul li .fa-users{
+    color: #43a0ff;
+}
+
+ul li .fa-store-alt{
+    color: #43a0ff;
+}
+
+ul li .fa-heart-circle{
+    color: red;
+}
+
+ul li .fa-cloud-sun{
+    color: yellow;
+}
+
+ul li .fa-bookmark{
+    color: purple;
+}
+
+ul li .fa-credit-card{
+    color: blueviolet;
+}
+
+ul li .fa-audio-description{
+    color: white;
+}
+
+ul li .fa-history{
+    color: blue;
+}
+
+ul li .fa-flag-alt{
+    color: orange;
+}
+
+ul li .fa-calendar-star{
+    color: red;
+}
+
+ul .task-bar:hover{
+    background-color: #5d5d5d;
+    border-radius: 10px;
+}
+
+ul .person:hover{
+    background-color: #5d5d5d;
+    border-radius: 10px;
+}
+
+ul .person{
+    padding: 7px 50px 10px 5px;
+}
+
+.avatar-friend{
+    border-radius: 50%;
+    width: 40px;
+    margin-right: 5px;
+}
+
+.panel .right-panel{
+    padding: 5px;
+    float: right;
+}
+
+.title-contact h2{
+    color: white;
+    margin-right: 85px;
+}
+
+.fa-circle{
+    padding-left: 120px;
+    color: green;
+}
+
+.title-contact .fa-search{
+    border-radius: 50%;
+    padding: 10px;
+}
+
+.title-contact .fa-search:hover {
+    background-color: #3b3b3b;
+}
+
+.fa-ellipsis-h{
+    color: #7c7d7e;
+    border-radius: 50%;
+    padding: 10px;
+}
+
+.fa-ellipsis-h:hover{
+    background-color: #3b3b3b;
+}
+
+.status{
+    background-color: #242526;
+    display: flex;
+    align-items: center;
+    border-radius: 15px;
+    text-align: center;
+}
+
+.status #ip-status{
+    border: 0;
+    width: 530px;
+    height: 40px;
+    border-radius: 25px;
+    background-color: #3a3b3c;
+    font-size: 10pt;
+    color: white;
+}
+
+.avatar-status{
+    border-radius: 50%;
+    width: 40px;
+}
+
+.fa-video-plus{
+    color: red;
+}
+
+.fa-photo-video{
+    color: green;
+}
+
+.fa-laugh{
+    color: yellow;
+}
+
+.video-plus:hover{
+    background-color: #5d5d5d;
+    border-radius: 10px;
+}
+
+.photo-video:hover{
+    background-color: #5d5d5d;
+    border-radius: 10px;
+}
+
+.laugh:hover{
+    background-color: #5d5d5d;
+    border-radius: 10px;
+}
+
+.post{
+    background-color: #242526;
+    display: flex;
+    align-items: center;
+    border-radius: 15px;
+    margin-top: 15px;
+}
+
+.fa-globe-americas{
+    color: #7c7d7e;
+}
+
+.post .col-6{
+    display: flex;
+    align-items: center;
+}
+
+.post-img{
+    width: 655px;
+}

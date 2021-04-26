@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Facebook</title>
+    <link rel="stylesheet" href="facebook.css">
+    <link rel="stylesheet" href="fontawesome-pro-5.12.0-web/css/all.min.css" />
     <style>
         * {
             box-sizing: border-box;
@@ -23,7 +25,7 @@
 
         [class*="col-"] {
             float: left;
-            padding: 2px;
+            padding: 10px;
         }
 
         /*<= 768*/
@@ -39,125 +41,328 @@
                 width: 50%;
             }
         }
-
-        body{
-            margin: 0;
-            background-color: #18191a;
-        }
-
-        .header{
-            height: 58px;
-            width: 100%;
-            background-color: #242526;
-            border-bottom: solid 1px #a09ca3;
-            position: fixed;
-        }
-
-        #logo{
-            display: block;
-            width: 48px;
-            height: 48px;
-            padding: 0px;
-            text-align: center;
-        }
-
-        #search{
-            border-radius: 40px;
-            padding: 15px 70px 15px 15px;
-            background-color: #3a3b3c;
-        }
-
-        #menu{
-            float: right;
-        }
-
-        #menu-list{
-            position: fixed;
-            margin-top: 56px;
-        }
-
-        .home{
-            margin-top: 56px;
-        }
-        #icon-chat{
-            float: right;
-            margin-top: 770px;
-            position: fixed;
-            padding-top: 90px;
-            padding-left: 500px;
-        }
     </style>
 </head>
 <body>
-    <div class="header">
-        <div class="row">
-            <div class="col-4">
-                <div class="row">
-                    <div class="col-1">
-                        <img id="logo" src="hinh/logo.jpg">
-                    </div>
-
-                    <div class="col-11">
-                        <input id="search" placeholder="Tìm kiếm trên Facebook">
-                    </div>
+    <div class="row">
+        <div class="header">
+            <div class="col-3">
+                <div class="col-1 logo">
+                    <img id="logo" src="hinh/logo.jpg">
+                </div>
+                <div class="col-11 search">
+                    <span class="icon"><i class="fal fa-search"></i></span>
+                    <input type="search" id="search"  placeholder="            Tìm kiếm trên Facebook">
                 </div>
             </div>
 
-            <div class="col-4">
-                <div class="row">
-                    <div class="col-12">
-                        <div class="row">
-                            <div class="col-1"></div>
-                            <div class="col-2">
-                                <a href="#">
-                                    <img src="hinh/home.jpg">
-                                </a>
-                            </div>
-                            <div class="col-2">
-                                <a href="#">
-                                    <img src="hinh/friend.jpg">
-                                </a>
-                            </div>
-                            <div class="col-2">
-                                <a href="#">
-                                    <img src="hinh/watch.jpg">
-                                </a>
-                            </div>
-                            <div class="col-2">
-                                <a href="#">
-                                    <img src="hinh/marketplace.jpg">
-                                </a>
-                            </div>
-                            <div class="col-2">
-                                <a href="#">
-                                    <img src="hinh/group.jpg">
-                                </a>
-                            </div>
-                            <div class="col-1"></div>
-                        </div>
-                    </div>
+            <div class="col-7 mid-header">
+                <div class="col-2"></div>
+                <div class="col-1 home">
+                   <i class="fal fa-home-alt fa-lg"></i>
                 </div>
+                <div class="col-1 friend">
+                    <i class="fal fa-user-friends fa-lg"></i>
+                </div>
+                <div class="col-1 watch">
+                    <i class="fal fa-tv fa-lg"></i>
+                </div>
+                <div class="col-1 store">
+                    <i class="fal fa-store fa-lg"></i>
+                </div>
+                <div class="col-1 group">
+                    <i class="fal fa-users fa-lg"></i>
+                </div>
+                <div class="col-2"></div>
             </div>
 
-            <div class="col-4">
-                <img id="menu" src="hinh/menu.jpg">
+            <div class="col-2 right-header">
+                <div class="col-4 avatar">
+                    <img class="avatar1" src="hinh/anh1.jpg">
+                    <a>Cường</a>
+                </div>
+                <div class="col-2 plus">
+                    <i class="fal fa-plus"></i>
+                </div>
+                <div class="col-2 mess">
+                    <i class="fab fa-facebook-messenger"></i>
+                </div>
+                <div class="col-2 bell">
+                    <i class="fas fa-bell"></i>
+                </div>
+                <div class="col-2 caret">
+                    <i class="fas fa-caret-down fa-lg"></i>
+                </div>
             </div>
         </div>
     </div>
-    <div class="main">
-        <div class="row">
-            <div class="col-4">
-                <img id="menu-list" src="hinh/menu-list.jpg">
-            </div>
-            <div class="col-4">
-                <div class="home">
-                    <img src="hinh/cay-khe.jpg">
-                    <img src="hinh/cay-khe.jpg">
-                    <img src="hinh/cay-khe.jpg">
+
+    <div class="row">
+        <div class="panel">
+            <div class="col-3 left-panel">
+                <div class="col-9">
+                    <ul>
+                        <li class="task-bar">
+                            <div class="col-1">
+                                <img class="avatar1" src="hinh/anh1.jpg" >
+                            </div>
+                            <div class="col-10">
+                                <a>Ngọc Cường</a>
+                            </div>
+                        </li>
+                        <li class="task-bar">
+                            <div class="col-1">
+                                <i class="fad fa-user-friends fa-2x"></i>
+                            </div>
+                            <div class="col-10">
+                                <a>Bạn bè</a>
+                            </div>
+                        </li>
+                        <li class="task-bar">
+                            <div class="col-1">
+                                <i class="fad fa-calendar-alt fa-2x"></i>
+                            </div>
+                            <div class="col-10">
+                                <a>Gần đây nhất</a>
+                            </div>
+                        </li>
+                        <li class="task-bar">
+                            <div class="col-1">
+                                <i class="fas fa-star fa-2x"></i>
+                            </div>
+                            <div class="col-10">
+                                <a>Yêu Thích</a>
+                            </div>
+                        </li>
+                        <li class="task-bar">
+                            <div class="col-1">
+                                <i class="fad fa-users fa-2x"></i>
+                            </div>
+                            <div class="col-10">
+                                <a>Nhóm</a>
+                            </div>
+                        </li>
+                        <li class="task-bar">
+                            <div class="col-1">
+                                <i class="fad fa-store-alt fa-2x"></i>
+                            </div>
+                            <div class="col-10">
+                                <a>Marketplace</a>
+                            </div>
+                        </li>
+                        <li class="task-bar">
+                            <div class="col-1">
+                                <i class="fad fa-heart-circle fa-2x"></i>
+                            </div>
+                            <div class="col-109">
+                                <a>Chiến dịch gây quỹ</a>
+                            </div>
+                        </li>
+                        <li class="task-bar">
+                            <div class="col-1">
+                                <i class="fad fa-cloud-sun fa-2x"></i>
+                            </div>
+                            <div class="col-10">
+                                <a>Thời tiết</a>
+                            </div>
+                        </li>
+                        <li class="task-bar">
+                            <div class="col-1">
+                                <i class="fad fa-bookmark fa-2x"></i>
+                            </div>
+                            <div class="col-10">
+                                <a>Đã lưu</a>
+                            </div>
+                        </li>
+                        <li class="task-bar">
+                            <div class="col-1">
+                                <i class="fad fa-credit-card fa-2x"></i>
+                            </div>
+                            <div class="col-10">
+                                <a>Facebook Pay</a>
+                            </div>
+                        </li>
+                        <li class="task-bar">
+                            <div class="col-1">
+                                <i class="fad fa-audio-description fa-2x"></i>
+                            </div>
+                            <div class="col-10">
+                                <a>Hoạt động quảng cáo gần đây</a>
+                            </div>
+                        </li>
+                        <li class="task-bar">
+                            <div class="col-1">
+                                <i class="fad fa-history fa-2x"></i>
+                            </div>
+                            <div class="col-109">
+                                <a>Kỷ niệm</a>
+                            </div>
+                        </li>
+                        <li class="task-bar">
+                            <div class="col-1">
+                                <i class="fad fa-flag-alt fa-2x"></i>
+                            </div>
+                            <div class="col-10">
+                                <a>Trang</a>
+                            </div>
+                        </li>
+                        <li class="task-bar">
+                            <div class="col-1">
+                                <i class="fad fa-calendar-star fa-2x"></i>
+                            </div>
+                            <div class="col-10">
+                                <a>Sự kiện</a>
+                            </div>
+                        </li>
+                    </ul>
                 </div>
             </div>
-            <div class="col-4">
-                <img id="icon-chat" src="hinh/icon.jpg">
+
+            <div class="col-6 mid-panel">
+                <div class="col-1"></div>
+                <div class="col-9">
+                    <div class="row">
+                        <div class="col-12 status">
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="col-1">
+                                        <img class="avatar-status" src="hinh/anh1.jpg" >
+                                    </div>
+                                    <div class="col-11">
+                                        <input id="ip-status" placeholder="Cường ơi, bạn đang nghĩ gì thế?">
+                                    </div>
+                                </div>
+
+                                <hr  width="90%" align="center" size="2px" color="#3a3b3c"/>
+
+                                <div class="col-12">
+                                    <div class="col-4 video-plus">
+                                        <i class="fad fa-video-plus fa-lg"></i>
+                                        <a>Video trực tiếp</a>
+                                    </div>
+                                    <div class="col-4 photo-video">
+                                        <i class="fad fa-photo-video fa-lg"></i>
+                                        <a>Ảnh/Video</a>
+                                    </div>
+                                    <div class="col-4 laugh">
+                                        <i class="far fa-laugh fa-lg"></i>
+                                        <a>Cảm xúc/Hoạt động</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 post">
+                        <div class="col-6">
+                            <div class="col-2">
+                                <img class="avatar-status" src="hinh/anh2.jpg" >
+                            </div>
+                            <div class="col-10">
+                                <div class="row">
+                                    <div class="col-8">
+                                        <a>Cường Ngọc Hoàng</a>
+                                    </div>
+                                    <div class="col-4"></div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-4" style="float:inherit;">
+                                        <a>1 giờ </a>
+                                        <i class="fas fa-globe-americas"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="col-10"></div>
+                            <div class="col-2">
+                                <i class="fas fa-ellipsis-h"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <img class="post-img" src="hinh/anh3.jpg">
+                    </div>
+                </div>
+                <div class="col-2"></div>
+            </div>
+
+            <div class="col-3 right-panel">
+                <div class="col-2"></div>
+                <div class="col-10 contact">
+                    <ul>
+                        <li class="title-contact">
+                            <h2 style="color: #7c7d7e">Người liên hệ</h2>
+                            <i class="fal fa-search"></i>
+                            <i class="fas fa-ellipsis-h"></i>
+                        </li>
+                        <li class="person">
+                            <img class="avatar-friend" src="hinh/avatarfb.jpg">
+                            <a>Hoàng Ngọc Cường</a>
+                            <i class="fas fa-circle fa-xs"></i>
+                        </li>
+                        <li class="person">
+                            <img class="avatar-friend" src="hinh/avatarfb.jpg">
+                            <a>Hoàng Ngọc Cường</a>
+                            <i class="fas fa-circle fa-xs"></i>
+                        </li>
+                        <li class="person">
+                            <img class="avatar-friend" src="hinh/avatarfb.jpg">
+                            <a>Hoàng Ngọc Cường</a>
+                            <i class="fas fa-circle fa-xs"></i>
+                        </li>
+                        <li class="person">
+                            <img class="avatar-friend"  src="hinh/avatarfb.jpg">
+                            <a>Hoàng Ngọc Cường</a>
+                            <i class="fas fa-circle fa-xs"></i>
+                        </li>
+                        <li class="person">
+                            <img class="avatar-friend" src="hinh/avatarfb.jpg">
+                            <a>Hoàng Ngọc Cường</a>
+                            <i class="fas fa-circle fa-xs"></i>
+                        </li>
+                        <li class="person">
+                            <img class="avatar-friend" src="hinh/avatarfb.jpg">
+                            <a>Hoàng Ngọc Cường</a>
+                            <i class="fas fa-circle fa-xs"></i>
+                        </li>
+                        <li class="person">
+                            <img class="avatar-friend" src="hinh/avatarfb.jpg">
+                            <a>Hoàng Ngọc Cường</a>
+                            <i class="fas fa-circle fa-xs"></i>
+                        </li>
+                        <li class="person">
+                            <img class="avatar-friend" src="hinh/avatarfb.jpg">
+                            <a>Hoàng Ngọc Cường</a>
+                            <i class="fas fa-circle fa-xs"></i>
+                        </li>
+                        <li class="person">
+                            <img class="avatar-friend" src="hinh/avatarfb.jpg">
+                            <a>Hoàng Ngọc Cường</a>
+                            <i class="fas fa-circle fa-xs"></i>
+                        </li>
+                        <li class="person">
+                            <img class="avatar-friend" src="hinh/avatarfb.jpg">
+                            <a>Hoàng Ngọc Cường</a>
+                            <i class="fas fa-circle fa-xs"></i>
+                        </li>
+                        <li class="person">
+                            <img class="avatar-friend" src="hinh/avatarfb.jpg">
+                            <a>Hoàng Ngọc Cường</a>
+                            <i class="fas fa-circle fa-xs"></i>
+                        </li>
+                        <li class="person">
+                            <img class="avatar-friend" src="hinh/avatarfb.jpg">
+                            <a>Hoàng Ngọc Cường</a>
+                            <i class="fas fa-circle fa-xs"></i>
+                        </li>
+                        <li class="person">
+                            <img class="avatar-friend" src="hinh/avatarfb.jpg">
+                            <a>Hoàng Ngọc Cường</a>
+                            <i class="fas fa-circle fa-xs"></i>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </div>
     </div>

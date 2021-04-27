@@ -11,9 +11,21 @@ a{
 #head{
     color: red;
     font-size: 40px;
-
 }
 
 #truyen{
     text-align: center;
+}
+
+ol li{
+    list-style: none;
+    text-align: center;
+}
+
+h1{
+    background-color: black;
+}
+
+.muc-luc{
+    background-color: #7abaff;
 }

@@ -13,7 +13,7 @@ a{
     background-color: #242526;
     display: flex;
     align-items: center;
-    /*position: fixed;*/
+    position: fixed;
 }
 
 #logo{
@@ -24,7 +24,6 @@ a{
     border-right: 5px;
     text-align: center;
     padding-left:1px;
-
 }
 
 .search{
@@ -216,9 +215,19 @@ a{
     background-color:#5d5d5d;
 }
 
-.panel .left-panel{
+.left-panel{
     padding-top: 1px;
     padding-left: 5px;
+    position: fixed;
+}
+
+.mid-panel{
+    margin-left: 25%;
+}
+
+.right-panel{
+    position: fixed;
+    margin-left: 77%;
 }
 
 ul{
@@ -395,10 +404,9 @@ ul .person{
 
 .post{
     background-color: #242526;
-    display: flex;
-    align-items: center;
     border-radius: 15px;
     margin-top: 15px;
+    height: auto;
 }
 
 .fa-globe-americas{
@@ -408,8 +416,32 @@ ul .person{
 .post .col-6{
     display: flex;
     align-items: center;
+    height: 60px;
 }
 
 .post-img{
-    width: 655px;
+    width: 640px;
+}
+
+.post .col-12{
+    text-align: center;
+}
+
+.like:hover{
+    background-color: #5d5d5d;
+    border-radius: 10px;
+}
+
+.comment:hover {
+    background-color: #5d5d5d;
+    border-radius: 10px;
+}
+
+.share:hover {
+    background-color: #5d5d5d;
+    border-radius: 10px;
+}
+
+.panel{
+    padding-top: 50px;
 }

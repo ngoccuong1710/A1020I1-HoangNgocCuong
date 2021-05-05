@@ -1,0 +1,20 @@
+a{
+    color: black;
+}
+.img{
+    height: 710px;
+    background-image: url("https://c.s-microsoft.com/en-us/CMSImages/Surface_Home_Hero_Spring_21_color_V1.jpg?version=672b6412-c20f-66ff-49d7-10347a5ab07e");
+}
+
+.badge-img{
+    width: 404px;
+    height: 297px;
+    top: 25%;
+    left: 11%;
+    bottom: 58px;
+}
+
+.icon-linknav{
+    width: 40px;
+    height: 31px;
+}

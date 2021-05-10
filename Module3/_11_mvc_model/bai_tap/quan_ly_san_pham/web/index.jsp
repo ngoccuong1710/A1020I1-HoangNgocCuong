@@ -6,29 +6,35 @@
   </head>
   <body>
     <h1>Product</h1>
-    <p><a href="/products?action=create">Create new product</a></p>
+    <p><a href="?action=create">Create new product</a></p>
+    <form method="post" action="?action=search">
+      <p>
+        <input type="text" name="search" placeholder="search">
+        <input type="submit" value="Search">
+      </p>
+    </form>
     <table border="1">
       <tr>
         <td>id</td>
-        <td>Tên sản phẩm</td>
-        <td>giá</td>
-        <td>Mô tả</td>
-        <td>Nhà sản xuất</td>
-        <td>Xem chi tiết</td>
-        <td>Sửa</td>
-        <td>Xóa</td>
+        <td>Name</td>
+        <td>Price</td>
+        <td>Describe</td>
+        <td>Production Company</td>
+        <td>Show</td>
+        <td>Edit</td>
+        <td>Delete</td>
       </tr>
 
-      <c:forEach var="product" items="${products}">
+      <c:forEach var="product" items="${productList}">
         <tr>
-          <td>${product.getId()}</td>
-          <td>${product.getName()}</td>
-          <td>${product.getPrice()}</td>
-          <td>${product.getDescribe()}</td>
-          <td>${product.getProductionCompany()}</td>
-          <td><a href="/products?action=view">Xem</a></td>
-          <td><a href="/products?action=update">Sửa</a></td>
-          <td><a href="/products?action=delete">Xóa</a></td>
+          <td><c:out value="${product.id}"/></td>
+          <td><c:out value="${product.name}"/></td>
+          <td><c:out value="${product.price}"/></td>
+          <td><c:out value="${product.describe}"/></td>
+          <td><c:out value="${product.productionCompany}"/></td>
+          <td><a href="?action=show&id=${product.id}">show</a></td>
+          <td><a href="?action=update&id=${product.id}">edit</a></td>
+          <td><a href="?action=delete&id=${product.id}">delete</a></td>
         </tr>
       </c:forEach>
     </table>

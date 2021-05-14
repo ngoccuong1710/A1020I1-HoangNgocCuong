@@ -2,11 +2,14 @@ package model.repository;
 
 import model.bean.User;
 
-import java.sql.*;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
-public class UserDAO implements IUserDAO{
+public class UserRepositoryImpl implements UserRepository {
     private BaseRepository baseRepository = new BaseRepository();
 
     private static final String INSERT_USERS_SQL = "INSERT INTO users" + "  (name, email, country) VALUES " + " (?, ?, ?);";
@@ -15,6 +18,7 @@ public class UserDAO implements IUserDAO{
     private static final String DELETE_USERS_SQL = "delete from users where id = ?;";
     private static final String UPDATE_USERS_SQL = "update users set name = ?,email= ?, country =? where id = ?;";
     private static final String SELECT_USER_BY_COUNTRY = "select * from users where country = ?;";
+    private static final String SORT_BY_NAME = "select * from users order by `name`;";
 
     @Override
     public void insertUser(User user) throws SQLException {
@@ -36,7 +40,6 @@ public class UserDAO implements IUserDAO{
         try {
             PreparedStatement preparedStatement = this.baseRepository.getConnection().prepareStatement(SELECT_USER_BY_ID);
             preparedStatement.setInt(1, id);
-            System.out.println(preparedStatement);
             ResultSet resultSet = preparedStatement.executeQuery();
 
             while ( resultSet.next()) {
@@ -102,6 +105,52 @@ public class UserDAO implements IUserDAO{
             throwables.printStackTrace();
         }
         return rowUpdated;
+    }
+
+    @Override
+    public List<User> selectByCountry(String country) throws SQLException {
+        List<User> userList = new ArrayList<>();
+        try{
+            PreparedStatement preparedStatement = this.baseRepository.getConnection().prepareStatement(SELECT_USER_BY_COUNTRY);
+            preparedStatement.setString(1, country);
+            ResultSet resultSet = preparedStatement.executeQuery(SELECT_USER_BY_COUNTRY);
+
+            User user = null;
+            while (resultSet.next()){
+                user = new User();
+                user.setId(resultSet.getInt("id"));
+                user.setName(resultSet.getString("name"));
+                user.setEmail(resultSet.getString("email"));
+                user.setCountry(resultSet.getString("country"));
+
+                userList.add(user);
+            }
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+        return userList;
+    }
+
+    public List<User> sortByName() {
+        List<User> userList = new ArrayList<>();
+        try{
+            Statement statement = this.baseRepository.getConnection().createStatement();
+            ResultSet resultSet = statement.executeQuery(SORT_BY_NAME);
+
+            User user = null;
+            while (resultSet.next()){
+                user = new User();
+                user.setId(resultSet.getInt("id"));
+                user.setName(resultSet.getString("name"));
+                user.setEmail(resultSet.getString("email"));
+                user.setCountry(resultSet.getString("country"));
+
+                userList.add(user);
+            }
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+        return userList;
     }
 
 

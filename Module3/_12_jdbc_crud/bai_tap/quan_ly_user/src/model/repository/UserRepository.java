@@ -5,7 +5,7 @@ import model.bean.User;
 import java.sql.SQLException;
 import java.util.List;
 
-public interface IUserDAO {
+public interface UserRepository {
     public void insertUser(User user) throws SQLException;
 
     public User selectUser(int id);
@@ -16,4 +16,7 @@ public interface IUserDAO {
 
     public boolean updateUser(User user) throws SQLException;
 
+    public List<User> selectByCountry(String country) throws SQLException;
+
+    public  List<User> sortByName();
 }

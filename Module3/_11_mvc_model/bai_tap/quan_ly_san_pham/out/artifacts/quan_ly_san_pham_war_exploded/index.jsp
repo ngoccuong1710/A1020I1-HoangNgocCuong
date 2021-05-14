@@ -38,6 +38,5 @@
         </tr>
       </c:forEach>
     </table>
-    <c:out value="${productList}"/>
   </body>
 </html>

@@ -12,7 +12,7 @@ public class ProductRepositoryImpl implements ProductRepository{
 
     static {
         productMap = new HashMap<>();
-        productMap.put(1, new Product(1, "quan ", 100000, "asdasd", "Channel"));
+        productMap.put(1, new Product(1, "quan", 100000, "asdasd", "Channel"));
         productMap.put(2, new Product(2, "ao", 200000, "asdasd123", "Channel"));
         productMap.put(3, new Product(3, "giay", 123000, "1231231", "Channel"));
         productMap.put(4, new Product(4, "dep", 3543000, "456456", "Channel"));

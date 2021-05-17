@@ -1,8 +1,8 @@
 package controller;
 
 import model.bean.User;
-import model.repository.UserRepository;
-import model.repository.UserRepositoryImpl;
+import model.service.UserService;
+import model.service.UserServiceImpl;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -16,10 +16,10 @@ import java.util.List;
 
 @WebServlet(name = "UserServlet", urlPatterns = {"", "/users"})
 public class UserServlet extends HttpServlet {
-    private UserRepository userRepository;
+    private UserService userService;
 
     public void init(){
-        userRepository = new UserRepositoryImpl();
+        userService = new UserServiceImpl();
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -83,7 +83,7 @@ public class UserServlet extends HttpServlet {
     }
 
     private void listUser(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        List<User> userList = userRepository.selectAllUser();
+        List<User> userList = userService.selectAllUser();
 
         request.setAttribute("userList", userList);
         request.getRequestDispatcher("user/list.jsp").forward(request, response);
@@ -95,7 +95,7 @@ public class UserServlet extends HttpServlet {
 
     private void showEditForm(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         int id = Integer.parseInt(request.getParameter("id"));
-        User existingUser = userRepository.selectUser(id);
+        User existingUser = userService.selectUser(id);
 
         request.setAttribute("user", existingUser);
         request.getRequestDispatcher("user/edit.jsp").forward(request, response);
@@ -107,7 +107,7 @@ public class UserServlet extends HttpServlet {
         String country = request.getParameter("country");
         User newUser = new User(name, email, country);
 
-        userRepository.insertUser(newUser);
+        userService.insertUser(newUser);
 
         request.getRequestDispatcher("user/create.jsp").forward(request, response);
     }
@@ -119,7 +119,7 @@ public class UserServlet extends HttpServlet {
         String country = request.getParameter("country");
         User updateUser = new User(id, name, email, country);
 
-        userRepository.updateUser(updateUser);
+        userService.updateUser(updateUser);
 
         request.getRequestDispatcher("user/edit.jsp").forward(request, response);
     }
@@ -127,8 +127,8 @@ public class UserServlet extends HttpServlet {
     private void deleteUser(HttpServletRequest request, HttpServletResponse response) throws SQLException, ServletException, IOException {
         int id = Integer.parseInt(request.getParameter("id"));
 
-        userRepository.deleteUser(id);
-        List<User> userList = userRepository.selectAllUser();
+        userService.deleteUser(id);
+        List<User> userList = userService.selectAllUser();
 
         request.setAttribute("userList", userList);
         request.getRequestDispatcher("user/list.jsp").forward(request, response);
@@ -136,8 +136,8 @@ public class UserServlet extends HttpServlet {
 
     private void searchUser(HttpServletRequest request, HttpServletResponse response) throws SQLException, ServletException, IOException {
         String countrySearch = request.getParameter("search");
-        userRepository.selectByCountry(countrySearch);
-        List<User> userList = userRepository.selectAllUser();
+        userService.selectByCountry(countrySearch);
+        List<User> userList = userService.selectAllUser();
         List<User> userListSearch = new ArrayList<>();
         for (User user: userList){
             if (countrySearch.equals(user.getCountry())){
@@ -149,7 +149,7 @@ public class UserServlet extends HttpServlet {
     }
 
     private void sortByName(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        List<User> userList = userRepository.sortByName();
+        List<User> userList = userService.sortByName();
 
         request.setAttribute("userListSort", userList);
         request.getRequestDispatcher("user/sortByName.jsp").forward(request, response);

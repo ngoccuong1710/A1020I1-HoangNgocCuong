@@ -110,6 +110,7 @@ public class ProductServlet extends HttpServlet {
 
         Product product = this.productService.findById(id);
 
+        product.setId(id);
         product.setName(name);
         product.setPrice(price);
         product.setDescribe(describe);

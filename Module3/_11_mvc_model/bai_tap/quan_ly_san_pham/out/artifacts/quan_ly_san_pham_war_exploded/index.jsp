@@ -38,5 +38,6 @@
         </tr>
       </c:forEach>
     </table>
+  <c:out value="${productSearch.getId(1)}"/>
   </body>
 </html>

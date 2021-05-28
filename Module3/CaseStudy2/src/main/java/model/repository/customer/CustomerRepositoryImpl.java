@@ -23,7 +23,7 @@ public class CustomerRepositoryImpl implements CustomerRepository {
             customer.setId(resultSet.getInt("customer_id"));
             customer.setName(resultSet.getString("customer_name"));
             customer.setBirthday(resultSet.getString("customer_birthday"));
-            customer.setGender(resultSet.getBoolean("customer_gender"));
+            customer.setGender(resultSet.getInt("customer_gender"));
             customer.setIdCard(resultSet.getInt("customer_id_card"));
             customer.setPhone(resultSet.getInt("customer_phone"));
             customer.setEmail(resultSet.getString("customer_email"));
@@ -41,7 +41,7 @@ public class CustomerRepositoryImpl implements CustomerRepository {
         CallableStatement callableStatement = this.baseRepository.getConnection().prepareCall("call customer_create(?, ?, ?, ?, ?, ?, ?, ?);");
         callableStatement.setString(1, customer.getName());
         callableStatement.setString(2, customer.getBirthday());
-        callableStatement.setBoolean(3, customer.getGender());
+        callableStatement.setInt(3, customer.getGender());
         callableStatement.setInt(4, customer.getIdCard());
         callableStatement.setInt(5, customer.getPhone());
         callableStatement.setString(6, customer.getEmail());
@@ -66,7 +66,7 @@ public class CustomerRepositoryImpl implements CustomerRepository {
         callableStatement.setInt(1, customer.getId());
         callableStatement.setString(2, customer.getName());
         callableStatement.setString(3, customer.getBirthday());
-        callableStatement.setBoolean(4, customer.getGender());
+        callableStatement.setInt(4, customer.getGender());
         callableStatement.setInt(5, customer.getIdCard());
         callableStatement.setInt(6, customer.getPhone());
         callableStatement.setString(7, customer.getEmail());
@@ -85,7 +85,7 @@ public class CustomerRepositoryImpl implements CustomerRepository {
         while (resultSet.next()){
             String name =  resultSet.getString("customer_name");
             String birthday = resultSet.getString("customer_birthday");
-            boolean gender = resultSet.getBoolean("customer_gender");
+            int gender = resultSet.getInt("customer_gender");
             int idCard = resultSet.getInt("customer_id_card");
             int phone = resultSet.getInt("customer_phone");
             String email = resultSet.getString("customer_email");

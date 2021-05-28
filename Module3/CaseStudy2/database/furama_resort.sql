@@ -7,7 +7,7 @@ create table `position`(
     position_name varchar(45) not null
 );
 
-create table education_degee(
+create table education_degree(
 	education_degree_id int primary key not null,
     education_degree_name varchar(45) not null
 );
@@ -19,7 +19,7 @@ create table division(
 
 create table `user`(
 	username varchar(255) primary key not null,
-    `password` varchar(255) not null
+    `password` varchar(255) default '123456'
 );
 
 create table `role`(
@@ -36,9 +36,9 @@ create table user_role(
 );
 
 create table employee(
-	employee_id int primary key not null,
+	employee_id int primary key not null auto_increment,
     employee_name varchar(45) not null,
-    employee_bỉthday date not null,
+    employee_birthday date not null,
     employee_id_card varchar(45) not null,
     employee_salary double not null,
     employee_phone varchar(45) not null,
@@ -47,10 +47,10 @@ create table employee(
     position_id int not null,
     education_degree_id int not null,
     division_id int not null,
-    username varchar(255) not null,
+    username varchar(255),
     
     foreign key (position_id) references `position`(position_id),
-    foreign key (education_degree_id) references education_degee(education_degree_id),
+    foreign key (education_degree_id) references education_degree(education_degree_id),
     foreign key (division_id) references division(division_id),
     foreign key (username) references user(username)
 );
@@ -86,24 +86,24 @@ create table rent_type(
 );
 
 create table service(
-	service_id int primary key not null,
+	service_id int primary key not null auto_increment auto_increment,
     service_name varchar(45) not null,
     service_area int not null,
     service_cost double not null,
     service_max_people int not null,
     rent_type_id int not null,
     service_type_id int not null,
-    standard_room varchar(45) not null,
-    decription_other_convenience varchar(45) not null,
-    pool_area double not null,
-    snumber_of_floors int not null,
+    standard_room varchar(45),
+    decription_other_convenience varchar(45),
+    pool_area double,
+    number_of_floors int,
     
     foreign key (rent_type_id) references rent_type(rent_type_id),
     foreign key (service_type_id) references service_type(service_type_id)
 );
 
 create table contract(
-	contract_id int primary key not null,
+	contract_id int primary key not null auto_increment,
     contract_start_date datetime not null,
     contract_end_date datetime not null,
     contract_daposit double not null,
@@ -213,7 +213,7 @@ BEGIN
 END$$
 DELIMITER ;
 
--- call customer_update(1,'Nguyễn Văn An', '1989-5-28', 1, 201132326, 0365978525, 'vanan89@gmail.com', 3, 'Danang');
+-- call customer_update(1,'Nguyễn Văn An', '1989-5-28', 0, 201132326, 0365978525, 'vanan89@gmail.com', 3, 'Danang');
 
 DELIMITER $$
 CREATE PROCEDURE get_customer_by_id(IN id INT)
@@ -225,7 +225,7 @@ BEGIN
 END$$
 DELIMITER ;
 
-call get_customer_by_id(1);
+-- call get_customer_by_id(1);
 
 insert into position values
 (1, 'Giám đốc'),
@@ -237,7 +237,7 @@ insert into position values
 (7, 'Nhân Viên'),
 (8, 'Bảo vệ');
 
-insert into education_degee values
+insert into education_degree values
 (1, 'Bậc trung học'),
 (2, 'Bậc đại học'),
 (3, 'Bậc cao học');
@@ -256,9 +256,8 @@ insert into `user` values
 ('thanhthao', '132465');
 
 insert into `role` values
-(1, 'Admin'),
-(2, 'Member');
-
+(1, 'Giám đốc'),
+(2, 'Quản lý');
 
 insert into user_role values
 (1, 'ngoccuong'),
@@ -268,13 +267,141 @@ insert into user_role values
 (2, 'thanhthao');
 
 insert into employee values
-(1, 'Hoàng Ngọc Cường', '1999-10-17', 201783537, 13000000, 0365797022, 'ngoccuong@gmail.com', 'Đà Nẵng', 4, 2, 4, 'ngoccuong'),
+(1, 'Hoàng Ngọc Cường', '1999-10-17', 201783537, 8500000, 0365797022, 'ngoccuong@gmail.com', 'Đà Nẵng', 4, 2, 4, 'ngoccuong'),
 (2, 'Đoàn Công Danh', '1999-12-24', 20171234, 7000000, 0963578925, 'congdanh123@gmail.com', 'Hà Nội', 7, 2, 1, 'congdanh'),
 (3, 'Nguyễn Huy', '2000-6-20', 201815975, 4000000, 0365794267, 'huynguyen2k@gmail.com', 'Hồ Chí Minh', 8, 1, 2, 'nguyenhuy'),
 (4, 'Huỳnh Tâm', '2001-2-28', 301789653, 7500000, 0691354781, 'tam123123123@gmail.com', 'Quảng Trị', 7, 1, 3, 'huynhtam'),
-(5, 'Thanh Thảo', '1999-9-26', 201713987, 30000000, 0698342111, 'thanhthao99@gmail.com', 'Đà Nẵng', 1, 3, 1, 'thanhthao');
+(5, 'Thanh Thảo', '1999-9-26', 201713987, 9000000, 0698342111, 'thanhthao99@gmail.com', 'Đà Nẵng', 1, 3, 1, 'thanhthao');
 
+DELIMITER $$
+CREATE PROCEDURE employee_list()
+BEGIN
+    select emp.employee_id, emp.employee_name, emp.employee_birthday, emp.employee_id_card, emp.employee_salary, emp.employee_phone, emp.employee_email, emp.employee_address, pos.position_name, edu.education_degree_name, `div`.division_name
+    from employee emp left join position pos
+	on emp.position_id = pos.position_id
+    left join education_degree edu
+    on emp.education_degree_id = edu.education_degree_id
+    left join division `div`
+    on emp.division_id = `div`.division_id;
+END$$
+DELIMITER ;
 
+call employee_list();
 
+DELIMITER $$
+CREATE PROCEDURE employee_create(
+	IN `name` varchar(45),
+	IN birthday date,
+    IN id_card int,
+    IN salary double,
+    IN phone int,
+    IN email varchar(45),
+    IN address varchar(45),
+	IN position int,
+    IN education_degree int,
+    IN division int,
+    IN username varchar(255)
+    
+)
+BEGIN
+	insert into `user`(username)
+    values(username);
+    insert into employee(employee_name, employee_birthday, employee_id_card, employee_salary, employee_phone, employee_email, employee_address, position_id, education_degree_id, division_id, username)
+    values(`name`, birthday, id_card, salary, phone, email, address, position, education_degree, division, username);
+END$$
+DELIMITER ;
 
+-- call employee_create('La Chinh', '2000-5-25', '200035689', 8500000, '0987654321', 'lachinh123@gmail.com', 'Da nang', 2, 3, 1, 'lachinh');  
 
+DELIMITER $$
+CREATE PROCEDURE employee_delete(
+	IN id INT
+)
+BEGIN
+    delete from employee where employee.employee_id = id;
+END$$
+DELIMITER ;
+
+-- call employee_delete(7);
+
+DELIMITER $$
+CREATE PROCEDURE employee_update(
+	IN id INT,
+	IN `name` varchar(45),
+	IN birthday date,
+    IN id_card int,
+    IN salary double,
+    IN phone int,
+    IN email varchar(45),
+    IN address varchar(45),
+	IN position int,
+    IN education_degree int,
+    IN division int,
+    IN username varchar(255)
+)
+BEGIN
+    update employee emp
+    set emp.employee_name = `name`, emp.employee_birthday = birthday, emp.employee_id_card = id_card, emp.employee_salary = salary, emp.employee_phone = phone, emp.employee_email = email, emp.employee_address = address, emp.position_id = position, emp.education_degree_id = education_degree, emp.division_id = division, emp.username = username
+    where emp.employee_id = id;
+END$$
+DELIMITER ;
+
+-- call employee_update(1, 'Hoàng Ngọc Cường', '1999-10-17', 201783537, 8500000, 0365797022, 'ngoccuong@gmail.com', 'Đà Nẵng', 4, 2, 4, 'ngoccuong');  
+
+DELIMITER $$
+CREATE PROCEDURE get_employee_by_id(IN id INT)
+BEGIN
+    select emp.employee_id, emp.employee_name, emp.employee_birthday, emp.employee_id_card, emp.employee_salary, emp.employee_phone, emp.employee_email, emp.employee_address, pos.position_name, edu.education_degree_name, `div`.division_name, `user`.username
+    from employee emp left join position pos
+	on emp.position_id = pos.position_id
+    left join education_degree edu
+    on emp.education_degree_id = edu.education_degree_id
+    left join division `div`
+    on emp.division_id = `div`.division_id
+    left join `user`
+    on emp.username = `user`.username
+    where emp.employee_id = id;
+END$$
+DELIMITER ;
+
+-- call get_employee_by_id(1);
+
+insert into rent_type values
+(1, 'Hour', 100000),
+(2, 'Day', 300000),
+(3, 'Month', 500000),
+(4, 'Year', 700000);
+
+insert into service_type values
+(1, 'Villa'),
+(2, 'House'),
+(3, 'Room');
+
+insert into service values
+(1, 'Villa-1', 50, 1200000, 10, 2, 1, '5 sao', 'foor', 40, 3),
+(2, 'Villa-2', 43, 700000, 7, 1, 2, '4 sao', 'drink', 50, 2);
+
+insert into service(service_id, service_name, service_area, service_cost, service_max_people, rent_type_id, service_type_id, standard_room, decription_other_convenience, number_of_floors) values
+(3, 'House-1', 43, 700000, 7, 1, 2, '4 sao', 'drink', 2),
+(4, 'House-2', 43, 700000, 7, 1, 2, '4 sao', 'drink', 2);
+
+insert into service(service_id, service_name, service_area, service_cost, service_max_people, rent_type_id, service_type_id) values
+(5, 'Room-1', 20, 400000, 4, 3, 3),
+(6, 'Room-2', 20, 400000, 4, 3, 3);
+
+insert into attach_service values
+(1, 'Karaoke', 100000, 3, 'còn'),
+(2, 'car', 400000, 1, 'Hết'),
+(3, 'food', 50000, 4, 'còn'),
+(4, 'drink', 50000, 4, 'còn');
+
+insert into contract values
+(1, '2018-1-28', '2030-7-28', 4000000, 13000000, 1, 2, 1),
+(2, '2019-3-12', '2035-5-21', 5000000, 17000000, 5, 6, 3),
+(3, '2019-2-20', '2040-6-12', 6000000, 23000000, 3, 1, 2),
+(4, '2018-1-20', '2040-6-12', 7000000, 11000000, 2, 3, 1);
+
+insert into contract_detail values
+(1, 2, 1, 50),
+(2, 3, 2, 40),
+(3, 1, 4, 60);

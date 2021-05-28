@@ -12,10 +12,10 @@
 
 <div class="container-fluid">
     <div class="row" style="height: 81%">
-        <div class="col-2 text-center">
+        <div class="col-1 text-center">
             <a class="btn btn-primary" href="customer?action=create-customer">Add Customer</a>
         </div>
-        <div class="col-10">
+        <div class="col-11">
             <div class="row">
                 <div class="col-12">
                     <table class="table table-striped">
@@ -39,10 +39,10 @@
                                 <td><c:out value="${customer.name}"/></td>
                                 <td><c:out value="${customer.birthday}"/></td>
                                 <td>
-                                    <c:if test="${customer.gender == true}">
+                                    <c:if test="${customer.gender == 0}">
                                         <c:out value = "Male"/><p>
                                     </c:if>
-                                    <c:if test="${customer.gender == false}">
+                                    <c:if test="${customer.gender == 1}">
                                         <c:out value = "Female"/><p>
                                     </c:if>
                                 </td>
@@ -62,11 +62,11 @@
             </div>
         </div>
     </div>
+    <div class="container-fluid">
+        <jsp:include page='layout/footer.jsp'/>
+    </div>
 </div>
 
-<div>
-    <jsp:include page='layout/footer.jsp'/>
-</div>
 
 <script src="boostrap/js/jquery-3.6.0.min.js"></script>
 <script src="boostrap/js/bootstrap.min.js"></script>

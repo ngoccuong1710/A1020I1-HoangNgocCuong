@@ -12,10 +12,10 @@
 
 <div class="container-fluid">
     <div class="row" style="height: 81%">
-        <div class="col-2">
+        <div class="col-1">
 
         </div>
-        <div class="col-10">
+        <div class="col-11">
             <form method="post" class="form-horizontal">
                 <caption>
                     <h2>Add New Customer</h2>
@@ -39,8 +39,8 @@
                         <div class="input-group mb-3">
                             <select class="form-select" id="gender" name="gender">
                                 <option selected>Choose...</option>
-                                <option value="true">Male</option>
-                                <option value="false">Female</option>
+                                <option value="0">Male</option>
+                                <option value="1">Female</option>
                             </select>
                         </div>
                     </div>
@@ -54,13 +54,13 @@
                 <div class="form-group">
                     <label class="control-label col-sm-2" for="phone">Phone:</label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control" id="phone" name="phone" placeholder="Nhập số điện thoại">
+                        <input type="text" class="form-control" id="phone" name="phone" placeholder="090xxxxxxx or 091xxxxxxx">
                     </div>
                 </div>
                 <div class="form-group">
                     <label class="control-label col-sm-2" for="email">Email:</label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control" id="email" name="email" placeholder="Nhập email">
+                        <input type="email" class="form-control" id="email" name="email" placeholder="Nhập email">
                     </div>
                 </div>
                 <div class="form-group">
@@ -96,11 +96,10 @@
 
             </form>
         </div>
+        <div class="container-fluid">
+            <jsp:include page='layout/footer.jsp'/>
+        </div>
     </div>
-</div>
-
-<div>
-    <jsp:include page='layout/footer.jsp'/>
 </div>
 
 <script src="boostrap/js/jquery-3.6.0.min.js"></script>

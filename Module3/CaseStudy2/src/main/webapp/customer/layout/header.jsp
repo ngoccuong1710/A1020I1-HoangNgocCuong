@@ -36,19 +36,19 @@
                     <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll col-9 justify-content-center"
                     style="--bs-scroll-height: 100px;">
                         <li class="nav-item col-2">
-                            <a class="nav-link text-center text-dark" href="customer?action=home">Home</a>
+                            <a class="nav-link text-center text-dark" href="index?action=home">Home</a>
                         </li>
                         <li class="nav-item col-2">
-                            <a class="nav-link text-center text-dark" href="customer?action=list-employee">Employee</a>
+                            <a class="nav-link text-center text-dark" href="index?action=list-employee">Employee</a>
                         </li>
                         <li class="nav-item col-2">
-                            <a class="nav-link text-center text-dark" href="customer?action=list-customer">Customer</a>
+                            <a class="nav-link text-center text-dark" href="index?action=list-customer">Customer</a>
                         </li>
                         <li class="nav-item col-2">
-                            <a class="nav-link text-center text-dark" href="customer?action=list-service">Service</a>
+                            <a class="nav-link text-center text-dark" href="index?action=list-services">Service</a>
                         </li>
                         <li class="nav-item col-2">
-                            <a class="nav-link text-center text-dark" href="customer?action=list-contract">Contract</a>
+                            <a class="nav-link text-center text-dark" href="index?action=list-contract">Contract</a>
                         </li>
                     </ul>
 

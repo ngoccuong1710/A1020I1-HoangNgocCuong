@@ -1,11 +1,14 @@
 package controller;
 
-import model.bean.customer.Customer;
-import model.bean.employee.Employee;
-import model.service.customer.CustomerService;
-import model.service.customer.CustomerServiceImpl;
-import model.service.employee.EmployeeService;
-import model.service.employee.EmployeeServiceImpl;
+import model.bean.Customer;
+import model.bean.Employee;
+import model.bean.Services;
+import model.service.CustomerService;
+import model.service.ServicesService;
+import model.service.impl.CustomerServiceImpl;
+import model.service.EmployeeService;
+import model.service.impl.EmployeeServiceImpl;
+import model.service.impl.ServicesServiceImpl;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -16,13 +19,15 @@ import java.io.IOException;
 import java.sql.SQLException;
 import java.util.List;
 
-@WebServlet(name = "CustomerServlet", urlPatterns = {"", "/customer"})
+@WebServlet(name = "CustomerServlet", urlPatterns = {"", "/index"})
 public class FuramaResortServlet extends HttpServlet {
     private CustomerService customerService;
     private EmployeeService employeeService;
+    private ServicesService servicesService;
     public void init(){
         customerService = new CustomerServiceImpl();
         employeeService = new EmployeeServiceImpl();
+        servicesService = new ServicesServiceImpl();
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -44,8 +49,12 @@ public class FuramaResortServlet extends HttpServlet {
                 case "edit-employee":
                     updateEmployee(request, response);
                     break;
-                default:
-                    home(request, response);
+                case "create-services":
+                    addNewServices(request, response);
+                    break;
+                case "edit-services":
+                    updateServices(request, response);
+                    break;
             }
         }
         catch (SQLException throwables) {
@@ -83,6 +92,18 @@ public class FuramaResortServlet extends HttpServlet {
                     break;
                 case "delete-employee":
                     deleteEmployee(request, response);
+                    break;
+                case "list-services":
+                    listServices(request, response);
+                    break;
+                case "create-services":
+                    addNewServiceForm(request, response);
+                    break;
+                case "edit-services":
+                    updateServicesForm(request, response);
+                    break;
+                case "delete-services":
+                    deleteServices(request, response);
                     break;
                 default:
                     home(request, response);
@@ -225,5 +246,71 @@ public class FuramaResortServlet extends HttpServlet {
         employeeService.updateEmployee(employee);
         request.setAttribute("msg", "Successfully updated employee!");
         request.getRequestDispatcher("employee/edit_employee.jsp").forward(request, response);
+    }
+
+    private void listServices(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException, SQLException {
+        List<Services> servicesList = servicesService.selectAllServices();
+        request.setAttribute("servicesList", servicesList);
+        request.getRequestDispatcher("services/list_services.jsp").forward(request, response);
+    }
+
+    private void addNewServiceForm(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        request.getRequestDispatcher("services/add_services.jsp").forward(request, response);
+    }
+
+    private void addNewServices(HttpServletRequest request, HttpServletResponse response) throws SQLException, ServletException, IOException {
+        String name = request.getParameter("name");
+        String area = request.getParameter("area");
+        double cost = Double.parseDouble(request.getParameter("cost"));
+        int maxPeople = Integer.parseInt(request.getParameter("maxPeople"));
+        int rentType = Integer.parseInt(request.getParameter("rentType"));
+        int serviceType = Integer.parseInt(request.getParameter("serviceType"));
+        String standardRoom = request.getParameter("standardRoom");
+        String convenience = request.getParameter("doc");
+        double poolArea = Double.parseDouble(request.getParameter("poolArea"));
+        int numOfFloor = Integer.parseInt(request.getParameter("numOfFloor"));
+
+        Services newServices = new Services(name, area, cost, maxPeople, rentType, serviceType, standardRoom, convenience, poolArea, numOfFloor);
+        servicesService.createServices(newServices);
+        request.setAttribute("msg", "Successfully added new service!");
+        request.getRequestDispatcher("services/add_services.jsp").forward(request, response);
+    }
+
+    private void deleteServices(HttpServletRequest request, HttpServletResponse response) throws SQLException, ServletException, IOException {
+        int id = Integer.parseInt(request.getParameter("id"));
+
+        servicesService.deleteServices(id);
+        List<Services> servicesList = servicesService.selectAllServices();
+
+        request.setAttribute("servicesList", servicesList);
+        request.getRequestDispatcher("services/list_services.jsp").forward(request, response);
+    }
+
+    private void updateServicesForm(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException, SQLException {
+        int id = Integer.parseInt(request.getParameter("id"));
+        Services editServices = servicesService.getServicesById(id);
+
+        request.setAttribute("services", editServices);
+        request.getRequestDispatcher("services/edit_services.jsp").forward(request, response);
+    }
+
+    private void updateServices(HttpServletRequest request, HttpServletResponse response) throws SQLException, ServletException, IOException {
+        int id = Integer.parseInt(request.getParameter("id"));
+        String name = request.getParameter("name");
+        String area = request.getParameter("area");
+        double cost = Double.parseDouble(request.getParameter("cost"));
+        int maxPeople = Integer.parseInt(request.getParameter("maxPeople"));
+        int rentType = Integer.parseInt(request.getParameter("rentType"));
+        int serviceType = Integer.parseInt(request.getParameter("serviceType"));
+        String standardRoom = request.getParameter("standardRoom");
+        String convenience = request.getParameter("doc");
+        double poolArea = Double.parseDouble(request.getParameter("poolArea"));
+        int numOfFloor = Integer.parseInt(request.getParameter("numOfFloor"));
+
+        Services services = new Services(id, name, area, cost, maxPeople, rentType, serviceType, standardRoom, convenience, poolArea, numOfFloor);
+
+        servicesService.updateServices(services);
+        request.setAttribute("msg", "Successfully updated service!");
+        request.getRequestDispatcher("services/edit_services.jsp").forward(request, response);
     }
 }

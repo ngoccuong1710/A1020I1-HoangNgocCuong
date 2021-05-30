@@ -72,11 +72,11 @@
                                 <option value="1">Giám đốc</option>
                                 <option value="2">Phó giám đốc</option>
                                 <option value="3">Thư ký</option>
-                                <option value="3">Trưởng phòng nhân sự</option>
-                                <option value="3">Trưởng phòng tư vấn</option>
-                                <option value="3">Trưởng phòng hành chính</option>
-                                <option value="3">Nhân Viên</option>
-                                <option value="3">Bảo vệ</option>
+                                <option value="4">Trưởng phòng nhân sự</option>
+                                <option value="5">Trưởng phòng tư vấn</option>
+                                <option value="6">Trưởng phòng hành chính</option>
+                                <option value="7">Nhân Viên</option>
+                                <option value="8">Bảo vệ</option>
                             </select>
                         </div>
                     </div>

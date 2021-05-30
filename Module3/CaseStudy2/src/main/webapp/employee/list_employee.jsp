@@ -13,7 +13,7 @@
 <div class="container-fluid">
     <div class="row" style="height: 81%">
         <div class="col-1 text-center">
-            <a class="btn btn-primary" href="customer?action=create-employee">Add Employee</a>
+            <a class="btn btn-primary" href="index?action=create-employee">Add Employee</a>
         </div>
         <div class="col-11">
             <div class="row">
@@ -48,9 +48,9 @@
                                 <td><c:out value="${employee.position}"/></td>
                                 <td><c:out value="${employee.educationDegree}"/></td>
                                 <td><c:out value="${employee.division}"/></td>
-                                <td><a class="btn btn-warning" href="customer?action=edit-employee&id=${employee.id}">Edit</a>
+                                <td><a class="btn btn-warning" href="index?action=edit-employee&id=${employee.id}">Edit</a>
                                 </td>
-                                <td><a class="btn btn-danger" href="customer?action=delete-employee&id=${employee.id}">Delete</a>
+                                <td><a class="btn btn-danger" href="index?action=delete-employee&id=${employee.id}">Delete</a>
                                 </td>
                             </tr>
                         </c:forEach>

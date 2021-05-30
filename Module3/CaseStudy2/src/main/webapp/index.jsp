@@ -14,11 +14,11 @@
     <div class="row" style="height: 81%">
         <div class="col-2 text-center">
             <div class="btn-group-vertical" role="group" aria-label="Basic radio toggle button group">
-                <a class="btn btn-outline-primary" href="customer?action=create-customer">Add Customer</a>
+                <a class="btn btn-outline-primary" href="index?action=create-customer">Add Customer</a>
 
-                <a class="btn btn-outline-primary" href="#">Add Employee</a>
+                <a class="btn btn-outline-primary" href="index?action=create-employee">Add Employee</a>
 
-                <a class="btn btn-outline-primary" href="#">Add Service</a>
+                <a class="btn btn-outline-primary" href="index?action=create-services">Add Service</a>
             </div>
         </div>
         <div class="col-10">

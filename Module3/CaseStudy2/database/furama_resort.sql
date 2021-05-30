@@ -86,7 +86,7 @@ create table rent_type(
 );
 
 create table service(
-	service_id int primary key not null auto_increment auto_increment,
+	service_id int primary key not null auto_increment,
     service_name varchar(45) not null,
     service_area int not null,
     service_cost double not null,
@@ -379,19 +379,15 @@ insert into service_type values
 
 insert into service values
 (1, 'Villa-1', 50, 1200000, 10, 2, 1, '5 sao', 'foor', 40, 3),
-(2, 'Villa-2', 43, 700000, 7, 1, 2, '4 sao', 'drink', 50, 2);
-
-insert into service(service_id, service_name, service_area, service_cost, service_max_people, rent_type_id, service_type_id, standard_room, decription_other_convenience, number_of_floors) values
-(3, 'House-1', 43, 700000, 7, 1, 2, '4 sao', 'drink', 2),
-(4, 'House-2', 43, 700000, 7, 1, 2, '4 sao', 'drink', 2);
-
-insert into service(service_id, service_name, service_area, service_cost, service_max_people, rent_type_id, service_type_id) values
-(5, 'Room-1', 20, 400000, 4, 3, 3),
-(6, 'Room-2', 20, 400000, 4, 3, 3);
+(2, 'Villa-2', 43, 700000, 7, 1, 2, '4 sao', 'drink', 50, 2),
+(3, 'House-1', 43, 700000, 7, 1, 2, '4 sao', 'drink', null, 2),
+(4, 'House-2', 43, 700000, 7, 1, 2, '4 sao', 'drink', null, 2),
+(5, 'Room-1', 20, 400000, 4, 3, 3, null, null, null, null),
+(6, 'Room-2', 20, 400000, 4, 3, 3, null, null, null, null);
 
 insert into attach_service values
 (1, 'Karaoke', 100000, 3, 'còn'),
-(2, 'car', 400000, 1, 'Hết'),
+(2, 'car', 400000, 1, 'hết'),
 (3, 'food', 50000, 4, 'còn'),
 (4, 'drink', 50000, 4, 'còn');
 
@@ -405,3 +401,80 @@ insert into contract_detail values
 (1, 2, 1, 50),
 (2, 3, 2, 40),
 (3, 1, 4, 60);
+
+DELIMITER $$
+CREATE PROCEDURE service_list()
+BEGIN
+    select *
+    from service;
+END$$
+DELIMITER ;
+
+call service_list();
+
+DELIMITER $$
+CREATE PROCEDURE service_create(
+	IN `name` varchar(45),
+	IN area int,
+    IN cost double,
+    IN max_people int,
+    IN rent_type int,
+    IN service_type int,
+    IN standard_room varchar(45),
+	IN decription_other_convenience varchar(45),
+    IN pool_area double,
+    IN number_of_floors int
+)
+BEGIN
+	insert into service(service_name, service_area, service_cost, service_max_people, rent_type_id, service_type_id, standard_room, decription_other_convenience, pool_area, number_of_floors) values
+	(`name`, area, cost, max_people, rent_type, service_type, standard_room, decription_other_convenience, pool_area, number_of_floors);
+	
+END$$
+DELIMITER ;
+
+-- call service_create('Villa-3', 43, 700000, 7, 1, 2, '4 sao', 'drink', 12, 2);
+
+DELIMITER $$
+CREATE PROCEDURE service_delete(
+	IN id INT
+)
+BEGIN
+    delete from service where service.service_id = id;
+END$$
+DELIMITER ;
+
+-- call service_delete(8);
+
+DELIMITER $$
+CREATE PROCEDURE service_update(
+	IN id INT,
+	IN `name` varchar(45),
+	IN area int,
+    IN cost double,
+    IN max_people int,
+    IN rent_type int,
+    IN service_type int,
+    IN standard_room varchar(45),
+	IN decription_other_convenience varchar(45),
+    IN pool_area double,
+    IN number_of_floors int
+)
+BEGIN
+    update service ser
+    set ser.service_name = `name`, ser.service_area = area, ser.service_cost = cost, ser.service_max_people = max_people, ser.rent_type_id = rent_type, ser.service_type_id = service_type, ser.standard_room = standard_room, ser.decription_other_convenience = decription_other_convenience, ser.pool_area = pool_area, ser.number_of_floors = number_of_floors
+    where ser.service_id = id;
+END$$
+DELIMITER ;
+
+-- call service_update(1, 'Villa-123', 50, 1200000, 10, 2, 1, '5 sao', 'foor', 40, 3)
+
+DELIMITER $$
+CREATE PROCEDURE get_service_by_id(IN id INT)
+BEGIN
+    select *
+    from service
+    where service.service_id = id;
+END$$
+DELIMITER ;
+
+call get_service_by_id(1)

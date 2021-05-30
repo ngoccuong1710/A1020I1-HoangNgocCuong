@@ -13,7 +13,7 @@
 <div class="container-fluid">
     <div class="row" style="height: 81%">
         <div class="col-1 text-center">
-            <a class="btn btn-primary" href="index?action=create-customer">Add Customer</a>
+            <a class="btn btn-primary" href="index?action=create-services">Add Service</a>
         </div>
         <div class="col-11">
             <div class="row">
@@ -22,38 +22,35 @@
                         <tr class="bg-dark text-white">
                             <td>Id</td>
                             <td>Name</td>
-                            <td>Birthday</td>
-                            <td>Gender</td>
-                            <td>Id Card</td>
-                            <td>Phone</td>
-                            <td>Email</td>
-                            <td>Type Customer</td>
-                            <td>Address</td>
+                            <td>Area</td>
+                            <td>Cost</td>
+                            <td>Max people</td>
+                            <td>Rent type</td>
+                            <td>Service type</td>
+                            <td>Standard room</td>
+                            <td>Other convenience</td>
+                            <td>Pool area</td>
+                            <td>Num of floor</td>
                             <td>Edit</td>
                             <td>Delete</td>
                         </tr>
 
-                        <c:forEach var="customer" items="${customerList}">
+                        <c:forEach var="services" items="${servicesList}">
                             <tr>
-                                <td><c:out value="${customer.id}"/></td>
-                                <td><c:out value="${customer.name}"/></td>
-                                <td><c:out value="${customer.birthday}"/></td>
-                                <td>
-                                    <c:if test="${customer.gender == 0}">
-                                        <c:out value = "Male"/><p>
-                                    </c:if>
-                                    <c:if test="${customer.gender == 1}">
-                                        <c:out value = "Female"/><p>
-                                    </c:if>
+                                <td><c:out value="${services.id}"/></td>
+                                <td><c:out value="${services.name}"/></td>
+                                <td><c:out value="${services.area}"/></td>
+                                <td><c:out value="${services.cost}"/></td>
+                                <td><c:out value="${services.maxPeople}"/></td>
+                                <td><c:out value="${services.rentType}"/></td>
+                                <td><c:out value="${services.serviceType}"/></td>
+                                <td><c:out value="${services.standardRoom}"/></td>
+                                <td><c:out value="${services.decriptionOtherConvenience}"/></td>
+                                <td><c:out value="${services.poolArea}"/></td>
+                                <td><c:out value="${services.numOfFloors}"/></td>
+                                <td><a class="btn btn-warning" href="index?action=edit-services&id=${services.id}">Edit</a>
                                 </td>
-                                <td><c:out value="${customer.idCard}"/></td>
-                                <td><c:out value="${customer.phone}"/></td>
-                                <td><c:out value="${customer.email}"/></td>
-                                <td><c:out value="${customer.type}"/></td>
-                                <td><c:out value="${customer.address}"/></td>
-                                <td><a class="btn btn-warning" href="index?action=edit-customer&id=${customer.id}">Edit</a>
-                                </td>
-                                <td><a class="btn btn-danger" href="index?action=delete-customer&id=${customer.id}">Delete</a>
+                                <td><a class="btn btn-danger" href="index?action=delete-services&id=${services.id}">Delete</a>
                                 </td>
                             </tr>
                         </c:forEach>

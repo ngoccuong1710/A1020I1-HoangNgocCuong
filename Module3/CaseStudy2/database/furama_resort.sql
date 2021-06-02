@@ -31,8 +31,8 @@ create table user_role(
 	role_id int not null,
     username varchar(255) not null,
     
-    foreign key (username) references user(username),
-    foreign key (role_id) references role(role_id)
+    constraint foreign key (username) references user(username) ON DELETE CASCADE,
+    constraint foreign key (role_id) references role(role_id) ON DELETE CASCADE
 );
 
 create table employee(
@@ -49,10 +49,10 @@ create table employee(
     division_id int not null,
     username varchar(255),
     
-    foreign key (position_id) references `position`(position_id),
-    foreign key (education_degree_id) references education_degree(education_degree_id),
-    foreign key (division_id) references division(division_id),
-    foreign key (username) references user(username)
+    constraint foreign key (position_id) references `position`(position_id) ON DELETE CASCADE,
+    constraint foreign key (education_degree_id) references education_degree(education_degree_id) ON DELETE CASCADE,
+    constraint foreign key (division_id) references division(division_id) ON DELETE CASCADE,
+    constraint foreign key (username) references user(username) ON DELETE CASCADE
 );
 
 create table customer_type(
@@ -71,7 +71,7 @@ create table customer(
     customer_email varchar(45) not null,
     customer_address varchar(45) not null,
     
-    foreign key (customer_type_id) references customer_type(customer_type_id)
+    constraint foreign key (customer_type_id) references customer_type(customer_type_id) ON DELETE CASCADE
 );
 
 create table service_type(
@@ -112,9 +112,9 @@ create table contract(
     customer_id int not null,
     service_id int not null,
     
-    foreign key (employee_id) references employee(employee_id),
-    foreign key (customer_id) references customer(customer_id),
-    foreign key (service_id) references service(service_id)
+    constraint foreign key (employee_id) references employee(employee_id) ON DELETE CASCADE,
+    constraint foreign key (customer_id) references customer(customer_id) ON DELETE CASCADE,
+    constraint foreign key (service_id) references service(service_id) ON DELETE CASCADE
 );
 
 create table attach_service(
@@ -131,8 +131,8 @@ create table contract_detail(
     attach_service_id int not null,
     quantity int not null,
     
-    foreign key (contract_id) references contract(contract_id),
-	foreign key (attach_service_id) references attach_service(attach_service_id)
+    constraint foreign key (contract_id) references contract(contract_id) on delete cascade,
+	constraint foreign key (attach_service_id) references attach_service(attach_service_id) on delete cascade
 );
 
 insert into customer_type values
@@ -181,7 +181,7 @@ BEGIN
 END$$
 DELIMITER ;
 
--- call customer_create('Trinh', '1021-5-25', 1, '123123123', '0987654321', 'Trinh@gmail.com', 2, 'Da nang');
+call customer_create('Trinh', '1021-5-25', 1, '123123123', '0987654321', 'Trinh@gmail.com', 2, 'Da nang');
 
 DELIMITER $$
 CREATE PROCEDURE customer_delete(
@@ -192,7 +192,7 @@ BEGIN
 END$$
 DELIMITER ;
 
--- call customer_delete(17);
+-- call customer_delete(10);
 
 DELIMITER $$
 CREATE PROCEDURE customer_update(
@@ -226,6 +226,20 @@ END$$
 DELIMITER ;
 
 -- call get_customer_by_id(1);
+
+DELIMITER $$
+CREATE PROCEDURE search_customer(
+	IN keywork varchar(50)
+)
+BEGIN
+    select customer_id, cus.customer_name, cus.customer_birthday, cus.customer_gender, cus.customer_id_card, cus.customer_phone, cus.customer_email, cus_type.customer_type_name, cus.customer_address 
+    from customer cus left join customer_type cus_type
+	on cus.customer_type_id = cus_type.customer_type_id
+    where cus.customer_name like concat('%', keywork, '%');
+END$$
+DELIMITER ;
+
+-- call search_customer('A');
 
 insert into position values
 (1, 'Giám đốc'),
@@ -322,7 +336,7 @@ BEGIN
 END$$
 DELIMITER ;
 
--- call employee_delete(7);
+-- call employee_delete(4);
 
 DELIMITER $$
 CREATE PROCEDURE employee_update(
@@ -365,6 +379,24 @@ END$$
 DELIMITER ;
 
 -- call get_employee_by_id(1);
+
+DELIMITER $$
+CREATE PROCEDURE search_employee(
+	IN keywork varchar(50)
+)
+BEGIN
+    select emp.employee_id, emp.employee_name, emp.employee_birthday, emp.employee_id_card, emp.employee_salary, emp.employee_phone, emp.employee_email, emp.employee_address, pos.position_name, edu.education_degree_name, `div`.division_name
+    from employee emp left join position pos
+	on emp.position_id = pos.position_id
+    left join education_degree edu
+    on emp.education_degree_id = edu.education_degree_id
+    left join division `div`
+    on emp.division_id = `div`.division_id
+    where emp.employee_name like concat('%', keywork, '%');
+END$$
+DELIMITER ;
+
+call search_employee('Cường');
 
 insert into rent_type values
 (1, 'Hour', 100000),
@@ -477,4 +509,17 @@ BEGIN
 END$$
 DELIMITER ;
 
-call get_service_by_id(1)
+-- call get_service_by_id(1)
+
+DELIMITER $$
+CREATE PROCEDURE search_service(
+	IN keywork varchar(50)
+)
+BEGIN
+    select *
+    from service ser
+    where ser.service_name like concat('%', keywork, '%');
+END$$
+DELIMITER ;
+
+call search_service('villa');

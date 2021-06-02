@@ -26,12 +26,22 @@
                     <div class="col-sm-10">
                         <input type="text" class="form-control" id="name" name="name" placeholder="Nhập họ và tên">
                     </div>
+                    <p>
+                        <c:if test='${messageName!= null}'>
+                            <span style="color: red" class="message">${messageName}</span>
+                        </c:if>
+                    </p>
                 </div>
                 <div class="form-group">
                     <label class="control-label col-sm-2" for="birthday">Birthday:</label>
                     <div class="col-sm-10">
                         <input type="date" class="form-control" id="birthday" name="birthday" placeholder="Nhập ngày tháng năm sinh">
                     </div>
+                    <p>
+                        <c:if test='${messageBirthday != null}'>
+                            <span style="color: red" class="message">${messageBirthday}</span>
+                        </c:if>
+                    </p>
                 </div>
                 <div class="form-group">
                     <label class="control-label col-sm-2" for="gender">Gender:</label>

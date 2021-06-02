@@ -109,7 +109,33 @@ public class EmployeeRepositoryImpl implements EmployeeRepository {
     }
 
     @Override
-    public List<Employee> searchEmployee(String name) throws SQLException {
-        return null;
+    public List<Employee> searchEmployee(String keywork) throws SQLException {
+        List<Employee> employeeList = new ArrayList<>();
+        try{
+            CallableStatement callableStatement = this.baseRepository.getConnection().prepareCall("call search_employee(?);");
+            callableStatement.setString(1, keywork);
+            ResultSet resultSet = callableStatement.executeQuery();
+
+            Employee employee = null;
+            while (resultSet.next()){
+                employee = new Employee();
+                employee.setId(resultSet.getInt("employee_id"));
+                employee.setName(resultSet.getString("employee_name"));
+                employee.setBirthday(resultSet.getString("employee_birthday"));
+                employee.setIdCard(resultSet.getInt("employee_id_card"));
+                employee.setSalary(resultSet.getDouble("employee_salary"));
+                employee.setPhone(resultSet.getInt("employee_phone"));
+                employee.setEmail(resultSet.getString("employee_email"));
+                employee.setAddress(resultSet.getString("employee_address"));
+                employee.setPosition(resultSet.getString("position_name"));
+                employee.setEducationDegree(resultSet.getString("education_degree_name"));
+                employee.setDivision(resultSet.getString("division_name"));
+
+                employeeList.add(employee);
+            }
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+        return employeeList;
     }
 }

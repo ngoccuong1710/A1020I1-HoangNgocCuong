@@ -54,9 +54,9 @@ create table nhan_vien(
     email varchar(45) not null,
     dia_chi varchar(45) not null,
     
-    foreign key (id_vi_tri) references vi_tri(id_vi_tri),
-    foreign key (id_trinh_do) references trinh_do(id_trinh_do),
-    foreign key (id_bo_phan) references bo_phan(id_bo_phan)
+    constraint foreign key (id_vi_tri) references vi_tri(id_vi_tri) on delete cascade,
+    constraint foreign key (id_trinh_do) references trinh_do(id_trinh_do) on delete cascade,
+    constraint foreign key (id_bo_phan) references bo_phan(id_bo_phan) on delete cascade
 );
 
 create table khach_hang(

@@ -99,7 +99,31 @@ public class CustomerRepositoryImpl implements CustomerRepository {
     }
 
     @Override
-    public List<Customer> searchCustomer(String name) throws SQLException {
-        return null;
+    public List<Customer> searchCustomer(String keywork) throws SQLException {
+        List<Customer> customerList = new ArrayList<>();
+        try{
+            CallableStatement callableStatement = this.baseRepository.getConnection().prepareCall("call search_customer(?)");
+            callableStatement.setString(1, keywork);
+            ResultSet resultSet = callableStatement.executeQuery();
+
+            Customer customer = null;
+            while (resultSet.next()){
+                customer = new Customer();
+                customer.setId(resultSet.getInt("customer_id"));
+                customer.setName(resultSet.getString("customer_name"));
+                customer.setBirthday(resultSet.getString("customer_birthday"));
+                customer.setGender(resultSet.getInt("customer_gender"));
+                customer.setIdCard(resultSet.getInt("customer_id_card"));
+                customer.setPhone(resultSet.getInt("customer_phone"));
+                customer.setEmail(resultSet.getString("customer_email"));
+                customer.setType(resultSet.getString("customer_type_name"));
+                customer.setAddress(resultSet.getString("customer_address"));
+
+                customerList.add(customer);
+            }
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+        return customerList;
     }
 }

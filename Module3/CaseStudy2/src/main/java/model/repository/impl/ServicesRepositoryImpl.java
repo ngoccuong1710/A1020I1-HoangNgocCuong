@@ -106,7 +106,33 @@ public class ServicesRepositoryImpl implements ServicesRepository {
     }
 
     @Override
-    public List<Services> searchServices(String name) throws SQLException {
-        return null;
+    public List<Services> searchServices(String keywork) throws SQLException {
+        List<Services> servicesList = new ArrayList<>();
+        try{
+            CallableStatement callableStatement = this.baseRepository.getConnection().prepareCall("call search_service(?)");
+            callableStatement.setString(1, keywork);
+            ResultSet resultSet = callableStatement.executeQuery();
+
+            Services services = null;
+            while (resultSet.next()){
+                services = new Services();
+                services.setId(resultSet.getInt("service_id"));
+                services.setName(resultSet.getString("service_name"));
+                services.setArea(resultSet.getString("service_area"));
+                services.setCost(resultSet.getInt("service_cost"));
+                services.setMaxPeople(resultSet.getInt("service_max_people"));
+                services.setRentType(resultSet.getInt("rent_type_id"));
+                services.setServiceType(resultSet.getInt("service_type_id"));
+                services.setStandardRoom(resultSet.getString("standard_room"));
+                services.setDecriptionOtherConvenience(resultSet.getString("decription_other_convenience"));
+                services.setPoolArea(resultSet.getDouble("pool_area"));
+                services.setNumOfFloors(resultSet.getInt("number_of_floors"));
+
+                servicesList.add(services);
+            }
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+        return servicesList;
     }
 }

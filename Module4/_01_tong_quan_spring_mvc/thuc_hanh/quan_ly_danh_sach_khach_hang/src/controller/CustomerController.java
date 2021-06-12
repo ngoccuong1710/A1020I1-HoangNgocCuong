@@ -12,13 +12,13 @@ import service.CustomerService;
 
 
 @Controller
-@RequestMapping(value = "/customers")
+@RequestMapping(value = {"/customers", "/"})
 public class CustomerController {
 
     @Autowired
     CustomerService customerService;
 
-    @RequestMapping(value = "/list", method = RequestMethod.GET)
+    @RequestMapping(value = {"/list", "/"}, method = RequestMethod.GET)
     public ModelAndView showlist(){
         return new ModelAndView("list", "customerList", customerService.findAll());
     }

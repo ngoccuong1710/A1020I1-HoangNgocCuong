@@ -8,30 +8,32 @@
     <form:form method="post" action="/settingEmail" modelAttribute="email">
       <table>
         <tr>
-          <td><form:label path="language">Language</form:label></td>
+          <td>Language:</td>
           <td>
             <form:select path="language">
-              <form:option value="NONE" label="Select"/>
               <form:options items="${listLanguage}"/>
             </form:select>
           </td>
         </tr>
         <tr>
-          <td><form:label path= "pageSIze">Page Size</form:label></td>
+          <td>Page Size:</td>
           <td>
             Show
-            <form:select path="pageSIze">
-              <form:option value="NONE" label="Select"/>
+            <form:select path="pageSize">
               <form:options items="${listPageSize}"/>
             </form:select>
             emails per page
           </td>
         </tr>
         <tr>
-          <td><form:label path= "pageSIze">Spams filter</form:label></td>
-
+          <td>Spams filter:</td>
+          <td>show <form:checkbox path="spamsFilters"/> emails per page</td>
         </tr>
-        <tr><input type="submit" value="Update"/></tr>
+        <tr>
+          <td>Signature:</td>
+          <td><form:textarea path="signature"/></td>
+        </tr>
+        <tr><td><input type="submit" value="Update"/></td></tr>
       </table>
     </form:form>
   </body>

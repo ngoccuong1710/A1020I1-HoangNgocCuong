@@ -2,16 +2,16 @@ package model;
 
 public class Email {
     private String language;
-    private int pageSIze;
+    private String pageSize;
     private boolean spamsFilters;
     private String signature;
 
     public Email() {
     }
 
-    public Email(String language, int pageSIze, boolean spamsFilters, String signature) {
+    public Email(String language, String pageSize, boolean spamsFilters, String signature) {
         this.language = language;
-        this.pageSIze = pageSIze;
+        this.pageSize = pageSize;
         this.spamsFilters = spamsFilters;
         this.signature = signature;
     }
@@ -24,12 +24,12 @@ public class Email {
         this.language = language;
     }
 
-    public int getPageSIze() {
-        return pageSIze;
+    public String getPageSize() {
+        return pageSize;
     }
 
-    public void setPageSIze(int pageSIze) {
-        this.pageSIze = pageSIze;
+    public void setPageSize(String pageSize) {
+        this.pageSize = pageSize;
     }
 
     public boolean isSpamsFilters() {

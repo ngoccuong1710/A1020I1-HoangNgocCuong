@@ -5,6 +5,7 @@
     <title>Title</title>
 </head>
 <body>
+<p><a href="/province"><input type="submit" value="List province"></a></p>
 <a href="/customer/create">Create new customer</a>
 <h1>Customers</h1>
 
@@ -29,7 +30,7 @@
     <tr th:each="customer : ${customerList}">
         <td th:text="${customer.firstName}"></td>
         <td th:text="${customer.lastName}"></td>
-        <td></td>
+        <td th:text="${customer.province.getName()}"></td>
         <td><a th:href="@{/customer/edit/{id}(id=${customer.getId()})}">edit</a></td>
         <td><a th:href="@{/customer/delete/{id}(id=${customer.getId()})}">delete</a></td>
     </tr>

@@ -16,14 +16,19 @@ public class Customer {
 
     public Customer() {}
 
-    public Customer(String firstName, String lastName) {
+    public Customer(int id, String firstName, String lastName, Province province) {
+        this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
+        this.province = province;
     }
 
-    @Override
-    public String toString() {
-        return String.format("Customer[id=%d, firstName='%s', lastName='%s']", id, firstName, lastName);
+    public Province getProvince() {
+        return province;
+    }
+
+    public void setProvince(Province province) {
+        this.province = province;
     }
 
     public int getId() {

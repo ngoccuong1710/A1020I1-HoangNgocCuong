@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
-import vn.codegym.model.Customer;
 import vn.codegym.model.Province;
 import vn.codegym.service.ProvinceService;
 
@@ -58,12 +57,8 @@ public class ProvinceController {
     @GetMapping("/province/delete/{id}")
     public String delete(@PathVariable("id") int id, RedirectAttributes redirectAttributes){
         Province province = provinceService.findById(id);
-        if (province != null){
-            redirectAttributes.addFlashAttribute("message", "Delete province success");
-            provinceService.remove(province);
-        } else {
-            redirectAttributes.addFlashAttribute("message", "province not found");
-        }
+        redirectAttributes.addFlashAttribute("message", "Delete province success");
+        provinceService.remove(province);
         return "redirect:/province";
     }
 }

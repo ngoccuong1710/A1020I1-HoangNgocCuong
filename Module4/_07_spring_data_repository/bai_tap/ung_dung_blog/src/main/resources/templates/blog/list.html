@@ -5,6 +5,7 @@
     <title>Title</title>
 </head>
 <body>
+<p><a href="/category"><input type="submit" value="List categories"></a></p>
 <a href="/blog/create">Create new Blog</a>
 <h1>List Blog</h1>
 
@@ -22,6 +23,7 @@
     <tr>
         <th>Author</th>
         <th>Title</th>
+        <th>Category</th>
         <th>content</th>
         <th>Show</th>
         <th>Edit</th>
@@ -30,10 +32,11 @@
     <tr th:each="blog : ${blogList}">
         <td th:text="${blog.author}"></td>
         <td th:text="${blog.title}"></td>
+        <td th:text="${blog.category.name}"></td>
         <td><span style="display:block; text-overflow: Ellipsis; width: 300px; overflow: hidden; white-space: nowrap;" th:text="${blog.content}"></span></td>
-        <td><a th:href="@{/blog/show/{id}(id=${blog.getId()})}">show</a></td>
-        <td><a th:href="@{/blog/edit/{id}(id=${blog.getId()})}">edit</a></td>
-        <td><a th:href="@{/blog/delete/{id}(id=${blog.getId()})}">delete</a></td>
+        <td><a th:href="@{/blog/show/{id}(id=${blog.id})}">show</a></td>
+        <td><a th:href="@{/blog/edit/{id}(id=${blog.id})}">edit</a></td>
+        <td><a th:href="@{/blog/delete/{id}(id=${blog.id})}">delete</a></td>
     </tr>
 </table>
 <div>

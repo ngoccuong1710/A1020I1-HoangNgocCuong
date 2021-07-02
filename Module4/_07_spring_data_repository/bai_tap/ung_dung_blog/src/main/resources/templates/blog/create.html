@@ -21,8 +21,16 @@
             <td><input type="text" th:field="*{title}"/></td>
         </tr>
         <tr>
+            <td>Category:</td>
+            <td>
+                <select th:field="*{category}">
+                    <option th:each="p : ${categories}" th:value="${p.id}" th:text="${p.name}"></option>
+                </select>
+            </td>
+        </tr>
+        <tr>
             <td>Content:</td>
-            <td><textarea cols="50" rows="7" th:field="*{content}"></textarea></td>
+            <td><textarea cols="100" rows="20" th:field="*{content}"></textarea></td>
         </tr>
         <tr>
             <td></td>

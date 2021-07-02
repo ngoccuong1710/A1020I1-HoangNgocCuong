@@ -4,7 +4,6 @@ import javax.persistence.*;
 import java.util.List;
 
 @Entity
-@Table
 public class Province {
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)

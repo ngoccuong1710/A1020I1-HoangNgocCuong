@@ -9,14 +9,12 @@
     <p>
         <a href="/province">Province list</a>
     </p>
-    <th:block th:if="${message}">
-        <p th:text="${message}"></p>
-    </th:block>
+
     <form th:action="@{/province/update}" th:object="${province}" method="post">
         <input th:type="hidden" name="id" th:field="*{id}">
         <table>
             <tr>
-                <td>First name:</td>
+                <td>name:</td>
                 <td><input type="text" th:field="*{name}"/></td>
             </tr>
             <tr>

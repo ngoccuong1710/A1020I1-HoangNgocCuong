@@ -2,26 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e4c5cb64-6b0f-4ac2-90e9-0defb05a8615" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../../../_07_spring_data_repository/thuc_hanh/quan_ly_khach_hang/src/main/java/vn/codegym/controller/CustomerController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../_07_spring_data_repository/thuc_hanh/quan_ly_khach_hang/src/main/java/vn/codegym/controller/ProvinceController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../_07_spring_data_repository/thuc_hanh/quan_ly_khach_hang/src/main/java/vn/codegym/model/Customer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../_07_spring_data_repository/thuc_hanh/quan_ly_khach_hang/src/main/java/vn/codegym/model/Province.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../_07_spring_data_repository/thuc_hanh/quan_ly_khach_hang/src/main/java/vn/codegym/repository/CustomerRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../_07_spring_data_repository/thuc_hanh/quan_ly_khach_hang/src/main/java/vn/codegym/repository/ProvinceRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../_07_spring_data_repository/thuc_hanh/quan_ly_khach_hang/src/main/java/vn/codegym/service/CustomerService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../_07_spring_data_repository/thuc_hanh/quan_ly_khach_hang/src/main/java/vn/codegym/service/ProvinceService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../_07_spring_data_repository/thuc_hanh/quan_ly_khach_hang/src/main/java/vn/codegym/service/impl/CustomerServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../_07_spring_data_repository/thuc_hanh/quan_ly_khach_hang/src/main/java/vn/codegym/service/impl/ProvinceServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../_07_spring_data_repository/thuc_hanh/quan_ly_khach_hang/src/main/resources/templates/customer/create.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../_07_spring_data_repository/thuc_hanh/quan_ly_khach_hang/src/main/resources/templates/customer/edit.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../_07_spring_data_repository/thuc_hanh/quan_ly_khach_hang/src/main/resources/templates/customer/list.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../_07_spring_data_repository/thuc_hanh/quan_ly_khach_hang/src/main/resources/templates/province/create.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../_07_spring_data_repository/thuc_hanh/quan_ly_khach_hang/src/main/resources/templates/province/edit.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../_07_spring_data_repository/thuc_hanh/quan_ly_khach_hang/src/main/resources/templates/province/list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1/executionHistory/executionHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../_08_validation/thuc_hanh/custom_validation/src/main/java/vn/codegym/ApplicationConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../_08_validation/thuc_hanh/custom_validation/src/main/java/vn/codegym/ApplicationInitializer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../_08_validation/thuc_hanh/custom_validation/src/main/java/vn/codegym/controller/PhoneController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../_08_validation/thuc_hanh/custom_validation/src/main/java/vn/codegym/model/PhoneNumber.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../_08_validation/thuc_hanh/custom_validation/src/main/resources/ValidationMessages.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../_08_validation/thuc_hanh/custom_validation/src/main/webapp/WEB-INF/views/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../_08_validation/thuc_hanh/custom_validation/src/main/webapp/WEB-INF/views/result.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../_08_validation/thuc_hanh/validating_form_input/src/main/java/vn/codegym/ApplicationConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../_08_validation/thuc_hanh/validating_form_input/src/main/java/vn/codegym/ApplicationInitializer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../_08_validation/thuc_hanh/validating_form_input/src/main/java/vn/codegym/controller/UserController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../_08_validation/thuc_hanh/validating_form_input/src/main/java/vn/codegym/model/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../_08_validation/thuc_hanh/validating_form_input/src/main/webapp/WEB-INF/views/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../_08_validation/thuc_hanh/validating_form_input/src/main/webapp/WEB-INF/views/result.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../_07_spring_data_repository/bai_tap/ung_dung_blog/src/main/resources/templates/blog/show.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../_07_spring_data_repository/bai_tap/ung_dung_blog/src/main/resources/templates/blog/show.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -181,6 +176,9 @@
       <workItem from="1624876374819" duration="862000" />
       <workItem from="1624877505482" duration="61000" />
       <workItem from="1624884228582" duration="38000" />
+      <workItem from="1625482096249" duration="10000" />
+      <workItem from="1625483890172" duration="9000" />
+      <workItem from="1625485398772" duration="401000" />
     </task>
     <servers />
   </component>

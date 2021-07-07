@@ -20,4 +20,6 @@ public interface BlogService {
     Page<Blog> findAll(Pageable pageable);
 
     Page<Blog> findAllByAuthorContainingOrTitleContaining(String author, String title, Pageable pageable);
+
+    Page<Blog> findAllByCategory(int id, Pageable pageable);
 }

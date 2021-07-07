@@ -51,4 +51,11 @@ public class BlogServiceImpl implements BlogService {
     public Page<Blog> findAllByAuthorContainingOrTitleContaining(String author, String title, Pageable pageable) {
         return blogRepository.findAllByAuthorContainingOrTitleContaining(author, title, pageable);
     }
+
+    @Override
+    public Page<Blog> findAllByCategory(int id, Pageable pageable) {
+        return blogRepository.findAllByCategory(id, pageable);
+    }
+
+
 }

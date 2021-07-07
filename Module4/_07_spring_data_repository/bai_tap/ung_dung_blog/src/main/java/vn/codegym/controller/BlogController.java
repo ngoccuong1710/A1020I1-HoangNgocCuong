@@ -34,14 +34,22 @@ public class BlogController {
     @GetMapping(value = {"/", "/blog"})
     public String showList(@RequestParam("keyword") Optional<String> author,
                            @RequestParam("keyword") Optional<String> title,
+                           @RequestParam("categoryId") Optional<Integer> categoryId,
                            @PageableDefault(value = 3) Pageable pageable,
                            Model model){
         Page<Blog> blogs;
-        if (author.isPresent() || title.isPresent()){
-            blogs = blogService.findAllByAuthorContainingOrTitleContaining(author.get(), title.get(), pageable);
+        model.addAttribute("categories", categoryService.findAll());
+        if (!author.isPresent() || !title.isPresent()){
+            if (categoryId.isPresent()){
+                blogs = blogService.findAllByCategory(categoryId.get(), pageable);
+                model.addAttribute("blogList", blogs);
+                model.addAttribute("categoryId", categoryId.get());
+                return "blog/list";
+            }
+            blogs = blogService.findAll(pageable);
         }
         else {
-            blogs = blogService.findAll(pageable);
+            blogs = blogService.findAllByAuthorContainingOrTitleContaining(author.get(), title.get(), pageable);
         }
         model.addAttribute("blogList", blogs);
         return "blog/list";

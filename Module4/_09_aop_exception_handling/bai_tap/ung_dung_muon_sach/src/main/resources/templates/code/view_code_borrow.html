@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <table border="1">
+        <tr>
+            <th>Id</th>
+            <th>Code Borrow</th>
+            <th>Book</th>
+            <th>Status</th>
+            <th>Return</th>
+            <th>Delete</th>
+        </tr>
+        <tr th:each="codeBorrow : ${codeBorrowList}">
+            <th th:text="${codeBorrow.id}"></th>
+            <td th:text="${codeBorrow.code}"></td>
+            <td th:text="${codeBorrow.book.title}"></td>
+            <td th:text="${codeBorrow.status.status}">
+            <td><a th:href="@{/returnCode(id=${codeBorrow.id})}">replay</a></td>
+            <td><a th:href="@{/delete(id=${codeBorrow.book.id})}">Delete</a></td>
+        </tr>
+    </table>
+</body>
+</html>

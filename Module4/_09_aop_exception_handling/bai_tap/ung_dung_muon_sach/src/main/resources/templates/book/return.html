@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form th:action="@{/return}" method="post" th:object="${book}">
+    <fieldset>
+        <legend>Book Information</legend>
+        <input type="hidden" th:field="*{id}">
+        <table>
+            <tr>
+                <td>Title:</td>
+                <td><input type="text" th:field="*{title}"/></td>
+                <small th:errors="*{title}"></small>
+            </tr>
+            <tr>
+                <td>Author</td>
+                <td><input type="text" th:field="*{author}"/></td>
+                <small th:errors="*{author}"></small>
+            </tr>
+            <tr>
+                <td>Quantity</td>
+                <td><input type="text" th:field="*{quantity}"/></td>
+                <small th:errors="*{quantity}"></small>
+            </tr>
+            <tr>
+                <td>Borrow code</td>
+                <td>
+                    <th:block th:object="${returnCodeWrapper}">
+                        <input type="number" th:field="*{returnCode}">
+                        <small th:errors="*{returnCode}"></small>
+                    </th:block>
+                </td>
+            </tr>
+        </table>
+        <button type="submit">Return</button>
+    </fieldset>
+</form>
+</body>
+</html>

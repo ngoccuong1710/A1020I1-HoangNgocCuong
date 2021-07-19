@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+</head>
+<body>
+<a href="/create">Create new product</a>
+    <div class="container-fluid">
+        <div class="col-md-2" th:each="product: ${productList}">
+            <img width="250px" height="250px" th:src="${product.img}">
+            <div class="dl-horizontal bg-info text-center">
+                <p th:text="${product.nameProduct}"></p>
+                <p th:text="${product.oldPrice}"></p>
+                <p class="text-warning" th:text="${product.newPrice}"></p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

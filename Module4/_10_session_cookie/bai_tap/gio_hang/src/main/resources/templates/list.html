@@ -7,15 +7,18 @@
 </head>
 <body>
 <a href="/create">Create new product</a>
-    <div class="container-fluid">
-        <div class="col-md-2" th:each="product: ${productList}">
-            <img width="250px" height="250px" th:src="${product.img}">
-            <div class="dl-horizontal bg-info text-center">
-                <p th:text="${product.nameProduct}"></p>
-                <p th:text="${product.oldPrice}"></p>
-                <p class="text-warning" th:text="${product.newPrice}"></p>
+    <form method="get" th:action="@{/cart/buy/{id}}">
+        <div class="container-fluid">
+            <div class="col-md-2" th:each="product: ${productList}">
+                <img width="250px" height="250px" th:src="${product.img}">
+                <div class="dl-horizontal bg-info text-center">
+                    <p th:text="${product.nameProduct}"></p>
+                    <p th:text="${product.oldPrice}"></p>
+                    <p class="text-warning" th:text="${product.newPrice}"></p>
+                    <button class="btn btn-primary" type="submit">Buy</button>
+                </div>
             </div>
         </div>
-    </div>
+    </form>
 </body>
 </html>

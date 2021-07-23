@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form th:object="${phone}" method="post" th:action="@{/update}">
+    <table>
+        <tbody>
+        <tr>
+            <td>Producer:</td>
+            <td>
+                <select id="producer" th:field="*{producer}">
+                    <option value="NOKIA">Nokia</option>
+                    <option value="IPHONE">iPhone</option>
+                    <option value="HTC">HTC</option>
+                    <option value="SAMSUNG">Samsung</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td>Model:</td>
+            <td><input th:field="*{model}" /></td>
+        </tr>
+        <tr>
+            <td>Price:</td>
+            <td><input th:field="*{price}"/></td>
+        </tr>
+        <tr>
+            <td><input  class="btn btn-primary"  type="submit" value="Edit" /></td>
+            <td></td>
+        </tr>
+        </tbody>
+    </table>
+</form>
+</body>
+</html>

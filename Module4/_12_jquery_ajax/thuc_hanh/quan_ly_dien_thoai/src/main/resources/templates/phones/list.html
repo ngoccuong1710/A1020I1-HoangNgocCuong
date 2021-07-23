@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+</head>
+<body>
+    <div id="container">
+        <h1>All Smartphones</h1>
+        <table border="1px" cellpadding="0" cellspacing="0">
+            <thead>
+            <tr>
+                <th>Producer</th>
+                <th>Model</th>
+                <th>Price</th>
+                <th>Actions</th>
+            </tr>
+            </thead>
+            <tbody>
+                <tr th:each="phone : ${smartPhones}">
+                    <td th:text="${phone.producer}"></td>
+                    <td th:text="${phone.model}"></td>
+                    <td th:text="${phone.price}"></td>
+                    <td>
+<!--                        <a th:href="@{/edit/__${phone.id}__}">Edit</a><br/>-->
+                        <button class="btn btn-warning" id="update" data-target="#modalId" data-toggle="modal">Create</button>
+
+                        <a th:href="@{/delete/__${phone.id}__}">Delete</a><br/>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <button class="btn btn-primary" id="create" data-target="#modalId" data-toggle="modal">Create</button>
+
+    <div class="modal fade" tabindex="-1" role="dialog" id="modalId">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Modal title</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>Modal body text goes here.</p>
+                </div>
+                <div class="modal-footer">
+<!--                    <button type="button" class="btn btn-primary">Save changes</button>-->
+<!--                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>-->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/jquery/jquery-3.5.1.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $("#create").click(function () {
+            $.ajax({
+                url:"/create",
+                type:"GET",
+                dataType: "HTML",
+                success: function (data) {
+                    $(".modal-body").html(data);
+                    $("#modalId").modal();
+                }
+            })
+        })
+
+        $("#update").click(function () {
+            $.ajax({
+                url:"/edit",
+                type:"GET",
+                dataType: "HTML",
+                success: function (data) {
+                    $(".modal-body").html(data);
+                    $("#modalId").modal();
+                }
+            })
+        })
+    })
+</script>
+</body>
+</html>

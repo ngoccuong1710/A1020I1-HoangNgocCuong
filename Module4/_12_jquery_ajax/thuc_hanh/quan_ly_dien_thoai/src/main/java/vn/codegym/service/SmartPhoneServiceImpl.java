@@ -7,7 +7,7 @@ import vn.codegym.repository.SmartPhoneRepository;
 
 import java.util.List;
 
-@Service
+@Service("SmartPhoneService")
 public class SmartPhoneServiceImpl implements SmartPhoneService{
     @Autowired
     private SmartPhoneRepository smartPhoneRepository;
@@ -23,8 +23,8 @@ public class SmartPhoneServiceImpl implements SmartPhoneService{
     }
 
     @Override
-    public SmartPhone save(SmartPhone phone) {
-        return smartPhoneRepository.save(phone);
+    public void save(SmartPhone phone) {
+        smartPhoneRepository.save(phone);
     }
 
     @Override

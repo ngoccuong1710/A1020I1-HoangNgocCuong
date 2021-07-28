@@ -24,9 +24,12 @@
                     <td th:text="${phone.price}"></td>
                     <td>
 <!--                        <a th:href="@{/edit/__${phone.id}__}">Edit</a><br/>-->
-                        <button class="btn btn-warning" id="update" data-target="#modalId" data-toggle="modal">Create</button>
+                        <button class="btn btn-warning" id="bntEdit" data-target="#modalId" data-toggle="modal"
+                                th:onclick="'javascript:showEdit(\''+${phone.id}+'\');'">Edit</button>
 
-                        <a th:href="@{/delete/__${phone.id}__}">Delete</a><br/>
+<!--                        <a th:href="@{/delete/__${phone.id}__}">Delete</a><br/>-->
+                        <button class="btn btn-danger" id="bntDelete" data-target="#modalId" data-toggle="modal"
+                                th:onclick="'javascript:showDelete(\''+${phone.id}+'\');'">Delete</button>
                     </td>
                 </tr>
             </tbody>
@@ -70,19 +73,44 @@
                 }
             })
         })
-
-        $("#update").click(function () {
-            $.ajax({
-                url:"/edit",
-                type:"GET",
-                dataType: "HTML",
-                success: function (data) {
-                    $(".modal-body").html(data);
-                    $("#modalId").modal();
-                }
-            })
-        })
     })
+
+    function showEdit(id) {
+        $.ajax({
+            url:"/edit/" + id,
+            type:"GET",
+            dataType: "HTML",
+            success: function (data) {
+                $(".modal-body").html(data);
+                $("#modalId").modal();
+            }
+        })
+    }
+
+    function showDelete(id) {
+        $.ajax({
+            url:"/delete/" + id,
+            type:"GET",
+            dataType: "HTML",
+            success: function (data) {
+                $(".modal-body").html(data);
+                $("#modalId").modal();
+            }
+        })
+    }
+    
+    function actionDelete(id) {
+        $.ajax({
+            url:"/actionDelete/" + id,
+            type:"POST",
+            dataType: "HTML",
+            success: function (data) {
+                $("#modalId").modal();
+                $("#searchTable").html(data);
+            }
+        })
+    }
+
 </script>
 </body>
 </html>

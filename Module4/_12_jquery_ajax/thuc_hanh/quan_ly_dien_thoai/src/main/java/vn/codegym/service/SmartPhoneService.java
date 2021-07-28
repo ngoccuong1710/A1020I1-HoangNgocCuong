@@ -7,6 +7,6 @@ import java.util.List;
 public interface SmartPhoneService {
     List<SmartPhone> findAll();
     SmartPhone findById(Integer id);
-    SmartPhone save(SmartPhone phone);
+    void save(SmartPhone phone);
     SmartPhone remove(Integer id);
 }

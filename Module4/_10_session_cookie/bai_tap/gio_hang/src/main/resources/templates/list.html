@@ -7,7 +7,7 @@
 </head>
 <body>
 <a href="/create">Create new product</a>
-    <form method="get" th:action="@{/cart/buy/{id}}">
+    <form method="get" th:action="@{/cart/buy/${product.id}}">
         <div class="container-fluid">
             <div class="col-md-2" th:each="product: ${productList}">
                 <img width="250px" height="250px" th:src="${product.img}">

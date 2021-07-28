@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form th:object="${phone}" method="post" th:action="@{/actionDelete}">
+    <input th:type="hidden" name="id" th:field="*{id}">
+    <table>
+        <tbody>
+        <tr>
+            <td>Producer:</td>
+            <td>
+                <a th:text="*{producer}"></a>
+            </td>
+        </tr>
+        <tr>
+            <td>Model:</td>
+            <td><a th:text="*{model}"></a></td>
+        </tr>
+        <tr>
+            <td>Price:</td>
+            <td><a th:text="*{price}"></a></td>
+        </tr>
+        <tr>
+            <td><input  class="btn btn-primary"  type="submit" value="Delete" /></td>
+            <td></td>
+        </tr>
+        </tbody>
+    </table>
+</form>
+</body>
+</html>

@@ -6,6 +6,7 @@
 </head>
 <body>
 <form th:object="${phone}" method="post" th:action="@{/update}">
+    <input th:type="hidden" name="id" th:field="*{id}">
     <table>
         <tbody>
         <tr>

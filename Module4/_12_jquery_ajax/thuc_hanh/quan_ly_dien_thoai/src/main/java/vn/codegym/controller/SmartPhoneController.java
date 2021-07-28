@@ -36,8 +36,7 @@ public class SmartPhoneController {
     }
 
     @PostMapping("/create")
-    public String saveCustomer(@ModelAttribute("smartPhone") SmartPhone smartPhone, RedirectAttributes redirectAttributes) {
-        redirectAttributes.addFlashAttribute("message", "Create customer success");
+    public String saveCustomer(@ModelAttribute("smartPhone") SmartPhone smartPhone) {
         smartPhoneService.save(smartPhone);
         return "redirect:/";
     }
@@ -52,5 +51,19 @@ public class SmartPhoneController {
     public String update(SmartPhone smartPhone) {
         smartPhoneService.save(smartPhone);
         return "redirect:/";
+    }
+
+    @GetMapping("/delete/{id}")
+    public String showDeleteForm(@PathVariable int id, Model model) {
+        model.addAttribute("phone", smartPhoneService.findById(id));
+        return "phones/delete";
+    }
+
+    @PostMapping("/actionDelete/{id}")
+    public String delete(@ModelAttribute("smartPhone") SmartPhone smartPhone, Model model){
+        smartPhoneService.remove(smartPhone.getId());
+        List<SmartPhone> smartPhones = smartPhoneService.findAll();
+        model.addAttribute("smartPhones", smartPhones);
+        return "phones/searchTable";
     }
 }

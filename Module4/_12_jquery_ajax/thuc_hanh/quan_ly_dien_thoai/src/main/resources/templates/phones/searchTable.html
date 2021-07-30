@@ -5,29 +5,34 @@
     <title>Title</title>
 </head>
 <body>
-<div id="searchTable">
-    <h1>All Smartphones</h1>
-    <table border="1px" cellpadding="0" cellspacing="0">
-        <thead>
-        <tr>
-            <th>Producer</th>
-            <th>Model</th>
-            <th>Price</th>
-            <th>Actions</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr th:each="phone : ${smartPhones}">
-            <td th:text="${phone.producer}"></td>
-            <td th:text="${phone.model}"></td>
-            <td th:text="${phone.price}"></td>
-            <td>
-                <a th:href="@{/edit/__${phone.id}__}">Edit</a><br/>
-                <a th:href="@{/actionDelete/__${phone.id}__}">Delete</a><br/>
-            </td>
-        </tr>
-        </tbody>
-    </table>
-</div>
+    <div id="searchTable">
+        <h1>All Smartphones</h1>
+        <table border="1px" cellpadding="0" cellspacing="0">
+            <thead>
+            <tr>
+                <th>Producer</th>
+                <th>Model</th>
+                <th>Price</th>
+                <th>Actions</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="phone : ${smartPhones}">
+                <td th:text="${phone.producer}"></td>
+                <td th:text="${phone.model}"></td>
+                <td th:text="${phone.price}"></td>
+                <td>
+                    <!--                        <a th:href="@{/edit/__${phone.id}__}">Edit</a><br/>-->
+                    <button class="btn btn-warning" id="bntEdit" data-target="#modalId" data-toggle="modal"
+                            th:onclick="'javascript:showEdit(\''+${phone.id}+'\');'">Edit</button>
+
+                    <!--                        <a th:href="@{/actionDelete/__${phone.id}__}">Delete</a><br/>-->
+                    <button class="btn btn-danger" id="bntDelete" data-target="#modalId" data-toggle="modal"
+                            th:onclick="'javascript:showDelete(\''+${phone.id}+'\');'">Delete</button>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
 </body>
 </html>

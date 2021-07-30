@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p><a href="/category"><input type="submit" value="List categories"></a></p>
+<a href="/blog/create">Create new Blog</a>
+<h1>List Blog</h1>
+
+<th:block th:if="${message}">
+    <p th:text="${message}"></p>
+</th:block>
+
+<form>
+    Search by Author or Title:
+    <input name="keyword" type="text"/>
+    <input type="submit" value="Search"/>
+</form><br>
+<form>
+    Search by Title (ajax):
+    <input type="text" id="searchValue"/>
+    <input type="submit" value="Search" id="search_btn"/>
+</form><br>
+
+<form action="/blog" method="get">
+    <select onchange="this.form.submit()" th:value ="${categoryId}" th:name="categoryId">
+        <option value="" disabled selected> Choose here</option>
+        <th:block th:each = "category : ${categories}">
+            <option th:value="${category.id}" th:text="${category.name}" th:href="@{/blog/category/${category.getId()}}"> </option>
+        </th:block>
+    </select>
+</form><br>
+
+<table border="1" style="border-collapse: collapse" id="container">
+    <tr>
+        <th>Author</th>
+        <th>Title</th>
+        <th>Category</th>
+        <th>content</th>
+        <th>Show</th>
+        <th>Edit</th>
+        <th>Delete</th>
+    </tr>
+    <tr th:each="blog : ${blogList}">
+        <td th:text="${blog.author}"></td>
+        <td th:text="${blog.title}"></td>
+        <td th:text="${blog.category.name}"></td>
+        <td><span style="display:block; text-overflow: Ellipsis; width: 300px; overflow: hidden; white-space: nowrap;" th:text="${blog.content}"></span></td>
+        <td><a th:href="@{/blog/show/{id}(id=${blog.id})}">show</a></td>
+        <td><a th:href="@{/blog/edit/{id}(id=${blog.id})}">edit</a></td>
+        <td><a th:href="@{/blog/delete/{id}(id=${blog.id})}">delete</a></td>
+    </tr>
+</table>
+<div>
+    <a th:href="@{'/blog'(page=${blogList.number - 1})}" th:if="${blogList.hasPrevious()}">Previous</a>
+    <span th:text="${blogList.number + 1}"></span>/<span th:text="${blogList.totalPages}"></span>
+    <a th:href="@{'/blog'(page=${blogList.number + 1})}" th:if="${blogList.hasNext()}">Next</a>
+</div>
+
+<div class="modal fade" tabindex="-1" role="dialog" id="modalId">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Modal title</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>Modal body text goes here.</p>
+            </div>
+            <div class="modal-footer">
+                <!--                    <button type="button" class="btn btn-primary">Save changes</button>-->
+                <!--                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>-->
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="/jquery/jquery-3.5.1.min.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+
+<script>
+    $(document).ready(function () {
+        $("#search_btn").click(function () {
+            $.ajax({
+                url:"/search/" + $("#searchValue").next().val(),
+                type:"GET",
+                dataType: "HTML",
+                success: function (data) {
+                    $("#listSearch").html(data);
+                }
+            })
+        })
+    })
+</script>
+
+</body>
+</html>

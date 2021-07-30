@@ -27,7 +27,7 @@
                         <button class="btn btn-warning" id="bntEdit" data-target="#modalId" data-toggle="modal"
                                 th:onclick="'javascript:showEdit(\''+${phone.id}+'\');'">Edit</button>
 
-<!--                        <a th:href="@{/delete/__${phone.id}__}">Delete</a><br/>-->
+<!--                        <a th:href="@{/actionDelete/__${phone.id}__}">Delete</a><br/>-->
                         <button class="btn btn-danger" id="bntDelete" data-target="#modalId" data-toggle="modal"
                                 th:onclick="'javascript:showDelete(\''+${phone.id}+'\');'">Delete</button>
                     </td>
@@ -98,15 +98,23 @@
             }
         })
     }
-    
+
     function actionDelete(id) {
         $.ajax({
             url:"/actionDelete/" + id,
             type:"POST",
             dataType: "HTML",
             success: function (data) {
-                $("#modalId").modal();
+                let massage = "Delete success!"
+                setTimeout(function () {
+                    $("#modalId").modal('hide');
+                }, 3000)
                 $("#searchTable").html(data);
+
+                $(".modal-body").html(massage);
+                setTimeout(function () {
+                    $("#modalId").modal('show');
+                }, 3000);
             }
         })
     }

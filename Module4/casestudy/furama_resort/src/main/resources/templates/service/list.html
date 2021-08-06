@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+</head>
+<body>
+<header th:replace="/layout :: header"></header>
+
+<p><a href="/service/create" class="btn btn-primary">Create new service</a></p>
+
+<table class="table table-bordered table-striped">
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Area</th>
+        <th>Cost</th>
+        <th>Max people</th>
+        <th>Rent Type</th>
+        <th>Service type</th>
+        <th>Standard room</th>
+        <th>Other Convenience</th>
+        <th>Pool Area</th>
+        <th>Floors</th>
+        <th>Edit</th>
+        <th>Delete</th>
+    </tr>
+    <tr th:each="service : ${serviceList}">
+        <td th:text="${service.serviceId}"></td>
+        <td th:text="${service.name}"></td>
+        <td th:text="${service.area}"></td>
+        <td th:text="${service.cost}"></td>
+        <td th:text="${service.maxPeople}"></td>
+        <td th:text="${service.rentType.rentTypeName}"></td>
+        <td th:text="${service.serviceType.serviceTypeName}"></td>
+        <td th:text="${service.standardRoom}"></td>
+        <td th:text="${service.descriptionOtherConvenience}"></td>
+        <td th:text="${service.poolArea}"></td>
+        <td th:text="${service.numOfFloors}"></td>
+        <td><a class="btn btn-warning" th:href="@{/service/edit/{id}(id=${service.serviceId})}">edit</a></td>
+        <td><a class="btn btn-danger" th:href="@{/service/delete/{id}(id=${service.serviceId})}">delete</a></td>
+    </tr>
+</table>
+<div>
+    <a th:href="@{'/employee'(page=${serviceList.number - 1})}" th:if="${serviceList.hasPrevious()}">Previous</a>
+    <span th:text="${serviceList.number + 1}"></span>/<span th:text="${serviceList.totalPages}"></span>
+    <a th:href="@{'/employee'(page=${serviceList.number + 1})}" th:if="${serviceList.hasNext()}">Next</a>
+</div>
+
+<script src="jquery/jquery-3.5.1.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+</body>
+</html>

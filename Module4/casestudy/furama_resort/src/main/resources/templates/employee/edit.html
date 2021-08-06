@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+</head>
+<body>
+<header th:replace="/layout :: header"></header>
+
+<form th:action="@{/employee/update}" th:object="${employee}" method="post">
+    <input th:type="hidden" name="id" th:field="*{employeeId}">
+    <table>
+        <tr>
+            <td>Name:</td>
+            <td><input type="text" th:field="*{name}"/></td>
+        </tr>
+        <tr>
+            <td>Birthday:</td>
+            <td><input type="date" th:field="*{birthday}"/></td>
+        </tr>
+        <tr>
+            <td>Id card:</td>
+            <td><input type="text" th:field="*{idCard}"/></td>
+        </tr>
+        <tr>
+            <td>Salary:</td>
+            <td><input type="text" th:field="*{salary}"/></td>
+        </tr>
+        <tr>
+            <td>Phone:</td>
+            <td><input type="text" th:field="*{phone}"/></td>
+        </tr>
+        <tr>
+            <td>Email:</td>
+            <td><input type="text" th:field="*{email}"/></td>
+        </tr>
+        <tr>
+            <td>address:</td>
+            <td><input type="text" th:field="*{address}"/></td>
+        </tr>
+        <tr>
+            <td>Position:</td>
+            <td>
+                <select th:field="*{position}">
+                    <option th:each="pos : ${positions}" th:value="${pos.getPositionId()}" th:text="${pos.getPositionName()}"></option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td>Education degree:</td>
+            <td>
+                <select th:field="*{educationDegree}">
+                    <option th:each="edu : ${educationDegrees}" th:value="${edu.getEducationDegreeId()}" th:text="${edu.getEducationDegreeName()}"></option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td>Division:</td>
+            <td>
+                <select th:field="*{division}">
+                    <option th:each="divi : ${divisions}" th:value="${divi.getDivisionId()}" th:text="${divi.getDivisionName()}"></option>
+                </select>
+            </td>
+        </tr>
+        <!--        <tr>-->
+        <!--            <td>Username:</td>-->
+        <!--            <td><input type="text" th:field="*{user}"/></td>-->
+        <!--        </tr>-->
+        <tr>
+            <td><input class="btn btn-success" type="submit" value="Update Employee"></td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>

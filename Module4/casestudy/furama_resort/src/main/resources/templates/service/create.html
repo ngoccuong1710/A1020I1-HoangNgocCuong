@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+</head>
+<body>
+<header th:replace="/layout :: header"></header>
+
+<form th:action="@{/service/create}" th:object="${service}" method="post">
+    <table>
+        <tr>
+            <td>Id</td>
+            <td><input type="text" th:field="*{serviceId}"/></td>
+        </tr>
+        <tr>
+            <td>Name:</td>
+            <td><input type="text" th:field="*{name}"/></td>
+        </tr>
+        <tr>
+            <td>Area:</td>
+            <td><input type="date" th:field="*{area}"/></td>
+        </tr>
+        <tr>
+            <td>Cost:</td>
+            <td><input type="text" th:field="*{cost}"/></td>
+        </tr>
+        <tr>
+            <td>Max People:</td>
+            <td><input type="text" th:field="*{maxPeople}"/></td>
+        </tr>
+        <tr>
+            <td>Rent Type:</td>
+            <td>
+                <select th:field="*{rentType}">
+                    <option th:each="rent : ${rentTypes}" th:value="${rent.getRentTypeId()}" th:text="${rent.getRentTypeName()}"></option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td>Service type:</td>
+            <td>
+                <select th:field="*{serviceType}">
+                    <option th:each="serviceType : ${serviceTypes}" th:value="${serviceType.getServicesTypeId()}" th:text="${serviceType.getServiceTypeName()}"></option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td>Standard room:</td>
+            <td><input type="text" th:field="*{standardRoom}"/></td>
+        </tr>
+        <tr>
+            <td>Description Other Convenience:</td>
+            <td><input type="text" th:field="*{descriptionOtherConvenience}"/></td>
+        </tr>
+        <tr>
+            <td>Pool area:</td>
+            <td><input type="text" th:field="*{poolArea}"/></td>
+        </tr>
+        <tr>
+            <td>Floors:</td>
+            <td><input type="text" th:field="*{numOfFloors}"/></td>
+        </tr>
+        <tr>
+            <td><input class="btn btn-success" type="submit" value="Create Service"></td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>

@@ -28,6 +28,7 @@ public class AppConfig implements WebMvcConfigurer {
         registry.addInterceptor(localeChangeInterceptor());
     }
 
+//Cấu hình file LocaleResolver để ứng dụng có thể biết được locale (tiếng Mỹ , tiếng Việt hay tiếng Pháp) mà ứng dụng đang sử dụng là gì ? .
     @Bean
     public LocaleResolver localeResolver() {
         SessionLocaleResolver localeResolver = new SessionLocaleResolver();

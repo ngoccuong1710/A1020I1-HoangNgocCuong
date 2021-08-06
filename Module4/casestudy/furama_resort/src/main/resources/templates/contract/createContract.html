@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+</head>
+<body>
+<header th:replace="/layout :: header"></header>
+
+<form th:action="@{/contract/create}" th:object="${contract}" method="post">
+    <table>
+        <tr>
+            <td>Start date:</td>
+            <td><input type="date" th:field="*{contractStartDate}"/></td>
+        </tr>
+        <tr>
+            <td>End date:</td>
+            <td><input type="date" th:field="*{contractEndDate}"/></td>
+        </tr>
+        <tr>
+            <td>Deposit</td>
+            <td><input type="text" th:field="*{contractDeposit}"/></td>
+        </tr>
+        <tr>
+            <td>Total money:</td>
+            <td><input type="text" th:field="*{contractTotalMoney}"/></td>
+        </tr>
+        <tr>
+            <td>Employee:</td>
+            <td>
+                <select th:field="*{employee}">
+                    <option th:each="emp : ${employees}" th:value="${emp.employeeId}" th:text="${emp.name}"></option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td>Customer:</td>
+            <td>
+                <select th:field="*{customer}">
+                    <option th:each="cus : ${customers}" th:value="${cus.id}" th:text="${cus.name}"></option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td>Service:</td>
+            <td>
+                <select th:field="*{service}">
+                    <option th:each="ser : ${services}" th:value="${ser.serviceId}" th:text="${ser.name}"></option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td><input class="btn btn-success" type="submit" value="Create Contract"></td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>

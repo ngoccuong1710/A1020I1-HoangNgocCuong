@@ -1,6 +1,8 @@
 package vn.codegym.furama_resort.model;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Positive;
 import java.util.Set;
 
 @Entity
@@ -10,7 +12,11 @@ public class Contract {
     private Integer contractId;
     private String contractStartDate;
     private String contractEndDate;
+
+    @Positive
     private Double contractDeposit;
+
+    @Positive
     private Double contractTotalMoney;
 
     @ManyToOne

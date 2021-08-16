@@ -1,15 +1,25 @@
 package vn.codegym.furama_resort.model;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Positive;
 import java.util.Set;
 
 @Entity
 public class Service {
     @Id
     private String serviceId;
+
+    @NotBlank
     private String name;
+
+    @NotBlank
     private String area;
+
+    @Positive
     private Double cost;
+
+    @Positive
     private Integer maxPeople;
 
     @ManyToOne
@@ -20,9 +30,16 @@ public class Service {
     @JoinColumn(name = "serviceTypeId", referencedColumnName = "serviceTypeId", nullable = false)
     private ServiceType serviceType;
 
+    @NotBlank
     private String standardRoom;
+
+    @NotBlank
     private String descriptionOtherConvenience;
+
+    @Positive
     private Double poolArea;
+
+    @Positive
     private Integer numOfFloors;
 
     @OneToMany(mappedBy = "service", cascade = CascadeType.ALL)

@@ -9,7 +9,7 @@
 <header th:replace="/layout :: header"></header>
 
 <form th:action="@{/service/update}" th:object="${service}" method="post">
-    <input th:type="hidden" name="id" th:field="*{serviceId}">
+    <input th:type="hidden" name="id" th:field="*{serviceId}"/>
     <table>
         <tr>
             <td>Name:</td>
@@ -17,7 +17,7 @@
         </tr>
         <tr>
             <td>Area:</td>
-            <td><input type="date" th:field="*{area}"/></td>
+            <td><input type="text" th:field="*{area}"/></td>
         </tr>
         <tr>
             <td>Cost:</td>

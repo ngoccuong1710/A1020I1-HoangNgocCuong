@@ -1,10 +1,7 @@
 package vn.codegym.furama_resort.model;
 
 import javax.persistence.*;
-import javax.validation.constraints.Email;
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotEmpty;
-import javax.validation.constraints.NotNull;
+import javax.validation.constraints.*;
 import java.util.Set;
 
 @Entity
@@ -18,12 +15,16 @@ public class Employee {
     @NotEmpty
     private String birthday;
 
+    @NotBlank
+    @Pattern(regexp = "^[0-9]{9}$",message = "Số CMND phải đúng định dạng XXXXXXXXX .")
+    private String idCard;
 
-    private Integer idCard;
-
+    @Positive
     private Double salary;
 
-    private Integer phone;
+    @NotBlank
+    @Pattern(regexp = "^((091)|(090))[0-9]{7}$",message = "Số điện thoại phải đúng định dạng 090xxxxxxx hoặc 091xxxxxxx")
+    private String phone;
 
     @NotBlank
     @Email
@@ -38,7 +39,6 @@ public class Employee {
 
     @ManyToOne
     @JoinColumn(name = "educationDegreeId", referencedColumnName = "educationDegreeId", nullable = false)
-
     private EducationDegree educationDegree;
 
     @ManyToOne
@@ -56,7 +56,7 @@ public class Employee {
     public Employee() {
     }
 
-    public Employee(String employeeId, String name, String birthday, Integer idCard, Double salary, Integer phone, String email, String address, Position position, EducationDegree educationDegree, Division division) {
+    public Employee(String employeeId, String name, String birthday, String idCard, Double salary, String phone, String email, String address, Position position, EducationDegree educationDegree, Division division) {
         this.employeeId = employeeId;
         this.name = name;
         this.birthday = birthday;
@@ -70,7 +70,7 @@ public class Employee {
         this.division = division;
     }
 
-    public Employee(String employeeId, String name, String birthday, Integer idCard, Double salary, Integer phone, String email, String address, Position position, EducationDegree educationDegree, Division division, User user) {
+    public Employee(String employeeId, String name, String birthday, String idCard, Double salary, String phone, String email, String address, Position position, EducationDegree educationDegree, Division division, User user) {
         this.employeeId = employeeId;
         this.name = name;
         this.birthday = birthday;
@@ -85,7 +85,7 @@ public class Employee {
         this.user = user;
     }
 
-    public Employee(String employeeId, String name, String birthday, Integer idCard, Double salary, Integer phone, String email, String address, Position position, EducationDegree educationDegree, Division division, User user, Set<Contract> contracts) {
+    public Employee(String employeeId, String name, String birthday, String idCard, Double salary, String phone, String email, String address, Position position, EducationDegree educationDegree, Division division, User user, Set<Contract> contracts) {
         this.employeeId = employeeId;
         this.name = name;
         this.birthday = birthday;
@@ -125,11 +125,11 @@ public class Employee {
         this.birthday = birthday;
     }
 
-    public Integer getIdCard() {
+    public String getIdCard() {
         return idCard;
     }
 
-    public void setIdCard(Integer idCard) {
+    public void setIdCard(String idCard) {
         this.idCard = idCard;
     }
 
@@ -141,11 +141,11 @@ public class Employee {
         this.salary = salary;
     }
 
-    public Integer getPhone() {
+    public String getPhone() {
         return phone;
     }
 
-    public void setPhone(Integer phone) {
+    public void setPhone(String phone) {
         this.phone = phone;
     }
 

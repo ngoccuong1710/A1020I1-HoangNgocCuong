@@ -11,10 +11,7 @@ import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 import vn.codegym.furama_resort.model.*;
-import vn.codegym.furama_resort.service.DivisionService;
-import vn.codegym.furama_resort.service.EducationDegreeService;
-import vn.codegym.furama_resort.service.EmployeeService;
-import vn.codegym.furama_resort.service.PositionService;
+import vn.codegym.furama_resort.service.*;
 
 import java.util.Optional;
 
@@ -31,6 +28,12 @@ public class EmployeeController {
 
     @Autowired
     private DivisionService divisionService;
+
+    @Autowired
+    private RoleService roleService;
+
+    @Autowired
+    private UserService userService;
 
     @ModelAttribute("positions")
     public Iterable<Position> positions(){
@@ -88,9 +91,14 @@ public class EmployeeController {
     }
 
     @PostMapping("/employee/update")
-    public String update(Employee employee){
-        employeeService.save(employee);
-        return "redirect:/employee";
+    public String update(@Validated Employee employee, BindingResult bindingResult){
+        if (bindingResult.hasFieldErrors()){
+            return "employee/edit";
+        }
+        else {
+            employeeService.save(employee);
+            return "redirect:/employee";
+        }
     }
 
     @GetMapping("/employee/delete/{id}")

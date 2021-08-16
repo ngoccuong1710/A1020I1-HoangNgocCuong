@@ -1,6 +1,7 @@
 package vn.codegym.furama_resort.model;
 
 import javax.persistence.*;
+import javax.validation.constraints.Positive;
 
 @Entity
 public class ContractDetail {
@@ -16,6 +17,7 @@ public class ContractDetail {
     @JoinColumn(name = "attachServiceId", referencedColumnName = "attachServiceId", nullable = false)
     private AttachService attachService;
 
+    @Positive
     private Integer quantity;
 
     public ContractDetail() {

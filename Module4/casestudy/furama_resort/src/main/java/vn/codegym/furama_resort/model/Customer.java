@@ -1,9 +1,12 @@
 package vn.codegym.furama_resort.model;
 
+import vn.codegym.furama_resort.validate.DateOfBirth;
+
 import javax.persistence.*;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.Pattern;
 import java.util.Set;
 
 @Entity
@@ -15,14 +18,17 @@ public class Customer {
     private String name;
 
     @NotEmpty
+    @DateOfBirth
     private String birthday;
 
     private Integer gender;
 
     @NotBlank
+    @Pattern(regexp = "^[0-9]{9}$",message = "Số CMND phải đúng định dạng XXXXXXXXX .")
     private String idCard;
 
     @NotBlank
+    @Pattern(regexp = "^((091)|(090))[0-9]{7}$",message = "Số điện thoại phải đúng định dạng 090xxxxxxx hoặc 091xxxxxxx")
     private String phone;
 
     @NotBlank

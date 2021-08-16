@@ -7,18 +7,17 @@
 </head>
 <body>
 <header th:replace="/layout :: header"></header>
-
 <form th:action="@{/customer/create}" th:object="${customer}" method="post">
-    <table>
+    <table class="table">
         <tr>
             <td>Name:</td>
             <td><input type="text" th:field="*{name}"/></td>
-            <td th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></td>
+            <td th:if="${#fields.hasErrors('name')}" th:errors="*{name}" style="color: red"></td>
         </tr>
         <tr>
             <td>Birthday:</td>
             <td><input type="date" th:field="*{birthday}"/></td>
-            <td th:if="${#fields.hasErrors('birthday')}" th:errors="*{birthday}"></td>
+            <td th:if="${#fields.hasErrors('birthday')}" th:errors="*{birthday}" style="color: red"></td>
         </tr>
         <tr>
             <td>Gender:</td>
@@ -32,22 +31,22 @@
         <tr>
             <td>Id card:</td>
             <td><input type="text" th:field="*{idCard}"/></td>
-            <td th:if="${#fields.hasErrors('idCard')}" th:errors="*{idCard}"></td>
+            <td th:if="${#fields.hasErrors('idCard')}" th:errors="*{idCard}" style="color: red"></td>
         </tr>
         <tr>
             <td>Phone:</td>
             <td><input type="text" th:field="*{phone}"/></td>
-            <td th:if="${#fields.hasErrors('phone')}" th:errors="*{phone}"></td>
+            <td th:if="${#fields.hasErrors('phone')}" th:errors="*{phone}" style="color: red"></td>
         </tr>
         <tr>
             <td>Email:</td>
             <td><input type="text" th:field="*{email}"/></td>
-            <td th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></td>
+            <td th:if="${#fields.hasErrors('email')}" th:errors="*{email}" style="color: red"></td>
         </tr>
         <tr>
             <td>address:</td>
             <td><input type="text" th:field="*{address}"/></td>
-            <td th:if="${#fields.hasErrors('address')}" th:errors="*{address}"></td>
+            <td th:if="${#fields.hasErrors('address')}" th:errors="*{address}" style="color: red"></td>
         </tr>
         <tr>
             <td>Type:</td>
@@ -58,7 +57,7 @@
             </td>
         </tr>
         <tr>
-            <td><input class="btn btn-success" type="submit" value="Create customer"></td>
+            <td colspan="2"><input class="btn btn-success" type="submit" value="Create customer"></td>
         </tr>
     </table>
 </form>

@@ -6,6 +6,8 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.web.PageableDefault;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 import vn.codegym.furama_resort.model.*;
@@ -55,9 +57,16 @@ public class ServiceController {
     }
 
     @PostMapping("/service/create")
-    public String saveService(@ModelAttribute("service") Service service) {
-        serviceService.save(service);
-        return "redirect:/service";
+    public String saveService(@Validated @ModelAttribute("service") Service service, BindingResult bindingResult) {
+        if (bindingResult.hasFieldErrors()){
+            return "service/create";
+        }
+        else {
+            String id = "DV-" + ((int)(Math.random()*10000));
+            service.setServiceId(id);
+            serviceService.save(service);
+            return "redirect:/service";
+        }
     }
 
     @GetMapping("/service/edit/{id}")
@@ -68,9 +77,14 @@ public class ServiceController {
     }
 
     @PostMapping("/service/update")
-    public String update(Service service){
-        serviceService.save(service);
-        return "redirect:/service";
+    public String update(@Validated Service service, BindingResult bindingResult){
+        if (bindingResult.hasFieldErrors()){
+            return "service/edit";
+        }
+        else {
+            serviceService.save(service);
+            return "redirect:/service";
+        }
     }
 
     @GetMapping("/service/delete/{id}")

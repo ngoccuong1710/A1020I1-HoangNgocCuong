@@ -21,10 +21,12 @@
         <tr>
             <td>Deposit</td>
             <td><input type="text" th:field="*{contractDeposit}"/></td>
+            <td th:if="${#fields.hasErrors('contractDeposit')}" th:errors="*{contractDeposit}"></td>
         </tr>
         <tr>
             <td>Total money:</td>
             <td><input type="text" th:field="*{contractTotalMoney}"/></td>
+            <td th:if="${#fields.hasErrors('contractTotalMoney')}" th:errors="*{contractTotalMoney}"></td>
         </tr>
         <tr>
             <td>Employee:</td>

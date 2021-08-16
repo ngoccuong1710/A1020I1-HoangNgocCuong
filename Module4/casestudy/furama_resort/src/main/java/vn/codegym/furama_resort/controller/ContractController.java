@@ -6,6 +6,8 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.web.PageableDefault;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 import vn.codegym.furama_resort.model.*;
@@ -77,9 +79,14 @@ public class ContractController {
     }
 
     @PostMapping("/contract/create")
-    public String saveContract(@ModelAttribute("contract") Contract contract) {
-        contractService.save(contract);
-        return "redirect:/contract";
+    public String saveContract(@Validated @ModelAttribute("contract") Contract contract, BindingResult bindingResult) {
+        if (bindingResult.hasFieldErrors()){
+            return "contract/createContract";
+        }
+        else {
+            contractService.save(contract);
+            return "redirect:/contract";
+        }
     }
 
     @GetMapping("/contractDetail/create")
@@ -91,8 +98,13 @@ public class ContractController {
     }
 
     @PostMapping("/contractDetail/create")
-    public String saveContractDetail(@ModelAttribute("contractDetail") ContractDetail contractDetail) {
-        contractDetailService.save(contractDetail);
-        return "redirect:/contract";
+    public String saveContractDetail(@Validated @ModelAttribute("contractDetail") ContractDetail contractDetail, BindingResult bindingResult) {
+        if (bindingResult.hasFieldErrors()){
+            return "contract/createContractDetail";
+        }
+        else {
+            contractDetailService.save(contractDetail);
+            return "redirect:/contract";
+        }
     }
 }

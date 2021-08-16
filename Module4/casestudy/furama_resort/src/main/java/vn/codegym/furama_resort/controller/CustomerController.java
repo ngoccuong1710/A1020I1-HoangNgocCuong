@@ -15,6 +15,9 @@ import vn.codegym.furama_resort.model.CustomerType;
 import vn.codegym.furama_resort.service.CustomerService;
 import vn.codegym.furama_resort.service.CustomerTypeService;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.Optional;
 
 @Controller
@@ -51,7 +54,7 @@ public class CustomerController {
     }
 
     @PostMapping("/customer/create")
-    public String saveCustomer(@Validated @ModelAttribute("customer") Customer customer, BindingResult bindingResult) {
+    public String saveCustomer(@Validated @ModelAttribute("customer") Customer customer, BindingResult bindingResult) throws ParseException {
         if (bindingResult.hasFieldErrors()){
             return "customer/create";
         }
@@ -71,13 +74,18 @@ public class CustomerController {
     }
 
     @PostMapping("/customer/update")
-    public String update(Customer customer){
-        customerService.save(customer);
-        return "redirect:/customer";
+    public String update(@Validated Customer customer, BindingResult bindingResult){
+        if (bindingResult.hasFieldErrors()){
+            return "customer/edit";
+        }
+        else {
+            customerService.save(customer);
+            return "redirect:/customer";
+        }
     }
 
     @GetMapping("/customer/delete/{id}")
-    public String delete(@PathVariable("id") String id){
+    public String delete(@PathVariable("id") String id, Model model){
         Customer customer = customerService.findById(id);
         customerService.delete(customer);
         return "redirect:/customer";

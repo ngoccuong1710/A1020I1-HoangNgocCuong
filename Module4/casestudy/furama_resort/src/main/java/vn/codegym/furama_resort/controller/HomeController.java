@@ -9,4 +9,9 @@ public class HomeController {
     public String showIndex(){
         return "index";
     }
+
+    @GetMapping("/login")
+    public String showLoginForm(){
+        return "login";
+    }
 }

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en"  xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+</head>
+<body>
+<h1>Sửa khuyến mãi</h1>
+<form th:action="@{/khuyen-mai/update}" th:object="${khuyenMai}" method="post">
+    <input th:type="hidden" name="ma" th:field="*{ma}">
+    <table class="table">
+        <tr>
+            <td>Tiêu đề:</td>
+            <td>
+                <input type="text" th:field="*{tieuDe}"/>
+                <div th:if="${#fields.hasErrors('tieuDe')}" th:errors="*{tieuDe}" style="color: red"></div>
+            </td>
+        </tr>
+        <tr>
+            <td>Thời gian bắt đầu:</td>
+            <td>
+                <input type="date" th:field="*{thoiGianBatDau}"/>
+                <div th:if="${#fields.hasErrors('thoiGianBatDau')}" th:errors="*{thoiGianBatDau}" style="color: red"></div>
+            </td>
+        </tr>
+        <tr>
+            <td>Thời gian kết thúc:</td>
+            <td>
+                <input type="date" th:field="*{thoiGianKetThuc}"/>
+                <div th:if="${#fields.hasErrors('thoiGianKetThuc')}" th:errors="*{thoiGianKetThuc}" style="color: red"></div>
+            </td>
+        </tr>
+        <tr>
+            <td>Mức giảm giá:</td>
+            <td>
+                <input type="text" th:field="*{mucGiamGia}"/>
+                <div th:if="${#fields.hasErrors('mucGiamGia')}" th:errors="*{mucGiamGia}" style="color: red"></div>
+            </td>
+        </tr>
+        <tr>
+            <td>Chi tiết:</td>
+            <td>
+                <input type="text" th:field="*{chiTiet}"/>
+                <div th:if="${#fields.hasErrors('chiTiet')}" th:errors="*{chiTiet}" style="color: red"></div>
+            </td>
+        </tr>
+    </table>
+    <input class="btn btn-success" type="submit" value="Sửa khuyến mãi">
+    <a class="btn btn-success" href="/">Quay lại</a>
+</form>
+
+</body>
+</html>

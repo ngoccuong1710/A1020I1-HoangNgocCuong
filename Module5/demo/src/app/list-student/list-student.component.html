@@ -1,29 +1,29 @@
 <h1>List students</h1>
 <table class="table table-bordered table-sm">
   <thead class="thead-dark">
-    <tr>
-      <th>Id</th>
-      <th>Name</th>
-      <th>Mark</th>
-      <th>Result</th>
-      <th>Action</th>
-    </tr>
+  <tr>
+    <th>Id</th>
+    <th>Name</th>
+    <th>Mark</th>
+    <th>Result</th>
+    <th>Action</th>
+  </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let student of students">
-      <td>{{student.id}}</td>
-      <td>{{student.name}}</td>
-      <td>{{student.mark}}</td>
-      <td *ngIf="student.mark >= 5">Pass</td>
-      <td *ngIf="student.mark < 5">Fail</td>
-      <td>
-        <a class="btn btn-info" >Detail</a>
-        <span>&nbsp;</span>
-        <a class="btn btn-danger" >Delete</a>
-      </td>
-    </tr>
+  <tr *ngFor="let student of students">
+    <td>{{student.id}}</td>
+    <td>{{student.name}}</td>
+    <td>{{student.mark}}</td>
+    <td *ngIf="student.mark >= 5">Pass</td>
+    <td *ngIf="student.mark < 5">Fail</td>
+    <td>
+      <a class="btn btn-info">Detail</a>
+      <span>&nbsp;</span>
+      <a class="btn btn-danger">Delete</a>
+    </td>
+  </tr>
   </tbody>
 </table>
 
 <h1>Infor student</h1>
-<app-student-infor></app-student-infor>
+<app-infor-student></app-infor-student>

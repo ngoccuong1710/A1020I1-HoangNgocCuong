@@ -8,11 +8,11 @@ export interface IStudent {
 }
 
 @Component({
-  selector: 'app-student-infor',
-  templateUrl: './student-infor.component.html',
-  styleUrls: ['./student-infor.component.css']
+  selector: 'app-infor-student',
+  templateUrl: './infor-student.component.html',
+  styleUrls: ['./infor-student.component.css']
 })
-export class StudentInforComponent implements OnInit {
+export class InforStudentComponent implements OnInit {
 
   student: IStudent = {
     id: 1,

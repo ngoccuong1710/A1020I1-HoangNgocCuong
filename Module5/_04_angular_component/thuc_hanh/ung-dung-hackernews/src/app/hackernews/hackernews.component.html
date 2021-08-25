@@ -1,0 +1,15 @@
+<h2>Today's article</h2>
+<hr>
+<table class="table table-bordered">
+  <tr *ngFor="let art of articles">
+    <td><a href="{{art.url}}" target="_blank">{{art.title}}</a></td>
+    <td><app-likes></app-likes></td>
+  </tr>
+</table>
+
+<hr>
+
+<textarea [(ngModel)]="article.title" cols="70"></textarea>
+<textarea [(ngModel)]="article.url" cols="70"></textarea>
+<br>
+<input class="btn btn-warning" (click)="updateArticle()" type="button" value="Update">

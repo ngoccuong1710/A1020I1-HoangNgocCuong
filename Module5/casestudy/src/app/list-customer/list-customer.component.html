@@ -1,0 +1,73 @@
+
+<h1>List Customer</h1>
+<table class="table table-bordered table-striped">
+  <thead class="thead-dark">
+    <tr>
+      <th>Id</th>
+      <th>Name</th>
+      <th>Birthday</th>
+      <th>Gender</th>
+      <th>Id Card</th>
+      <th>Phone</th>
+      <th>Email</th>
+      <th>Address</th>
+      <th>Type</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let customer of customers">
+      <td>{{customer.idCustomer}}</td>
+      <td>{{customer.name}}</td>
+      <td>{{customer.birthday}}</td>
+      <td>{{customer.gender}}</td>
+      <td>{{customer.idCard}}</td>
+      <td>{{customer.phone}}</td>
+      <td>{{customer.email}}</td>
+      <td>{{customer.address}}</td>
+      <td>{{customer.type}}</td>
+      <td>
+        <a class="btn btn-warning">Edit</a>
+        <span>&nbsp;</span>
+        <a class="btn btn-danger" id="deleteButton">Delete</a>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+
+<div>
+</div>
+
+<div class="modal fade" tabindex="-1" role="dialog" id="deleteModal">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Confirm delete</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>Bạn có muốn xóa customer tên <a></a></p>
+      </div>
+      <div class="modal-footer">
+        <a href="" type="button" class="btn btn-primary" id="delRef">Yes, delete</a>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  $(document).ready(function () {
+    $(".table #deleteButton").on('click', function (event) {
+      event.preventDefault();
+      var href = $(this).attr('href');
+      $('#deleteModal #delRef').attr('href', href);
+      $('#deleteModal').modal();
+    })
+  })
+</script>
+
+

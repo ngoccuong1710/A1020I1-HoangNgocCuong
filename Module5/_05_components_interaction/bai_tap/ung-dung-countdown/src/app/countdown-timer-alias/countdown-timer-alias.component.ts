@@ -66,5 +66,4 @@ export class CountdownTimerAliasComponent implements OnInit, OnChanges, OnDestro
       }
     }, 1000);
   }
-
 }

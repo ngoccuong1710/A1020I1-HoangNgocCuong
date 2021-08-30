@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 
 export interface IStudent {
   id: number;
@@ -14,9 +14,9 @@ export interface IStudent {
 })
 export class InforStudentComponent implements OnInit {
 
-  student: IStudent = {
+   @Input()student: IStudent = {
     id: 1,
-    name: "Cuong",
+    name: "cuong",
     mark: 0,
     image: 'https://image.flaticon.com/icons/png/512/147/147144.png'
   }

@@ -14,6 +14,7 @@ export interface IStudent {
 })
 export class ListStudentComponent implements OnInit {
 
+
   students: IStudent[] = [
     {
       id: 1,

@@ -1,0 +1,48 @@
+<div class="row justify-content-between">
+  <h2>List Employee</h2>
+  <div class="d-flex">
+    <input class="form-control mr-2 h-100" type="text" placeholder="Search" aria-label="Search" style="width: 400px">
+    <button class="btn btn-outline-success">Search</button>
+  </div>
+</div>
+<div class="row mt-3">
+  <button class="btn btn-success">Create</button>
+  <table class="table table-bordered table-striped mt-3">
+    <thead class="thead-dark">
+      <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Birthday</th>
+        <th>Id card</th>
+        <th>Salary</th>
+        <th>Phone</th>
+        <th>Email</th>
+        <th>Address</th>
+        <th>Position</th>
+        <th>Education eegree</th>
+        <th>Division</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let employee of employees">
+        <td>{{employee.idEmployee}}</td>
+        <td>{{employee.name}}</td>
+        <td>{{employee.birthday}}</td>
+        <td>{{employee.idCard}}</td>
+        <td>{{employee.salary}}</td>
+        <td>{{employee.phone}}</td>
+        <td>{{employee.email}}</td>
+        <td>{{employee.address}}</td>
+        <td>{{employee.position}}</td>
+        <td>{{employee.educationDegree}}</td>
+        <td>{{employee.division}}</td>
+        <td style="width: 10%">
+          <a class="btn btn-sm btn-warning mr-2">Edit</a>
+          <a class="btn btn-sm btn-danger" id="deleteButton">Delete</a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+

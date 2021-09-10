@@ -1,0 +1,109 @@
+{
+  "customers": [
+    {
+      "id": 1,
+      "idCustomer": "KH-439",
+      "name": "Ngọc Cường",
+      "birthday": "2021-09-02",
+      "gender": "Male",
+      "idCard": "123123123",
+      "phone": "0912345678",
+      "email": "cuong@gmail.com",
+      "address": "da nang",
+      "type": "Gold"
+    },
+    {
+      "id": 2,
+      "idCustomer": "KH-996",
+      "name": "Hoàng Ngọc Cường",
+      "birthday": "2021-09-02",
+      "gender": "Male",
+      "idCard": "123123123",
+      "phone": "0912345678",
+      "email": "cuong@gmail.com",
+      "address": "Quảng Nam",
+      "type": "Diamond"
+    },
+    {
+      "id": 3,
+      "idCustomer": "KH-2943",
+      "name": "Nguyễn Văn A",
+      "birthday": "2021-02-10",
+      "gender": "Female",
+      "idCard": "123123123",
+      "phone": "0912346578",
+      "email": "asd@gmail.com",
+      "address": "Huế",
+      "type": "Member"
+    }
+  ],
+  "employees": [
+    {
+      "idEmployee": 1,
+      "name": "Lão Hạc",
+      "birthday": "20/10/2000",
+      "idCard": "123456789",
+      "salary": "32000000",
+      "phone": "0913245678",
+      "email": "hac@gmail.com",
+      "address": "Vu Dai",
+      "position": "Phục vụ",
+      "educationDegree": "Cao đẳng",
+      "division": "Phục vụ"
+    },
+    {
+      "idEmployee": 2,
+      "name": "Cậu Vàng",
+      "birthday": "25/2/2004",
+      "idCard": "123456789",
+      "salary": "32000000",
+      "phone": "0913245678",
+      "email": "vang@gmail.com",
+      "address": "Vu Dai",
+      "position": "Chuyên viên",
+      "educationDegree": "Đại học",
+      "division": "Hành Chính"
+    }
+  ],
+  "services": [
+    {
+      "idService": 1,
+      "name": "Villa 1",
+      "area": "50",
+      "cost": "3000000",
+      "maxPeople": "5",
+      "rentType": "Ngày",
+      "serviceType": "Villa",
+      "standardRoom": "Vip",
+      "descriptionOtherConvenience": "karaoke",
+      "poolArea": "10",
+      "numOfFloors": "3"
+    },
+    {
+      "idService": 2,
+      "name": "Villa 2",
+      "area": "50",
+      "cost": "3000000",
+      "maxPeople": "3",
+      "rentType": "Giờ",
+      "serviceType": "Villa",
+      "standardRoom": "normal",
+      "descriptionOtherConvenience": "food",
+      "poolArea": "10",
+      "numOfFloors": "2"
+    },
+    {
+      "idService": 3,
+      "name": "House 1",
+      "area": "50",
+      "cost": "3000000",
+      "maxPeople": "6",
+      "rentType": "Tháng",
+      "serviceType": "House",
+      "standardRoom": "Vip",
+      "descriptionOtherConvenience": "food",
+      "poolArea": "",
+      "numOfFloors": "2"
+    }
+  ]
+}

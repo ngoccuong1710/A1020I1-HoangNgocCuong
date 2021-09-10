@@ -1,18 +1,29 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ListCustomerComponent } from './list-customer/list-customer.component';
-import { ListEmployeeComponent } from './list-employee/list-employee.component';
-import { ListServiceComponent } from './list-service/list-service.component';
-import { ListContractComponent } from './list-contract/list-contract.component';
-import { CreateCustomerComponent } from './create-customer/create-customer.component';
-import { CreateEmployeeComponent } from './create-employee/create-employee.component';
-import { CreateServiceComponent } from './create-service/create-service.component';
-import { CreateContractComponent } from './create-contract/create-contract.component';
-import { CreateContractDetailComponent } from './create-contract-detail/create-contract-detail.component';
-import {ReactiveFormsModule} from "@angular/forms";
+import { ListCustomerComponent } from './components/customer/list-customer/list-customer.component';
+import { ListEmployeeComponent } from './components/employee/list-employee/list-employee.component';
+import { ListServiceComponent } from './components/service/list-service/list-service.component';
+import { ListContractComponent } from './components/contract/list-contract/list-contract.component';
+import { CreateCustomerComponent } from './components/customer/create-customer/create-customer.component';
+import { CreateEmployeeComponent } from './components/employee/create-employee/create-employee.component';
+import { CreateServiceComponent } from './components/service/create-service/create-service.component';
+import { CreateContractComponent } from './components/contract/create-contract/create-contract.component';
+import { CreateContractDetailComponent } from './components/contract-detail/create-contract-detail/create-contract-detail.component';
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import { HomeComponent } from './components/home/home.component';
+import { ListContractDetailComponent } from './components/contract-detail/list-contract-detail/list-contract-detail.component';
+import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
+import {HttpClientModule} from "@angular/common/http";
+import {Ng2SearchPipeModule} from "ng2-search-filter";
+import {NgxPaginationModule} from "ngx-pagination";
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatSelectModule} from "@angular/material/select";
+import {MatRadioModule} from "@angular/material/radio";
+import { DeleteCustomerComponent } from './components/customer/delete-customer/delete-customer.component';
+import {MatDialogModule} from "@angular/material/dialog";
+import { EditCustomerComponent } from './components/customer/edit-customer/edit-customer.component';
 
 @NgModule({
   declarations: [
@@ -25,14 +36,28 @@ import {ReactiveFormsModule} from "@angular/forms";
     CreateEmployeeComponent,
     CreateServiceComponent,
     CreateContractComponent,
-    CreateContractDetailComponent
+    CreateContractDetailComponent,
+    HomeComponent,
+    ListContractDetailComponent,
+    PageNotFoundComponent,
+    DeleteCustomerComponent,
+    EditCustomerComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule,
+    FormsModule,
+    Ng2SearchPipeModule,
+    NgxPaginationModule,
+    BrowserAnimationsModule,
+    MatSelectModule,
+    MatRadioModule,
+    MatDialogModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents:[DeleteCustomerComponent]
 })
 export class AppModule { }

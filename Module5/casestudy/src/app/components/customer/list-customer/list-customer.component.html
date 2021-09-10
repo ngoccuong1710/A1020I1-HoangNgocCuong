@@ -1,0 +1,47 @@
+<div class="row justify-content-between">
+  <h2>List Customer</h2>
+  <div class="d-flex">
+    <input class="form-control mr-2 h-100" type="text" placeholder="Search" aria-label="Search" style="width: 400px" [(ngModel)]="keyword">
+    <button class="btn btn-outline-success">Search</button>
+  </div>
+</div>
+<div class="row mt-3">
+  <button class="btn btn-success" [routerLink]="['/customer-create']">Create</button>
+  <table class="table table-bordered table-striped mt-3">
+    <thead class="thead-dark">
+      <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Birthday</th>
+        <th>Gender</th>
+        <th>Id Card</th>
+        <th>Phone</th>
+        <th>Email</th>
+        <th>Address</th>
+        <th>Type</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let customer of customers | filter:keyword | paginate: { itemsPerPage: 5, currentPage: p }">
+        <td>{{customer.idCustomer}}</td>
+        <td>{{customer.name}}</td>
+        <td>{{customer.birthday | date: 'dd/MM/yyyy'}}</td>
+        <td>{{customer.gender}}</td>
+        <td>{{customer.idCard}}</td>
+        <td>{{customer.phone}}</td>
+        <td>{{customer.email}}</td>
+        <td>{{customer.address}}</td>
+        <td>{{customer.type}}</td>
+        <td style="width: 10%">
+          <a class="btn btn-sm btn-warning mr-2" [routerLink]="['/customer-edit/' + customer.id]">Edit</a>
+          <a class="btn btn-sm btn-danger" (click)="openDialog(customer.id)">Delete</a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <pagination-controls (pageChange)="p = $event"></pagination-controls>
+
+</div>
+

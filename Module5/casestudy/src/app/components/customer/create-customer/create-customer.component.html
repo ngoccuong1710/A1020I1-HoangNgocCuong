@@ -1,0 +1,67 @@
+<h2 class="text-center">Create customer</h2>
+<form class="w-75 mx-auto mt-4" (ngSubmit)="addNewCustomer()" [formGroup]="customerCreateForm">
+  <div class="card border-dark" style="width: 100%">
+    <div class="card-body">
+      <div class="form-group">
+        <p>Name</p>
+        <input type="text" class="form-control" formControlName="name" placeholder="Input name customer">
+        <p class="form-text text-danger" *ngIf="customerCreateForm.controls.name.errors?.required && customerCreateForm.controls.name?.touched">Please enter your name</p>
+      </div>
+      <div class="form-group">
+        <p>Birthday</p>
+        <input type="date" class="form-control" formControlName="birthday" placeholder="Input birthday customer">
+        <p class="form-text text-danger" *ngIf="customerCreateForm.controls.birthday.errors?.required && customerCreateForm.controls.birthday?.touched">Please choose your birthday</p>
+      </div>
+      <div class="form-group">
+        <p>Gender</p>
+<!--        <mat-radio-group>-->
+<!--          <mat-radio-button value="Male" formControlName="gender">Male</mat-radio-button>-->
+<!--          <span>&nbsp;&nbsp;&nbsp;&nbsp;</span>-->
+<!--          <mat-radio-button value="Female" formControlName="gender">Female</mat-radio-button>-->
+<!--        </mat-radio-group>-->
+        <input class="form-check-inline" type="radio" value="Male" formControlName="gender">Male
+        <span>&nbsp;&nbsp;&nbsp;&nbsp;</span>
+        <input class="form-check-inline" type="radio" value="Female" formControlName="gender">Female
+        <p class="form-text text-danger" *ngIf="customerCreateForm.controls.gender.errors?.required && customerCreateForm.controls.gender?.touched">Please enter your gender</p>
+      </div>
+      <div class="form-group">
+        <p>Id card</p>
+        <input type="text" class="form-control" formControlName="idCard" placeholder="Input gender customer">
+        <p class="form-text text-danger" *ngIf="customerCreateForm.controls.idCard.errors?.required && customerCreateForm.controls.idCard?.touched">Please enter your id card</p>
+        <p class="form-text text-danger" *ngIf="customerCreateForm.controls.idCard.errors?.pattern && customerCreateForm.controls.idCard?.touched">Id card invalidate</p>
+      </div>
+      <div class="form-group">
+        <p>Phone</p>
+        <input type="text" class="form-control" formControlName="phone" placeholder="Input phone customer">
+        <p class="form-text text-danger" *ngIf="customerCreateForm.controls.phone.errors?.required && customerCreateForm.controls.phone?.touched">Please enter your phone</p>
+        <p class="form-text text-danger" *ngIf="customerCreateForm.controls.phone.errors?.pattern && customerCreateForm.controls.phone?.touched">Phone invalidate</p>
+      </div>
+      <div class="form-group">
+        <p>Email</p>
+        <input type="text" class="form-control" formControlName="email" placeholder="Input email customer">
+        <p class="form-text text-danger" *ngIf="customerCreateForm.controls.email.errors?.required && customerCreateForm.controls.email?.touched">Please enter your email</p>
+        <p class="form-text text-danger" *ngIf="customerCreateForm.controls.email.errors?.email && customerCreateForm.controls.email?.touched">Email invalidate</p>
+      </div>
+      <div class="form-group">
+        <p>Address</p>
+        <input type="text" class="form-control" formControlName="address" placeholder="Input address customer">
+        <p class="form-text text-danger" *ngIf="customerCreateForm.controls.address.errors?.required && customerCreateForm.controls.address?.touched">Please enter your address</p>
+      </div>
+      <div class="form-group">
+        <p>Type</p>
+        <mat-form-field >
+          <mat-label>Choose type customer</mat-label>
+          <mat-select formControlName="type">
+            <mat-option *ngFor="let type of types" [value]="type.value">
+              {{type.viewValue}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+        <p class="form-text text-danger" *ngIf="customerCreateForm.controls.type.errors?.required && customerCreateForm.controls.type?.touched">Please choose your type</p>
+      </div>
+    </div>
+    <div class="card-footer text-muted d-flex justify-content-center">
+      <button class="btn btn-success"  [disabled]="customerCreateForm.invalid">Create</button>
+    </div>
+  </div>
+</form>

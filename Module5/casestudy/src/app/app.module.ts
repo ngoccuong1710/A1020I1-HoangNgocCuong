@@ -24,6 +24,9 @@ import {MatRadioModule} from "@angular/material/radio";
 import { DeleteCustomerComponent } from './components/customer/delete-customer/delete-customer.component';
 import {MatDialogModule} from "@angular/material/dialog";
 import { EditCustomerComponent } from './components/customer/edit-customer/edit-customer.component';
+import { EditEmployeeComponent } from './components/employee/edit-employee/edit-employee.component';
+import { DeleteEmployeeComponent } from './components/employee/delete-employee/delete-employee.component';
+import {SearchPipe} from "./search.pipe";
 
 @NgModule({
   declarations: [
@@ -42,6 +45,9 @@ import { EditCustomerComponent } from './components/customer/edit-customer/edit-
     PageNotFoundComponent,
     DeleteCustomerComponent,
     EditCustomerComponent,
+    EditEmployeeComponent,
+    DeleteEmployeeComponent,
+    SearchPipe,
   ],
   imports: [
     BrowserModule,

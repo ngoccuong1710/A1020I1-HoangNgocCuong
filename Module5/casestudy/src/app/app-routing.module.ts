@@ -10,6 +10,8 @@ import {ListContractDetailComponent} from "./components/contract-detail/list-con
 import {PageNotFoundComponent} from "./components/page-not-found/page-not-found.component";
 import {CreateCustomerComponent} from "./components/customer/create-customer/create-customer.component";
 import {EditCustomerComponent} from "./components/customer/edit-customer/edit-customer.component";
+import {CreateEmployeeComponent} from "./components/employee/create-employee/create-employee.component";
+import {EditEmployeeComponent} from "./components/employee/edit-employee/edit-employee.component";
 
 
 const routes: Routes = [
@@ -18,6 +20,8 @@ const routes: Routes = [
   {path: 'customer-create', component: CreateCustomerComponent},
   {path: 'customer-edit/:id', component: EditCustomerComponent},
   {path: 'employee-list', component: ListEmployeeComponent},
+  {path: 'employee-create', component: CreateEmployeeComponent},
+  {path: 'employee-edit/:id', component: EditEmployeeComponent},
   {path: 'service-list', component: ListServiceComponent},
   {path: 'contract-list', component: ListContractComponent},
   {path: 'contract-detail-list', component: ListContractDetailComponent},

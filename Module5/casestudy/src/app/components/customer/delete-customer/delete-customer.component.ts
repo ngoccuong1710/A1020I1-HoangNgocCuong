@@ -17,8 +17,8 @@ export class DeleteCustomerComponent implements OnInit {
     public customerService: CustomerService) {}
 
   ngOnInit(): void {
-   this.nameCustomer = this.data.data1.name;
-    this.idCustomer = this.data.data1.id;
+     this.nameCustomer = this.data.data1.name;
+     this.idCustomer = this.data.data1.id;
   }
 
   deleteCustomer(){

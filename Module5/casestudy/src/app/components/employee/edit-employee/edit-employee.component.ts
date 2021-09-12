@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
-import {Router} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 import {EmployeeService} from "../../../services/employee.service";
 
 interface Position {
@@ -19,39 +19,47 @@ interface Division {
 }
 
 @Component({
-  selector: 'app-create-employee',
-  templateUrl: './create-employee.component.html',
-  styleUrls: ['./create-employee.component.css']
+  selector: 'app-edit-employee',
+  templateUrl: './edit-employee.component.html',
+  styleUrls: ['./edit-employee.component.css']
 })
-export class CreateEmployeeComponent implements OnInit {
+export class EditEmployeeComponent implements OnInit {
 
-  public employeeCreateForm!: FormGroup;
+  public employeeEditForm!: FormGroup;
+  public idEmployee: any;
 
   constructor(
     public formBuilder:FormBuilder,
     public employeeService: EmployeeService,
-    public router: Router) {}
+    public router: Router,
+    public activatedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.employeeCreateForm = this.formBuilder.group({
+    this.employeeEditForm = this.formBuilder.group({
       'id': [],
       'idEmployee': [''],
       'name': ['', [Validators.required]],
       'birthday': ['', [Validators.required]],
       'idCard': ['', [Validators.required, Validators.pattern('^[0-9]{9}$')]],
-      'salary': ['', [Validators.required], Validators.pattern('^[0-9]$')],
+      'salary': ['', [Validators.required, Validators.pattern('^[0-9]$')]],
       'phone': ['', [Validators.required, Validators.pattern('^((\\(84\\)\\+)|(0))((91)|(90))[\\d]{7}$')]],
       'email': ['', [Validators.required, Validators.email]],
       'address': ['', [Validators.required]],
       'position': ['', [Validators.required]],
       'educationDegree': ['', [Validators.required]],
       'division': ['', [Validators.required]],
+    });
+
+    this.activatedRoute.params.subscribe(data =>{
+      this.idEmployee = data.id;
+      this.employeeService.getEmployeesById(this.idEmployee).subscribe(data =>{
+        this.employeeEditForm.patchValue(data);
+      })
     })
   }
 
-  addNewEmployee(){
-    this.employeeCreateForm.value.idEmployee = "NV-" + Math.floor(Math.random() * 10000);
-    this.employeeService.addNewEmployees(this.employeeCreateForm.value).subscribe(data => {
+  editEmployee() {
+    this.employeeService.editEmployees(this.employeeEditForm.value, this.idEmployee).subscribe(data =>{
       this.router.navigateByUrl('employee-list').then(r => {});
     })
   }
@@ -78,5 +86,4 @@ export class CreateEmployeeComponent implements OnInit {
     {value: 'Phục vụ', viewValue: 'Phục vụ'},
     {value: 'Quản lý', viewValue: 'Quản lý'},
   ];
-
 }

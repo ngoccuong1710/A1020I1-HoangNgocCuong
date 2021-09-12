@@ -1,4 +1,5 @@
 export interface IEmployee {
+  id: number;
   idEmployee: string;
   name: string;
   birthday: string;

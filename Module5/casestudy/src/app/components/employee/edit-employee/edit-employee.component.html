@@ -1,45 +1,45 @@
 <h2 class="text-center">Create employee</h2>
-<form class="w-75 mx-auto mt-4" (ngSubmit)="addNewEmployee()" [formGroup]="employeeCreateForm">
+<form class="w-75 mx-auto mt-4" (ngSubmit)="editEmployee()" [formGroup]="employeeEditForm">
   <div class="card border-dark" style="width: 100%">
     <div class="card-body">
       <div class="form-group">
         <p>Name</p>
         <input type="text" class="form-control" formControlName="name" placeholder="Input name employee">
-        <p class="form-text text-danger" *ngIf="employeeCreateForm.controls.name.errors?.required && employeeCreateForm.controls.name?.touched">Please enter your name</p>
+        <p class="form-text text-danger" *ngIf="employeeEditForm.controls.name.errors?.required && employeeEditForm.controls.name?.touched">Please enter your name</p>
       </div>
       <div class="form-group">
         <p>Birthday</p>
         <input type="date" class="form-control" formControlName="birthday" placeholder="Input birthday employee">
-        <p class="form-text text-danger" *ngIf="employeeCreateForm.controls.birthday.errors?.required && employeeCreateForm.controls.birthday?.touched">Please choose your birthday</p>
+        <p class="form-text text-danger" *ngIf="employeeEditForm.controls.birthday.errors?.required && employeeEditForm.controls.birthday?.touched">Please choose your birthday</p>
       </div>
       <div class="form-group">
         <p>Id card</p>
         <input type="number" class="form-control" formControlName="idCard" placeholder="Input gender employee">
-        <p class="form-text text-danger" *ngIf="employeeCreateForm.controls.idCard.errors?.required && employeeCreateForm.controls.idCard?.touched">Please enter your id card</p>
-        <p class="form-text text-danger" *ngIf="employeeCreateForm.controls.idCard.errors?.pattern && employeeCreateForm.controls.idCard?.touched">Id card invalidate</p>
+        <p class="form-text text-danger" *ngIf="employeeEditForm.controls.idCard.errors?.required && employeeEditForm.controls.idCard?.touched">Please enter your id card</p>
+        <p class="form-text text-danger" *ngIf="employeeEditForm.controls.idCard.errors?.pattern && employeeEditForm.controls.idCard?.touched">Id card invalidate</p>
       </div>
       <div class="form-group">
         <p>Salary</p>
         <input type="number" class="form-control" formControlName="salary" placeholder="Input salary employee">
-        <p class="form-text text-danger" *ngIf="employeeCreateForm.controls.salary.errors?.required && employeeCreateForm.controls.salary?.touched">Please enter your salary</p>
-        <p class="form-text text-danger" *ngIf="employeeCreateForm.controls.salary.errors?.pattern && employeeCreateForm.controls.salary?.touched">Phone invalidate</p>
+        <p class="form-text text-danger" *ngIf="employeeEditForm.controls.salary.errors?.required && employeeEditForm.controls.salary?.touched">Please enter your salary</p>
+        <p class="form-text text-danger" *ngIf="employeeEditForm.controls.salary.errors?.pattern && employeeEditForm.controls.salary?.touched">Phone invalidate</p>
       </div>
       <div class="form-group">
         <p>Phone</p>
         <input type="text" class="form-control" formControlName="phone" placeholder="Input phone employee">
-        <p class="form-text text-danger" *ngIf="employeeCreateForm.controls.phone.errors?.required && employeeCreateForm.controls.phone?.touched">Please enter your phone</p>
-        <p class="form-text text-danger" *ngIf="employeeCreateForm.controls.phone.errors?.pattern && employeeCreateForm.controls.phone?.touched">Phone invalidate</p>
+        <p class="form-text text-danger" *ngIf="employeeEditForm.controls.phone.errors?.required && employeeEditForm.controls.phone?.touched">Please enter your phone</p>
+        <p class="form-text text-danger" *ngIf="employeeEditForm.controls.phone.errors?.pattern && employeeEditForm.controls.phone?.touched">Phone invalidate</p>
       </div>
       <div class="form-group">
         <p>Email</p>
         <input type="text" class="form-control" formControlName="email" placeholder="Input email employee">
-        <p class="form-text text-danger" *ngIf="employeeCreateForm.controls.email.errors?.required && employeeCreateForm.controls.email?.touched">Please enter your email</p>
-        <p class="form-text text-danger" *ngIf="employeeCreateForm.controls.email.errors?.email && employeeCreateForm.controls.email?.touched">Email invalidate</p>
+        <p class="form-text text-danger" *ngIf="employeeEditForm.controls.email.errors?.required && employeeEditForm.controls.email?.touched">Please enter your email</p>
+        <p class="form-text text-danger" *ngIf="employeeEditForm.controls.email.errors?.email && employeeEditForm.controls.email?.touched">Email invalidate</p>
       </div>
       <div class="form-group">
         <p>Address</p>
         <input type="text" class="form-control" formControlName="address" placeholder="Input address employee">
-        <p class="form-text text-danger" *ngIf="employeeCreateForm.controls.address.errors?.required && employeeCreateForm.controls.address?.touched">Please enter your address</p>
+        <p class="form-text text-danger" *ngIf="employeeEditForm.controls.address.errors?.required && employeeEditForm.controls.address?.touched">Please enter your address</p>
       </div>
       <div class="form-group">
         <p>Position</p>
@@ -51,7 +51,7 @@
             </mat-option>
           </mat-select>
         </mat-form-field>
-        <p class="form-text text-danger" *ngIf="employeeCreateForm.controls.position.errors?.required && employeeCreateForm.controls.position?.touched">Please choose your position</p>
+        <p class="form-text text-danger" *ngIf="employeeEditForm.controls.position.errors?.required && employeeEditForm.controls.position?.touched">Please choose your position</p>
       </div>
       <div class="form-group">
         <p>Education degree</p>
@@ -63,7 +63,7 @@
             </mat-option>
           </mat-select>
         </mat-form-field>
-        <p class="form-text text-danger" *ngIf="employeeCreateForm.controls.educationDegree.errors?.required && employeeCreateForm.controls.educationDegree?.touched">Please choose your education degree</p>
+        <p class="form-text text-danger" *ngIf="employeeEditForm.controls.educationDegree.errors?.required && employeeEditForm.controls.educationDegree?.touched">Please choose your education degree</p>
       </div>
       <div class="form-group">
         <p>Division</p>
@@ -75,11 +75,11 @@
             </mat-option>
           </mat-select>
         </mat-form-field>
-        <p class="form-text text-danger" *ngIf="employeeCreateForm.controls.division.errors?.required && employeeCreateForm.controls.division?.touched">Please choose your division</p>
+        <p class="form-text text-danger" *ngIf="employeeEditForm.controls.division.errors?.required && employeeEditForm.controls.division?.touched">Please choose your division</p>
       </div>
     </div>
     <div class="card-footer text-muted d-flex justify-content-center">
-      <button class="btn btn-success"  [disabled]="employeeCreateForm.invalid">Create</button>
+      <button class="btn btn-success"  [disabled]="employeeEditForm.invalid">Update</button>
     </div>
   </div>
 </form>

@@ -27,6 +27,8 @@ import { EditCustomerComponent } from './components/customer/edit-customer/edit-
 import { EditEmployeeComponent } from './components/employee/edit-employee/edit-employee.component';
 import { DeleteEmployeeComponent } from './components/employee/delete-employee/delete-employee.component';
 import {SearchPipe} from "./search.pipe";
+import { DeleteServiceComponent } from './components/service/delete-service/delete-service.component';
+import { EditServiceComponent } from './components/service/edit-service/edit-service.component';
 
 @NgModule({
   declarations: [
@@ -48,6 +50,8 @@ import {SearchPipe} from "./search.pipe";
     EditEmployeeComponent,
     DeleteEmployeeComponent,
     SearchPipe,
+    DeleteServiceComponent,
+    EditServiceComponent,
   ],
   imports: [
     BrowserModule,

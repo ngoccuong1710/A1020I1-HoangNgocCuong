@@ -22,7 +22,7 @@
         <p>Salary</p>
         <input type="number" class="form-control" formControlName="salary" placeholder="Input salary employee">
         <p class="form-text text-danger" *ngIf="employeeCreateForm.controls.salary.errors?.required && employeeCreateForm.controls.salary?.touched">Please enter your salary</p>
-        <p class="form-text text-danger" *ngIf="employeeCreateForm.controls.salary.errors?.pattern && employeeCreateForm.controls.salary?.touched">Phone invalidate</p>
+        <p class="form-text text-danger" *ngIf="employeeCreateForm.controls.salary.errors?.pattern && employeeCreateForm.controls.salary?.touched">Salary invalidate</p>
       </div>
       <div class="form-group">
         <p>Phone</p>

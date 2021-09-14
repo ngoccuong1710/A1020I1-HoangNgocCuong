@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
+import {ICustomer} from "../models/customer";
 
 @Injectable({
   providedIn: 'root'
@@ -10,23 +11,23 @@ export class CustomerService {
 
   constructor(public http: HttpClient) {}
 
-  getAllCustomers(): Observable<any>{
-    return this.http.get(this.API);
+  getAllCustomers(): Observable<ICustomer>{
+    return this.http.get<ICustomer>(this.API);
   }
 
-  addNewCustomer(customer: any): Observable<any>{
-    return  this.http.post(this.API, customer)
+  addNewCustomer(customer: ICustomer): Observable<ICustomer>{
+    return  this.http.post<ICustomer>(this.API, customer)
   }
 
-  getCustomerById(idCustomer: any): Observable<any>{
-    return this.http.get(this.API + '/' + idCustomer);
+  getCustomerById(idCustomer: number): Observable<ICustomer>{
+    return this.http.get<ICustomer>(this.API + '/' + idCustomer);
   }
 
-  deleteCustomer(idCustomer: any): Observable<any>{
-    return this.http.delete(this.API + '/' + idCustomer);
+  deleteCustomer(idCustomer: number): Observable<ICustomer>{
+    return this.http.delete<ICustomer>(this.API + '/' + idCustomer);
   }
 
-  editCustomer(customer:any, idCustomer: any):Observable<any>{
-    return this.http.put(this.API + '/' + idCustomer, customer);
+  editCustomer(customer:ICustomer, idCustomer: number):Observable<ICustomer>{
+    return this.http.put<ICustomer>(this.API + '/' + idCustomer, customer);
   }
 }

@@ -1,4 +1,5 @@
 export interface IService {
+  id: number;
   idService: string;
   name: string;
   area: number;

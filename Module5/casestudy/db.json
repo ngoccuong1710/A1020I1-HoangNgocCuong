@@ -47,6 +47,30 @@
       "email": "cuong@gmail.com",
       "address": "hue",
       "type": "Silver"
+    },
+    {
+      "id": 5,
+      "idCustomer": "KH-3912",
+      "name": "Nguyễn Văn Long",
+      "birthday": "2021-09-08",
+      "gender": "Male",
+      "idCard": 123123123,
+      "phone": "0913246578",
+      "email": "long@gmail.com",
+      "address": "HCM",
+      "type": "Silver"
+    },
+    {
+      "id": 6,
+      "idCustomer": "KH-9310",
+      "name": "Phùng Văn Sáng",
+      "birthday": "2021-08-31",
+      "gender": "Male",
+      "idCard": 123123123,
+      "phone": "0912345678",
+      "email": "sang@gmail.com",
+      "address": "Huế",
+      "type": "Member"
     }
   ],
   "employees": [
@@ -81,7 +105,8 @@
   ],
   "services": [
     {
-      "idService": 1,
+      "id": 1,
+      "idService": "DV-1234",
       "name": "Villa 1",
       "area": "50",
       "cost": "3000000",
@@ -94,7 +119,8 @@
       "numOfFloors": "3"
     },
     {
-      "idService": 2,
+      "id": 2,
+      "idService": "DV-2345",
       "name": "Villa 2",
       "area": "50",
       "cost": "3000000",
@@ -107,17 +133,18 @@
       "numOfFloors": "2"
     },
     {
-      "idService": 3,
+      "id": 3,
+      "idService": "DV-2496",
       "name": "House 1",
-      "area": "50",
-      "cost": "3000000",
-      "maxPeople": "6",
-      "rentType": "Tháng",
+      "area": 21,
+      "cost": 123123123,
+      "maxPeople": 2,
+      "rentType": "Ngày",
       "serviceType": "House",
-      "standardRoom": "Vip",
-      "descriptionOtherConvenience": "food",
-      "poolArea": "",
-      "numOfFloors": "2"
+      "standardRoom": "Normal",
+      "descriptionOtherConvenience": "food, drink",
+      "poolArea": 21,
+      "numOfFloors": "1"
     }
   ]
 }

@@ -14,6 +14,8 @@ import {CreateEmployeeComponent} from "./components/employee/create-employee/cre
 import {EditEmployeeComponent} from "./components/employee/edit-employee/edit-employee.component";
 import {CreateServiceComponent} from "./components/service/create-service/create-service.component";
 import {EditServiceComponent} from "./components/service/edit-service/edit-service.component";
+import {CreateContractComponent} from "./components/contract/create-contract/create-contract.component";
+import {EditContractComponent} from "./components/contract/edit-contract/edit-contract.component";
 
 
 const routes: Routes = [
@@ -28,6 +30,8 @@ const routes: Routes = [
   {path: 'service-create', component: CreateServiceComponent},
   {path: 'service-edit/:id', component: EditServiceComponent},
   {path: 'contract-list', component: ListContractComponent},
+  {path: 'contract-create', component: CreateContractComponent},
+  {path: 'contract-edit/:id', component: EditContractComponent},
   {path: 'contract-detail-list', component: ListContractDetailComponent},
   {path: '**', component: PageNotFoundComponent},
 ];

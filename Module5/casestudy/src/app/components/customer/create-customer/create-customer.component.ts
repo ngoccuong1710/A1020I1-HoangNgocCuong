@@ -16,6 +16,8 @@ interface Type {
 export class CreateCustomerComponent implements OnInit {
 
   public customerCreateForm!: FormGroup;
+  public maxDate = new Date();
+  public minDate = new Date(1900, 0,1);
 
   constructor(
     public formBuilder:FormBuilder,

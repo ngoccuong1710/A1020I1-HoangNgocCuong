@@ -1,1 +1,83 @@
-<p>edit-service works!</p>
+<h2 class="text-center">Edit employee</h2>
+<form class="w-75 mx-auto mt-4" (ngSubmit)="editService()" [formGroup]="serviceEditForm">
+  <div class="card border-dark" style="width: 100%">
+    <div class="card-body">
+      <div class="form-group">
+        <p>Name</p>
+        <input type="text" class="form-control" formControlName="name" placeholder="Input name service">
+        <p class="form-text text-danger" *ngIf="serviceEditForm.controls.name.errors?.required && serviceEditForm.controls.name?.touched">Please enter name service</p>
+      </div>
+      <div class="form-group">
+        <p>Area</p>
+        <input type="number" class="form-control" formControlName="area" placeholder="Input area service">
+        <p class="form-text text-danger" *ngIf="serviceEditForm.controls.area.errors?.required && serviceEditForm.controls.area?.touched">Please enter area service</p>
+      </div>
+      <div class="form-group">
+        <p>Cost</p>
+        <input type="number" class="form-control" formControlName="cost" placeholder="Input cost service">
+        <p class="form-text text-danger" *ngIf="serviceEditForm.controls.cost.errors?.required && serviceEditForm.controls.cost?.touched">Please enter cost service</p>
+      </div>
+      <div class="form-group">
+        <p>Max people</p>
+        <input type="number" class="form-control" formControlName="maxPeople" placeholder="Input max people service">
+        <p class="form-text text-danger" *ngIf="serviceEditForm.controls.maxPeople.errors?.required && serviceEditForm.controls.maxPeople?.touched">Please enter max people service</p>
+      </div>
+      <div class="form-group">
+        <p>Rent type</p>
+        <mat-form-field >
+          <mat-label>Choose position employee</mat-label>
+          <mat-select formControlName="rentType">
+            <mat-option *ngFor="let rentType of rentTypes" [value]="rentType.value">
+              {{rentType.viewValue}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+        <p class="form-text text-danger" *ngIf="serviceEditForm.controls.rentType.errors?.required && serviceEditForm.controls.rentType?.touched">Please choose rent type</p>
+      </div>
+      <div class="form-group">
+        <p>Service type</p>
+        <mat-form-field >
+          <mat-label>Choose education degree employee</mat-label>
+          <mat-select formControlName="serviceType">
+            <mat-option *ngFor="let serviceType of serviceTypes" [value]="serviceType.value">
+              {{serviceType.viewValue}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+        <p class="form-text text-danger" *ngIf="serviceEditForm.controls.serviceType.errors?.required && serviceEditForm.controls.serviceType?.touched">Please choose service type</p>
+      </div>
+      <div class="form-group">
+        <p>Standard room</p>
+        <mat-form-field >
+          <mat-label>Choose division employee</mat-label>
+          <mat-select formControlName="standardRoom">
+            <mat-option *ngFor="let standardRoom of standardRooms" [value]="standardRoom.value">
+              {{standardRoom.viewValue}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+        <p class="form-text text-danger" *ngIf="serviceEditForm.controls.standardRoom.errors?.required && serviceEditForm.controls.standardRoom?.touched">Please choose standard room</p>
+      </div>
+      <div class="form-group">
+        <p>Description other convenience</p>
+        <input type="text" class="form-control" formControlName="descriptionOtherConvenience" placeholder="Input description other convenience service">
+        <p class="form-text text-danger" *ngIf="serviceEditForm.controls.descriptionOtherConvenience.errors?.required && serviceEditForm.controls.descriptionOtherConvenience?.touched">Please enter description other convenience</p>
+      </div>
+      <div class="form-group">
+        <p>Pool area</p>
+        <input type="number" class="form-control" formControlName="poolArea" placeholder="Input pool area service">
+        <p class="form-text text-danger" *ngIf="serviceEditForm.controls.poolArea.errors?.required && serviceEditForm.controls.poolArea?.touched">Please enter pool area service</p>
+      </div>
+      <div class="form-group">
+        <p>Num of floors</p>
+        <input type="text" class="form-control" formControlName="numOfFloors" placeholder="Input num of floors service">
+        <p class="form-text text-danger" *ngIf="serviceEditForm.controls.numOfFloors.errors?.required && serviceEditForm.controls.numOfFloors?.touched">Please enter num of floors</p>
+      </div>
+    </div>
+    <div class="card-footer text-muted d-flex justify-content-center">
+      <button class="btn btn-success"  [disabled]="serviceEditForm.invalid">Update</button>
+    </div>
+  </div>
+</form>
+
+

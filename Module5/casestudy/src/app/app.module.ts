@@ -29,6 +29,10 @@ import { DeleteEmployeeComponent } from './components/employee/delete-employee/d
 import {SearchPipe} from "./search.pipe";
 import { DeleteServiceComponent } from './components/service/delete-service/delete-service.component';
 import { EditServiceComponent } from './components/service/edit-service/edit-service.component';
+import {MatDatepickerModule} from "@angular/material/datepicker";
+import {MatNativeDateModule} from "@angular/material/core";
+import {MatInputModule} from "@angular/material/input";
+import { EditContractComponent } from './components/contract/edit-contract/edit-contract.component';
 
 @NgModule({
   declarations: [
@@ -52,20 +56,24 @@ import { EditServiceComponent } from './components/service/edit-service/edit-ser
     SearchPipe,
     DeleteServiceComponent,
     EditServiceComponent,
+    EditContractComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    ReactiveFormsModule,
-    HttpClientModule,
-    FormsModule,
-    Ng2SearchPipeModule,
-    NgxPaginationModule,
-    BrowserAnimationsModule,
-    MatSelectModule,
-    MatRadioModule,
-    MatDialogModule,
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        ReactiveFormsModule,
+        HttpClientModule,
+        FormsModule,
+        Ng2SearchPipeModule,
+        NgxPaginationModule,
+        BrowserAnimationsModule,
+        MatSelectModule,
+        MatRadioModule,
+        MatDialogModule,
+        MatDatepickerModule,
+        MatNativeDateModule,
+        MatInputModule,
+    ],
   providers: [],
   bootstrap: [AppComponent],
   entryComponents:[DeleteCustomerComponent]

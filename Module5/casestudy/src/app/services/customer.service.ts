@@ -11,8 +11,8 @@ export class CustomerService {
 
   constructor(public http: HttpClient) {}
 
-  getAllCustomers(): Observable<ICustomer>{
-    return this.http.get<ICustomer>(this.API);
+  getAllCustomers(): Observable<ICustomer[]>{
+    return this.http.get<ICustomer[]>(this.API);
   }
 
   addNewCustomer(customer: ICustomer): Observable<ICustomer>{
@@ -30,4 +30,9 @@ export class CustomerService {
   editCustomer(customer:ICustomer, idCustomer: number):Observable<ICustomer>{
     return this.http.put<ICustomer>(this.API + '/' + idCustomer, customer);
   }
+
+  searchCustomer(name: any, customerType: any): Observable<ICustomer[]> {
+    return this.http.get<ICustomer[]>(this.API + '?name_like=' + name + '?customerType_like=' + customerType);
+  }
+
 }

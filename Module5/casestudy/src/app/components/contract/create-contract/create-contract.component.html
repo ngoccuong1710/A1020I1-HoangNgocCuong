@@ -1,1 +1,68 @@
-<p>create-contract works!</p>
+<h2 class="text-center">Create employee</h2>
+<form class="w-75 mx-auto mt-4" (ngSubmit)="addNewContract()" [formGroup]="contractCreateForm">
+  <div class="card border-dark" style="width: 100%">
+    <div class="card-body">
+      <div class="form-group">
+        <p>Start date</p>
+        <input type="text" class="form-control" formControlName="startDate" placeholder="Input start date">
+        <p class="form-text text-danger" *ngIf="contractCreateForm.controls.startDate.errors?.required && contractCreateForm.controls.startDate?.touched">Please enter name service</p>
+      </div>
+      <div class="form-group">
+        <p>End Date</p>
+        <input type="number" class="form-control" formControlName="endDate" placeholder="Input end date">
+        <p class="form-text text-danger" *ngIf="contractCreateForm.controls.endDate.errors?.required && contractCreateForm.controls.endDate?.touched">Please enter area service</p>
+      </div>
+      <div class="form-group">
+        <p>Deposit</p>
+        <input type="number" class="form-control" formControlName="deposit" placeholder="Input deposit">
+        <p class="form-text text-danger" *ngIf="contractCreateForm.controls.deposit.errors?.required && contractCreateForm.controls.deposit?.touched">Please enter cost service</p>
+      </div>
+      <div class="form-group">
+        <p>Total money</p>
+        <input type="number" class="form-control" formControlName="totalMoney" placeholder="Input total money">
+        <p class="form-text text-danger" *ngIf="contractCreateForm.controls.totalMoney.errors?.required && contractCreateForm.controls.totalMoney?.touched">Please enter max people service</p>
+      </div>
+      <div class="form-group">
+        <p>Employee</p>
+        <mat-form-field >
+          <mat-label>Choose employee</mat-label>
+          <mat-select formControlName="idEmployee">
+            <mat-option *ngFor="let employee of employees" [value]="employee">
+              {{employee.name}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+        <p class="form-text text-danger" *ngIf="contractCreateForm.controls.employee.errors?.required && contractCreateForm.controls.employee?.touched">Please choose employee</p>
+      </div>
+      <div class="form-group">
+        <p>Customer</p>
+        <mat-form-field >
+          <mat-label>Choose customer</mat-label>
+          <mat-select formControlName="idCustomer">
+            <mat-option *ngFor="let customer of customers" [value]="customer">
+              {{customer.name}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+        <p class="form-text text-danger" *ngIf="contractCreateForm.controls.customer.errors?.required && contractCreateForm.controls.customer?.touched">Please choose customer</p>
+      </div>
+      <div class="form-group">
+        <p>Service</p>
+        <mat-form-field >
+          <mat-label>Choose service</mat-label>
+          <mat-select formControlName="idService">
+            <mat-option *ngFor="let service of services" [value]="service">
+              {{service.name}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+        <p class="form-text text-danger" *ngIf="contractCreateForm.controls.service.errors?.required && contractCreateForm.controls.service?.touched">Please choose service</p>
+      </div>
+      <div class="card-footer text-muted d-flex justify-content-center">
+        <button class="btn btn-success"  [disabled]="contractCreateForm.invalid">Create</button>
+      </div>
+    </div>
+  </div>
+</form>
+
+

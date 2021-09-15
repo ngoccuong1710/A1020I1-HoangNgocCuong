@@ -9,7 +9,12 @@
       </div>
       <div class="form-group">
         <p>Birthday</p>
-        <input type="date" class="form-control" formControlName="birthday" placeholder="Input birthday customer">
+        <mat-form-field>
+          <input class="form-control" matInput [matDatepicker]="myDatepicker" formControlName="birthday" placeholder="Input birthday customer" [max]="maxDate" [min]="minDate">
+          <mat-datepicker-toggle matSuffix [for]="myDatepicker"></mat-datepicker-toggle>
+          <mat-datepicker #myDatepicker></mat-datepicker>
+        </mat-form-field>
+<!--        <input type="date" class="form-control" formControlName="birthday" placeholder="Input birthday customer">-->
         <p class="form-text text-danger" *ngIf="customerCreateForm.controls.birthday.errors?.required && customerCreateForm.controls.birthday?.touched">Please choose your birthday</p>
       </div>
       <div class="form-group">

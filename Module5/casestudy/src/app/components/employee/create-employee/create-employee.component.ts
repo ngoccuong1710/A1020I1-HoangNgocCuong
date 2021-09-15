@@ -26,6 +26,8 @@ interface Division {
 export class CreateEmployeeComponent implements OnInit {
 
   public employeeCreateForm!: FormGroup;
+  public maxDate = new Date();
+  public minDate = new Date(1900, 0,1);
 
   constructor(
     public formBuilder:FormBuilder,

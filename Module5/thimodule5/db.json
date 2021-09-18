@@ -1,0 +1,88 @@
+{
+  "soTietKiem": [
+    {
+      "id": 2,
+      "khachHang": {
+        "id": 1,
+        "tenKhachHang": "hieu"
+      },
+      "ngayMoSo": "2021-09-08",
+      "thoiGianBatDauGui": "2021-09-01",
+      "kyHan": "6 thang",
+      "soTienGui": "100000000",
+      "laiSuat": "8%/nam",
+      "uuDai": "ao mua"
+    },
+    {
+      "id": 3,
+      "khachHang": {
+        "id": 1,
+        "tenKhachHang": "cong"
+      },
+      "ngayMoSo": "2021-09-08",
+      "thoiGianBatDauGui": "2021-09-01",
+      "kyHan": "6 thang",
+      "soTienGui": "100000000",
+      "laiSuat": "8%/nam",
+      "uuDai": "ao mua"
+    },
+    {
+      "id": 4,
+      "khachHang": {
+        "id": 1,
+        "tenKhachHang": "trung"
+      },
+      "ngayMoSo": "2021-09-08",
+      "thoiGianBatDauGui": "2021-09-01",
+      "kyHan": "6 thang",
+      "soTienGui": "100000000",
+      "laiSuat": "8%/nam",
+      "uuDai": "ao mua"
+    },
+    {
+      "id": 5,
+      "khachHang": {
+        "id": 1,
+        "tenKhachHang": "long"
+      },
+      "ngayMoSo": "2021-09-08",
+      "thoiGianBatDauGui": "2021-09-01",
+      "kyHan": "6 thang",
+      "soTienGui": "100000000",
+      "laiSuat": "8%/nam",
+      "uuDai": "ao mua"
+    },
+    {
+      "id": 6,
+      "khachHang": {
+        "id": 1,
+        "tenKhachHang": "thanh"
+      },
+      "ngayMoSo": "2021-09-08",
+      "thoiGianBatDauGui": "2021-09-01",
+      "kyHan": "6 thang",
+      "soTienGui": "100000000",
+      "laiSuat": "8%/nam",
+      "uuDai": "ao mua"
+    },
+    {
+      "id": 7,
+      "khachHang": {
+        "id": 1,
+        "tenKhachHang": "hieu2"
+      },
+      "ngayMoSo": "2021-09-08",
+      "thoiGianBatDauGui": "2021-09-01",
+      "kyHan": "6 thang",
+      "soTienGui": "100000000",
+      "laiSuat": "8%/nam",
+      "uuDai": "ao mua"
+    }
+  ],
+  "khachHang": [
+    {
+      "id": 1,
+      "tenKhachHang": "cuong"
+    }
+  ]
+}

@@ -1,0 +1,54 @@
+<h2 class="text-center">Edit customer</h2>
+<form class="w-75 mx-auto mt-4" (ngSubmit)="edit()" [formGroup]="editForm">
+  <div class="card border-dark" style="width: 100%">
+    <div class="card-body">
+<!--      <div class="form-group">-->
+<!--        <p>Mã số sổ</p>-->
+<!--        <input type="text" class="form-control" formControlName="id" >-->
+<!--      </div>-->
+<!--      <div class="form-group">-->
+<!--        <p>Mã khách hàng</p>-->
+<!--        <input type="text" class="form-control" formControlName="idCustomer" >-->
+<!--      </div>-->
+      <div class="form-group">
+        <p>Tên khách hàng</p>
+        <input type="text" class="form-control" formControlName="khachHang">
+        <p class="form-text text-danger" *ngIf="editForm.controls.tenKhachHang.errors?.required && editForm.controls.tenKhachHang?.touched">bắt buộc  nhập</p>
+      </div>
+      <div class="form-group">
+        <p>Ngày mở sổ</p>
+        <input type="date" class="form-control" formControlName="ngayMoSo">
+        <p class="form-text text-danger" *ngIf="editForm.controls.ngayMoSo.errors?.required && editForm.controls.ngayMoSo?.touched">bắt buộc  nhập</p>
+      </div>
+      <div class="form-group">
+        <p>Thời gian bắt đầu gửi</p>
+        <input type="date" class="form-control" formControlName="thoiGianBatDauGui" [min]="date">
+        <p class="form-text text-danger" *ngIf="editForm.controls.thoiGianBatDauGui.errors?.required && editForm.controls.thoiGianBatDauGui?.touched">bắt buộc  nhập</p>
+      </div>
+      <div class="form-group">
+        <p>Kỳ hạn</p>
+        <input type="text" class="form-control" formControlName="kyHan">
+        <p class="form-text text-danger" *ngIf="editForm.controls.kyHan.errors?.required && editForm.controls.kyHan?.touched">bắt buộc  nhập</p>
+      </div>
+      <div class="form-group">
+        <p>Số tiền gửi</p>
+        <input type="text" class="form-control" formControlName="soTienGui">
+        <p class="form-text text-danger" *ngIf="editForm.controls.soTienGui.errors?.required && editForm.controls.soTienGui?.touched">bắt buộc  nhập</p>
+        <p class="form-text text-danger" *ngIf="editForm.controls.soTienGui.errors?.min && editForm.controls.soTienGui?.touched">Lớn hơn hoặc bằng 10000000</p>
+      </div>
+      <div class="form-group">
+        <p>Lãi suất</p>
+        <input type="text" class="form-control" formControlName="laiSuat">
+        <p class="form-text text-danger" *ngIf="editForm.controls.laiSuat.errors?.required && editForm.controls.laiSuat?.touched">bắt buộc  nhập</p>
+      </div>
+      <div class="form-group">
+        <p>Ưu đãi</p>
+        <input type="text" class="form-control" formControlName="uuDai">
+        <p class="form-text text-danger" *ngIf="editForm.controls.uuDai.errors?.required && editForm.controls.uuDai?.touched">bắt buộc  nhập</p>
+      </div>
+      <div class="card-footer text-muted d-flex justify-content-center">
+        <button class="btn btn-success" >Update</button>
+      </div>
+    </div>
+  </div>
+</form>

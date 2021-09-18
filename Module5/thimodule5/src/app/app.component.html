@@ -1,0 +1,30 @@
+<div class="container-fluid px-0" style="height: 100vh">
+  <nav class="navbar navbar-expand-lg navbar-dark rounded bg-dark" style="height: 10%">
+    <div class="container-fluid">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <a class="navbar-brand text-white" href="#"></a>
+      <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active text-white" aria-current="page" href="#" [routerLink]="['']">Home</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="row px-0 mx-0" style="height: 90%">
+    <div class="col-2 px-0">
+      <div class="list-group border border-dark rounded h-100">
+        <a href="#" class="list-group-item list-group-item-action active" aria-current="true">
+        </a>
+        <a href="#" class="list-group-item list-group-item-action" [routerLink]="['']">List</a>
+      </div>
+    </div>
+    <div class="col-10 p-5">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>

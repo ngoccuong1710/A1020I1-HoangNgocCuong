@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="73c3349f-fe95-4881-bb9a-e1fc8634ad95" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../Module3/_08_bootstrap_co_ban/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Module3/_08_bootstrap_co_ban/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Module3/_08_bootstrap_co_ban/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Module1.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Module1.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Git-HTML/.idea/Git-HTML.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Git-HTML/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Git-HTML/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Git-HTML/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Git-HTML/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Module2/out/production/Module2/META-INF/Module2.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Module2/out/production/Module2/QuanLyPhuongTienGiaoThong/model/OTo.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Module2/out/production/Module2/QuanLyPhuongTienGiaoThong/model/OTo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Module2/out/production/Module2/QuanLyPhuongTienGiaoThong/model/XeMay.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Module2/out/production/Module2/QuanLyPhuongTienGiaoThong/model/XeMay.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Module2/out/production/Module2/QuanLyPhuongTienGiaoThong/model/XeTai.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Module2/out/production/Module2/QuanLyPhuongTienGiaoThong/model/XeTai.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Module2/out/production/Module2/_03_Mang_va_phuong_thuc_trong_Java/bai_tap/dem_so_lan_xuat_hien_trong_chuoi/DemSoLanXuatHienTrongChuoi.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Module2/out/production/Module2/_03_Mang_va_phuong_thuc_trong_Java/bai_tap/dem_so_lan_xuat_hien_trong_chuoi/DemSoLanXuatHienTrongChuoi.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Module2/src/CaseStudy/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Module2/src/CaseStudy/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Module2/src/CaseStudy/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Module2/src/CaseStudy/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Module2/src/_03_Mang_va_phuong_thuc_trong_Java/bai_tap/dem_so_lan_xuat_hien_trong_chuoi/DemSoLanXuatHienTrongChuoi.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Module2/src/_03_Mang_va_phuong_thuc_trong_Java/bai_tap/dem_so_lan_xuat_hien_trong_chuoi/DemSoLanXuatHienTrongChuoi.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Module3/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Module3/.idea/Module3.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Module3/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Module3/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Module3/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Module3/CaseStudy2/.gradle/6.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../Module3/CaseStudy2/.gradle/6.1/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Module3/CaseStudy2/.gradle/6.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../Module3/CaseStudy2/.gradle/6.1/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Module3/CaseStudy2/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../Module3/CaseStudy2/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Module3/CaseStudy2/.gradle/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../Module3/CaseStudy2/.gradle/checksums/checksums.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Module4/_06_jpa/thuc_hanh/quan_ly_khach_hang/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Module4/_06_jpa/thuc_hanh/quan_ly_khach_hang/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Module4/casestudy/furama_resort/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../Module4/casestudy/furama_resort/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2Djrmgt3yyqs3bcX9QliwassNXx" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;E:/A1020I1-HoangNgocCuong/Module1&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="73c3349f-fe95-4881-bb9a-e1fc8634ad95" name="Changes" comment="" />
+      <created>1661223496558</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1661223496558</updated>
+      <workItem from="1661223498110" duration="335000" />
+      <workItem from="1661223867264" duration="17000" />
+      <workItem from="1661224839748" duration="76000" />
+      <workItem from="1661225416494" duration="67000" />
+      <workItem from="1661232130688" duration="662000" />
+      <workItem from="1661235309496" duration="49000" />
+      <workItem from="1661390310938" duration="3646000" />
+      <workItem from="1661396038578" duration="1709000" />
+      <workItem from="1661414540412" duration="2891000" />
+      <workItem from="1661476168001" duration="3139000" />
+      <workItem from="1661482882699" duration="605000" />
+      <workItem from="1661483678768" duration="33000" />
+      <workItem from="1661487878607" duration="82000" />
+      <workItem from="1661490862351" duration="31000" />
+      <workItem from="1661874809158" duration="233000" />
+      <workItem from="1661907793234" duration="60000" />
+      <workItem from="1661915864128" duration="53000" />
+      <workItem from="1661916013094" duration="37000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>

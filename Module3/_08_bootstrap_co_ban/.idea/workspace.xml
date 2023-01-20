@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="14721e61-0142-44b6-bdef-1066ba3bdcdd" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../../Module1/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Module1/.idea/Module1.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Module1/.idea/Module1.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Module1/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Module1/Git-HTML/.idea/Git-HTML.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Module1/Git-HTML/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Module1/Git-HTML/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Module1/Git-HTML/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Module1/Git-HTML/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Module2/out/production/Module2/META-INF/Module2.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Module2/out/production/Module2/QuanLyPhuongTienGiaoThong/model/OTo.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../Module2/out/production/Module2/QuanLyPhuongTienGiaoThong/model/OTo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Module2/out/production/Module2/QuanLyPhuongTienGiaoThong/model/XeMay.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../Module2/out/production/Module2/QuanLyPhuongTienGiaoThong/model/XeMay.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Module2/out/production/Module2/QuanLyPhuongTienGiaoThong/model/XeTai.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../Module2/out/production/Module2/QuanLyPhuongTienGiaoThong/model/XeTai.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Module2/out/production/Module2/_03_Mang_va_phuong_thuc_trong_Java/bai_tap/dem_so_lan_xuat_hien_trong_chuoi/DemSoLanXuatHienTrongChuoi.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../Module2/out/production/Module2/_03_Mang_va_phuong_thuc_trong_Java/bai_tap/dem_so_lan_xuat_hien_trong_chuoi/DemSoLanXuatHienTrongChuoi.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Module2/src/CaseStudy/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Module2/src/CaseStudy/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Module2/src/CaseStudy/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Module2/src/CaseStudy/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Module2/src/_03_Mang_va_phuong_thuc_trong_Java/bai_tap/dem_so_lan_xuat_hien_trong_chuoi/DemSoLanXuatHienTrongChuoi.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Module2/src/_03_Mang_va_phuong_thuc_trong_Java/bai_tap/dem_so_lan_xuat_hien_trong_chuoi/DemSoLanXuatHienTrongChuoi.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/Module3.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CaseStudy2/.gradle/6.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../CaseStudy2/.gradle/6.1/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CaseStudy2/.gradle/6.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../CaseStudy2/.gradle/6.1/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CaseStudy2/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../CaseStudy2/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CaseStudy2/.gradle/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../CaseStudy2/.gradle/checksums/checksums.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Module4/_06_jpa/thuc_hanh/quan_ly_khach_hang/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Module4/_06_jpa/thuc_hanh/quan_ly_khach_hang/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Module4/casestudy/furama_resort/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../../Module4/casestudy/furama_resort/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2Ds8aylr6GW8zORYCuNeJfOkmbq" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "E:/A1020I1-HoangNgocCuong/Module3/_08_bootstrap_co_ban",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="14721e61-0142-44b6-bdef-1066ba3bdcdd" name="Changes" comment="" />
+      <created>1661476498351</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1661476498351</updated>
+      <workItem from="1661476499546" duration="107000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>

@@ -58,8 +58,6 @@
                                     <td><c:out value="${customer.address}"/></td>
                                     <td><a class="btn btn-warning" href="index?action=edit-customer&id=${customer.id}">Edit</a>
                                     </td>
-    <%--                                <td><a class="btn btn-danger" href="index?action=delete-customer&id=${customer.id}">Delete</a>--%>
-    <%--                                </td>--%>
                                     <td><a class="btn btn-danger" href="index?action=delete-customer&id=${customer.id}" onclick="customerSetId('${customer.id}','${customer.name}')"
                                            data-toggle="modal" data-target="#deleteModal">Delete</a></td>
                                 </tr>

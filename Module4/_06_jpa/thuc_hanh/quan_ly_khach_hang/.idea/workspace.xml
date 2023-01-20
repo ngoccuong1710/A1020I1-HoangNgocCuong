@@ -2,21 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e4c5cb64-6b0f-4ac2-90e9-0defb05a8615" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../../../_08_validation/thuc_hanh/custom_validation/src/main/java/vn/codegym/ApplicationConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../_08_validation/thuc_hanh/custom_validation/src/main/java/vn/codegym/ApplicationInitializer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../_08_validation/thuc_hanh/custom_validation/src/main/java/vn/codegym/controller/PhoneController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../_08_validation/thuc_hanh/custom_validation/src/main/java/vn/codegym/model/PhoneNumber.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../_08_validation/thuc_hanh/custom_validation/src/main/resources/ValidationMessages.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../_08_validation/thuc_hanh/custom_validation/src/main/webapp/WEB-INF/views/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../_08_validation/thuc_hanh/custom_validation/src/main/webapp/WEB-INF/views/result.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../_08_validation/thuc_hanh/validating_form_input/src/main/java/vn/codegym/ApplicationConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../_08_validation/thuc_hanh/validating_form_input/src/main/java/vn/codegym/ApplicationInitializer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../_08_validation/thuc_hanh/validating_form_input/src/main/java/vn/codegym/controller/UserController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../_08_validation/thuc_hanh/validating_form_input/src/main/java/vn/codegym/model/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../_08_validation/thuc_hanh/validating_form_input/src/main/webapp/WEB-INF/views/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../_08_validation/thuc_hanh/validating_form_input/src/main/webapp/WEB-INF/views/result.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../_07_spring_data_repository/bai_tap/ung_dung_blog/src/main/resources/templates/blog/show.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../_07_spring_data_repository/bai_tap/ung_dung_blog/src/main/resources/templates/blog/show.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Module2/out/production/Module2/META-INF/Module2.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Module2/out/production/Module2/QuanLyPhuongTienGiaoThong/model/OTo.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../Module2/out/production/Module2/QuanLyPhuongTienGiaoThong/model/OTo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Module2/out/production/Module2/QuanLyPhuongTienGiaoThong/model/XeMay.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../Module2/out/production/Module2/QuanLyPhuongTienGiaoThong/model/XeMay.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Module2/out/production/Module2/QuanLyPhuongTienGiaoThong/model/XeTai.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../Module2/out/production/Module2/QuanLyPhuongTienGiaoThong/model/XeTai.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Module2/out/production/Module2/_03_Mang_va_phuong_thuc_trong_Java/bai_tap/dem_so_lan_xuat_hien_trong_chuoi/DemSoLanXuatHienTrongChuoi.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../Module2/out/production/Module2/_03_Mang_va_phuong_thuc_trong_Java/bai_tap/dem_so_lan_xuat_hien_trong_chuoi/DemSoLanXuatHienTrongChuoi.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Module2/src/_03_Mang_va_phuong_thuc_trong_Java/bai_tap/dem_so_lan_xuat_hien_trong_chuoi/DemSoLanXuatHienTrongChuoi.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../Module2/src/_03_Mang_va_phuong_thuc_trong_Java/bai_tap/dem_so_lan_xuat_hien_trong_chuoi/DemSoLanXuatHienTrongChuoi.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -179,6 +170,7 @@
       <workItem from="1625482096249" duration="10000" />
       <workItem from="1625483890172" duration="9000" />
       <workItem from="1625485398772" duration="401000" />
+      <workItem from="1637324196651" duration="5000" />
     </task>
     <servers />
   </component>
